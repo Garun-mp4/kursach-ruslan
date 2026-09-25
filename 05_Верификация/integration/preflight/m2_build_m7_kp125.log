@@ -1,0 +1,13 @@
+{
+  "config_version": "M7-v1.1",
+  "model_path": "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\03_Модель_и_схемы\\source\\scara_color_sorter_m2.xml",
+  "model_sha256": "a58be856fc02a56fc0fc1ba04f2b48d65fae4e08b3dec87c7380b88794ba8ab0",
+  "body_mass_kg": {
+    "link1": 0.15639872,
+    "link2": 0.1403184,
+    "z_slide": 0.03753728,
+    "wrist": 0.044290779,
+    "finger_left": 0.004464,
+    "finger_right": 0.004464
+  }
+}

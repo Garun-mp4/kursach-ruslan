@@ -1,0 +1,34 @@
+center_red_yaw0: SUCCESS (27.32s, 25616 samples)
+left_green_yaw45: SUCCESS (27.43s, 26185 samples)
+right_blue_yaw30: SUCCESS (26.59s, 24839 samples)
+upper_edge_red_yaw90: SUCCESS (29.95s, 28268 samples)
+center_green_two_obstacles: SUCCESS (29.52s, 25644 samples)
+near_obstacle_safe_reject: COLLISION_GRASP (14.73s, 0 samples)
+center_red_halfstep: SUCCESS (53.18s, 50696 samples)
+{
+  "status": "PASS",
+  "scenario_count": 7,
+  "scenario_pass_count": 7,
+  "sampling_convergence": {
+    "status": "PASS",
+    "method": "Run the same M4 estimate and deterministic plan at baseline and half-step collision sampling. Require the same successful collision-preflight outcome, destination, IK branch, phase/event sequence, and TCP path length difference no greater than the refined spatial step.",
+    "same_m4_estimate": true,
+    "same_collision_outcome": true,
+    "new_collision_at_refined_resolution": false,
+    "same_planned_route_semantics": true,
+    "tcp_path_length_stable": true,
+    "path_length_comparison_tolerance_m": 0.0005,
+    "coarse_case": "center_red_yaw0",
+    "coarse_step_m": 0.001,
+    "refined_case": "center_red_halfstep",
+    "refined_step_m": 0.0005,
+    "both_plans_success": true,
+    "duration_difference_s": 0.0,
+    "tcp_path_length_difference_m": 1.0761091462363481e-06,
+    "coarse_min_clearance_lower_bound_m": 0.002259433751381823,
+    "refined_min_clearance_lower_bound_m": 0.0010987141494889219,
+    "clearance_lower_bound_difference_m": 0.0011607196018929011,
+    "clearance_estimate_status": "GRID_SENSITIVE",
+    "note": "PASS is decision-level: the refined full-path preflight found no new collision and the same geometric route was produced. The minimum sampled clearance lower bound changed by 0.0011607196 m; it is explicitly grid-sensitive because the minimum may occur between coarse samples. Pair-specific clearance, swept-step and numeric requirements are checked at every sample. This comparison is not a continuous collision-free proof."
+  }
+}

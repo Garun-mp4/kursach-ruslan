@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="118" y="48" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#17313d">TCP phases QA</text>
+<line x1="118" y1="635.00" x2="1215" y2="635.00" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="641.00" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">-0.622</text>
+<line x1="118" y1="526.40" x2="1215" y2="526.40" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="532.40" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">-0.4132</text>
+<line x1="118" y1="417.80" x2="1215" y2="417.80" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="423.80" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">-0.2044</text>
+<line x1="118" y1="309.20" x2="1215" y2="309.20" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="315.20" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.0044</text>
+<line x1="118" y1="200.60" x2="1215" y2="200.60" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="206.60" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.2132</text>
+<line x1="118" y1="92.00" x2="1215" y2="92.00" stroke="#dce5e8" stroke-width="1"/>
+<text x="106" y="98.00" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.422</text>
+<line x1="118.00" y1="92" x2="118.00" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="118.00" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">-0.136</text>
+<line x1="337.40" y1="92" x2="337.40" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="337.40" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.0584</text>
+<line x1="556.80" y1="92" x2="556.80" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="556.80" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.2528</text>
+<line x1="776.20" y1="92" x2="776.20" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="776.20" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.4472</text>
+<line x1="995.60" y1="92" x2="995.60" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="995.60" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.6416</text>
+<line x1="1215.00" y1="92" x2="1215.00" y2="635" stroke="#edf1f2" stroke-width="1"/>
+<text x="1215.00" y="663" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#506672">0.836</text>
+<polyline points="271.49,311.49 271.49,519.53 271.49,519.53 835.79,519.53 1174.37,415.51 1174.37,207.47 835.79,207.47 271.49,207.47" fill="none" stroke="#175d7a" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="271.49" cy="311.49" r="6" fill="#23875a"/>
+<circle cx="271.49" cy="207.47" r="6" fill="#795ca8"/>
+<circle cx="271.49" cy="519.53" r="6" fill="#be3d32"/>
+<circle cx="158.63" cy="467.52" r="6" fill="#667085"/>
+<circle cx="384.35" cy="467.52" r="6" fill="#667085"/>
+<circle cx="835.79" cy="207.47" r="6" fill="#23875a"/>
+<circle cx="271.49" cy="519.53" r="6" fill="#2e7d32"/>
+<text x="283.49" y="489.53" font-family="Arial,sans-serif" font-size="14" fill="#2e7d32">approach</text>
+<circle cx="271.49" cy="519.53" r="6" fill="#c62828"/>
+<text x="223.49" y="541.53" font-family="Arial,sans-serif" font-size="14" fill="#c62828">grasp</text>
+<circle cx="271.49" cy="519.53" r="6" fill="#ef6c00"/>
+<text x="229.49" y="477.53" font-family="Arial,sans-serif" font-size="14" fill="#ef6c00">lift</text>
+<circle cx="271.49" cy="519.53" r="6" fill="#6a1b9a"/>
+<text x="305.49" y="541.53" font-family="Arial,sans-serif" font-size="14" fill="#6a1b9a">transfer</text>
+<circle cx="835.79" cy="207.47" r="6" fill="#ad1457"/>
+<text x="787.79" y="185.47" font-family="Arial,sans-serif" font-size="14" fill="#ad1457">place</text>
+<circle cx="835.79" cy="207.47" r="6" fill="#00838f"/>
+<text x="849.79" y="231.47" font-family="Arial,sans-serif" font-size="14" fill="#00838f">retreat</text>
+<line x1="118" y1="635" x2="1215" y2="635" stroke="#526a75" stroke-width="2"/>
+<line x1="118" y1="92" x2="118" y2="635" stroke="#526a75" stroke-width="2"/>
+<text x="666.5" y="738" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#304c59">X base, m</text>
+<text x="26" y="363.5" text-anchor="middle" transform="rotate(-90 26 363.5)" font-family="Arial,sans-serif" font-size="18" fill="#304c59">Y base, m</text>
+<line x1="118" y1="694" x2="150" y2="694" stroke="#175d7a" stroke-width="4"/>
+<text x="158" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">path</text>
+<line x1="241" y1="694" x2="273" y2="694" stroke="#23875a" stroke-width="4"/>
+<text x="281" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">start</text>
+<line x1="364" y1="694" x2="396" y2="694" stroke="#795ca8" stroke-width="4"/>
+<text x="404" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">end</text>
+<line x1="483" y1="694" x2="515" y2="694" stroke="#be3d32" stroke-width="4"/>
+<text x="523" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">target estimate</text>
+<line x1="679" y1="694" x2="711" y2="694" stroke="#667085" stroke-width="4"/>
+<text x="719" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">perceived obstacle 5305</text>
+<line x1="945" y1="694" x2="977" y2="694" stroke="#667085" stroke-width="4"/>
+<text x="985" y="699" font-family="Arial,sans-serif" font-size="15" fill="#304c59">perceived obstacle 5306</text>
+<line x1="118" y1="720" x2="150" y2="720" stroke="#23875a" stroke-width="4"/>
+<text x="158" y="725" font-family="Arial,sans-serif" font-size="15" fill="#304c59">slot RED:1</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "test": "M4 frozen perception arm-occlusion check against current M2 geometry",
+  "m4_profile_version": "M4-v1.3",
+  "m4_calibration_id": "M4-HOMOGRAPHY-TOP-PLANE-v1.1",
+  "ssot_version": "M5-v1.1",
+  "ssot_sha256": "69a123c1d6eaf66d550a791cbae7ce8e7338251e8f229c232c26c6c4f90b450f",
+  "current_m2_model_sha256": "c76f67828dd5ffd6f3dc543b302729c394579e2d4b393df67e8bcae557bc748b",
+  "original_m4_model_sha256": "d5445d8a6a4cf1a38f533be697d6cd0748d457e4de40d6a16d5240752957c9e2",
+  "m4_profile_sha256": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+  "calibration_sha256": "035e5fd2a7af3e17c43bede7320b8c06a17986faeaae14b03be3b542928e02da",
+  "background_sha256": "f40946e44bd5b10fd7d133b793a46462311e1f64760a979ae8d99862d3c5573f",
+  "fixture": {
+    "class_label_evaluator_only": "RED",
+    "xy_base_m_evaluator_only": [
+      -0.05,
+      -0.28
+    ],
+    "yaw_rad_evaluator_only": 0.35,
+    "observation_joints": {
+      "j1_shoulder": -1.5707963267948966,
+      "j2_elbow": 1.5707963267948966,
+      "j3_lift": 0.015,
+      "j4_wrist": 0.0
+    }
+  },
+  "frame": {
+    "frame_id": 2,
+    "simulation_time_s": 2.0,
+    "camera_config_id": "overhead_rgb_M2_validated_v1",
+    "valid": true
+  },
+  "batch_status": "NO_CANDIDATES",
+  "detections": [],
+  "accepted_valid_count": 0,
+  "truth_boundary": "Evaluator fixture is used only to place/score the occlusion case; the perception API receives RGB CameraFrame, calibration and background only.",
+  "interpretation": "Confirms the frozen M4 detector still rejects the M4 arm-occlusion fixture using the corrected M2 wrist/finger geometry. This targeted regression does not rerun the full M4 classification/localization campaign.",
+  "artifacts": [
+    "current_m2_arm_occlusion_rgb.png",
+    "current_m2_arm_occlusion_mask.png"
+  ]
+}

@@ -1,0 +1,15 @@
+test_camera_frame_exposes_rgb_metadata_without_truth (test_perception_contract.PerceptionContractTests.test_camera_frame_exposes_rgb_metadata_without_truth) ... ok
+test_canonical_square_yaw_has_quarter_turn_symmetry (test_perception_contract.PerceptionContractTests.test_canonical_square_yaw_has_quarter_turn_symmetry) ... ok
+test_homography_pixel_base_round_trip (test_perception_contract.PerceptionContractTests.test_homography_pixel_base_round_trip) ... ok
+test_invalid_camera_frames_fail_closed (test_perception_contract.PerceptionContractTests.test_invalid_camera_frames_fail_closed) ... ok
+test_low_contrast_neutral_object_is_never_promoted_to_supported_color (test_perception_contract.PerceptionContractTests.test_low_contrast_neutral_object_is_never_promoted_to_supported_color) ... ok
+test_oversized_connected_mask_splits_at_distinct_known_color_cores (test_perception_contract.PerceptionContractTests.test_oversized_connected_mask_splits_at_distinct_known_color_cores) ... ok
+test_primary_rgb_order_and_cyclic_red_hue (test_perception_contract.PerceptionContractTests.test_primary_rgb_order_and_cyclic_red_hue) ... ok
+test_rendered_red_candidate_returns_structured_valid_pose (test_perception_contract.PerceptionContractTests.test_rendered_red_candidate_returns_structured_valid_pose) ... ok
+test_runtime_yaml_is_exact_ssot_export (test_perception_contract.PerceptionContractTests.test_runtime_yaml_is_exact_ssot_export) ... ok
+test_unsupported_saturated_hue_is_preserved_as_unknown (test_perception_contract.PerceptionContractTests.test_unsupported_saturated_hue_is_preserved_as_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.298s
+
+OK

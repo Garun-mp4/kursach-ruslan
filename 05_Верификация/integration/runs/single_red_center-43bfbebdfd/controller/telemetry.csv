@@ -1,0 +1,3 @@
+simulation_time_s,state,q1_rad,q2_rad,q3_m,q4_rad,dq1_rad_s,dq2_rad_s,dq3_m_s,dq4_rad_s,gripper_m,touch_left_N,touch_right_N,active_command_id,phase,max_abs_joint_error
+0,OBSERVE,2.61799388,1.04719755,0.015,0,0,0,0,0,0,0,0,,,0
+0.04,OBSERVE,2.61799388,1.04719755,0.0180925894,0,0,0,0.0799236347,0,0,0,0,,,0

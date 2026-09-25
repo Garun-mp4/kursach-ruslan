@@ -1,0 +1,745 @@
+{
+  "status": "PASS",
+  "config_version": "M5-v1.3",
+  "model_sha256": "f452a10047a48bb4de2871449be4a1401154b347646cc5cf6085349cf45e7e88",
+  "mujoco_version": "3.14.0",
+  "model_shape": {
+    "nbody": 19,
+    "njnt": 12,
+    "nq": 48,
+    "nv": 42,
+    "nu": 5,
+    "neq": 1,
+    "nsensor": 2,
+    "nkey": 1
+  },
+  "explicit_adjacent_pair_exclusions": [
+    [
+      "base_static",
+      "link1"
+    ],
+    [
+      "finger_left",
+      "wrist"
+    ],
+    [
+      "finger_right",
+      "wrist"
+    ],
+    [
+      "link1",
+      "link2"
+    ],
+    [
+      "link2",
+      "z_slide"
+    ],
+    [
+      "wrist",
+      "z_slide"
+    ]
+  ],
+  "joint_report": {
+    "j1_shoulder": {
+      "type": "hinge",
+      "range": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "qpos_address": 0
+    },
+    "j2_elbow": {
+      "type": "hinge",
+      "range": [
+        -2.6179938779914944,
+        2.6179938779914944
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "qpos_address": 1
+    },
+    "j3_lift": {
+      "type": "slide",
+      "range": [
+        0.0,
+        0.097
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "qpos_address": 2
+    },
+    "j4_wrist": {
+      "type": "hinge",
+      "range": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "qpos_address": 3
+    },
+    "j5_finger_left": {
+      "type": "slide",
+      "range": [
+        0.0,
+        0.027
+      ],
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "qpos_address": 4
+    },
+    "j6_finger_right": {
+      "type": "slide",
+      "range": [
+        0.0,
+        0.027
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "qpos_address": 5
+    }
+  },
+  "actuator_report": {
+    "act_j1_shoulder": {
+      "ctrlrange": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "forcerange": [
+        -0.5,
+        0.5
+      ]
+    },
+    "act_j2_elbow": {
+      "ctrlrange": [
+        -2.6179938779914944,
+        2.6179938779914944
+      ],
+      "forcerange": [
+        -0.3,
+        0.3
+      ]
+    },
+    "act_j3_lift": {
+      "ctrlrange": [
+        0.0,
+        0.097
+      ],
+      "forcerange": [
+        -4.0,
+        4.0
+      ]
+    },
+    "act_j4_wrist": {
+      "ctrlrange": [
+        -3.141592653589793,
+        3.141592653589793
+      ],
+      "forcerange": [
+        -0.08,
+        0.08
+      ]
+    },
+    "act_gripper_left": {
+      "ctrlrange": [
+        0.0,
+        0.027
+      ],
+      "forcerange": [
+        -1.2,
+        1.2
+      ]
+    }
+  },
+  "inertial_report": {
+    "link1": {
+      "mass_kg": 0.15639872000000005,
+      "com_local_m": [
+        0.1629403463148547,
+        0.0,
+        0.0
+      ],
+      "principal_inertia_kg_m2": [
+        0.0009361612679787683,
+        0.0009071340484587682,
+        6.058353973333336e-05
+      ],
+      "inertial_quat_wxyz": [
+        0.0,
+        0.7071067811865489,
+        0.0,
+        0.7071067811865489
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          6.0583539733333845e-05,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0009071340484587754,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0009361612679787759
+        ]
+      ]
+    },
+    "link2": {
+      "mass_kg": 0.14031840000000007,
+      "com_local_m": [
+        0.14852863202545072,
+        0.0,
+        0.0
+      ],
+      "principal_inertia_kg_m2": [
+        0.0007080473125679748,
+        0.0006331531477679747,
+        0.00016186201120000002
+      ],
+      "inertial_quat_wxyz": [
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          0.0001618620112000009,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0007080473125679785,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0006331531477679782
+        ]
+      ]
+    },
+    "z_slide": {
+      "mass_kg": 0.03753727999999999,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0002938689217758986
+      ],
+      "principal_inertia_kg_m2": [
+        4.1413737093502464e-05,
+        4.1413737093502464e-05,
+        1.110320469333333e-05
+      ],
+      "inertial_quat_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          4.1413737093502464e-05,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.1413737093502464e-05,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.110320469333333e-05
+        ]
+      ]
+    },
+    "wrist": {
+      "mass_kg": 0.044290778963741395,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.01
+      ],
+      "principal_inertia_kg_m2": [
+        2.039687602922541e-05,
+        1.2092736962177605e-05,
+        9.763917762177603e-06
+      ],
+      "inertial_quat_wxyz": [
+        0.5000000000000007,
+        0.5000000000000007,
+        -0.5000000000000007,
+        0.5000000000000007
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          1.209273696217767e-05,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.763917762177654e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.039687602922552e-05
+        ]
+      ]
+    },
+    "finger_left": {
+      "mass_kg": 0.005356799999999999,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "principal_inertia_kg_m2": [
+        1.6713215999999998e-06,
+        1.6231103999999998e-06,
+        8.035199999999999e-08
+      ],
+      "inertial_quat_wxyz": [
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          8.035200000000041e-08,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.6713216000000087e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.6231104000000083e-06
+        ]
+      ]
+    },
+    "finger_right": {
+      "mass_kg": 0.005356799999999999,
+      "com_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "principal_inertia_kg_m2": [
+        1.6713215999999998e-06,
+        1.6231103999999998e-06,
+        8.035199999999999e-08
+      ],
+      "inertial_quat_wxyz": [
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007,
+        0.5000000000000007
+      ],
+      "reconstructed_body_frame_inertia_kg_m2": [
+        [
+          8.035200000000041e-08,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.6713216000000087e-06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.6231104000000083e-06
+        ]
+      ]
+    }
+  },
+  "home_qpos_joints": {
+    "j1_shoulder": 2.6179938779914944,
+    "j2_elbow": 1.0471975511965976,
+    "j3_lift": 0.015,
+    "j4_wrist": 0.0,
+    "j5_finger_left": 0.0,
+    "j6_finger_right": 0.0
+  },
+  "initial_contact_point_count": 24,
+  "initial_unique_support_pair_count": 6,
+  "initial_expected_contacts": [
+    {
+      "body1": "table",
+      "body2": "object_red_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_01",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_red_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_green_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_02",
+      "distance_m": 0.0
+    },
+    {
+      "body1": "table",
+      "body2": "object_blue_02",
+      "distance_m": 0.0
+    }
+  ],
+  "radial_reach_m": [
+    0.11500288192837443,
+    0.43000000000000005
+  ],
+  "target_radial_checks": [
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        -0.05,
+        -0.28
+      ],
+      "radius_m": 0.28442925306655786,
+      "radial_margin_m": 0.14557074693344219
+    },
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        0.0,
+        -0.28
+      ],
+      "radius_m": 0.28,
+      "radial_margin_m": 0.15000000000000002
+    },
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        0.05,
+        -0.28
+      ],
+      "radius_m": 0.28442925306655786,
+      "radial_margin_m": 0.14557074693344219
+    },
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        -0.05,
+        -0.22
+      ],
+      "radius_m": 0.22561028345356957,
+      "radial_margin_m": 0.11060740152519513
+    },
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        0.0,
+        -0.22
+      ],
+      "radius_m": 0.22,
+      "radial_margin_m": 0.10499711807162557
+    },
+    {
+      "zone": "INPUT",
+      "xy_m": [
+        0.05,
+        -0.22
+      ],
+      "radius_m": 0.22561028345356957,
+      "radial_margin_m": 0.11060740152519513
+    },
+    {
+      "zone": "RED",
+      "xy_m": [
+        -0.255,
+        0.21
+      ],
+      "radius_m": 0.3303407331831786,
+      "radial_margin_m": 0.09965926681682147
+    },
+    {
+      "zone": "RED",
+      "xy_m": [
+        -0.22,
+        0.21
+      ],
+      "radius_m": 0.30413812651491096,
+      "radial_margin_m": 0.1258618734850891
+    },
+    {
+      "zone": "RED",
+      "xy_m": [
+        -0.185,
+        0.21
+      ],
+      "radius_m": 0.2798660393831306,
+      "radial_margin_m": 0.15013396061686946
+    },
+    {
+      "zone": "GREEN",
+      "xy_m": [
+        -0.035,
+        0.3
+      ],
+      "radius_m": 0.3020347662107791,
+      "radial_margin_m": 0.12796523378922092
+    },
+    {
+      "zone": "GREEN",
+      "xy_m": [
+        0.0,
+        0.3
+      ],
+      "radius_m": 0.3,
+      "radial_margin_m": 0.13000000000000006
+    },
+    {
+      "zone": "GREEN",
+      "xy_m": [
+        0.035,
+        0.3
+      ],
+      "radius_m": 0.3020347662107791,
+      "radial_margin_m": 0.12796523378922092
+    },
+    {
+      "zone": "BLUE",
+      "xy_m": [
+        0.185,
+        0.21
+      ],
+      "radius_m": 0.2798660393831306,
+      "radial_margin_m": 0.15013396061686946
+    },
+    {
+      "zone": "BLUE",
+      "xy_m": [
+        0.22,
+        0.21
+      ],
+      "radius_m": 0.30413812651491096,
+      "radial_margin_m": 0.1258618734850891
+    },
+    {
+      "zone": "BLUE",
+      "xy_m": [
+        0.255,
+        0.21
+      ],
+      "radius_m": 0.3303407331831786,
+      "radial_margin_m": 0.09965926681682147
+    }
+  ],
+  "tray_slot_clearances": [
+    {
+      "class": "RED",
+      "x_offset_m": -0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    },
+    {
+      "class": "RED",
+      "x_offset_m": 0.0,
+      "object_wall_clearance_m": 0.05720101012677667,
+      "finger_wall_clearance_m": 0.047
+    },
+    {
+      "class": "RED",
+      "x_offset_m": 0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    },
+    {
+      "class": "GREEN",
+      "x_offset_m": -0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    },
+    {
+      "class": "GREEN",
+      "x_offset_m": 0.0,
+      "object_wall_clearance_m": 0.05720101012677667,
+      "finger_wall_clearance_m": 0.047
+    },
+    {
+      "class": "GREEN",
+      "x_offset_m": 0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    },
+    {
+      "class": "BLUE",
+      "x_offset_m": -0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    },
+    {
+      "class": "BLUE",
+      "x_offset_m": 0.0,
+      "object_wall_clearance_m": 0.05720101012677667,
+      "finger_wall_clearance_m": 0.047
+    },
+    {
+      "class": "BLUE",
+      "x_offset_m": 0.035,
+      "object_wall_clearance_m": 0.022201010126776666,
+      "finger_wall_clearance_m": 0.011999999999999997
+    }
+  ],
+  "camera_coverage_m": [
+    1.305661442833996,
+    0.979246082125497
+  ],
+  "camera_intrinsics_fx_fy_cx_cy_px": [
+    514.6816609222941,
+    514.6816609222941,
+    319.5,
+    239.5
+  ],
+  "object_mass_kg": 0.015554560000000002,
+  "grasp_force_min_per_finger_N": 0.39495555456000003,
+  "grasp_force_model_per_finger_N": 0.6,
+  "z_axis_moving_mass_with_payload_kg": 0.10809621896374139,
+  "z_axis_load_estimate_N": 1.0978954623380839,
+  "documentation_render_resolution_px": [
+    1280,
+    960
+  ],
+  "renders": [
+    "m2_model_overhead.png",
+    "m2_model_isometric.png"
+  ],
+  "scope_note": "Geometry and model compilation only; no FK/IK, perception calibration, trajectory planning, FSM, full sorting run, or final tuning."
+}

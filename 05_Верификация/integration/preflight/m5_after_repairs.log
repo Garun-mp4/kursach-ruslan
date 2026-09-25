@@ -1,0 +1,14 @@
+center_red_yaw0: SUCCESS (26.48s, 25616 samples)
+left_green_yaw45: SUCCESS (27.10s, 26185 samples)
+right_blue_yaw30: SUCCESS (25.96s, 24839 samples)
+upper_edge_red_yaw90: SUCCESS (29.46s, 28268 samples)
+center_green_two_obstacles: SCENE_UNCERTAIN (0.00s, 0 samples)
+near_obstacle_safe_reject: SCENE_UNCERTAIN (0.00s, 0 samples)
+center_red_halfstep: SUCCESS (52.07s, 50696 samples)
+Traceback (most recent call last):
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\planning\run_m5_verification.py", line 700, in <module>
+    summary=run()
+            ^^^^^
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\planning\run_m5_verification.py", line 695, in run
+    raise AssertionError("M5 systematic route verification or sampling convergence did not pass; inspect saved reports.")
+AssertionError: M5 systematic route verification or sampling convergence did not pass; inspect saved reports.

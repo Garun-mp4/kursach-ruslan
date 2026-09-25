@@ -1,0 +1,41 @@
+﻿event_type,reason_code_or_expression,source_site,semantic,boundary
+CYCLE_CLOSED,self._cycle_outcome or 'SAFE_FAILURE',controller.py:1393,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+CYCLE_TIMEOUT_NO_PAYLOAD,reason,controller.py:1125,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+DUPLICATE_TRACK_COLLAPSED,SAME_M4_TRACK_ID,controller.py:1214,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+EMPTY_SCENE_OBSERVED,VALID_EMPTY_INPUT_ROI,controller.py:417,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+EXECUTION_COMMAND_ISSUED,M5_PHASE_GROUP,controller.py:337,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+EXECUTION_FAILED,reason,controller.py:1021,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+EXECUTION_FEEDBACK_IGNORED,COMMAND_ID_MISMATCH; STALE_OR_FUTURE_FEEDBACK,"controller.py:778,784,842",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+GRASP_FAILED,reason,controller.py:1043,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+HOLD_CONFIRMED,FINGER_SIGNAL_AND_SOURCE_ABSENCE,controller.py:890,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+INIT_WAIT,ARM_STATE_NOT_VALID; DEPENDENCY_NOT_READY; GRIPPER_STATE_NOT_KNOWN; NO_FRESH_EMPTY_GRIPPER_EVIDENCE,"controller.py:371,375,378,391",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+OBSERVATION_IGNORED,reason,controller.py:405,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+OBSERVATION_REQUESTED,FRESH_FRAME_REQUIRED,controller.py:290,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PERCEPTION_FAILURE,reason,controller.py:1132,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACEMENT_CONTROLLER_CONFIRMED,PUBLIC_PERCEPTION_MATCHED_CLASS_ZONE_SLOT,controller.py:1374,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACEMENT_NOT_CONFIRMED,PLACE_EVIDENCE_MISMATCH,controller.py:952,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACE_EVIDENCE_IGNORED,FORBIDDEN_EVIDENCE_SOURCE; NON_NEW_PUBLIC_FRAME; STALE_OR_FUTURE_PLACE_EVIDENCE; UNKNOWN_PLACE_EVIDENCE_STATUS,"controller.py:900,905,910,921",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACE_EVIDENCE_INCONCLUSIVE,evidence.reason_code or evidence.status.value,controller.py:916,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACE_NOT_VERIFIED,PLACE_VERIFICATION_TIMEOUT,controller.py:1093,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLACE_WAITING_FOR_HOLD_EVIDENCE,FRESH_HOLD_REQUIRED,controller.py:815,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLAN_ACCEPTED,FULL_M5_PREFLIGHT_SUCCESS,controller.py:609,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLAN_REJECTED,code.value,controller.py:750,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLAN_REQUESTED,M5_FULL_CYCLE_PREFLIGHT,controller.py:316,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLAN_RESPONSE_IGNORED,STALE_REQUEST_ID,controller.py:583,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+PLAN_RETRY_SCHEDULED,code.value,controller.py:714,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+RECOVERY_FEEDBACK_IGNORED,STALE_REQUEST_ID,controller.py:969,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+RECOVERY_NO_MOTION_REQUIRED,self._recovery_reason or 'NO_MOTION',controller.py:343,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+RECOVERY_REQUESTED,request.reason_code,controller.py:362,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+RELEASE_WAITING_FOR_EMPTY_GRIPPER,FRESH_RELEASE_EVIDENCE_REQUIRED,controller.py:827,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+RESET_REJECTED,ARM_OR_GRIPPER_STATE_UNKNOWN; GRIPPER_NOT_CONFIRMED_EMPTY; INTERLOCK_OR_DEPENDENCY_NOT_READY,"controller.py:1442,1446,1449",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+SAFE_STOP_REASON_RETAINED,reason,controller.py:1435,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+SCENE_INCOMPLETE,OCCLUDED_TRACK_BLOCKS_SAFE_PLANNING,controller.py:439,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+SENSOR_EVIDENCE_IGNORED,FORBIDDEN_HOLD_EVIDENCE_SOURCE,controller.py:1253,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+STATE_ENTERED,CONTROLLER_START; reason_code,"controller.py:165,256",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+STATE_TRANSITION,reason_code,controller.py:253,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+STATE_TRANSITION_FORCED_SAFE,reason,controller.py:1421,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+TARGET_SELECTED,DETERMINISTIC_LOWEST_COST,controller.py:526,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+TEST_LIFT_COMPLETE,WAITING_FOR_PUBLIC_HOLD_AND_SOURCE_EVIDENCE,controller.py:858,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+TRACK_SKIPPED,TRACK_ATTEMPT_BUDGET_EXHAUSTED; UNKNOWN_COLOR_CONFIRMED; UNSUPPORTED_COLOR_CLASS; ZONE_CAPACITY_EXHAUSTED; f'PLAN_{code.value}_RETRY_EXHAUSTED',"controller.py:469,480,486,498,720",Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+TRANSFER_WAITING_FOR_HOLD_EVIDENCE,FRESH_HOLD_REQUIRED,controller.py:805,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.
+UNKNOWN_COLOR_OBSERVED,detection.reason or 'COLOR_UNKNOWN',controller.py:461,Structured ControllerEvent; details schema is event-specific.,M6 controller policy; no evaluator truth.

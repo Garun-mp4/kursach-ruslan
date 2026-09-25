@@ -1,0 +1,23 @@
+{
+  "zones_tested": [
+    {
+      "zone": "RED",
+      "candidate_count": 0,
+      "batch_status": "NO_CANDIDATES",
+      "excluded_from_input_detection": true
+    },
+    {
+      "zone": "GREEN",
+      "candidate_count": 0,
+      "batch_status": "NO_CANDIDATES",
+      "excluded_from_input_detection": true
+    },
+    {
+      "zone": "BLUE",
+      "candidate_count": 0,
+      "batch_status": "NO_CANDIDATES",
+      "excluded_from_input_detection": true
+    }
+  ],
+  "all_sorting_zones_excluded": true
+}

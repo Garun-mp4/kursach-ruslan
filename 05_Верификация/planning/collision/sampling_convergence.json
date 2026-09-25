@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "method": "Run the same M4 estimate and deterministic plan at baseline and half-step collision sampling. Require the same successful collision-preflight outcome, destination, IK branch, phase/event sequence, and TCP path length difference no greater than the refined spatial step.",
+  "same_m4_estimate": true,
+  "same_collision_outcome": true,
+  "new_collision_at_refined_resolution": false,
+  "same_planned_route_semantics": true,
+  "tcp_path_length_stable": true,
+  "path_length_comparison_tolerance_m": 0.0005,
+  "coarse_case": "center_red_yaw0",
+  "coarse_step_m": 0.001,
+  "refined_case": "center_red_halfstep",
+  "refined_step_m": 0.0005,
+  "both_plans_success": true,
+  "duration_difference_s": 0.0,
+  "tcp_path_length_difference_m": 1.0761091462363481e-06,
+  "coarse_min_clearance_lower_bound_m": 0.002259433751381823,
+  "refined_min_clearance_lower_bound_m": 0.0010987141494889219,
+  "clearance_lower_bound_difference_m": 0.0011607196018929011,
+  "clearance_estimate_status": "GRID_SENSITIVE",
+  "note": "PASS is decision-level: the refined full-path preflight found no new collision and the same geometric route was produced. The minimum sampled clearance lower bound changed by 0.0011607196 m; it is explicitly grid-sensitive because the minimum may occur between coarse samples. Pair-specific clearance, swept-step and numeric requirements are checked at every sample. This comparison is not a continuous collision-free proof."
+}

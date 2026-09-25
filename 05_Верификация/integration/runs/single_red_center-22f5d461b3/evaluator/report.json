@@ -1,0 +1,56 @@
+{
+  "schema_version": "M7-evaluator-v1.0",
+  "run_id": "single_red_center-22f5d461b3",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 87.86999999997661,
+  "controller_final_state": "SAFE_STOP",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 1,
+      "failure_reasons": [
+        "NO_HOLD_AFTER_TEST_LIFT",
+        "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+      ]
+    }
+  },
+  "controller_reports_done": false,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -1.2726543145620505e-05,
+        -0.25000001714685716,
+        0.007947014949862429
+      ],
+      "linear_velocity_m_s": [
+        -6.524675043838182e-11,
+        9.389477216071885e-12,
+        2.7641716162648307e-17
+      ],
+      "angular_velocity_rad_s": [
+        -7.772021501416139e-10,
+        -5.394990858852064e-09,
+        3.930552738188884e-24
+      ],
+      "nearest_slot_id": null,
+      "nearest_zone": null,
+      "horizontal_slot_error_m": 0.4969298046574093,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": false
+    }
+  ],
+  "physical_sort_success_count": 0,
+  "physical_sort_failure_count": 1,
+  "all_active_objects_physically_sorted": false,
+  "controller_done_and_physical_success": false,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

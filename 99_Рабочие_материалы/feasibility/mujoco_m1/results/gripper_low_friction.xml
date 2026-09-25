@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco model="M1 contact gripper probe">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002000" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <visual>
+    <global offwidth="640" offheight="480"/>
+  </visual>
+  <default>
+    <geom condim="4" friction="0.005000 0.004 0.0001" solref="0.004 1" solimp="0.93 0.98 0.001"/>
+    <joint damping="1"/>
+  </default>
+  <worldbody>
+    <light name="key" pos="0.3 -0.3 0.8" dir="-0.2 0.3 -1" diffuse="0.9 0.9 0.9"/>
+    <geom name="floor" type="plane" size="1 1 0.1" rgba="0.66 0.68 0.70 1"/>
+    <body name="carrier" pos="0 0 0.12">
+      <joint name="lift" type="slide" axis="0 0 1" range="0 0.12" limited="true"/>
+      <geom name="palm" type="box" pos="0 0 -0.012" size="0.055 0.045 0.008" mass="0.08" rgba="0.25 0.30 0.35 1"/>
+      <body name="left_finger_carriage" pos="-0.05 0 0">
+        <joint name="left_finger_slide" type="slide" axis="1 0 0" range="0 0.022" limited="true"/>
+        <geom name="left_finger" type="box" pos="0 0 -0.055" size="0.012 0.028 0.045" mass="0.025" rgba="0.95 0.62 0.10 1"/>
+      </body>
+      <body name="right_finger_carriage" pos="0.05 0 0">
+        <joint name="right_finger_slide" type="slide" axis="-1 0 0" range="0 0.022" limited="true"/>
+        <geom name="right_finger" type="box" pos="0 0 -0.055" size="0.012 0.028 0.045" mass="0.025" rgba="0.95 0.62 0.10 1"/>
+      </body>
+    </body>
+    <body name="object" pos="0 0 0.0205">
+      <freejoint name="object_free"/>
+      <geom name="object_geom" type="box" size="0.020 0.020 0.020" mass="0.025" rgba="0.92 0.08 0.06 1"/>
+    </body>
+    <camera name="gripper_view" pos="0.28 -0.38 0.34" xyaxes="0.805 0.592 0 -0.320 0.435 0.843" fovy="50"/>
+  </worldbody>
+  <equality>
+    <joint name="symmetric_finger_mimic" joint1="left_finger_slide" joint2="right_finger_slide" polycoef="0 1 0 0 0"/>
+  </equality>
+  <actuator>
+    <position name="lift_position" joint="lift" kp="250" kv="20" ctrlrange="0 0.12" forcelimited="true" forcerange="-25 25"/>
+    <position name="left_position" joint="left_finger_slide" kp="700" kv="28" ctrlrange="0 0.022" forcelimited="true" forcerange="-5.000000 5.000000"/>
+  </actuator>
+</mujoco>

@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "configuration_version": "M5-v1.1",
+  "geometry_baseline_version": "M2-v1.1",
+  "ssot_sha256": "69a123c1d6eaf66d550a791cbae7ce8e7338251e8f229c232c26c6c4f90b450f",
+  "mjcf_sha256": "c76f67828dd5ffd6f3dc543b302729c394579e2d4b393df67e8bcae557bc748b",
+  "kinematics_source_sha256": "60455367ea1a0c187b90c5c5d759bc7b2e1b239ba05d952cf017e95804b8c031",
+  "python_version": "3.12.10",
+  "numpy_version": "2.5.3",
+  "mujoco_version": "3.14.0",
+  "joint_vector_order": [
+    "q1_rad",
+    "q2_rad",
+    "q3_m",
+    "q4_rad"
+  ],
+  "fixed_tolerances": {
+    "position_acceptance_m": 1e-06,
+    "yaw_acceptance_rad": 1e-08,
+    "numeric_cos_tolerance": 1e-12,
+    "near_singular_abs_sin_q2": 0.05,
+    "jacobian_finite_difference_max_abs_component": 2e-06
+  },
+  "round_trip": {
+    "sample_count": 10000,
+    "seed": 20260924,
+    "max_position_error_m": 2.6945789820192466e-16,
+    "mean_position_error_m": 3.3910425126429304e-17,
+    "median_position_error_m": 2.7755575615628914e-17,
+    "worst_sample_id": 3239,
+    "max_yaw_error_mod_object_symmetry_rad": 2.220446049250313e-15,
+    "mean_yaw_error_mod_object_symmetry_rad": 2.141842259106852e-16,
+    "max_tool_yaw_error_rad": 1.7763568394002505e-15,
+    "branch_counts": {
+      "ELBOW_POSITIVE": 5058,
+      "ELBOW_NEGATIVE": 4942
+    },
+    "near_singular_selected_count": 197
+  },
+  "engine_parity": {
+    "sample_count": 1000,
+    "seed": 71103,
+    "compared_frames": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "TCP"
+    ],
+    "max_position_error_m": 1.6079679568759646e-16,
+    "mean_position_error_m": 3.20848639488153e-17,
+    "max_orientation_error_rad": 5.322613514405371e-16,
+    "mean_orientation_error_rad": 9.115531639539914e-17
+  },
+  "jacobian_finite_difference": {
+    "sample_count": 200,
+    "seed": 52103,
+    "finite_difference_step": 1e-07,
+    "max_abs_component_error": 6.07747097092215e-09,
+    "mean_max_abs_component_error": 2.022551975622289e-09
+  },
+  "workspace": {
+    "geometric_r_min_m": 0.03,
+    "geometric_r_max_m": 0.43000000000000005,
+    "joint_limited_r_min_m": 0.11500288192837443,
+    "joint_limited_r_max_m": 0.43000000000000005,
+    "tcp_z_min_m": 0.006000000000000005,
+    "tcp_z_max_m": 0.10300000000000001,
+    "q1_samples": 181,
+    "q2_samples": 121,
+    "joint_grid_sample_count": 21901,
+    "task_regions": [
+      {
+        "region_id": "INPUT",
+        "center_x_m": 0.0,
+        "center_y_m": -0.25,
+        "size_x_m": 0.24,
+        "size_y_m": 0.16,
+        "tcp_z_m": 0.008,
+        "radial_min_m": 0.16999999999999998,
+        "radial_max_m": 0.35114099732158877,
+        "joint_limited_r_min_m": 0.11500288192837443,
+        "joint_limited_r_max_m": 0.43000000000000005,
+        "analytic_rectangle_coverage": true,
+        "grid_points_checked": 961,
+        "grid_ik_failures": 0
+      },
+      {
+        "region_id": "TRAY_RED",
+        "center_x_m": -0.22,
+        "center_y_m": 0.21,
+        "size_x_m": 0.16,
+        "size_y_m": 0.16,
+        "tcp_z_m": 0.012,
+        "radial_min_m": 0.19104973174542803,
+        "radial_max_m": 0.4172529209005013,
+        "joint_limited_r_min_m": 0.11500288192837443,
+        "joint_limited_r_max_m": 0.43000000000000005,
+        "analytic_rectangle_coverage": true,
+        "grid_points_checked": 961,
+        "grid_ik_failures": 0
+      },
+      {
+        "region_id": "TRAY_GREEN",
+        "center_x_m": 0.0,
+        "center_y_m": 0.3,
+        "size_x_m": 0.16,
+        "size_y_m": 0.16,
+        "tcp_z_m": 0.012,
+        "radial_min_m": 0.21999999999999997,
+        "radial_max_m": 0.388329756778952,
+        "joint_limited_r_min_m": 0.11500288192837443,
+        "joint_limited_r_max_m": 0.43000000000000005,
+        "analytic_rectangle_coverage": true,
+        "grid_points_checked": 961,
+        "grid_ik_failures": 0
+      },
+      {
+        "region_id": "TRAY_BLUE",
+        "center_x_m": 0.22,
+        "center_y_m": 0.21,
+        "size_x_m": 0.16,
+        "size_y_m": 0.16,
+        "tcp_z_m": 0.012,
+        "radial_min_m": 0.19104973174542803,
+        "radial_max_m": 0.4172529209005013,
+        "joint_limited_r_min_m": 0.11500288192837443,
+        "joint_limited_r_max_m": 0.43000000000000005,
+        "analytic_rectangle_coverage": true,
+        "grid_points_checked": 961,
+        "grid_ik_failures": 0
+      }
+    ],
+    "task_region_grid_total": 3844,
+    "task_region_grid_failures": 0,
+    "task_slot_count": 15,
+    "max_task_slot_position_residual_m": 7.88106850030428e-17,
+    "collision_free": false
+  },
+  "singularity_sensitivity_at_threshold": {
+    "q2_rad": 0.05,
+    "q2_deg": 2.8647889756541165,
+    "abs_sin_q2": 0.04997916927067833,
+    "sigma_min_xy_m_per_rad": 0.004849376424103963,
+    "local_inverse_gain_rad_per_m": 206.21208018199448,
+    "condition_number_xy": 97.76312411075214,
+    "classification": "NEAR_SINGULARITY"
+  },
+  "files": [
+    "round_trip_samples.csv",
+    "engine_parity.csv",
+    "task_slot_ik.csv",
+    "task_region_coverage.csv",
+    "task_region_grid_samples.csv",
+    "manual_examples.csv",
+    "jacobian_finite_difference.csv",
+    "singularity_sensitivity.csv",
+    "workspace_joint_samples.csv",
+    "workspace_boundary.csv",
+    "workspace_xy.png",
+    "workspace_xy.svg",
+    "kinematics_error_distribution.png",
+    "kinematics_error_distribution.svg"
+  ],
+  "note": "Kinematic reachability only. No collision checking, trajectory planning, camera calibration, dynamics, or sorting FSM is included in M3."
+}

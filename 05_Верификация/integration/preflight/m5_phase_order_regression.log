@@ -1,0 +1,6 @@
+test_full_cycle_is_preflighted_before_plan_success (planning.tests.test_planner.PlannerTests.test_full_cycle_is_preflighted_before_plan_success) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 15.862s
+
+OK

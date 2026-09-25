@@ -1,0 +1,2601 @@
+schema_version: '1.0'
+config_version: M7-v1.1
+project:
+  id: SCARA_COLOR_SORTER
+  title: Моделирование и симуляция робота-манипулятора, выполняющего задачу сортировки
+    объектов по цвету
+  status: параметрическая учебная модель; не физический прототип
+  geometry_baseline_version: M2-v1.2
+  controller_policy_version: M6-v1.0
+  provenance_categories:
+  - source
+  - calculation
+  - design_assumption
+  - tuned_parameter
+  - inherited
+  date: '2026-09-24'
+parameters:
+  environment.engine:
+    value: MuJoCo
+    unit: name
+    origin: source
+    basis: Выбор среды M1-ADR-04
+    owner: M1
+  environment.engine_version:
+    value: 3.14.0
+    unit: version
+    origin: source
+    basis: Зафиксированная и проверенная версия M1
+    owner: M1
+  environment.python_version:
+    value: 3.12.10
+    unit: version
+    origin: source
+    basis: Чистое окружение и проверка M1
+    owner: M1
+  environment.timestep_s:
+    value: 0.002
+    unit: s
+    origin: source
+    basis: Шаг контактного baseline M1; M7 должен повторно подтвердить для полной
+      модели
+    owner: M7
+  environment.solver_iterations:
+    value: 100
+    unit: iteration
+    origin: design_assumption
+    basis: Начальная настройка модели контактов; чувствительность уточнить M7
+    owner: M7
+  environment.solver_tolerance:
+    value: 1.0e-08
+    unit: dimensionless
+    origin: design_assumption
+    basis: Начальная численная точность решателя
+    owner: M7
+  environment.gravity_m_s2:
+    value: 9.80665
+    unit: m/s^2
+    origin: source
+    basis: Стандартное ускорение свободного падения NIST SP 811
+    owner: M2
+  environment.density_pla_kg_m3:
+    value: 1240.0
+    unit: kg/m^3
+    origin: source
+    basis: 'Prusament PLA TDS: плотность 1.24 g/cm^3; преобразовано в SI'
+    owner: M2
+  coordinates.world_definition:
+    value: right-handed; origin at table center on tabletop; +X right/east, +Y away/north,
+      +Z upward
+    unit: frame convention
+    origin: source
+    basis: Плоскость стола XY, +Z up зафиксированы интерфейсом M1; ориентация X/Y
+      принята в M2
+    owner: M2
+  coordinates.base_definition:
+    value: BASE origin coincides with WORLD origin at tabletop; fixed orientation
+    unit: frame convention
+    origin: design_assumption
+    basis: Согласованная мировая/базовая система для ячейки
+    owner: M2
+  coordinates.transform_semantics:
+    value: 'T_A_B maps homogeneous coordinates expressed in frame B into frame A:
+      p_A=T_A_B*p_B; column vectors'
+    unit: transform convention
+    origin: design_assumption
+    basis: Единый контракт между FK/IK, camera adapter and simulator
+    owner: M2
+  coordinates.internal_units:
+    value: meters, radians, seconds, kilograms, newtons
+    unit: SI
+    origin: design_assumption
+    basis: Все расчеты и значения SSOT используются в SI
+    owner: M2
+  coordinates.mujoco_quaternion_order:
+    value: w,x,y,z
+    unit: component order
+    origin: source
+    basis: MJCF quaternion convention documented in MuJoCo XML reference
+    owner: M2
+  coordinates.python_quaternion_order:
+    value: x,y,z,w at library adapters unless explicitly declared otherwise
+    unit: component order
+    origin: design_assumption
+    basis: Adapter must convert from MuJoCo wxyz and carry frame semantics; no silent
+      reuse
+    owner: M2
+  coordinates.opencvcamera_axes:
+    value: x right, y down, z forward; image u right, v down from top-left origin
+    unit: frame convention
+    origin: source
+    basis: OpenCV camera/image convention; M1 image coordinates
+    owner: M2
+  coordinates.camera_cv_to_world_quaternion_xyzw:
+    value:
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    unit: quaternion x,y,z,w
+    origin: calculation
+    basis: 180-degree rotation about X maps CV y-down/z-forward to world -Y/-Z
+    owner: M2
+  coordinates.camera_cv_to_world_quaternion_wxyz:
+    value:
+    - 0.0
+    - 1.0
+    - 0.0
+    - 0.0
+    unit: quaternion w,x,y,z
+    origin: calculation
+    basis: Same physical rotation as xyzw record; distinct from MuJoCo camera body
+      quaternion identity
+    owner: M2
+  coordinates.camera_cv_to_world_rotation:
+    value:
+    - - 1
+      - 0
+      - 0
+    - - 0
+      - -1
+      - 0
+    - - 0
+      - 0
+      - -1
+    unit: rotation matrix
+    origin: calculation
+    basis: Right-handed 180-degree X rotation from CV optical frame
+    owner: M2
+  coordinates.frame_names:
+    value:
+    - WORLD
+    - BASE
+    - J1
+    - J2
+    - J3
+    - J4
+    - TCP
+    - CAM_MJ
+    - CAM_CV
+    unit: frame id
+    origin: design_assumption
+    basis: Canonical named frames for geometry, camera and future M3/M4
+    owner: M2
+  coordinates.joint_axes_local:
+    value:
+      j1_shoulder:
+      - 0
+      - 0
+      - 1
+      j2_elbow:
+      - 0
+      - 0
+      - 1
+      j3_lift:
+      - 0
+      - 0
+      - -1
+      j4_wrist:
+      - 0
+      - 0
+      - 1
+      j5_finger_left:
+      - 0
+      - -1
+      - 0
+      j6_finger_right:
+      - 0
+      - 1
+      - 0
+    unit: unit direction in parent frame
+    origin: design_assumption
+    basis: SCARA R-R-P-R topology and mirrored finger motion
+    owner: M2
+  coordinates.joint_origin_parameter_refs:
+    value:
+      J1_in_BASE:
+      - robot.zero_xyz_m[0]
+      - robot.zero_xyz_m[1]
+      - robot.shoulder_z_m
+      J2_in_J1:
+      - robot.link1_length_m
+      - robot.zero_xyz_m[1]
+      - robot.zero_xyz_m[2]
+      J3_in_J2:
+      - robot.link2_length_m
+      - robot.zero_xyz_m[1]
+      - robot.zero_xyz_m[2]
+      J4_in_J3: robot.wrist_center_in_zslide_m
+      TCP_in_J4: robot.tcp_in_wrist_m
+    unit: parameter reference/local vector
+    origin: calculation
+    basis: Исключены независимо редактируемые копии длины звеньев и офсетов
+    owner: M2
+  environment.contact_margin_m:
+    value: 0.005
+    unit: m
+    origin: design_assumption
+    basis: Начальный запас будущей проверки коллизий; M5 формализует, M7 проверит
+      чувствительность
+    owner: M5
+  cell.table_size_xy_m:
+    value:
+    - 1.0
+    - 0.9
+    unit: m; X,Y
+    origin: design_assumption
+    basis: Габарит рабочей ячейки, выбран для размещения подачи и трех лотков
+    owner: M2
+  cell.table_thickness_m:
+    value: 0.03
+    unit: m
+    origin: design_assumption
+    basis: Визуально-физическая толщина стола модели
+    owner: M2
+  cell.table_top_z_m:
+    value: 0.0
+    unit: m
+    origin: design_assumption
+    basis: Ноль высоты рабочей плоскости WORLD
+    owner: M2
+  cell.input_center_xy_m:
+    value:
+    - 0.0
+    - -0.25
+    unit: m; X,Y
+    origin: design_assumption
+    basis: Входная область перед базой манипулятора
+    owner: M2
+  cell.input_size_xy_m:
+    value:
+    - 0.24
+    - 0.16
+    unit: m; X,Y
+    origin: design_assumption
+    basis: Шесть разнесенных начальных позиций объектов
+    owner: M2
+  cell.input_slot_x_offsets_m:
+    value:
+    - -0.05
+    - 0.0
+    - 0.05
+    unit: m
+    origin: design_assumption
+    basis: Три столбца; между квадратными объектами остается зазор при любом yaw
+    owner: M2
+  cell.input_row_y_offsets_m:
+    value:
+    - -0.03
+    - 0.03
+    unit: m
+    origin: design_assumption
+    basis: Два ряда начальной сцены
+    owner: M2
+  cell.tray_outer_size_xy_m:
+    value:
+    - 0.166
+    - 0.16
+    unit: m; X,Y
+    origin: tuned_parameter
+    basis: M7 physical preflight found the outer slot finger clearance 0.052 mm below
+      the fixed 6.25 mm requirement. Increasing the tray X outer width from 160 mm
+      to 166 mm moves both side walls outward by 3 mm while leaving tray centers,
+      slot pitch, object spacing, and collision thresholds unchanged.
+    owner: M7
+  cell.tray_floor_thickness_m:
+    value: 0.004
+    unit: m
+    origin: design_assumption
+    basis: Толщина пола лотка; нижняя поверхность совпадает со столом
+    owner: M2
+  cell.tray_wall_thickness_m:
+    value: 0.006
+    unit: m
+    origin: design_assumption
+    basis: Толщина борта лотка
+    owner: M2
+  cell.tray_wall_height_m:
+    value: 0.008
+    unit: m
+    origin: design_assumption
+    basis: Низкий ограничительный борт; не предназначен для укладки в несколько слоев
+    owner: M2
+  cell.tray_slot_x_offsets_m:
+    value:
+    - -0.032
+    - 0.0
+    - 0.032
+    unit: m
+    origin: tuned_parameter
+    basis: With M7's 3 mm outward side-wall expansion, moving the outer slot centers
+      inward by 3 mm adds 6 mm finger-to-wall clearance on each outer route while
+      retaining 32 mm center spacing for 26 mm objects; collision thresholds are unchanged.
+    owner: M7
+  cell.tray_slot_y_offset_m:
+    value: 0.0
+    unit: m
+    origin: design_assumption
+    basis: Центральная линия лотка
+    owner: M2
+  cell.tray_centers_xy_m:
+    value:
+      RED:
+      - -0.22
+      - 0.21
+      GREEN:
+      - 0.0
+      - 0.3
+      BLUE:
+      - 0.22
+      - 0.21
+    unit: m; X,Y
+    origin: design_assumption
+    basis: Разнесение трех зон внутри плоскости стола
+    owner: M2
+  cell.bin_rgba:
+    value:
+      RED:
+      - 0.82
+      - 0.12
+      - 0.12
+      - 1.0
+      GREEN:
+      - 0.12
+      - 0.62
+      - 0.2
+      - 1.0
+      BLUE:
+      - 0.12
+      - 0.3
+      - 0.8
+      - 1.0
+    unit: normalized RGBA
+    origin: design_assumption
+    basis: Визуальное кодирование; цвет лотка не является входом классификатора объекта
+    owner: M2
+  cell.input_mark_rgba:
+    value:
+    - 0.45
+    - 0.48
+    - 0.52
+    - 1.0
+    unit: normalized RGBA
+    origin: design_assumption
+    basis: Нейтральная разметка входной зоны
+    owner: M2
+  robot.type:
+    value: SCARA R-R-P-R
+    unit: topology
+    origin: source
+    basis: Архитектура M1-ARCH-v1.0
+    owner: M1
+  robot.arm_dof:
+    value: 4
+    unit: coordinate
+    origin: source
+    basis: Две R, одна P и запястье R по M1
+    owner: M1
+  robot.gripper_actuated_dof:
+    value: 1
+    unit: coordinate
+    origin: source
+    basis: Симметричный двухпальцевый захват по M1
+    owner: M1
+  robot.scalar_joint_count:
+    value: 6
+    unit: scalar joint
+    origin: calculation
+    basis: Четыре координаты руки и два физических скользящих пальца; последние связаны
+      equality
+    owner: M2
+  robot.effective_controlled_coordinates:
+    value: 5
+    unit: coordinate
+    origin: calculation
+    basis: Четыре координаты руки плюс одна связанная координата двух пальцев
+    owner: M2
+  robot.base_world_position_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.0
+    unit: m
+    origin: design_assumption
+    basis: FRAME_BASE совпадает с началом WORLD на плоскости стола
+    owner: M2
+  robot.shoulder_z_m:
+    value: 0.19
+    unit: m
+    origin: design_assumption
+    basis: Высота плоскости J1/J2 над столом; обеспечивает свободный проход над лотками
+    owner: M2
+  robot.link1_length_m:
+    value: 0.23
+    unit: m
+    origin: design_assumption
+    basis: Расстояние между осями J1 и J2; радиальный охват всей ячейки с запасом
+    owner: M2
+  robot.link2_length_m:
+    value: 0.2
+    unit: m
+    origin: design_assumption
+    basis: Расстояние между осью J2 и осью вертикальной направляющей J3
+    owner: M2
+  robot.link1_tube_outer_xyz_m:
+    value:
+    - 0.195
+    - 0.05
+    - 0.032
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Внешнее сечение полой несущей балки; последние 35 mm до оси J2 формируют
+      соединитель и узел
+    owner: M2
+  robot.link1_tube_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина стенки упрощенной печатной/коробчатой детали
+    owner: M2
+  robot.link1_tube_center_m:
+    value:
+    - 0.0975
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Центр открытой трубы длиной 0.195 m от оси J1
+    owner: M2
+  robot.link1_connector_xyz_m:
+    value:
+    - 0.008
+    - 0.05
+    - 0.032
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Короткий соединительный блок между трубой и локтевой площадкой
+    owner: M2
+  robot.link1_connector_center_m:
+    value:
+    - 0.199
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Интервал X=0.195..0.203 m перед локтевой площадкой
+    owner: M2
+  robot.elbow_plate_xyz_m:
+    value:
+    - 0.054
+    - 0.054
+    - 0.018
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Площадка вокруг оси J2
+    owner: M2
+  robot.elbow_plate_center_m:
+    value:
+    - 0.23
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Центр площадки и ось J2 находятся на конце L1
+    owner: M2
+  robot.link2_tube_outer_xyz_m:
+    value:
+    - 0.165
+    - 0.044
+    - 0.03
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Внешнее сечение открытой балки между локтевым соединителем и стойкой Z-направляющей
+    owner: M2
+  robot.link2_tube_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина стенки балки
+    owner: M2
+  robot.link2_tube_center_m:
+    value:
+    - 0.0825
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Центр трубы длиной 0.165 m от оси J2
+    owner: M2
+  robot.link2_connector_xyz_m:
+    value:
+    - 0.01
+    - 0.044
+    - 0.03
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Короткий соединитель балки к Z-направляющей
+    owner: M2
+  robot.link2_connector_center_m:
+    value:
+    - 0.17
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Интервал X=0.165..0.175 m
+    owner: M2
+  robot.z_guide_outer_xyz_m:
+    value:
+    - 0.05
+    - 0.05
+    - 0.14
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Внешний размер открытой квадратной направляющей вдоль Z
+    owner: M2
+  robot.z_guide_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина четырех стенок направляющей; торцы открыты
+    owner: M2
+  robot.z_guide_center_m:
+    value:
+    - 0.2
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Ось J3 расположена на расстоянии L2 от J2
+    owner: M2
+  robot.z_carriage_plate_xyz_m:
+    value:
+    - 0.052
+    - 0.052
+    - 0.012
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Плита движущейся каретки
+    owner: M2
+  robot.z_carriage_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина оболочки каретки
+    owner: M2
+  robot.z_carriage_center_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.0
+    unit: m
+    origin: design_assumption
+    basis: Ноль поступательной координаты
+    owner: M2
+  robot.z_upper_rod_xyz_m:
+    value:
+    - 0.018
+    - 0.018
+    - 0.064
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Верхний полый шток каретки внутри направляющей
+    owner: M2
+  robot.z_upper_rod_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина стенки штока
+    owner: M2
+  robot.z_upper_rod_center_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.038
+    unit: m
+    origin: calculation
+    basis: Нижняя грань касается верхней грани каретки
+    owner: M2
+  robot.z_lower_rod_xyz_m:
+    value:
+    - 0.018
+    - 0.018
+    - 0.063
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Нижний полый шток соединяет каретку с запястьем
+    owner: M2
+  robot.z_lower_rod_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина стенки штока
+    owner: M2
+  robot.z_lower_rod_center_m:
+    value:
+    - 0.0
+    - 0.0
+    - -0.0375
+    unit: m
+    origin: calculation
+    basis: Шток занимает Z=-0.069..-0.006 m и соприкасается с деталями по торцам
+    owner: M2
+  robot.zero_xyz_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.0
+    unit: m
+    origin: calculation
+    basis: Нулевой локальный вектор в телах модели
+    owner: M2
+  robot.finger_xyz_m:
+    value:
+    - 0.06
+    - 0.006
+    - 0.01
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Длина, толщина и высота пальца
+    owner: M2
+  robot.base_foot_outer_xyz_m:
+    value:
+    - 0.14
+    - 0.14
+    - 0.08
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Низкий стационарный цоколь модели
+    owner: M2
+  robot.base_foot_wall_m:
+    value: 0.003
+    unit: m
+    origin: design_assumption
+    basis: Толщина оболочки неподвижного цоколя
+    owner: M2
+  robot.base_foot_center_world_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.04
+    unit: m
+    origin: calculation
+    basis: Нижняя грань цоколя на плоскости стола
+    owner: M2
+  robot.base_column_outer_xyz_m:
+    value:
+    - 0.07
+    - 0.07
+    - 0.085
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Неподвижная стойка от z=0.080 до z=0.165 m
+    owner: M2
+  robot.base_column_wall_m:
+    value: 0.003
+    unit: m
+    origin: design_assumption
+    basis: Толщина оболочки стойки
+    owner: M2
+  robot.base_column_center_world_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.1225
+    unit: m
+    origin: calculation
+    basis: Стойка расположена на неподвижном цоколе
+    owner: M2
+  robot.base_axle_radius_m:
+    value: 0.01
+    unit: m
+    origin: design_assumption
+    basis: Условная ось/опора в зоне J1; прямой соседний контакт исключен как механическое
+      соединение
+    owner: M2
+  robot.base_axle_height_m:
+    value: 0.04
+    unit: m
+    origin: design_assumption
+    basis: Диапазон оси z=0.165..0.205 m
+    owner: M2
+  robot.base_axle_center_world_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.185
+    unit: m
+    origin: calculation
+    basis: Центр цилиндрической опоры J1
+    owner: M2
+  robot.visual_rgba:
+    value:
+    - 0.28
+    - 0.38
+    - 0.48
+    - 1.0
+    unit: normalized RGBA
+    origin: design_assumption
+    basis: Нейтральное визуальное оформление компонентов руки
+    owner: M2
+  object.initial_yaw_rad:
+    value: 0.0
+    unit: rad
+    origin: design_assumption
+    basis: Нулевая ориентация начальной сцены; M9 проверит вариации в диапазоне объекта
+    owner: M2
+  camera.intrinsics_fx_fy_cx_cy_px:
+    value:
+    - 514.6816609222941
+    - 514.6816609222941
+    - 319.5
+    - 239.5
+    unit: pixel
+    origin: calculation
+    basis: Вычисляется по pinhole FOV и разрешению; заменяется генератором при первом
+      построении
+    owner: M2
+  camera.coverage_width_height_m:
+    value:
+    - 1.305661442833996
+    - 0.979246082125497
+    unit: m
+    origin: calculation
+    basis: Вычисляется по FOV, высоте камеры и разрешению
+    owner: M2
+  robot.radial_reach_min_max_m:
+    value:
+    - 0.11500288192837443
+    - 0.43000000000000005
+    unit: m
+    origin: calculation
+    basis: Грубая граница по L1,L2 и пределу q2; не является IK/workspace verification
+    owner: M2
+  cell.tray_inner_size_xy_m:
+    value:
+    - 0.154
+    - 0.148
+    unit: m; X,Y
+    origin: calculation
+    basis: Наружный размер минус две толщины борта
+    owner: M2
+  robot.gripper_worst_yaw_object_span_m:
+    value: 0.03959797974644667
+    unit: m
+    origin: calculation
+    basis: Квадрат 28 mm при yaw=45 degrees
+    owner: M2
+  robot.gripper_worst_yaw_half_clearance_m:
+    value: 0.010201010126776665
+    unit: m
+    origin: calculation
+    basis: Половина наименьшего запаса по длине пальца и открытому зазору
+    owner: M2
+  robot.mass_by_body_kg:
+    value:
+      link1: 0.15639872
+      link2: 0.1403184
+      z_slide: 0.03753728
+      wrist: 0.044290778964
+      finger_left: 0.004464
+      finger_right: 0.004464
+    unit: kg
+    origin: calculation
+    basis: Композитные массы по оболочкам/сплошным телам из YAML assembly; рассчитываются
+      build_model.py
+    owner: M2
+  robot.com_by_body_m:
+    value:
+      link1:
+      - 0.162940346315
+      - 0.0
+      - 0.0
+      link2:
+      - 0.148528632025
+      - 0.0
+      - 0.0
+      z_slide:
+      - 0.0
+      - 0.0
+      - 0.000293868922
+      wrist:
+      - 0.0
+      - 0.0
+      - 0.01
+      finger_left:
+      - 0.0
+      - 0.0
+      - 0.0
+      finger_right:
+      - 0.0
+      - 0.0
+      - 0.0
+    unit: m in local body frame
+    origin: calculation
+    basis: Взвешенный центр масс частей тела; рассчитывается build_model.py
+    owner: M2
+  robot.inertia_by_body_kg_m2:
+    value:
+      link1:
+      - 6.0583539733e-05
+      - 0.000907134048459
+      - 0.000936161267979
+      - 0.0
+      - 0.0
+      - 0.0
+      link2:
+      - 0.0001618620112
+      - 0.000708047312568
+      - 0.000633153147768
+      - 0.0
+      - 0.0
+      - 0.0
+      z_slide:
+      - 4.1413737094e-05
+      - 4.1413737094e-05
+      - 1.1103204693e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      wrist:
+      - 1.2092736962e-05
+      - 9.763917762e-06
+      - 2.0396876029e-05
+      - 0.0
+      - 0.0
+      - 0.0
+      finger_left:
+      - 5.0592e-08
+      - 1.3764e-06
+      - 1.352592e-06
+      - 0.0
+      - 0.0
+      - 0.0
+      finger_right:
+      - 5.0592e-08
+      - 1.3764e-06
+      - 1.352592e-06
+      - 0.0
+      - 0.0
+      - 0.0
+    unit: kg*m^2; Ixx,Iyy,Izz,Ixy,Ixz,Iyz
+    origin: calculation
+    basis: Тензор через формулы примитивов и теорему параллельных осей; рассчитывается
+      build_model.py
+    owner: M2
+  robot.wrist_radius_m:
+    value: 0.022
+    unit: m
+    origin: design_assumption
+    basis: Радиус цилиндрического узла J4
+    owner: M2
+  robot.wrist_height_m:
+    value: 0.012
+    unit: m
+    origin: design_assumption
+    basis: Высота цилиндрического узла J4
+    owner: M2
+  robot.palm_xyz_m:
+    value:
+    - 0.054
+    - 0.064
+    - 0.012
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Габарит оболочки ладони захвата
+    owner: M2
+  robot.palm_wall_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Толщина стенки ладони
+    owner: M2
+  robot.palm_center_in_wrist_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.01
+    unit: m
+    origin: design_assumption
+    basis: 'Raised rigid palm: 8 mm minimum clearance above grasped cuboid top at
+      TCP-centered grasp; corrected after M5 identified physical interference.'
+    owner: M5
+  robot.tcp_in_wrist_m:
+    value:
+    - 0.0
+    - 0.0
+    - -0.012
+    unit: m
+    origin: design_assumption
+    basis: TCP расположен в центре ладони между пальцами
+    owner: M2
+  robot.wrist_center_in_zslide_m:
+    value:
+    - 0.0
+    - 0.0
+    - -0.075
+    unit: m
+    origin: design_assumption
+    basis: Смещение оси J4 ниже оси каретки J3
+    owner: M2
+  robot.j3_range_m:
+    value:
+    - 0.0
+    - 0.097
+    unit: m
+    origin: design_assumption
+    basis: Положительное движение вниз; 97 mm хода
+    owner: M2
+  robot.j3_home_m:
+    value: 0.015
+    unit: m
+    origin: design_assumption
+    basis: Поза ожидания с TCP выше рабочей плоскости
+    owner: M2
+  robot.tcp_home_z_m:
+    value: 0.088
+    unit: m
+    origin: calculation
+    basis: 0.19-0.075-0.012-0.015 m
+    owner: M2
+  robot.tcp_safe_transfer_z_m:
+    value: 0.06
+    unit: m
+    origin: design_assumption
+    basis: Высота переноса над верхом лотков и объектом
+    owner: M2
+  robot.object_pick_center_z_m:
+    value: 0.008
+    unit: m
+    origin: calculation
+    basis: Половина высоты объекта над столом
+    owner: M2
+  robot.j3_pick_q_m:
+    value: 0.095
+    unit: m
+    origin: calculation
+    basis: 0.19-0.075-0.012-0.008 m
+    owner: M2
+  robot.object_place_center_z_m:
+    value: 0.012
+    unit: m
+    origin: calculation
+    basis: Толщина пола лотка 0.004 m плюс половина объекта 0.008 m
+    owner: M2
+  robot.j3_place_q_m:
+    value: 0.091
+    unit: m
+    origin: calculation
+    basis: 0.19-0.075-0.012-0.012 m
+    owner: M2
+  robot.j1_range_rad:
+    value:
+    - -3.141592653589793
+    - 3.141592653589793
+    unit: rad
+    origin: design_assumption
+    basis: Непрерывный геометрический поворот вокруг Z; физические ограничения не
+      заявляются
+    owner: M2
+  robot.j2_range_rad:
+    value:
+    - -2.6179938779914944
+    - 2.6179938779914944
+    unit: rad
+    origin: design_assumption
+    basis: ±150 degrees; сохраняет компактность и допускает несколько конфигураций
+    owner: M2
+  robot.j4_range_rad:
+    value:
+    - -3.141592653589793
+    - 3.141592653589793
+    unit: rad
+    origin: design_assumption
+    basis: Плоский поворот инструмента; не означает непрерывный кабельный привод
+    owner: M2
+  robot.finger_length_m:
+    value: 0.06
+    unit: m
+    origin: design_assumption
+    basis: Продольный запас захвата для квадрата, повернутого до 45 degrees
+    owner: M2
+  robot.finger_thickness_m:
+    value: 0.006
+    unit: m
+    origin: design_assumption
+    basis: Толщина каждого контактного пальца по оси раскрытия
+    owner: M2
+  robot.finger_height_m:
+    value: 0.01
+    unit: m
+    origin: tuned_parameter
+    basis: M7 сохраняет центр контактных площадок на TCP и уменьшает высоту с 12 до
+      10 mm. При объекте высотой 16 mm активная площадка перекрывает центральные 10
+      mm объекта с симметричными 3 mm выступами сверху и снизу; минимальный геометрический
+      зазор пальца до стола или пола лотка равен 3 mm. Это сохраняет 0.5 mm остаточного
+      резерва относительно максимального проверочного порога 2.75 mm при выборке 2
+      mm.
+    owner: M7
+  robot.finger_open_center_offset_m:
+    value: 0.033
+    unit: m
+    origin: calculation
+    basis: Полураскрытие 0.060 m + половина толщины пальца 0.003 m
+    owner: M2
+  robot.finger_range_m:
+    value:
+    - 0.0
+    - 0.027
+    unit: m
+    origin: design_assumption
+    basis: Положительное перемещение каждого пальца внутрь; конечный зазор 6 mm
+    owner: M2
+  robot.finger_home_m:
+    value: 0.0
+    unit: m
+    origin: design_assumption
+    basis: Нулевая координата соответствует полностью открытому захвату
+    owner: M2
+  robot.touch_site_radius_m:
+    value: 0.018
+    unit: m
+    origin: tuned_parameter
+    basis: M7 replay показал нулевой сигнал при контактах по четырем точкам на палец
+      для зоны 10 mm; радиус 18 mm охватывает площадь контакта квадратного объекта
+      28×28 mm и дает положительный сигнал обеих сторон.
+    owner: M7
+  robot.gripper_actuator_total_force_N:
+    value: 1.2
+    unit: N generalized
+    origin: design_assumption
+    basis: Один привод задает общий координатный ход двух связанных пальцев; эквивалентный
+      предел 0.60 N на палец
+    owner: M2
+  robot.gripper_contact_force_per_finger_N:
+    value: 0.6
+    unit: N
+    origin: calculation
+    basis: 1.20 N generalized effort / 2 симметричных виртуальных перемещения пальцев
+    owner: M2
+  robot.grasp_xy_error_budget_m:
+    value: 0.004
+    unit: m radial XY
+    origin: design_assumption
+    basis: Допуск центра захвата меньше геометрического запаса в наихудшей yaw-ориентации
+      квадрата
+    owner: M2
+  robot.grasp_xy_budget_perception_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Предварительная доля общей ошибки; M4 измерит
+    owner: M4
+  robot.grasp_xy_budget_kinematics_m:
+    value: 0.001
+    unit: m
+    origin: design_assumption
+    basis: Предварительная доля общей ошибки; M3 измерит
+    owner: M3
+  robot.grasp_xy_budget_tracking_m:
+    value: 0.0005
+    unit: m
+    origin: design_assumption
+    basis: Предварительная доля общей ошибки; M6/M7 измерят
+    owner: M7
+  robot.grasp_xy_budget_reserve_m:
+    value: 0.0005
+    unit: m
+    origin: calculation
+    basis: Остаток до общего бюджета 4 mm
+    owner: M2
+  robot.grasp_yaw_error_limit_rad:
+    value: 0.17453292519943295
+    unit: rad
+    origin: design_assumption
+    basis: 10 degrees; отдельная проверка ориентации в M4/M7
+    owner: M4
+  robot.j1_velocity_rad_s:
+    value: 1.0
+    unit: rad/s
+    origin: design_assumption
+    basis: Начальное ограничение приводной модели; M7 tune
+    owner: M7
+  robot.j1_acceleration_rad_s2:
+    value: 2.0
+    unit: rad/s^2
+    origin: design_assumption
+    basis: Начальное ограничение траекторий; M5/M7 проверят
+    owner: M7
+  robot.j1_effort_Nm:
+    value: 0.5
+    unit: N*m
+    origin: design_assumption
+    basis: Предел виртуального actuator, не спецификация мотора
+    owner: M7
+  robot.j2_velocity_rad_s:
+    value: 1.2
+    unit: rad/s
+    origin: design_assumption
+    basis: Начальное ограничение приводной модели; M7 tune
+    owner: M7
+  robot.j2_acceleration_rad_s2:
+    value: 2.5
+    unit: rad/s^2
+    origin: design_assumption
+    basis: Начальное ограничение траекторий; M5/M7 проверят
+    owner: M7
+  robot.j2_effort_Nm:
+    value: 0.3
+    unit: N*m
+    origin: design_assumption
+    basis: Предел виртуального actuator, не спецификация мотора
+    owner: M7
+  robot.j3_velocity_m_s:
+    value: 0.12
+    unit: m/s
+    origin: design_assumption
+    basis: Начальное ограничение приводной модели; M7 tune
+    owner: M7
+  robot.j3_acceleration_m_s2:
+    value: 0.35
+    unit: m/s^2
+    origin: design_assumption
+    basis: Используется в оценке нагрузки и ограничении будущего движения
+    owner: M7
+  robot.j3_effort_N:
+    value: 4.0
+    unit: N
+    origin: design_assumption
+    basis: Предел виртуального actuator, не спецификация линейного привода
+    owner: M7
+  robot.j4_velocity_rad_s:
+    value: 1.5
+    unit: rad/s
+    origin: design_assumption
+    basis: Начальное ограничение приводной модели; M7 tune
+    owner: M7
+  robot.j4_acceleration_rad_s2:
+    value: 3.0
+    unit: rad/s^2
+    origin: design_assumption
+    basis: Начальное ограничение траекторий; M5/M7 проверят
+    owner: M7
+  robot.j4_effort_Nm:
+    value: 0.08
+    unit: N*m
+    origin: design_assumption
+    basis: Предел виртуального actuator, не спецификация мотора
+    owner: M7
+  robot.finger_velocity_m_s:
+    value: 0.06
+    unit: m/s
+    origin: design_assumption
+    basis: Начальное ограничение привода захвата; M7 tune
+    owner: M7
+  robot.finger_acceleration_m_s2:
+    value: 0.12
+    unit: m/s^2
+    origin: design_assumption
+    basis: Начальное ограничение привода захвата; M7 tune
+    owner: M7
+  robot.j1_damping_Nm_s_rad:
+    value: 0.05
+    unit: N*m*s/rad
+    origin: design_assumption
+    basis: Начальное суставное демпфирование MuJoCo
+    owner: M7
+  robot.j2_damping_Nm_s_rad:
+    value: 0.04
+    unit: N*m*s/rad
+    origin: design_assumption
+    basis: Начальное суставное демпфирование MuJoCo
+    owner: M7
+  robot.j3_damping_N_s_m:
+    value: 1.0
+    unit: N*s/m
+    origin: design_assumption
+    basis: Начальное суставное демпфирование MuJoCo
+    owner: M7
+  robot.j4_damping_Nm_s_rad:
+    value: 0.01
+    unit: N*m*s/rad
+    origin: design_assumption
+    basis: Начальное суставное демпфирование MuJoCo
+    owner: M7
+  robot.finger_damping_N_s_m:
+    value: 0.5
+    unit: N*s/m
+    origin: design_assumption
+    basis: Начальное суставное демпфирование MuJoCo
+    owner: M7
+  robot.position_servo_gains:
+    value:
+      j1_kp: 20.0
+      j1_kv: 1.0
+      j2_kp: 15.0
+      j2_kv: 0.8
+      j3_kp: 3000.0
+      j3_kv: 20.0
+      j4_kp: 2.0
+      j4_kv: 0.1
+      finger_kp: 85.0
+      finger_kv: 1.2
+    unit: joint-dependent
+    origin: design_assumption
+    basis: M7 gains calibrated by J3 static gravity sag and finite-force trajectory
+      sweep. 3000 N/m and 20 N*s/m reduce unladen static sag below 0.5 mm while retaining
+      the M2 +/-4 N actuator force limit. This is a simulated actuator parameter,
+      not a measured hardware specification.
+    owner: M7
+  robot.gripper_preload_position_offset_m:
+    value: 0.011
+    unit: m
+    origin: design_assumption
+    basis: M7 contact/lift run showed slip at the 10.5 mm preload. An 11 mm offset
+      sets the nominal M5 grip coordinate 15.998 mm to 26.998 mm, inside the physical
+      27 mm joint range. The finger position gain is tuned from 80 to 85 N/m; the
+      actuator remains force-limited to 1.2 N and target commands never exceed the
+      joint interval. Physical hold and slip must still pass the independent M7 evaluator.
+    owner: M7
+  robot.joint_name_order:
+    value:
+    - j1_shoulder
+    - j2_elbow
+    - j3_lift
+    - j4_wrist
+    - j5_finger_left
+    - j6_finger_right
+    unit: name
+    origin: design_assumption
+    basis: Именование канонических скалярных суставов модели
+    owner: M2
+  robot.actuator_name_order:
+    value:
+    - act_j1_shoulder
+    - act_j2_elbow
+    - act_j3_lift
+    - act_j4_wrist
+    - act_gripper_left
+    unit: name
+    origin: design_assumption
+    basis: Пять управляемых координат; один actuator на связанную пару пальцев
+    owner: M2
+  object.shape:
+    value: solid rectangular cuboid
+    unit: shape
+    origin: source
+    basis: Однослойная низкая квадратная призма принята в M1
+    owner: M1
+  object.size_xyz_m:
+    value:
+    - 0.028
+    - 0.028
+    - 0.016
+    unit: m; X,Y,Z
+    origin: design_assumption
+    basis: Габаритная учебная цель; квадратная симметрия упрощает захват и оценку
+      yaw
+    owner: M2
+  object.mass_kg:
+    value: 0.015554560000000002
+    unit: kg
+    origin: calculation
+    basis: 0.028*0.028*0.016 m^3 * 1240 kg/m^3
+    owner: M2
+  object.position_z_m:
+    value: 0.008
+    unit: m
+    origin: calculation
+    basis: Нижняя грань объекта совпадает с верхней плоскостью стола
+    owner: M2
+  object.yaw_range_rad:
+    value:
+    - 0.0
+    - 1.5707963267948966
+    unit: rad modulo pi/2
+    origin: design_assumption
+    basis: Квадратная симметрия; генератор M9 может выбирать yaw внутри этого диапазона
+    owner: M9
+  object.count_per_class:
+    value: 2
+    unit: object
+    origin: design_assumption
+    basis: Шесть начальных объектов, по два каждого класса
+    owner: M2
+  object.color_class_labels:
+    value:
+    - RED
+    - GREEN
+    - BLUE
+    - UNKNOWN
+    unit: class label
+    origin: source
+    basis: Три цвета сортировки и отказной класс из требований M0/M1
+    owner: M1
+  object.visual_rgba:
+    value:
+      RED:
+      - 0.9
+      - 0.06
+      - 0.04
+      - 1.0
+      GREEN:
+      - 0.04
+      - 0.78
+      - 0.08
+      - 1.0
+      BLUE:
+      - 0.04
+      - 0.12
+      - 0.92
+      - 1.0
+    unit: normalized RGBA
+    origin: design_assumption
+    basis: Палитра рендера для виртуальной RGB-камеры; M4 проверит сегментируемость
+      без доступа к truth
+    owner: M4
+  object.mass_density_note:
+    value: Изотропный сплошной PLA для оценки инерции; пористость печати, инфилл и
+      анизотропия не моделируются
+    unit: description
+    origin: design_assumption
+    basis: Явное ограничение приближенной физической модели
+    owner: M2
+  gripper.friction_slide:
+    value: 0.6
+    unit: dimensionless
+    origin: design_assumption
+    basis: Номинальный коэффициент виртуального контакта; M7 исследует чувствительность
+    owner: M7
+  gripper.friction_spin:
+    value: 0.005
+    unit: m
+    origin: design_assumption
+    basis: Начальный torsional contact friction MuJoCo; M7 tune
+    owner: M7
+  gripper.friction_roll:
+    value: 0.001
+    unit: m
+    origin: design_assumption
+    basis: Начальный rolling contact friction MuJoCo; M7 tune
+    owner: M7
+  gripper.safety_factor:
+    value: 3.0
+    unit: dimensionless
+    origin: design_assumption
+    basis: Запас по нормальной силе двухконтактного захвата
+    owner: M2
+  gripper.payload_vertical_acceleration_m_s2:
+    value: 0.35
+    unit: m/s^2
+    origin: source
+    basis: Верхний предел ускорения оси Z из параметра robot.j3_acceleration_m_s2
+    owner: M2
+  gripper.minimum_normal_force_per_finger_N:
+    value: 0.39495555456000003
+    unit: N
+    origin: calculation
+    basis: Рассчитывается build_model.py по m*(g+a)*SF/(2*mu); значение в YAML служит
+      явным placeholder и пересчитывается при генерации отчета
+    owner: M2
+  gripper.required_pair_friction:
+    value: 0.6
+    unit: dimensionless
+    origin: calculation
+    basis: Минимальный номинальный slide friction между объектом и пальцами; одинаковый
+      friction задается обоим geoms
+    owner: M2
+  gripper.z_axis_moving_mass_including_payload_kg:
+    value: 0.10631061896374139
+    unit: kg
+    origin: calculation
+    basis: Сумма масс z_carriage, wrist/palm, обоих пальцев и объекта; рассчитывается
+      генератором
+    owner: M2
+  gripper.z_axis_force_limit_N:
+    value: 4.0
+    unit: N
+    origin: source
+    basis: robot.j3_effort_N; виртуальный предел линейного actuator
+    owner: M2
+  camera.position_world_m:
+    value:
+    - 0.0
+    - 0.0
+    - 1.05
+    unit: m
+    origin: design_assumption
+    basis: Фиксированная камера над центром стола, выбранная с запасом FOV
+    owner: M2
+  camera.mujoco_quaternion_wxyz:
+    value:
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    unit: quaternion w,x,y,z
+    origin: calculation
+    basis: 'Нейтральная ориентация MuJoCo camera: локальный -Z направлен вниз'
+    owner: M2
+  camera.fovy_deg:
+    value: 50.0
+    unit: degree
+    origin: design_assumption
+    basis: Вертикальное поле зрения pinhole-камеры
+    owner: M2
+  camera.resolution_px:
+    value:
+    - 640
+    - 480
+    unit: pixel; W,H
+    origin: design_assumption
+    basis: Разрешение виртуального наблюдения совместимо с проверенным M1 RGB API
+    owner: M2
+  camera.image_origin_convention:
+    value: top-left; u right; v down; array channels RGB uint8
+    unit: convention
+    origin: source
+    basis: Sensor contract M1; OpenCV uses same image-plane pixel directions
+    owner: M1
+  camera.camera_model:
+    value: ideal pinhole; nominal intrinsics only
+    unit: model
+    origin: design_assumption
+    basis: MuJoCo perspective camera; calibration error belongs to M4
+    owner: M2
+  camera.safe_observation_joint_pose:
+    value:
+      j1_shoulder: 2.6179938779914944
+      j2_elbow: 1.0471975511965976
+      j3_lift: 0.015
+      j4_wrist: 0.0
+      gripper: 0.0
+    unit: rad,rad,m,rad,m
+    origin: design_assumption
+    basis: Ненулевая конфигурация локтя, отведенная от подающих/приемных зон
+    owner: M2
+  contact.friction_table_slide:
+    value: 0.5
+    unit: dimensionless
+    origin: design_assumption
+    basis: Начальное трение объектов о стол и лотки; M7 sensitivity
+    owner: M7
+  contact.friction_table_spin:
+    value: 0.005
+    unit: m
+    origin: design_assumption
+    basis: Начальный torsional friction модели
+    owner: M7
+  contact.friction_table_roll:
+    value: 0.001
+    unit: m
+    origin: design_assumption
+    basis: Начальный rolling friction модели
+    owner: M7
+  contact.condim:
+    value: 6
+    unit: contact dimension
+    origin: design_assumption
+    basis: MuJoCo контакт включает касательную, spin и rolling составляющие
+    owner: M7
+  contact.solref:
+    value:
+    - 0.02
+    - 1.0
+    unit: time constant [s], damping ratio
+    origin: design_assumption
+    basis: Начальная near-critically-damped compliant contact response; M7 tune
+    owner: M7
+  contact.solimp:
+    value:
+    - 0.95
+    - 0.99
+    - 0.001
+    unit: dimensionless, dimensionless, m
+    origin: design_assumption
+    basis: Начальная impedance curve; M7 tune
+    owner: M7
+  contact.restitution_model:
+    value: near-inelastic via solver damping; no independent coefficient of restitution
+      is exposed as a measured material property
+    unit: description
+    origin: design_assumption
+    basis: MuJoCo soft-contact parameters solref/solimp define response; physical
+      restitution is unknown
+    owner: M2
+  collision.visual_geom_group:
+    value: 1
+    unit: MuJoCo group
+    origin: design_assumption
+    basis: Rendered visual geoms, collision disabled
+    owner: M2
+  collision.collision_geom_group:
+    value: 3
+    unit: MuJoCo group
+    origin: design_assumption
+    basis: Invisible collision geoms are separate duplicates of envelope primitives
+    owner: M2
+  collision.allowed_pairs:
+    value:
+    - - base_static
+      - link1
+    - - link1
+      - link2
+    - - link2
+      - z_slide
+    - - z_slide
+      - wrist
+    - - wrist
+      - finger_left
+    - - wrist
+      - finger_right
+    unit: body-name pair
+    origin: design_assumption
+    basis: Only fixed/mechanical neighbors and intended joint overlaps are excluded;
+      object-table and object-tray support contacts remain active
+    owner: M2
+  collision.non_adjacent_robot_collision:
+    value: true
+    unit: boolean
+    origin: design_assumption
+    basis: Do not disable all self-collision; non-adjacent robot and scene interactions
+      remain active
+    owner: M2
+  collision.visual_and_collision_separate:
+    value: true
+    unit: boolean
+    origin: design_assumption
+    basis: Каждому envelope geom соответствует отдельный collision-disabled visual
+      и collision geom
+    owner: M2
+  planning.static_clearance_m:
+    value: 0.005
+    unit: m
+    origin: design_assumption
+    basis: Minimum required static/mechanical clearance at every verified trajectory
+      sample; each sample threshold adds the conservative bound on motion since the
+      previous sample and the numeric reserve. This is not a continuous collision-free
+      proof between samples.
+    owner: M5
+  planning.max_joints_not_enforced_by_engine:
+    value:
+    - robot.j1_velocity_rad_s
+    - robot.j2_velocity_rad_s
+    - robot.j3_velocity_m_s
+    - robot.j4_velocity_rad_s
+    unit: parameter reference
+    origin: design_assumption
+    basis: MJCF model stores these limits; trajectory/controller must enforce them
+      in M5-M7
+    owner: M5
+  kinematics.numeric_cos_tolerance:
+    value: 1.0e-12
+    unit: dimensionless
+    origin: design_assumption
+    basis: Только погрешность округления для аналитического cos(q2) у границ [-1,1];
+      не расширяет геометрическую область достижимости
+    owner: M3
+  kinematics.joint_limit_tolerance_rad:
+    value: 1.0e-12
+    unit: rad
+    origin: design_assumption
+    basis: Допуск round-off при аналитическом представлении revolute-кандидата у границы;
+      после принятия значение ограничивается точным физическим пределом
+    owner: M3
+  kinematics.joint_limit_tolerance_m:
+    value: 1.0e-12
+    unit: m
+    origin: design_assumption
+    basis: Допуск round-off при переводе целевого Z в ход J3; цели за этим допуском
+      отклоняются, после принятия координата ограничивается точным физическим пределом
+    owner: M3
+  kinematics.candidate_dedup_tolerance:
+    value: 1.0e-12
+    unit: dimensionless
+    origin: design_assumption
+    basis: Удаление повторов IK по максимальной разности суставов, нормированной на
+      допустимый диапазон каждого сустава
+    owner: M3
+  kinematics.position_acceptance_m:
+    value: 1.0e-06
+    unit: m
+    origin: design_assumption
+    basis: Численный допуск FK/IK равен 0.001 mm и в 1000 раз меньше выделенного M2
+      кинематического бюджета захвата 1 mm; не является допуском компьютерного зрения
+    owner: M3
+  kinematics.yaw_acceptance_rad:
+    value: 1.0e-08
+    unit: rad
+    origin: design_assumption
+    basis: Численный допуск аналитического преобразования yaw существенно меньше M2
+      проектного ограничения ориентации захвата 10 градусов
+    owner: M3
+  kinematics.near_singular_abs_sin_q2:
+    value: 0.05
+    unit: dimensionless
+    origin: design_assumption
+    basis: Диагностический порог sin(q2); для звеньев M2 при q2 около 0.05 rad planar
+      Jacobian condition number близок к 100; флаг предупреждает, но сам по себе не
+      запрещает достижимую позу
+    owner: M3
+  robot.wrist_hub_center_in_wrist_m:
+    value:
+    - 0.0
+    - 0.0
+    - 0.01
+    unit: m
+    origin: design_assumption
+    basis: Raised J4 hub, aligned with palm; provides 8 mm bottom clearance above
+      the grasped cuboid at the M2 TCP grasp pose.
+    owner: M5
+  robot.finger_center_in_wrist_m:
+    value:
+    - 0.0
+    - 0.0
+    - -0.012
+    unit: m
+    origin: tuned_parameter
+    basis: M7 evaluator measured up to 6.5 mm vertical object-to-wrist slip during
+      the test lift with pads 6 mm above TCP. Centering the 12 mm finger pads on the
+      object-center TCP makes the 16 mm object overlap symmetric and leaves 2 mm clearance
+      below the pads at the 8 mm-high input surface.
+    owner: M7
+  planning.perceived_object_clearance_m:
+    value: 0.015
+    unit: m
+    origin: design_assumption
+    basis: 'Conservative required clearance to perception-positioned cuboids: 5.0
+      mm static reserve + 2.0 mm allocated XY error + 3.5 mm maximum 10-degree yaw-induced
+      corner shift + 0.5 mm tracking allocation + 1.0 mm sample swept-step bound +
+      0.25 mm numerical allowance + 2.75 mm residual reserve.'
+    owner: M5
+  planning.path_sweep_sample_step_m:
+    value: 0.001
+    unit: m
+    origin: design_assumption
+    basis: Maximum conservative displacement of any checked collision-geometry point
+      between adjacent samples; the configured 1 mm baseline bounds all arm coordinates
+      and the carried cuboid. M5 checks route convergence again at a 0.5 mm half-step
+      and includes a controlled thin-obstacle midpoint test.
+    owner: M5
+  planning.distance_numeric_tolerance_m:
+    value: 0.00025
+    unit: m
+    origin: design_assumption
+    basis: Conservative numerical-distance reserve used in collision thresholds; verification
+      compares MuJoCo distances against a refined sampling run.
+    owner: M5
+  planning.safe_transfer_tcp_z_m:
+    value: 0.06
+    unit: m
+    origin: design_assumption
+    basis: Reuses the M2 safe-transfer TCP height; above input cuboids and tray walls.
+    owner: M5
+  planning.max_normalized_joint_step:
+    value: 0.02
+    unit: dimensionless
+    origin: design_assumption
+    basis: Maximum Euclidean joint displacement per Cartesian waypoint in M3 range-normalized
+      coordinates; recursively subdivide larger intervals.
+    owner: M5
+  planning.branch_singularity_weight:
+    value: 0.02
+    unit: dimensionless
+    origin: design_assumption
+    basis: Penalty weight on normalized reciprocal manipulability indicator; compared
+      only with dimensionless range-normalized continuity cost.
+    owner: M5
+  planning.plan_timeout_s:
+    value: 90.0
+    unit: s
+    origin: design_assumption
+    basis: Wall-clock cap for a complete pick/place preflight. The M5 half-step convergence
+      route required 58.4 s on the validation PC with a 60 s cap; increased to 90
+      s to leave runtime headroom while timeout still returns a structured fail-closed
+      result. This does not change trajectory or collision acceptance criteria.
+    owner: M5
+  planning.motion_profile:
+    value: quintic_rest_to_rest
+    unit: profile
+    origin: design_assumption
+    basis: Zero endpoint velocity and acceleration on each geometric phase; no dynamic
+      actuator guarantee.
+    owner: M5
+  planning.parameterization_safety_scale:
+    value: 1.02
+    unit: ratio
+    origin: design_assumption
+    basis: Adds a 2% temporal reserve after analytical spline derivative bounds so
+      sampled joint and gripper velocity/acceleration remain below the configured
+      M2 limits; the verification runner checks the complete sampled trajectory explicitly.
+    owner: M5
+  planning.contact_speed_scale:
+    value: 0.15
+    unit: ratio
+    origin: design_assumption
+    basis: Descent/lift/retreat phases use an additional duration scale >= 1/scale;
+      quintic endpoints remain zero-velocity.
+    owner: M5
+  planning.transfer_ring_radial_clearance_m:
+    value: 0.01
+    unit: m
+    origin: design_assumption
+    basis: Deterministic transfer route uses a 10 mm outer radial reserve above the
+      endpoint radii, clamped to the non-singular reachable annulus. The reserve was
+      reduced from 20 mm after a branch-continuity preflight showed the larger ring
+      unnecessarily reached a q1 wrap boundary; revised routes must pass full IK and
+      collision preflight before use.
+    owner: M5
+  planning.maximum_waypoint_refinements:
+    value: 12
+    unit: iteration
+    origin: design_assumption
+    basis: Bounded bisection count for Cartesian waypoint/branch continuity refinement;
+      exhausted refinement returns safe failure.
+    owner: M5
+  planning.minimum_clearance_report_cap_m:
+    value: 0.05
+    unit: m
+    origin: design_assumption
+    basis: Bounded MuJoCo geom-distance query cap. Conservative AABB lower bounds
+      decide when narrow-phase distance calls are necessary; avoids relying on large-range
+      legacy CCD queries.
+    owner: M5
+  planning.allowed_gripper_object_contact_phases:
+    value:
+    - GRASP_CLOSE
+    - LIFT
+    - TRANSFER
+    - PREPLACE
+    - PLACE_DESCENT
+    - RELEASE
+    - RETREAT
+    unit: phase
+    origin: design_assumption
+    basis: Only the selected target's finger contact may occur during grasp, carried
+      transfer, placement, and vertical release retreat; palm/wrist contact remains
+      checked.
+    owner: M5
+  planning.self_collision_clearance_m:
+    value: 0.0
+    unit: m
+    origin: design_assumption
+    basis: No arbitrary static reserve is imposed between non-adjacent robot bodies;
+      the checker still requires path-sweep and numerical-distance margin and rejects
+      contact/penetration.
+    owner: M5
+  planning.maximum_detection_age_s:
+    value: 0.04
+    unit: s
+    origin: source
+    basis: M4 sensor interface maximum_age_s; planner rejects stale perception before
+      building a route.
+    owner: M5
+  planning.position_sigma_limit_m:
+    value: 0.002
+    unit: m
+    origin: source
+    basis: M4/M2 grasp position uncertainty allocation; an observation exceeding the
+      allocated xy budget is not pickable.
+    owner: M5
+  planning.yaw_sigma_limit_rad:
+    value: 0.17453292519943295
+    unit: rad
+    origin: source
+    basis: M2 grasp yaw error limit (10 degrees); exceeds this limit means safe refusal.
+    owner: M5
+  planning.allowed_support_contact_phases:
+    value:
+    - INITIAL_APPROACH
+    - PREGRASP
+    - DESCENT
+    - GRASP_CLOSE
+    unit: phase
+    origin: design_assumption
+    basis: Selected object/table support is expected only while object is resting
+      in input; payload/tray-floor support is allowed only at RELEASE/RETREAT.
+    owner: M5
+  planning.grasp_entry_clearance_m:
+    value: 0.004
+    unit: m
+    origin: design_assumption
+    basis: Minimum signed clearance from the target cuboid for the open-gripper approach,
+      excluding only exact finger-target contacts during GRASP_CLOSE. Derived from
+      M2 worst-yaw half-clearance 10.201 mm minus 2.0 mm XY allocation, 2.2 mm projected-span/yaw
+      allowance, 0.5 mm tracking, 1.0 mm swept-step, and 0.25 mm distance allowance;
+      rounded down to 4 mm.
+    owner: M5
+  planning.grasp_finger_support_clearance_m:
+    value: 0.0005
+    unit: m
+    origin: tuned_parameter
+    basis: M7 centered the finger pads on the object-center TCP and reduced their
+      height to keep a 3 mm physical gap above the input tabletop and reserved tray
+      floor. The phase-scoped threshold retains a positive 0.5 mm geometric reserve
+      in addition to the configured swept-sample bound and 0.25 mm distance-numeric
+      reserve. It applies only to selected finger-table pairs during DESCENT or GRASP_CLOSE
+      while unheld, and vertical LIFT while carrying at the detected target XY; finger-floor
+      pairs for the color-matched reserved tray slot during PLACE_DESCENT, RELEASE,
+      or RETREAT at that slot XY. At that exact tray slot, finger-table checks retain
+      a zero-penetration test because the checked tray floor is physically between
+      the fingers and tabletop. XY alignment is bounded by the allocated M4 position
+      uncertainty. No contact or penetration is authorized; signed distance rejects
+      penetration. All other robot-environment pairs retain static clearance.
+    owner: M7
+  planning.minimum_abs_sin_q2:
+    value: 0.05
+    unit: dimensionless
+    origin: design_assumption
+    basis: Hard planning threshold reuses the M3 NEAR_SINGULARITY diagnostic boundary;
+      candidate branches below it fail closed.
+    owner: M5
+  planning.transfer_arc_max_angle_rad:
+    value: 0.08726646259971647
+    unit: rad
+    origin: design_assumption
+    basis: Maximum 5-degree deterministic arc waypoint spacing; at the M2 maximum
+      0.43 m radius, chord sag is below 0.82 mm.
+    owner: M5
+  planning.maximum_cartesian_waypoint_step_m:
+    value: 0.02
+    unit: m
+    origin: design_assumption
+    basis: Upper bound before adaptive M3-normalized joint-step subdivision; no geometric
+      path segment is left longer than 20 mm.
+    owner: M5
+  planning.replan_target_shift_xy_m:
+    value: 0.002
+    unit: m
+    origin: design_assumption
+    basis: Replan/stop if a refreshed supported detection shifts more than the M4
+      allocated 2 mm XY perception budget before contact.
+    owner: M5
+  planning.replan_target_shift_yaw_rad:
+    value: 0.17453292519943295
+    unit: rad
+    origin: design_assumption
+    basis: Replan/stop if refreshed target orientation shifts more than the M4 10-degree
+      grasp yaw acceptance limit.
+    owner: M5
+  planning.joint_tracking_error_budget_m:
+    value: 0.0005
+    unit: m
+    origin: design_assumption
+    basis: Handoff limit reuses the M7 allocated 0.5 mm tracking contribution in the
+      M2 grasp error budget; M7 must implement/validate actuator tracking.
+    owner: M5
+  controller.observation_timeout_s:
+    value: 0.25
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded wait for one new camera/perception result; frame freshness remains
+      inherited from M4.
+    owner: M6
+  controller.init_timeout_s:
+    value: 0.5
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded wait for valid startup arm and gripper state before initialization
+      fails closed.
+    owner: M6
+  controller.select_timeout_s:
+    value: 0.5
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded high-level ranking/reservation step; no motion is issued from an
+      expired selection.
+    owner: M6
+  controller.plan_response_timeout_s:
+    value: 120.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded asynchronous wait for M5 PlanResult; M5's compute wall-time cap
+      remains separately authoritative.
+    owner: M6
+  controller.recovery_timeout_s:
+    value: 5.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded wait for M7's explicitly requested safe recovery result; timeout
+      latches SAFE_STOP.
+    owner: M6
+  controller.place_verification_timeout_s:
+    value: 0.5
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Finite wait for a fresh public perception result after release; it does
+      not authorize retrying release.
+    owner: M6
+  controller.hold_verification_timeout_s:
+    value: 0.25
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded wait for a fresh hold sensor and post-lift M4 frame after the test
+      lift completes.
+    owner: M6
+  controller.gripper_release_confirmation_timeout_s:
+    value: 0.25
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Bounded wait for a fresh gripper signal indicating it no longer holds an
+      object after RELEASE.
+    owner: M6
+  controller.empty_scene_confirm_frames:
+    value: 3
+    unit: distinct fresh frames
+    origin: design_assumption
+    basis: A valid empty scene is confirmed over distinct frames to avoid treating
+      one missed frame as batch completion.
+    owner: M6
+  controller.unknown_confirm_frames:
+    value: 2
+    unit: distinct fresh frames
+    origin: design_assumption
+    basis: UNKNOWN remains unassigned to any color; after this many separate observations
+      it is recorded as skipped.
+    owner: M6
+  controller.max_camera_failures:
+    value: 3
+    unit: consecutive failures
+    origin: design_assumption
+    basis: Consecutive invalid/missing perception responses before SAFE_STOP.
+    owner: M6
+  controller.max_plan_retries:
+    value: 1
+    unit: retries per track
+    origin: design_assumption
+    basis: Retry transient M5 failures once after a new M4 frame; deterministic geometric
+      refusal is not retried.
+    owner: M6
+  controller.max_grasp_attempts:
+    value: 2
+    unit: total attempts per track
+    origin: design_assumption
+    basis: One initial attempt plus at most one bounded retry after a public no-hold
+      signal and safe recovery.
+    owner: M6
+  controller.max_cycle_attempts_per_track:
+    value: 2
+    unit: total attempts per track
+    origin: design_assumption
+    basis: Bounded full-cycle execution attempts; uncertain payload state always stops
+      rather than repeating.
+    owner: M6
+  controller.execution_timeout_factor:
+    value: 1.5
+    unit: ratio
+    origin: design_assumption
+    basis: State budget is max(minimum, summed M5 phase duration times this factor
+      plus margin).
+    owner: M6
+  controller.execution_timeout_margin_s:
+    value: 2.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Fixed grace margin for state-level execution feedback after its M5 phase
+      duration estimate.
+    owner: M6
+  controller.execution_timeout_min_s:
+    value: 1.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Lower bound for a motion state even when a phase has near-zero sampled
+      duration.
+    owner: M6
+  controller.cycle_timeout_factor:
+    value: 1.5
+    unit: ratio
+    origin: design_assumption
+    basis: Full-cycle budget derived from M5 plan duration with headroom; starts only
+      after a complete plan is accepted.
+    owner: M6
+  controller.cycle_timeout_margin_s:
+    value: 30.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Fixed full-cycle feedback margin after the M5 predicted motion duration.
+    owner: M6
+  controller.batch_timeout_s:
+    value: 1800.0
+    unit: s of simulation time
+    origin: design_assumption
+    basis: Finite batch watchdog for up to several long M5 cycles; reaching it stops
+      the run safely.
+    owner: M6
+  controller.hold_evidence_max_age_s:
+    value: 0.04
+    unit: s of simulation time
+    origin: inherited
+    basis: Reuses M4 sensor_interface.maximum_age_s; stale contact evidence cannot
+      confirm a grasp.
+    owner: M6
+  controller.place_evidence_min_confidence:
+    value: 0.75
+    unit: normalized confidence
+    origin: design_assumption
+    basis: Minimum confidence for future M7 public camera evidence of a released class
+      and slot; must be checked against M7 perception integration.
+    owner: M6
+  controller.selection_weight_confidence:
+    value: 0.4
+    unit: normalized score weight
+    origin: design_assumption
+    basis: Deterministic SELECT ranking weight for lower classification confidence.
+    owner: M6
+  controller.selection_weight_xy_uncertainty:
+    value: 0.2
+    unit: normalized score weight
+    origin: design_assumption
+    basis: Deterministic SELECT ranking weight for normalized XY uncertainty.
+    owner: M6
+  controller.selection_weight_yaw_uncertainty:
+    value: 0.1
+    unit: normalized score weight
+    origin: design_assumption
+    basis: Deterministic SELECT ranking weight for normalized yaw uncertainty.
+    owner: M6
+  controller.selection_weight_motion:
+    value: 0.25
+    unit: normalized score weight
+    origin: design_assumption
+    basis: Deterministic SELECT ranking weight for estimated XY travel distance; M5
+      remains the only feasibility authority.
+    owner: M6
+  controller.selection_weight_failures:
+    value: 0.05
+    unit: normalized score weight
+    origin: design_assumption
+    basis: Deterministic SELECT ranking penalty for earlier safe failures, below quality
+      and travel cost.
+    owner: M6
+  controller.max_recovery_attempts:
+    value: 1
+    unit: retries per recovery action
+    origin: design_assumption
+    basis: Recovery is attempted once; a failed or unknown result moves to SAFE_STOP.
+    owner: M6
+  controller.max_scene_uncertainty_frames:
+    value: 3
+    unit: distinct fresh frames
+    origin: design_assumption
+    basis: Incomplete/occluded scene is retried only for a bounded number of fresh
+      frames before SAFE_STOP.
+    owner: M6
+  controller.initial_occupied_slots:
+    value: []
+    unit: list of public slot IDs
+    origin: design_assumption
+    basis: Empty default setup for the controlled coursework cell; M7 must supply
+      public initial occupancy if a run starts with objects already in trays.
+    owner: M6
+  controller.gripper_position_tolerance_m:
+    value: 0.00025
+    unit: m
+    origin: inherited
+    basis: Reuses planning.distance_numeric_tolerance_m for startup gripper-home verification.
+    owner: M6
+assemblies:
+  link1:
+    body_name: link1
+    components:
+    - name: link1_tube
+      shape: open_rect_tube
+      size_ref: robot.link1_tube_outer_xyz_m
+      wall_ref: robot.link1_tube_wall_m
+      center_ref: robot.link1_tube_center_m
+      axis: x
+    - name: link1_connector
+      shape: solid_box
+      size_ref: robot.link1_connector_xyz_m
+      center_ref: robot.link1_connector_center_m
+    - name: elbow_plate
+      shape: solid_box
+      size_ref: robot.elbow_plate_xyz_m
+      center_ref: robot.elbow_plate_center_m
+  link2:
+    body_name: link2
+    components:
+    - name: link2_tube
+      shape: open_rect_tube
+      size_ref: robot.link2_tube_outer_xyz_m
+      wall_ref: robot.link2_tube_wall_m
+      center_ref: robot.link2_tube_center_m
+      axis: x
+    - name: link2_connector
+      shape: solid_box
+      size_ref: robot.link2_connector_xyz_m
+      center_ref: robot.link2_connector_center_m
+    - name: z_guide
+      shape: open_rect_tube
+      size_ref: robot.z_guide_outer_xyz_m
+      wall_ref: robot.z_guide_wall_m
+      center_ref: robot.z_guide_center_m
+      axis: z
+  z_slide:
+    body_name: z_slide
+    components:
+    - name: z_carriage
+      shape: closed_rect_shell
+      size_ref: robot.z_carriage_plate_xyz_m
+      wall_ref: robot.z_carriage_wall_m
+      center_ref: robot.z_carriage_center_m
+    - name: z_upper_rod
+      shape: open_rect_tube
+      size_ref: robot.z_upper_rod_xyz_m
+      wall_ref: robot.z_upper_rod_wall_m
+      center_ref: robot.z_upper_rod_center_m
+      axis: z
+    - name: z_lower_rod
+      shape: open_rect_tube
+      size_ref: robot.z_lower_rod_xyz_m
+      wall_ref: robot.z_lower_rod_wall_m
+      center_ref: robot.z_lower_rod_center_m
+      axis: z
+  wrist:
+    body_name: wrist
+    components:
+    - name: wrist_hub
+      shape: solid_cylinder_z
+      radius_param: robot.wrist_radius_m
+      height_param: robot.wrist_height_m
+      center_ref: robot.wrist_hub_center_in_wrist_m
+    - name: palm
+      shape: closed_rect_shell
+      size_ref: robot.palm_xyz_m
+      wall_ref: robot.palm_wall_m
+      center_ref: robot.palm_center_in_wrist_m
+  finger_left:
+    body_name: finger_left
+    components:
+    - name: finger_left_geom
+      shape: solid_box
+      size_ref: robot.finger_xyz_m
+      center_ref: robot.zero_xyz_m
+  finger_right:
+    body_name: finger_right
+    components:
+    - name: finger_right_geom
+      shape: solid_box
+      size_ref: robot.finger_xyz_m
+      center_ref: robot.zero_xyz_m
+perception:
+  profile_version: M4-v1.3
+  profile_sha256: 55c87dcd96f6146a1214765c0fcab66a1be452fc55467ed2ae3a19046a7e19f2
+  runtime_config:
+    config_version: M4-v1.3
+    sensor_interface:
+      frame_format: RGB
+      dtype: uint8
+      resolution_px:
+      - 640
+      - 480
+      pixel_origin: top-left
+      maximum_age_s: 0.04
+      camera_config_id: overhead_rgb_M2_validated_v1
+    camera:
+      position_world_m:
+      - 0.0
+      - 0.0
+      - 1.05
+      mujoco_quaternion_wxyz:
+      - 1.0
+      - 0.0
+      - 0.0
+      - 0.0
+      fovy_deg: 50.0
+      intrinsics_fx_fy_cx_cy_px:
+      - 514.6816609222941
+      - 514.6816609222941
+      - 319.5
+      - 239.5
+    calibration:
+      method: planar_homography_from_fiducials
+      object_top_plane_z_m: 0.016
+      calibration_grid_xy_m:
+        x:
+        - -0.42
+        - -0.28
+        - -0.14
+        - 0.0
+        - 0.14
+        - 0.28
+        - 0.42
+        y:
+        - -0.36
+        - -0.24
+        - -0.12
+        - 0.0
+        - 0.12
+        - 0.24
+        - 0.36
+    regions:
+      input_xy_bounds_m:
+      - - -0.145
+        - 0.145
+      - - -0.355
+        - -0.145
+    candidate_detection:
+      method: background_delta_e_lab
+      object_size_xy_m:
+      - 0.028
+      - 0.028
+      lab_delta_threshold: 16.0
+      open_kernel_px:
+      - 3
+      - 3
+      close_kernel_px:
+      - 3
+      - 3
+      min_area_px: 8.0
+      max_area_px: 520.0
+      nominal_projected_object_area_px: 194.0
+      min_aspect_ratio: 0.45
+      max_aspect_ratio: 2.2
+      occlusion_area_ratio: 0.58
+      merged_candidate_area_ratio: 1.55
+      area_model_note: Nominal 28x28 mm square viewed at z=16 mm using M2 camera intrinsics.
+    merged_candidate_split:
+      enabled: true
+      minimum_component_area_ratio: 0.4
+      maximum_component_area_ratio: 1.4
+      minimum_components: 2
+    color_classifier:
+      conversion: COLOR_RGB2HSV
+      hue_range:
+      - 0
+      - 179
+      saturation_range:
+      - 0
+      - 255
+      value_range:
+      - 0
+      - 255
+      hsv_ranges:
+        RED:
+          hue_intervals:
+          - - 0
+            - 7
+          - - 176
+            - 179
+          saturation_min: 155
+          value_min: 231
+        GREEN:
+          hue_intervals:
+          - - 57
+            - 69
+          saturation_min: 156
+          value_min: 231
+        BLUE:
+          hue_intervals:
+          - - 108
+            - 121
+          saturation_min: 157
+          value_min: 231
+      interior_erode_kernel_px: 3
+      minimum_confidence: 0.36
+      minimum_class_margin: 0.22
+    pose_estimation:
+      center_method: color_core_rect_center
+      yaw_method: longest_edge_of_world_min_area_rectangle
+      symmetry_period_rad: 1.5707963267948966
+      yaw_interval_rad:
+      - 0.0
+      - 1.5707963267948966
+    photometric_normalization:
+      method: per_channel_median_gain_on_static_table_anchor
+      anchor_xy_bounds_m:
+      - - -0.46
+        - -0.36
+      - - 0.33
+        - 0.43
+      gain_clip:
+      - 0.55
+      - 1.8
+    tracking:
+      method: deterministic_greedy_nearest_neighbor
+      max_distance_m: 0.055
+      max_missed_frames: 2
+    uncertainty:
+      position_sigma_m: 0.0015
+      yaw_sigma_rad: 0.08
+  runtime_config_is_canonical: true
+  runtime_yaml_is_export: 04_Программа/perception/perception_config.yaml
+  profile_parameter_metadata:
+    calibration.calibration_grid_xy_m.x:
+      unit: m in BASE X
+      provenance: M4 calibration procedure; top-face height is derived from M2 table
+        and object dimensions; see camera_calibration.json.
+      owner: M4
+    calibration.calibration_grid_xy_m.y:
+      unit: m in BASE Y
+      provenance: M4 calibration procedure; top-face height is derived from M2 table
+        and object dimensions; see camera_calibration.json.
+      owner: M4
+    calibration.method:
+      unit: method ID
+      provenance: M4 calibration procedure; top-face height is derived from M2 table
+        and object dimensions; see camera_calibration.json.
+      owner: M4
+    calibration.object_top_plane_z_m:
+      unit: m in BASE/world Z
+      provenance: M4 calibration procedure; top-face height is derived from M2 table
+        and object dimensions; see camera_calibration.json.
+      owner: M4
+    camera.fovy_deg:
+      unit: degree
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    camera.intrinsics_fx_fy_cx_cy_px:
+      unit: px (fx, fy, cx, cy)
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    camera.mujoco_quaternion_wxyz:
+      unit: unit quaternion (w, x, y, z)
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    camera.position_world_m:
+      unit: m (x, y, z)
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    candidate_detection.area_model_note:
+      unit: model note
+      provenance: Inherited or calculated from the M2 workcell/object/camera geometry;
+        cross-checked against the M2 SSOT.
+      owner: M4
+    candidate_detection.close_kernel_px:
+      unit: px (kernel width, height)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.lab_delta_threshold:
+      unit: Delta E*ab (CIE Lab scale)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.max_area_px:
+      unit: px^2
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.max_aspect_ratio:
+      unit: dimensionless (long/short side)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.merged_candidate_area_ratio:
+      unit: ratio of nominal projected area
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.method:
+      unit: method ID
+      provenance: M4 sensor/perception interface decision; see the M4 specification
+        and acceptance report.
+      owner: M4
+    candidate_detection.min_area_px:
+      unit: px^2
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.min_aspect_ratio:
+      unit: dimensionless (long/short side)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.nominal_projected_object_area_px:
+      unit: px^2
+      provenance: Inherited or calculated from the M2 workcell/object/camera geometry;
+        cross-checked against the M2 SSOT.
+      owner: M4
+    candidate_detection.object_size_xy_m:
+      unit: m (width, length)
+      provenance: Inherited or calculated from the M2 workcell/object/camera geometry;
+        cross-checked against the M2 SSOT.
+      owner: M4
+    candidate_detection.occlusion_area_ratio:
+      unit: ratio of nominal projected area
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    candidate_detection.open_kernel_px:
+      unit: px (kernel width, height)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.conversion:
+      unit: OpenCV conversion code
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.BLUE.hue_intervals:
+      unit: OpenCV HSV hue units (0..179)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.BLUE.saturation_min:
+      unit: 8-bit saturation level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.BLUE.value_min:
+      unit: 8-bit value level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.GREEN.hue_intervals:
+      unit: OpenCV HSV hue units (0..179)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.GREEN.saturation_min:
+      unit: 8-bit saturation level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.GREEN.value_min:
+      unit: 8-bit value level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.RED.hue_intervals:
+      unit: OpenCV HSV hue units (0..179)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.RED.saturation_min:
+      unit: 8-bit saturation level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hsv_ranges.RED.value_min:
+      unit: 8-bit value level
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.hue_range:
+      unit: OpenCV HSV hue units (0..179)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.interior_erode_kernel_px:
+      unit: px (kernel width and height)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.minimum_class_margin:
+      unit: score fraction (0..1)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.minimum_confidence:
+      unit: score fraction (0..1)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.saturation_range:
+      unit: 8-bit levels (0..255)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    color_classifier.value_range:
+      unit: 8-bit levels (0..255)
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    merged_candidate_split.enabled:
+      unit: boolean
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    merged_candidate_split.maximum_component_area_ratio:
+      unit: ratio of nominal projected area
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    merged_candidate_split.minimum_component_area_ratio:
+      unit: ratio of nominal projected area
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    merged_candidate_split.minimum_components:
+      unit: component count
+      provenance: Frozen from the M4 tuning split (seeds 20260401..20260424) and separate
+        blank-scene checks; never tuned on validation seeds.
+      owner: M4
+    photometric_normalization.anchor_xy_bounds_m:
+      unit: m in BASE (X range, Y range)
+      provenance: M4 fixed-background/lighting study; validated under the stated controlled
+        MuJoCo lighting envelope.
+      owner: M4
+    photometric_normalization.gain_clip:
+      unit: per-channel multiplicative gain
+      provenance: M4 fixed-background/lighting study; validated under the stated controlled
+        MuJoCo lighting envelope.
+      owner: M4
+    photometric_normalization.method:
+      unit: method ID
+      provenance: M4 fixed-background/lighting study; validated under the stated controlled
+        MuJoCo lighting envelope.
+      owner: M4
+    pose_estimation.center_method:
+      unit: method ID
+      provenance: M4 geometry-method comparison on tuning data; square symmetry is
+        inherited from M2 object geometry.
+      owner: M4
+    pose_estimation.symmetry_period_rad:
+      unit: rad
+      provenance: M4 geometry-method comparison on tuning data; square symmetry is
+        inherited from M2 object geometry.
+      owner: M4
+    pose_estimation.yaw_interval_rad:
+      unit: rad in BASE
+      provenance: M4 geometry-method comparison on tuning data; square symmetry is
+        inherited from M2 object geometry.
+      owner: M4
+    pose_estimation.yaw_method:
+      unit: method ID
+      provenance: M4 geometry-method comparison on tuning data; square symmetry is
+        inherited from M2 object geometry.
+      owner: M4
+    regions.input_xy_bounds_m:
+      unit: m in BASE (X range, Y range)
+      provenance: Inherited or calculated from the M2 workcell/object/camera geometry;
+        cross-checked against the M2 SSOT.
+      owner: M4
+    sensor_interface.camera_config_id:
+      unit: configuration ID
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    sensor_interface.dtype:
+      unit: data type
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    sensor_interface.frame_format:
+      unit: pixel channel order
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    sensor_interface.maximum_age_s:
+      unit: s
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    sensor_interface.pixel_origin:
+      unit: image-coordinate convention
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    sensor_interface.resolution_px:
+      unit: px (width, height)
+      provenance: Inherited from M1/M2 sensor contract and M2 SSOT; rendered RGB/channel
+        behavior is checked in M4.
+      owner: M4
+    tracking.max_distance_m:
+      unit: m in BASE XY
+      provenance: M4 deterministic two-frame noise/repeated-observation contract check.
+      owner: M4
+    tracking.max_missed_frames:
+      unit: frames
+      provenance: M4 deterministic two-frame noise/repeated-observation contract check.
+      owner: M4
+    tracking.method:
+      unit: method ID
+      provenance: M4 deterministic two-frame noise/repeated-observation contract check.
+      owner: M4
+    uncertainty.position_sigma_m:
+      unit: m (configured position allowance)
+      provenance: Configured engineering allowance in M4; not a calibrated probability
+        distribution or guaranteed worst-case bound.
+      owner: M4
+    uncertainty.yaw_sigma_rad:
+      unit: rad (configured angular allowance)
+      provenance: Configured engineering allowance in M4; not a calibrated probability
+        distribution or guaranteed worst-case bound.
+      owner: M4
+  basis: Tuning split only; camera and workcell geometry are inherited from M2 SSOT.

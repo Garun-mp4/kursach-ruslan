@@ -1,0 +1,118 @@
+{
+  "configuration_version": "M7-v1.0",
+  "ssot_sha256": "7699a5120b7bd90158b4494efe5275fc544af46167765c56621690bc8dd60c73",
+  "baseline_collision_sample_step_m": 0.001,
+  "input_contract": "M4 DetectionBatch estimated fields; no simulator object qpos, true color, object identity, or true pose is passed to Planner.",
+  "randomness": "None; all cases and detector records are deterministic.",
+  "cases": [
+    {
+      "case_id": "center_red_yaw0",
+      "xy_estimate_m": [
+        0.0,
+        -0.25
+      ],
+      "class_label": "RED",
+      "yaw_estimate_rad": 0.0,
+      "obstacles": [],
+      "step_scale": 1.0,
+      "expected": "SUCCESS",
+      "purpose": "Central input, zero estimated yaw, red destination."
+    },
+    {
+      "case_id": "left_green_yaw45",
+      "xy_estimate_m": [
+        -0.075,
+        -0.285
+      ],
+      "class_label": "GREEN",
+      "yaw_estimate_rad": 0.7853981633974483,
+      "obstacles": [],
+      "step_scale": 1.0,
+      "expected": "SUCCESS",
+      "purpose": "Left input region, square-object symmetry, green destination."
+    },
+    {
+      "case_id": "right_blue_yaw30",
+      "xy_estimate_m": [
+        0.075,
+        -0.215
+      ],
+      "class_label": "BLUE",
+      "yaw_estimate_rad": 0.5235987755982988,
+      "obstacles": [],
+      "step_scale": 1.0,
+      "expected": "SUCCESS",
+      "purpose": "Right input region, nonzero yaw, blue destination."
+    },
+    {
+      "case_id": "upper_edge_red_yaw90",
+      "xy_estimate_m": [
+        -0.1,
+        -0.18
+      ],
+      "class_label": "RED",
+      "yaw_estimate_rad": 1.5707963267948966,
+      "obstacles": [],
+      "step_scale": 1.0,
+      "expected": "SUCCESS",
+      "purpose": "Near upper-left boundary of configured input region."
+    },
+    {
+      "case_id": "center_green_two_obstacles",
+      "xy_estimate_m": [
+        0.0,
+        -0.25
+      ],
+      "class_label": "GREEN",
+      "yaw_estimate_rad": 0.35,
+      "obstacles": [
+        [
+          -0.085,
+          -0.25
+        ],
+        [
+          0.085,
+          -0.25
+        ]
+      ],
+      "step_scale": 1.0,
+      "expected": "SUCCESS",
+      "purpose": "Two additional perceived objects remain in the input field while planning a green sort."
+    },
+    {
+      "case_id": "near_obstacle_safe_reject",
+      "xy_estimate_m": [
+        0.0,
+        -0.25
+      ],
+      "class_label": "GREEN",
+      "yaw_estimate_rad": 0.35,
+      "obstacles": [
+        [
+          -0.065,
+          -0.25
+        ],
+        [
+          0.065,
+          -0.25
+        ]
+      ],
+      "step_scale": 1.0,
+      "expected": "COLLISION_GRASP",
+      "purpose": "Non-target object encroaches on the finger clearance envelope; planner must refuse before pickup."
+    },
+    {
+      "case_id": "center_red_halfstep",
+      "xy_estimate_m": [
+        0.0,
+        -0.25
+      ],
+      "class_label": "RED",
+      "yaw_estimate_rad": 0.0,
+      "obstacles": [],
+      "step_scale": 0.5,
+      "expected": "SUCCESS",
+      "purpose": "Half-baseline sampling for convergence comparison with center_red_yaw0."
+    }
+  ]
+}

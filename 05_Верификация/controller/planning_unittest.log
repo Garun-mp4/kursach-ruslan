@@ -1,0 +1,26 @@
+test_signed_distance_report_keeps_a_conservative_global_lower_bound (test_collision.CollisionTests.test_signed_distance_report_keeps_a_conservative_global_lower_bound) ... ok
+test_thin_static_obstacle_is_missed_at_endpoints_but_caught_mid_sweep (test_collision.CollisionTests.test_thin_static_obstacle_is_missed_at_endpoints_but_caught_mid_sweep) ... ok
+test_both_ik_branches_are_available_and_scored_without_branch_switch (test_planner.PlannerTests.test_both_ik_branches_are_available_and_scored_without_branch_switch) ... ok
+test_full_cycle_is_preflighted_before_plan_success (test_planner.PlannerTests.test_full_cycle_is_preflighted_before_plan_success) ... ok
+test_invalid_obstacle_track_makes_the_scene_incomplete (test_planner.PlannerTests.test_invalid_obstacle_track_makes_the_scene_incomplete) ... ok
+test_no_explicit_free_slot_is_rejected_before_pick (test_planner.PlannerTests.test_no_explicit_free_slot_is_rejected_before_pick) ... ok
+test_stale_perception_is_rejected_fail_closed (test_planner.PlannerTests.test_stale_perception_is_rejected_fail_closed) ... ok
+test_uncertainty_over_budget_is_rejected_before_pick (test_planner.PlannerTests.test_uncertainty_over_budget_is_rejected_before_pick) ... ok
+test_unknown_color_with_valid_geometry_remains_a_collision_obstacle (test_planner.PlannerTests.test_unknown_color_with_valid_geometry_remains_a_collision_obstacle) ... ok
+test_unknown_target_is_rejected_without_a_motion_plan (test_planner.PlannerTests.test_unknown_target_is_rejected_without_a_motion_plan) ... ok
+test_unknown_target_remains_unselectable (test_planner.PlannerTests.test_unknown_target_remains_unselectable) ... ok
+test_annotation_only_series_are_not_legend_entries (test_plot_layout.LegendLayoutTests.test_annotation_only_series_are_not_legend_entries) ... ok
+test_single_row_keeps_legacy_baseline (test_plot_layout.LegendLayoutTests.test_single_row_keeps_legacy_baseline) ... ok
+test_wrapped_legend_stays_above_x_axis_label (test_plot_layout.LegendLayoutTests.test_wrapped_legend_stays_above_x_axis_label) ... ok
+test_different_observation_fails_comparison (test_sampling.SamplingRefinementTests.test_different_observation_fails_comparison) ... ok
+test_material_path_change_fails_convergence (test_sampling.SamplingRefinementTests.test_material_path_change_fails_convergence) ... ok
+test_refined_collision_fails_convergence (test_sampling.SamplingRefinementTests.test_refined_collision_fails_convergence) ... ok
+test_same_safe_route_passes_and_reports_grid_sensitive_clearance (test_sampling.SamplingRefinementTests.test_same_safe_route_passes_and_reports_grid_sensitive_clearance) ... ok
+test_invalid_or_nonpositive_sweep_step_is_rejected (test_trajectory.TrajectoryTests.test_invalid_or_nonpositive_sweep_step_is_rejected) ... ok
+test_quintic_phase_parameterization_respects_joint_and_gripper_limits (test_trajectory.TrajectoryTests.test_quintic_phase_parameterization_respects_joint_and_gripper_limits) ... ok
+test_tcp_fk_velocity_and_acceleration_match_jacobian_chain_rule (test_trajectory.TrajectoryTests.test_tcp_fk_velocity_and_acceleration_match_jacobian_chain_rule) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 14.962s
+
+OK

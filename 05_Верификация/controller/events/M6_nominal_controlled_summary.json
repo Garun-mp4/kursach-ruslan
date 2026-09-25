@@ -1,0 +1,30 @@
+{
+  "event_count": 46,
+  "event_types": [
+    "CYCLE_CLOSED",
+    "EXECUTION_COMMAND_ISSUED",
+    "HOLD_CONFIRMED",
+    "OBSERVATION_REQUESTED",
+    "PLACEMENT_CONTROLLER_CONFIRMED",
+    "PLAN_ACCEPTED",
+    "PLAN_REQUESTED",
+    "STATE_ENTERED",
+    "STATE_TRANSITION",
+    "TARGET_SELECTED",
+    "TEST_LIFT_COMPLETE"
+  ],
+  "evidence_class": "CONTROLLED_TEST_DOUBLE",
+  "final_state": "OBSERVE",
+  "run_id": "M6-controlled-nominal",
+  "slot_states": [
+    {
+      "slot_id": "RED:0",
+      "status": "OCCUPIED"
+    }
+  ],
+  "success_contract": "PLACED_CONTROLLER_CONFIRMED from public evidence only; not evaluator-confirmed physical sorting",
+  "trace": "05_Верификация/controller/events/M6_nominal_controlled_double.jsonl",
+  "track_statuses": {
+    "7": "PLACED_CONTROLLER_CONFIRMED"
+  }
+}

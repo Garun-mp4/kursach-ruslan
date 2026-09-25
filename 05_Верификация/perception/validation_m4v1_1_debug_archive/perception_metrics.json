@@ -1,0 +1,3027 @@
+{
+  "status": "NOT_PASS",
+  "milestone": "M4-v1.1",
+  "configuration_version": "M4-v1.1",
+  "ssot_version_before_m4": "M4-v1.1",
+  "camera_calibration": {
+    "n": 64,
+    "mean_x_error_m": 3.735615666177459e-05,
+    "mean_y_error_m": -4.6929263417001886e-05,
+    "rmse_x_m": 0.00025914411324930625,
+    "rmse_y_m": 0.00018953788564047164,
+    "mean_planar_error_m": 0.00027684401618719475,
+    "p95_planar_error_m": 0.000511785107825167,
+    "max_planar_error_m": 0.0008793145175878263,
+    "max_error_point_index": 52
+  },
+  "camera_calibration_id": "M4-HOMOGRAPHY-TOP-PLANE-v1.1",
+  "frozen_config_sha256": "7980e33834f204386e94d11880f7f4643a2093fd0c24f6aee3621ea73012cc72",
+  "ssot_sha256_after_profile_freeze": "1ea4ee5933cb3e5bc85d40e1c90e8f3ee41ab72ff3218bdbe1c074564bf3e3b4",
+  "runtime_config_sha256": "f4127b2f233a7411f8005b1a8a80b857dd2e2ce6641e1f0768c227058779d785",
+  "validation_seed_ids": [
+    20261000,
+    20261001,
+    20261002,
+    20261003,
+    20261004,
+    20261005,
+    20261006,
+    20261007,
+    20261008,
+    20261009,
+    20261010,
+    20261011,
+    20261012,
+    20261013,
+    20261014,
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019,
+    20261020,
+    20261021,
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026,
+    20261027,
+    20261028,
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038,
+    20261039,
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058,
+    20261059,
+    20261060,
+    20261061,
+    20261062,
+    20261063,
+    20261064,
+    20261065,
+    20261066,
+    20261067
+  ],
+  "validation_frame_count": 68,
+  "validation_object_count": 368,
+  "validation_dataset_hash": "301feb79b14aad9d4d5a01690c1d00a339a8eedf80204ead6fbc9b8fdf5e761c",
+  "validation_metrics": {
+    "object_detection": {
+      "tp": 368,
+      "fp": 25,
+      "fn": 0,
+      "precision": 0.9363867684478372,
+      "recall": 1.0,
+      "f1": 0.9671484888304863
+    },
+    "color_confusion_matrix_counts": {
+      "RED": {
+        "RED": 117,
+        "GREEN": 0,
+        "BLUE": 0,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "GREEN": {
+        "RED": 0,
+        "GREEN": 117,
+        "BLUE": 0,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "BLUE": {
+        "RED": 0,
+        "GREEN": 0,
+        "BLUE": 119,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "UNKNOWN": {
+        "RED": 0,
+        "GREEN": 0,
+        "BLUE": 0,
+        "UNKNOWN": 15,
+        "NO_DETECTION": 0
+      }
+    },
+    "color_metrics": {
+      "RED": {
+        "support": 117,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "GREEN": {
+        "support": 117,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "BLUE": {
+        "support": 119,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "UNKNOWN": {
+        "support": 15,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "color_sample_counts": {
+      "RED": 117,
+      "GREEN": 117,
+      "BLUE": 119,
+      "UNKNOWN": 15
+    },
+    "xy_planar_error_summary_m": {
+      "n": 365,
+      "mean": 0.000478223734512244,
+      "median": 0.000394499341441658,
+      "p95": 0.0010395789892911596,
+      "max": 0.002250335369991679
+    },
+    "x_signed_error_summary_m": {
+      "n": 365,
+      "mean": 7.10117211182548e-05,
+      "median": 1.6688696400299352e-05,
+      "p95": 0.0007124932125128518,
+      "max": 0.0022500462289154685
+    },
+    "y_signed_error_summary_m": {
+      "n": 365,
+      "mean": -0.0003490245806115201,
+      "median": -0.00035957993489410534,
+      "p95": 3.7762944523678395e-05,
+      "max": 0.0009857094495965002
+    },
+    "yaw_error_summary_rad": {
+      "n": 368,
+      "mean": 0.014760513065724724,
+      "median": 0.006049348997122617,
+      "p95": 0.05788901155948025,
+      "max": 0.750535494685556
+    },
+    "center_estimator_comparison": {
+      "contour_centroid_planar_error_m": {
+        "n": 368,
+        "mean": 0.0016812351472211217,
+        "median": 0.0016235533163359542,
+        "p95": 0.0022142549949790437,
+        "max": 0.013816550429797504
+      },
+      "min_area_rectangle_center_planar_error_m": {
+        "n": 368,
+        "mean": 0.0016607150081812889,
+        "median": 0.0016092909601904026,
+        "p95": 0.002309589604820707,
+        "max": 0.013939906859112118
+      },
+      "color_core_centroid_planar_error_m": {
+        "n": 365,
+        "mean": 0.0004538588216974072,
+        "median": 0.0003932785925492178,
+        "p95": 0.0009533084610038403,
+        "max": 0.0020891264042989925
+      },
+      "color_core_rectangle_center_planar_error_m": {
+        "n": 365,
+        "mean": 0.000478223734512244,
+        "median": 0.000394499341441658,
+        "p95": 0.0010395789892911596,
+        "max": 0.002250335369991679
+      }
+    },
+    "lighting_strata": {
+      "0.75": {
+        "frames": 23,
+        "gt": 123,
+        "tp": 123,
+        "fp": 25,
+        "fn": 0,
+        "precision": 0.831081081081081,
+        "recall": 1.0
+      },
+      "1.0": {
+        "frames": 23,
+        "gt": 123,
+        "tp": 123,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "1.25": {
+        "frames": 22,
+        "gt": 122,
+        "tp": 122,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "operating_domain": {
+      "definition": "Median evaluator-only local Lab Euclidean contrast ΔE*ab on a 7x7 pixel crop after configured photometric normalization is at least the frozen candidate threshold.",
+      "contrast_threshold_delta_e76": 16.0,
+      "supported_object_count": 365,
+      "supported_matched_count": 365,
+      "supported_false_negative_count": 0,
+      "supported_false_positive_count": 25,
+      "supported_precision": 0.9358974358974359,
+      "supported_recall": 1.0,
+      "supported_valid_count": 365,
+      "supported_rejected_count": 0,
+      "out_of_domain_object_count": 3,
+      "contrast_by_object": [
+        {
+          "seed": 20261000,
+          "truth_index": 0,
+          "contrast_delta_e76": 137.36083984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261001,
+          "truth_index": 0,
+          "contrast_delta_e76": 107.3964614868164,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261002,
+          "truth_index": 0,
+          "contrast_delta_e76": 161.536376953125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261003,
+          "truth_index": 0,
+          "contrast_delta_e76": 128.5106964111328,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261004,
+          "truth_index": 0,
+          "contrast_delta_e76": 111.09005737304688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261005,
+          "truth_index": 0,
+          "contrast_delta_e76": 163.9451141357422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261006,
+          "truth_index": 0,
+          "contrast_delta_e76": 105.4798583984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261007,
+          "truth_index": 0,
+          "contrast_delta_e76": 151.99012756347656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 0,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 1,
+          "contrast_delta_e76": 155.9679412841797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 2,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 3,
+          "contrast_delta_e76": 156.214599609375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 4,
+          "contrast_delta_e76": 125.09996032714844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261008,
+          "truth_index": 5,
+          "contrast_delta_e76": 137.38632202148438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 0,
+          "contrast_delta_e76": 168.75425720214844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 1,
+          "contrast_delta_e76": 111.73181915283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 2,
+          "contrast_delta_e76": 110.18620300292969,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 3,
+          "contrast_delta_e76": 135.37355041503906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 4,
+          "contrast_delta_e76": 151.16217041015625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261009,
+          "truth_index": 5,
+          "contrast_delta_e76": 135.21095275878906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 0,
+          "contrast_delta_e76": 136.16534423828125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 1,
+          "contrast_delta_e76": 166.33700561523438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 2,
+          "contrast_delta_e76": 175.9857940673828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 3,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 4,
+          "contrast_delta_e76": 111.09005737304688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261010,
+          "truth_index": 5,
+          "contrast_delta_e76": 130.63690185546875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 0,
+          "contrast_delta_e76": 126.22994995117188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 1,
+          "contrast_delta_e76": 132.4348907470703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 2,
+          "contrast_delta_e76": 102.88829040527344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 3,
+          "contrast_delta_e76": 146.74127197265625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 4,
+          "contrast_delta_e76": 98.10198974609375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261011,
+          "truth_index": 5,
+          "contrast_delta_e76": 170.3555145263672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 0,
+          "contrast_delta_e76": 157.292724609375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.29052734375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 2,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 3,
+          "contrast_delta_e76": 178.40684509277344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 4,
+          "contrast_delta_e76": 138.4990997314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261012,
+          "truth_index": 5,
+          "contrast_delta_e76": 85.66212463378906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 0,
+          "contrast_delta_e76": 140.40655517578125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 1,
+          "contrast_delta_e76": 134.38377380371094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 2,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 3,
+          "contrast_delta_e76": 140.40655517578125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 4,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261013,
+          "truth_index": 5,
+          "contrast_delta_e76": 137.14590454101562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 0,
+          "contrast_delta_e76": 106.21205139160156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 1,
+          "contrast_delta_e76": 129.34063720703125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 2,
+          "contrast_delta_e76": 102.12737274169922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 3,
+          "contrast_delta_e76": 131.70042419433594,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 4,
+          "contrast_delta_e76": 148.46885681152344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261014,
+          "truth_index": 5,
+          "contrast_delta_e76": 166.06324768066406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 0,
+          "contrast_delta_e76": 110.45813751220703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 1,
+          "contrast_delta_e76": 130.1383819580078,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 2,
+          "contrast_delta_e76": 134.70709228515625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 3,
+          "contrast_delta_e76": 162.6868133544922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 4,
+          "contrast_delta_e76": 180.9447479248047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261015,
+          "truth_index": 5,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 0,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 1,
+          "contrast_delta_e76": 145.39944458007812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 2,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 3,
+          "contrast_delta_e76": 126.5661849975586,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 4,
+          "contrast_delta_e76": 136.85394287109375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261016,
+          "truth_index": 5,
+          "contrast_delta_e76": 0.0,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 0,
+          "contrast_delta_e76": 159.12887573242188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 1,
+          "contrast_delta_e76": 101.87246704101562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 2,
+          "contrast_delta_e76": 132.09844970703125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 3,
+          "contrast_delta_e76": 132.77801513671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 4,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261017,
+          "truth_index": 5,
+          "contrast_delta_e76": 156.97451782226562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 0,
+          "contrast_delta_e76": 130.97328186035156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.60741424560547,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 2,
+          "contrast_delta_e76": 139.79270935058594,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 3,
+          "contrast_delta_e76": 110.18620300292969,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 4,
+          "contrast_delta_e76": 173.06068420410156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261018,
+          "truth_index": 5,
+          "contrast_delta_e76": 172.24691772460938,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 0,
+          "contrast_delta_e76": 105.4798583984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 1,
+          "contrast_delta_e76": 164.2041473388672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 2,
+          "contrast_delta_e76": 126.90941619873047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 3,
+          "contrast_delta_e76": 138.4990997314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 4,
+          "contrast_delta_e76": 174.6940155029297,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261019,
+          "truth_index": 5,
+          "contrast_delta_e76": 105.13800811767578,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 0,
+          "contrast_delta_e76": 131.33924865722656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 1,
+          "contrast_delta_e76": 154.8838348388672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 2,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 3,
+          "contrast_delta_e76": 150.09996032714844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 4,
+          "contrast_delta_e76": 131.1373291015625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261020,
+          "truth_index": 5,
+          "contrast_delta_e76": 19.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 0,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 1,
+          "contrast_delta_e76": 105.4798583984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 2,
+          "contrast_delta_e76": 138.14846801757812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 3,
+          "contrast_delta_e76": 161.0310516357422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 4,
+          "contrast_delta_e76": 137.0146026611328,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261021,
+          "truth_index": 5,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 0,
+          "contrast_delta_e76": 132.24598693847656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 1,
+          "contrast_delta_e76": 131.5940704345703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 2,
+          "contrast_delta_e76": 170.07644653320312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 3,
+          "contrast_delta_e76": 105.42295837402344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 4,
+          "contrast_delta_e76": 175.19418334960938,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261022,
+          "truth_index": 5,
+          "contrast_delta_e76": 106.48943328857422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 0,
+          "contrast_delta_e76": 108.02314758300781,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 1,
+          "contrast_delta_e76": 104.69956970214844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 2,
+          "contrast_delta_e76": 123.9798355102539,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 3,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 4,
+          "contrast_delta_e76": 130.98472595214844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261023,
+          "truth_index": 5,
+          "contrast_delta_e76": 144.6754913330078,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 0,
+          "contrast_delta_e76": 104.08169555664062,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 1,
+          "contrast_delta_e76": 155.38983154296875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 2,
+          "contrast_delta_e76": 173.8763885498047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 3,
+          "contrast_delta_e76": 110.45361328125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 4,
+          "contrast_delta_e76": 130.43772888183594,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261024,
+          "truth_index": 5,
+          "contrast_delta_e76": 52.31634521484375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 0,
+          "contrast_delta_e76": 106.21205139160156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 1,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 2,
+          "contrast_delta_e76": 148.5294647216797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 3,
+          "contrast_delta_e76": 100.64790344238281,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 4,
+          "contrast_delta_e76": 138.4990997314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261025,
+          "truth_index": 5,
+          "contrast_delta_e76": 129.16268920898438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 0,
+          "contrast_delta_e76": 102.61091613769531,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 1,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 2,
+          "contrast_delta_e76": 149.5894317626953,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 3,
+          "contrast_delta_e76": 123.79822540283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 4,
+          "contrast_delta_e76": 141.75331115722656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261026,
+          "truth_index": 5,
+          "contrast_delta_e76": 135.21095275878906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 0,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 1,
+          "contrast_delta_e76": 111.73181915283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 2,
+          "contrast_delta_e76": 106.10843658447266,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 3,
+          "contrast_delta_e76": 171.45553588867188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 4,
+          "contrast_delta_e76": 137.36083984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261027,
+          "truth_index": 5,
+          "contrast_delta_e76": 135.71661376953125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 0,
+          "contrast_delta_e76": 133.7348175048828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 1,
+          "contrast_delta_e76": 130.79754638671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 2,
+          "contrast_delta_e76": 163.3829803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 3,
+          "contrast_delta_e76": 106.77546691894531,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 4,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261028,
+          "truth_index": 5,
+          "contrast_delta_e76": 134.3949432373047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 0,
+          "contrast_delta_e76": 155.9679412841797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 1,
+          "contrast_delta_e76": 125.09996032714844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 2,
+          "contrast_delta_e76": 130.79754638671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 3,
+          "contrast_delta_e76": 150.18988037109375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 4,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261029,
+          "truth_index": 5,
+          "contrast_delta_e76": 97.64220428466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 0,
+          "contrast_delta_e76": 137.36083984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 1,
+          "contrast_delta_e76": 169.07394409179688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 2,
+          "contrast_delta_e76": 111.09005737304688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 3,
+          "contrast_delta_e76": 139.00718688964844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 4,
+          "contrast_delta_e76": 151.99012756347656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261030,
+          "truth_index": 5,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 0,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 1,
+          "contrast_delta_e76": 107.01869201660156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 2,
+          "contrast_delta_e76": 139.00718688964844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 3,
+          "contrast_delta_e76": 143.2270965576172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 4,
+          "contrast_delta_e76": 134.4209747314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261031,
+          "truth_index": 5,
+          "contrast_delta_e76": 166.67933654785156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 0,
+          "contrast_delta_e76": 103.0436782836914,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 1,
+          "contrast_delta_e76": 134.74049377441406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 2,
+          "contrast_delta_e76": 100.64790344238281,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 3,
+          "contrast_delta_e76": 138.3148651123047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 4,
+          "contrast_delta_e76": 134.71080017089844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261032,
+          "truth_index": 5,
+          "contrast_delta_e76": 87.1148681640625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 0,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 1,
+          "contrast_delta_e76": 135.4769287109375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 2,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 3,
+          "contrast_delta_e76": 135.0370330810547,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 4,
+          "contrast_delta_e76": 176.669189453125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261033,
+          "truth_index": 5,
+          "contrast_delta_e76": 150.41941833496094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 0,
+          "contrast_delta_e76": 105.4798583984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 1,
+          "contrast_delta_e76": 134.4209747314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 2,
+          "contrast_delta_e76": 166.33700561523438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 3,
+          "contrast_delta_e76": 107.46627044677734,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 4,
+          "contrast_delta_e76": 136.50640869140625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261034,
+          "truth_index": 5,
+          "contrast_delta_e76": 163.3829803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 0,
+          "contrast_delta_e76": 129.16268920898438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 1,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 2,
+          "contrast_delta_e76": 132.27622985839844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 3,
+          "contrast_delta_e76": 102.88829040527344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 4,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261035,
+          "truth_index": 5,
+          "contrast_delta_e76": 156.97451782226562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 0,
+          "contrast_delta_e76": 140.65560913085938,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 1,
+          "contrast_delta_e76": 171.9593048095703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 2,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 3,
+          "contrast_delta_e76": 135.0370330810547,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 4,
+          "contrast_delta_e76": 107.89810180664062,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261036,
+          "truth_index": 5,
+          "contrast_delta_e76": 10.630146026611328,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 0,
+          "contrast_delta_e76": 105.59355926513672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 1,
+          "contrast_delta_e76": 153.80831909179688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 2,
+          "contrast_delta_e76": 166.06324768066406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 3,
+          "contrast_delta_e76": 132.27622985839844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 4,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261037,
+          "truth_index": 5,
+          "contrast_delta_e76": 129.34063720703125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 0,
+          "contrast_delta_e76": 123.79822540283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 1,
+          "contrast_delta_e76": 165.2906494140625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 2,
+          "contrast_delta_e76": 145.9109344482422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 3,
+          "contrast_delta_e76": 101.87246704101562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 4,
+          "contrast_delta_e76": 130.63690185546875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261038,
+          "truth_index": 5,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 0,
+          "contrast_delta_e76": 110.53506469726562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 1,
+          "contrast_delta_e76": 172.27304077148438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 2,
+          "contrast_delta_e76": 105.75916290283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 3,
+          "contrast_delta_e76": 134.9962921142578,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 4,
+          "contrast_delta_e76": 137.0146026611328,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261039,
+          "truth_index": 5,
+          "contrast_delta_e76": 174.37889099121094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 0,
+          "contrast_delta_e76": 110.0999526977539,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 1,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 2,
+          "contrast_delta_e76": 135.91909790039062,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 3,
+          "contrast_delta_e76": 156.97451782226562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 4,
+          "contrast_delta_e76": 131.0953826904297,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261040,
+          "truth_index": 5,
+          "contrast_delta_e76": 48.6723747253418,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 0,
+          "contrast_delta_e76": 134.89254760742188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 1,
+          "contrast_delta_e76": 102.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 2,
+          "contrast_delta_e76": 123.9798355102539,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 3,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 4,
+          "contrast_delta_e76": 145.9109344482422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261041,
+          "truth_index": 5,
+          "contrast_delta_e76": 134.70709228515625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 0,
+          "contrast_delta_e76": 110.5893325805664,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 1,
+          "contrast_delta_e76": 170.12054443359375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 2,
+          "contrast_delta_e76": 141.32586669921875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 3,
+          "contrast_delta_e76": 168.75425720214844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 4,
+          "contrast_delta_e76": 134.63282775878906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261042,
+          "truth_index": 5,
+          "contrast_delta_e76": 104.75209045410156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 0,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 1,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 2,
+          "contrast_delta_e76": 130.79754638671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 3,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 4,
+          "contrast_delta_e76": 164.2041473388672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261043,
+          "truth_index": 5,
+          "contrast_delta_e76": 129.16268920898438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 0,
+          "contrast_delta_e76": 102.61091613769531,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 1,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 2,
+          "contrast_delta_e76": 170.3555145263672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 3,
+          "contrast_delta_e76": 123.79822540283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 4,
+          "contrast_delta_e76": 125.09996032714844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261044,
+          "truth_index": 5,
+          "contrast_delta_e76": 51.332252502441406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 0,
+          "contrast_delta_e76": 108.3143539428711,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 1,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 2,
+          "contrast_delta_e76": 130.79754638671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 3,
+          "contrast_delta_e76": 179.81100463867188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 4,
+          "contrast_delta_e76": 111.73181915283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261045,
+          "truth_index": 5,
+          "contrast_delta_e76": 138.4990997314453,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 0,
+          "contrast_delta_e76": 137.20787048339844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 1,
+          "contrast_delta_e76": 105.75916290283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 2,
+          "contrast_delta_e76": 167.15560913085938,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 3,
+          "contrast_delta_e76": 134.86660766601562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 4,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261046,
+          "truth_index": 5,
+          "contrast_delta_e76": 153.80831909179688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 0,
+          "contrast_delta_e76": 103.2279052734375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 1,
+          "contrast_delta_e76": 128.03515625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 2,
+          "contrast_delta_e76": 98.69650268554688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 3,
+          "contrast_delta_e76": 141.03900146484375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 4,
+          "contrast_delta_e76": 150.92713928222656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261047,
+          "truth_index": 5,
+          "contrast_delta_e76": 129.8422088623047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 0,
+          "contrast_delta_e76": 140.30323791503906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 1,
+          "contrast_delta_e76": 168.75425720214844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 2,
+          "contrast_delta_e76": 161.536376953125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 3,
+          "contrast_delta_e76": 108.101806640625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 4,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261048,
+          "truth_index": 5,
+          "contrast_delta_e76": 136.3561553955078,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 0,
+          "contrast_delta_e76": 174.7369384765625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 1,
+          "contrast_delta_e76": 107.68936920166016,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 2,
+          "contrast_delta_e76": 166.33700561523438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 3,
+          "contrast_delta_e76": 108.94493865966797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 4,
+          "contrast_delta_e76": 127.20455932617188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261049,
+          "truth_index": 5,
+          "contrast_delta_e76": 126.22994995117188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 0,
+          "contrast_delta_e76": 105.72605895996094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 1,
+          "contrast_delta_e76": 102.2790298461914,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 2,
+          "contrast_delta_e76": 133.0714111328125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 3,
+          "contrast_delta_e76": 135.58023071289062,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 4,
+          "contrast_delta_e76": 145.4853973388672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261050,
+          "truth_index": 5,
+          "contrast_delta_e76": 131.76873779296875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 0,
+          "contrast_delta_e76": 132.8946990966797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 1,
+          "contrast_delta_e76": 156.97451782226562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 2,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 3,
+          "contrast_delta_e76": 111.09005737304688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 4,
+          "contrast_delta_e76": 135.91909790039062,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261051,
+          "truth_index": 5,
+          "contrast_delta_e76": 174.6682586669922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 0,
+          "contrast_delta_e76": 137.36083984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.18620300292969,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 2,
+          "contrast_delta_e76": 140.40655517578125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 3,
+          "contrast_delta_e76": 162.0555419921875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 4,
+          "contrast_delta_e76": 126.5661849975586,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261052,
+          "truth_index": 5,
+          "contrast_delta_e76": 87.60137176513672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 0,
+          "contrast_delta_e76": 129.8422088623047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 1,
+          "contrast_delta_e76": 156.47683715820312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 2,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 3,
+          "contrast_delta_e76": 130.79754638671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 4,
+          "contrast_delta_e76": 102.61091613769531,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261053,
+          "truth_index": 5,
+          "contrast_delta_e76": 160.46495056152344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 0,
+          "contrast_delta_e76": 154.31785583496094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 1,
+          "contrast_delta_e76": 137.71347045898438,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 2,
+          "contrast_delta_e76": 133.40164184570312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 3,
+          "contrast_delta_e76": 167.93748474121094,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 4,
+          "contrast_delta_e76": 111.09005737304688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261054,
+          "truth_index": 5,
+          "contrast_delta_e76": 109.46232604980469,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 0,
+          "contrast_delta_e76": 163.3829803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 1,
+          "contrast_delta_e76": 157.04139709472656,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 2,
+          "contrast_delta_e76": 108.82554626464844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 3,
+          "contrast_delta_e76": 129.49903869628906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 4,
+          "contrast_delta_e76": 104.12492370605469,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261055,
+          "truth_index": 5,
+          "contrast_delta_e76": 139.3628387451172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 0,
+          "contrast_delta_e76": 107.11209106445312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 1,
+          "contrast_delta_e76": 135.66134643554688,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 2,
+          "contrast_delta_e76": 129.96153259277344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 3,
+          "contrast_delta_e76": 132.1892547607422,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 4,
+          "contrast_delta_e76": 170.3555145263672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261056,
+          "truth_index": 5,
+          "contrast_delta_e76": 0.0,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 0,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.18620300292969,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 2,
+          "contrast_delta_e76": 138.14846801757812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 3,
+          "contrast_delta_e76": 135.0370330810547,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 4,
+          "contrast_delta_e76": 171.67701721191406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261057,
+          "truth_index": 5,
+          "contrast_delta_e76": 155.38983154296875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 0,
+          "contrast_delta_e76": 137.0146026611328,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.5893325805664,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 2,
+          "contrast_delta_e76": 105.59355926513672,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 3,
+          "contrast_delta_e76": 149.35862731933594,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 4,
+          "contrast_delta_e76": 129.34449768066406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261058,
+          "truth_index": 5,
+          "contrast_delta_e76": 149.82656860351562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 0,
+          "contrast_delta_e76": 151.16217041015625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 1,
+          "contrast_delta_e76": 106.04715728759766,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 2,
+          "contrast_delta_e76": 101.87246704101562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 3,
+          "contrast_delta_e76": 140.20343017578125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 4,
+          "contrast_delta_e76": 123.15031433105469,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261059,
+          "truth_index": 5,
+          "contrast_delta_e76": 135.21095275878906,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 0,
+          "contrast_delta_e76": 153.99026489257812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 1,
+          "contrast_delta_e76": 139.95713806152344,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 2,
+          "contrast_delta_e76": 131.4838409423828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 3,
+          "contrast_delta_e76": 107.81929016113281,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 4,
+          "contrast_delta_e76": 108.6554183959961,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261060,
+          "truth_index": 5,
+          "contrast_delta_e76": 64.28841400146484,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 0,
+          "contrast_delta_e76": 157.79733276367188,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 1,
+          "contrast_delta_e76": 133.7348175048828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 2,
+          "contrast_delta_e76": 132.77801513671875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 3,
+          "contrast_delta_e76": 155.14187622070312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 4,
+          "contrast_delta_e76": 103.50362396240234,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261061,
+          "truth_index": 5,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 0,
+          "contrast_delta_e76": 155.9679412841797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 1,
+          "contrast_delta_e76": 110.18620300292969,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 2,
+          "contrast_delta_e76": 124.59935760498047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 3,
+          "contrast_delta_e76": 106.8363265991211,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 4,
+          "contrast_delta_e76": 123.79822540283203,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261062,
+          "truth_index": 5,
+          "contrast_delta_e76": 140.40655517578125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 0,
+          "contrast_delta_e76": 106.10843658447266,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 1,
+          "contrast_delta_e76": 136.85394287109375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 2,
+          "contrast_delta_e76": 163.3829803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 3,
+          "contrast_delta_e76": 162.0555419921875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 4,
+          "contrast_delta_e76": 110.60741424560547,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261063,
+          "truth_index": 5,
+          "contrast_delta_e76": 133.7348175048828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 0,
+          "contrast_delta_e76": 163.14410400390625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 1,
+          "contrast_delta_e76": 104.24010467529297,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 2,
+          "contrast_delta_e76": 137.20787048339844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 3,
+          "contrast_delta_e76": 108.19426727294922,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 4,
+          "contrast_delta_e76": 145.39944458007812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261064,
+          "truth_index": 5,
+          "contrast_delta_e76": 50.45790481567383,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 0,
+          "contrast_delta_e76": 171.17242431640625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 1,
+          "contrast_delta_e76": 136.7077178955078,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 2,
+          "contrast_delta_e76": 106.21205139160156,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 3,
+          "contrast_delta_e76": 104.85704803466797,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 4,
+          "contrast_delta_e76": 146.96258544921875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261065,
+          "truth_index": 5,
+          "contrast_delta_e76": 126.5661849975586,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 0,
+          "contrast_delta_e76": 139.00718688964844,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 1,
+          "contrast_delta_e76": 149.82656860351562,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 2,
+          "contrast_delta_e76": 133.7348175048828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 3,
+          "contrast_delta_e76": 110.45361328125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 4,
+          "contrast_delta_e76": 160.9720458984375,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261066,
+          "truth_index": 5,
+          "contrast_delta_e76": 108.2081298828125,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 0,
+          "contrast_delta_e76": 165.2906494140625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 1,
+          "contrast_delta_e76": 101.25709533691406,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 2,
+          "contrast_delta_e76": 154.39236450195312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 3,
+          "contrast_delta_e76": 139.10427856445312,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 4,
+          "contrast_delta_e76": 106.96728515625,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20261067,
+          "truth_index": 5,
+          "contrast_delta_e76": 132.7554168701172,
+          "in_declared_domain": true
+        }
+      ]
+    }
+  },
+  "grasp_budget": {
+    "perception_xy_budget_m": 0.002,
+    "total_xy_budget_m": 0.004,
+    "yaw_error_limit_rad": 0.17453292519943295,
+    "xy_p95_remaining_total_budget_m": 0.0029604210107088405
+  },
+  "sensor_contract_checks": {
+    "synthetic_rgb_to_hsv": [
+      [
+        0,
+        255,
+        255
+      ],
+      [
+        60,
+        255,
+        255
+      ],
+      [
+        120,
+        255,
+        255
+      ]
+    ],
+    "synthetic_rgb_channel_order_test_pass": true,
+    "actual_mujoco_render_channel_order_samples": {
+      "RED": [
+        {
+          "mean_rgb": [
+            254.67999267578125,
+            65.87999725341797,
+            58.47999954223633
+          ],
+          "dominant_channel": 0,
+          "pass": true
+        }
+      ]
+    },
+    "actual_mujoco_rgb_channel_order_test_pass": true,
+    "rgb_channel_order_test_pass": true,
+    "fresh_frame_status": "OK",
+    "missing_frame_status": "NO_FRAME",
+    "stale_frame_status": "STALE",
+    "malformed_frame_status": "INVALID",
+    "wrong_camera_status": "INVALID",
+    "future_timestamp_status": "INVALID",
+    "failure_returns_no_detections": true,
+    "fresh_frame_age_test_s": 0.02
+  },
+  "tracking_contract": {
+    "frame1_track_ids": [
+      1,
+      2
+    ],
+    "frame2_track_ids": [
+      1
+    ],
+    "matched_observation_pairs": [
+      {
+        "distance_m": 0.0,
+        "track_id_frame1": 1,
+        "track_id_frame2": 1,
+        "stable": true
+      }
+    ],
+    "stable_track_ids": false,
+    "unique_ids_per_frame": true,
+    "uses_internal_simulator_id": false
+  },
+  "occlusion_tests": {
+    "cases": [
+      {
+        "name": "partial_occlusion_proxy",
+        "candidate_count": 1,
+        "statuses": [
+          "OCCLUDED"
+        ],
+        "reasons": [
+          "OVERSIZED_OR_MERGED_CANDIDATE"
+        ],
+        "safe_rejection": true,
+        "ground_truth_only_evaluator": true
+      },
+      {
+        "name": "m2_arm_over_input",
+        "candidate_count": 0,
+        "statuses": [],
+        "reasons": [],
+        "detection_xy_error_m": [],
+        "safe_rejection": true,
+        "ground_truth_only_evaluator": true
+      }
+    ]
+  },
+  "empty_scene_stress": {
+    "frame_count": 36,
+    "lighting_levels": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "noise_sigma_levels": [
+      0.0,
+      1.5,
+      3.0
+    ],
+    "repeats_per_combination": 4,
+    "false_positive_total": 9,
+    "empty_scene_no_candidates": false,
+    "rows": [
+      {
+        "seed": 20261100,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 2,
+        "status": "OK",
+        "reasons": [
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS",
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS"
+        ]
+      },
+      {
+        "seed": 20261101,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 2,
+        "status": "OK",
+        "reasons": [
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS",
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS"
+        ]
+      },
+      {
+        "seed": 20261102,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 2,
+        "status": "OK",
+        "reasons": [
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS",
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS"
+        ]
+      },
+      {
+        "seed": 20261103,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 2,
+        "status": "OK",
+        "reasons": [
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS",
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS"
+        ]
+      },
+      {
+        "seed": 20261104,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261105,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261106,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261107,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 1,
+        "status": "OK",
+        "reasons": [
+          "CANDIDATE_SHAPE_OUTSIDE_SQUARE_BOUNDS"
+        ]
+      },
+      {
+        "seed": 20261108,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261109,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261110,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261111,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261112,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261113,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261114,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261115,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261116,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261117,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261118,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261119,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261120,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261121,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261122,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261123,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261124,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261125,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261126,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261127,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261128,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261129,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261130,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261131,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261132,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261133,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261134,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261135,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      }
+    ]
+  },
+  "sorting_zone_exclusion": {
+    "zones_tested": [
+      {
+        "zone": "RED",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      },
+      {
+        "zone": "GREEN",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      },
+      {
+        "zone": "BLUE",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      }
+    ],
+    "all_sorting_zones_excluded": true
+  },
+  "neighbor_object_checks": {
+    "cases": [
+      {
+        "name": "separated_8mm_gap",
+        "center_separation_m": 0.036,
+        "candidate_count": 2,
+        "statuses": [
+          "VALID",
+          "VALID"
+        ],
+        "reasons": [
+          null,
+          null
+        ],
+        "matched_objects": 2,
+        "missed_objects": 0,
+        "false_detections": 0,
+        "pass": true
+      },
+      {
+        "name": "touching_faces",
+        "center_separation_m": 0.028,
+        "candidate_count": 1,
+        "statuses": [
+          "OCCLUDED"
+        ],
+        "reasons": [
+          "OVERSIZED_OR_MERGED_CANDIDATE"
+        ],
+        "matched_objects": 1,
+        "missed_objects": 1,
+        "false_detections": 0,
+        "pass": true
+      }
+    ],
+    "all_neighbor_checks_pass": true
+  },
+  "acceptance_checks": {
+    "supported_domain_detection_has_no_misses_or_false_candidates": false,
+    "no_unsafe_known_color_cross_classification": true,
+    "unknown_not_promoted_to_supported_color": true,
+    "xy_p95_within_perception_budget": true,
+    "yaw_p95_within_limit": true,
+    "rgb_channel_order": true,
+    "missing_stale_malformed_handled": true,
+    "tracking_ids_stable_under_small_noise": false,
+    "sorting_zones_excluded": true,
+    "empty_scene_has_no_false_candidates": false,
+    "neighbor_object_cases_handled": true,
+    "occlusion_cases_rejected_safely": true,
+    "ground_truth_boundary_audit": true,
+    "tuning_validation_seeds_disjoint": true,
+    "config_frozen_before_validation": true
+  },
+  "classification_safety_counts": {
+    "known_color_cross_classifications": 0,
+    "unknown_promoted_to_supported_color": 0
+  },
+  "worst_cases": [
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20261040,
+      "files_prefix": "01_largest_xy_error_20261040"
+    },
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20261048,
+      "files_prefix": "02_largest_xy_error_20261048"
+    },
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20261032,
+      "files_prefix": "03_largest_xy_error_20261032"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20261036,
+      "files_prefix": "04_rejected_candidate_large_residual_20261036"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20261056,
+      "files_prefix": "05_rejected_candidate_large_residual_20261056"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20261016,
+      "files_prefix": "06_rejected_candidate_large_residual_20261016"
+    }
+  ],
+  "ground_truth_boundary": {
+    "runtime_perception_files": [
+      "__init__.py",
+      "detector.py",
+      "geometry.py",
+      "tracker.py",
+      "types.py"
+    ],
+    "violations": [],
+    "no_hidden_ground_truth_access": true,
+    "sensor_input_contract": "RGB CameraFrame + calibration/config + static background reference",
+    "evaluator_truth_separate": true
+  },
+  "versions": {
+    "python": "3.12.10",
+    "opencv": "4.14.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.5.3",
+    "config_sha256": "7980e33834f204386e94d11880f7f4643a2093fd0c24f6aee3621ea73012cc72"
+  },
+  "limitations": [
+    "Objects are matte RGB cuboids rendered with controlled MuJoCo lighting; real camera color response is not modeled.",
+    "Position estimation is calibrated for one fixed object-top plane at z=16 mm; other object heights are unsupported.",
+    "The candidate detector is ROI/background based and requires a clear, calibrated tabletop background.",
+    "Neutral objects whose rendered local contrast from the tabletop falls below the measured operating limit cannot be guaranteed detectable; a pale-gray-on-white miss remains a documented limitation and remains counted in raw recall.",
+    "Touching/merged objects and substantial occlusion require rejection; this module does not separate arbitrary piles.",
+    "The homography validates image-to-BASE geometry but is not a collision-free grasp or trajectory proof."
+  ]
+}

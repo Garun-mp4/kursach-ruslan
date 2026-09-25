@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "name": "separated_8mm_gap",
+      "center_separation_m": 0.036,
+      "candidate_count": 2,
+      "statuses": [
+        "VALID",
+        "VALID"
+      ],
+      "reasons": [
+        null,
+        null
+      ],
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_detections": 0,
+      "pass": true
+    },
+    {
+      "name": "touching_faces",
+      "center_separation_m": 0.028,
+      "candidate_count": 2,
+      "statuses": [
+        "VALID",
+        "VALID"
+      ],
+      "reasons": [
+        null,
+        null
+      ],
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_detections": 0,
+      "pass": true
+    }
+  ],
+  "all_neighbor_checks_pass": true
+}

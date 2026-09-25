@@ -1,0 +1,14 @@
+test_recovery_beyond_time_budget_fails_closed (test_recovery.ActuatorRecoveryPathTests.test_recovery_beyond_time_budget_fails_closed) ... ok
+test_recovery_reverses_checked_plan_prefix_and_opens_before_retreat (test_recovery.ActuatorRecoveryPathTests.test_recovery_reverses_checked_plan_prefix_and_opens_before_retreat) ... ok
+test_recovery_without_pregrasp_anchor_fails_closed (test_recovery.ActuatorRecoveryPathTests.test_recovery_without_pregrasp_anchor_fails_closed) ... ok
+test_any_remaining_finger_contact_fails_closed (test_recovery.RecoveryFeedbackTests.test_any_remaining_finger_contact_fails_closed) ... ok
+test_completed_actuator_and_clear_public_touch_sensors_complete_recovery (test_recovery.RecoveryFeedbackTests.test_completed_actuator_and_clear_public_touch_sensors_complete_recovery) ... ok
+test_failed_actuator_does_not_claim_recovery (test_recovery.RecoveryFeedbackTests.test_failed_actuator_does_not_claim_recovery) ... ok
+test_invalid_joint_state_fails_closed (test_recovery.RecoveryFeedbackTests.test_invalid_joint_state_fails_closed) ... ok
+test_mismatched_request_cannot_complete_recovery (test_recovery.RecoveryFeedbackTests.test_mismatched_request_cannot_complete_recovery) ... ok
+test_two_contacts_are_reported_as_still_holding (test_recovery.RecoveryFeedbackTests.test_two_contacts_are_reported_as_still_holding) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

@@ -1,0 +1,57 @@
+{
+  "status": "FAIL",
+  "test": "thin_static_obstacle_between_collision_free_endpoint_poses",
+  "configuration_version": "M7-v1.0",
+  "ssot_sha256": "7699a5120b7bd90158b4494efe5275fc544af46167765c56621690bc8dd60c73",
+  "model_sha256": "3158478697d27e44abb3430c9c8e54137a42e9dd9c1145610648b4105f16eeb4",
+  "modified_model_obstacle": {
+    "name": "m5_thin_obstacle",
+    "center_m": [
+      -0.3558909236273086,
+      -0.013578838324886478,
+      0.05550000000000002
+    ],
+    "half_extents_m": [
+      0.002,
+      0.002,
+      0.0005
+    ]
+  },
+  "q_start": [
+    2.6179938779914944,
+    1.0471975511965976,
+    0.015,
+    0.0
+  ],
+  "q_midpoint": [
+    2.6179938779914944,
+    1.0471975511965976,
+    0.0475,
+    0.0
+  ],
+  "q_end": [
+    2.6179938779914944,
+    1.0471975511965976,
+    0.08,
+    0.0
+  ],
+  "sweep_sample_step_bound_m": 0.001,
+  "observations": {
+    "start_valid": true,
+    "midpoint_valid": false,
+    "midpoint_reports_named_obstacle": true,
+    "end_valid": false,
+    "midpoint_violations": [
+      {
+        "category": "robot_environment",
+        "geom_a": "finger_left_collision",
+        "geom_b": "m5_thin_obstacle",
+        "phase": "TRANSFER",
+        "distance_m": -0.005732050807402849,
+        "required_m": 0.00625,
+        "reason": "Signed distance is below the required phase clearance."
+      }
+    ]
+  },
+  "interpretation": "This controlled static obstacle test confirms midpoint collision detection when both endpoint configurations are collision-free; it does not prove continuous collision freedom for arbitrary motion."
+}

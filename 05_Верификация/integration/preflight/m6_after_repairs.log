@@ -1,0 +1,115 @@
+{
+  "report": "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\05_Верификация\\controller\\M6_verification_report.json",
+  "suite_results": [
+    {
+      "name": "controller",
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\controller\\tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_run": 45,
+      "duration_s": 0.128,
+      "log": "05_Верификация/controller/controller_unittest.log",
+      "passed": true
+    },
+    {
+      "name": "planning",
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\planning\\tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_run": 21,
+      "duration_s": 14.962,
+      "log": "05_Верификация/controller/planning_unittest.log",
+      "passed": true
+    },
+    {
+      "name": "perception",
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\perception\\tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests_run": 10,
+      "duration_s": 1.298,
+      "log": "05_Верификация/controller/perception_unittest.log",
+      "passed": true
+    }
+  ],
+  "controlled_trace": {
+    "run_id": "M6-controlled-nominal",
+    "evidence_class": "CONTROLLED_TEST_DOUBLE",
+    "final_state": "OBSERVE",
+    "track_statuses": {
+      "7": "PLACED_CONTROLLER_CONFIRMED"
+    },
+    "slot_states": [
+      {
+        "slot_id": "RED:0",
+        "status": "OCCUPIED"
+      }
+    ],
+    "event_count": 46,
+    "event_types": [
+      "CYCLE_CLOSED",
+      "EXECUTION_COMMAND_ISSUED",
+      "HOLD_CONFIRMED",
+      "OBSERVATION_REQUESTED",
+      "PLACEMENT_CONTROLLER_CONFIRMED",
+      "PLAN_ACCEPTED",
+      "PLAN_REQUESTED",
+      "STATE_ENTERED",
+      "STATE_TRANSITION",
+      "TARGET_SELECTED",
+      "TEST_LIFT_COMPLETE"
+    ],
+    "success_contract": "PLACED_CONTROLLER_CONFIRMED from public evidence only; not evaluator-confirmed physical sorting",
+    "trace": "05_Верификация/controller/events/M6_nominal_controlled_double.jsonl"
+  },
+  "diagram_exports": {
+    "fsm_state": {
+      "source_bytes": 14532,
+      "svg_bytes": 835495,
+      "png_bytes": 271920,
+      "pdf_bytes": 77792,
+      "png_size_px": [
+        1614,
+        1002
+      ],
+      "valid_xml": true,
+      "valid_png": true,
+      "valid_pdf": true
+    },
+    "sorting_flow": {
+      "source_bytes": 13547,
+      "svg_bytes": 1790779,
+      "png_bytes": 603802,
+      "pdf_bytes": 90352,
+      "png_size_px": [
+        1706,
+        1163
+      ],
+      "valid_xml": true,
+      "valid_png": true,
+      "valid_pdf": true
+    }
+  },
+  "passed": true
+}

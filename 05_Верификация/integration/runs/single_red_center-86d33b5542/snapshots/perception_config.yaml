@@ -1,0 +1,136 @@
+config_version: M4-v1.3
+sensor_interface:
+  frame_format: RGB
+  dtype: uint8
+  resolution_px:
+  - 640
+  - 480
+  pixel_origin: top-left
+  maximum_age_s: 0.04
+  camera_config_id: overhead_rgb_M2_validated_v1
+camera:
+  position_world_m:
+  - 0.0
+  - 0.0
+  - 1.05
+  mujoco_quaternion_wxyz:
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  fovy_deg: 50.0
+  intrinsics_fx_fy_cx_cy_px:
+  - 514.6816609222941
+  - 514.6816609222941
+  - 319.5
+  - 239.5
+calibration:
+  method: planar_homography_from_fiducials
+  object_top_plane_z_m: 0.016
+  calibration_grid_xy_m:
+    x:
+    - -0.42
+    - -0.28
+    - -0.14
+    - 0.0
+    - 0.14
+    - 0.28
+    - 0.42
+    y:
+    - -0.36
+    - -0.24
+    - -0.12
+    - 0.0
+    - 0.12
+    - 0.24
+    - 0.36
+regions:
+  input_xy_bounds_m:
+  - - -0.145
+    - 0.145
+  - - -0.355
+    - -0.145
+candidate_detection:
+  method: background_delta_e_lab
+  object_size_xy_m:
+  - 0.028
+  - 0.028
+  lab_delta_threshold: 16.0
+  open_kernel_px:
+  - 3
+  - 3
+  close_kernel_px:
+  - 3
+  - 3
+  min_area_px: 8.0
+  max_area_px: 520.0
+  nominal_projected_object_area_px: 194.0
+  min_aspect_ratio: 0.45
+  max_aspect_ratio: 2.2
+  occlusion_area_ratio: 0.58
+  merged_candidate_area_ratio: 1.55
+  area_model_note: Nominal 28x28 mm square viewed at z=16 mm using M2 camera intrinsics.
+merged_candidate_split:
+  enabled: true
+  minimum_component_area_ratio: 0.4
+  maximum_component_area_ratio: 1.4
+  minimum_components: 2
+color_classifier:
+  conversion: COLOR_RGB2HSV
+  hue_range:
+  - 0
+  - 179
+  saturation_range:
+  - 0
+  - 255
+  value_range:
+  - 0
+  - 255
+  hsv_ranges:
+    RED:
+      hue_intervals:
+      - - 0
+        - 7
+      - - 176
+        - 179
+      saturation_min: 155
+      value_min: 231
+    GREEN:
+      hue_intervals:
+      - - 57
+        - 69
+      saturation_min: 156
+      value_min: 231
+    BLUE:
+      hue_intervals:
+      - - 108
+        - 121
+      saturation_min: 157
+      value_min: 231
+  interior_erode_kernel_px: 3
+  minimum_confidence: 0.36
+  minimum_class_margin: 0.22
+pose_estimation:
+  center_method: color_core_rect_center
+  yaw_method: longest_edge_of_world_min_area_rectangle
+  symmetry_period_rad: 1.5707963267948966
+  yaw_interval_rad:
+  - 0.0
+  - 1.5707963267948966
+photometric_normalization:
+  method: per_channel_median_gain_on_static_table_anchor
+  anchor_xy_bounds_m:
+  - - -0.46
+    - -0.36
+  - - 0.33
+    - 0.43
+  gain_clip:
+  - 0.55
+  - 1.8
+tracking:
+  method: deterministic_greedy_nearest_neighbor
+  max_distance_m: 0.055
+  max_missed_frames: 2
+uncertainty:
+  position_sigma_m: 0.0015
+  yaw_sigma_rad: 0.08

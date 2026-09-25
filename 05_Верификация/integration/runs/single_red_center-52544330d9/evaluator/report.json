@@ -1,0 +1,64 @@
+{
+  "schema_version": "M7-evaluator-v1.0",
+  "run_id": "single_red_center-52544330d9",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 88.07999999997612,
+  "controller_final_state": "SAFE_STOP",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": [
+        "ACTUATOR_TRACKING_TIMEOUT",
+        "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+      ]
+    }
+  },
+  "controller_reports_done": false,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        0.001141963214980931,
+        -0.25013185644348906,
+        0.05276217004340366
+      ],
+      "linear_velocity_m_s": [
+        2.781043105988152e-11,
+        1.217125551500809e-09,
+        -0.03466836156660552
+      ],
+      "angular_velocity_rad_s": [
+        1.6655277501920388e-07,
+        -8.427824272815296e-08,
+        6.048962741023799e-11
+      ],
+      "nearest_slot_id": null,
+      "nearest_zone": null,
+      "horizontal_slot_error_m": 0.49662586644805684,
+      "resting_on_tray": false,
+      "settled": false,
+      "physical_sort_success": false
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 81.56,
+      "bilateral_contact_samples": 164,
+      "maximum_relative_slip_m": 0.00707506913
+    }
+  },
+  "physical_sort_success_count": 0,
+  "physical_sort_failure_count": 1,
+  "all_active_objects_physically_sorted": false,
+  "controller_done_and_physical_success": false,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "M7-evaluator-v1.0",
+  "run_id": "single_red_center-52495d9e5c",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 0.030000000000000013,
+  "controller_final_state": "SAFE_STOP",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": [
+        "M5_PLAN_CONTRACT_MISMATCH"
+      ]
+    }
+  },
+  "controller_reports_done": false,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        0.0,
+        -0.25,
+        0.007846303793049613
+      ],
+      "linear_velocity_m_s": [
+        0.0,
+        0.0,
+        0.0014593022352118485
+      ],
+      "angular_velocity_rad_s": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nearest_slot_id": null,
+      "nearest_zone": null,
+      "horizontal_slot_error_m": 0.4969346033433373,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": false
+    }
+  ],
+  "physical_sort_success_count": 0,
+  "physical_sort_failure_count": 1,
+  "all_active_objects_physically_sorted": false,
+  "controller_done_and_physical_success": false,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

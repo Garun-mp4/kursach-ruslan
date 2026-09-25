@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\planning\run_m5_verification.py", line 700, in <module>
+    summary=run()
+            ^^^^^
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\planning\run_m5_verification.py", line 645, in run
+    context = load_context()
+              ^^^^^^^^^^^^^^
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\planning\context.py", line 57, in load_context
+    raise ValueError(f"Planner requires an M5-frozen SSOT, got {version!r}")
+ValueError: Planner requires an M5-frozen SSOT, got 'M4-v1.3'

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="70" y="54" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#173042">SCARA: расчетная XY-рабочая область</text>
+<text x="70" y="94" font-family="Arial,sans-serif" font-size="18" fill="#526a7a">Точки получены FK-сеткой; границы — аналитически из длин звеньев и физического диапазона J2.</text>
+<rect x="70" y="125" width="900" height="900" fill="#f7fafc" stroke="#d5dde4" stroke-width="2"/>
+<circle cx="520.0" cy="575.0" r="372.11538461538464" fill="#d9eaf4" stroke="#286487" stroke-width="4"/>
+<circle cx="520.0" cy="575.0" r="99.52172474570864" fill="#f7fafc" stroke="#bd684a" stroke-width="4"/>
+<circle cx="520.0" cy="575.0" r="25.96153846153846" fill="none" stroke="#7d8790" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="87" y="186" width="866" height="778" fill="none" stroke="#8d9ca5" stroke-width="2" />
+<rect x="416" y="722" width="208" height="139" fill="#e8edf0" stroke="#607d8b" stroke-width="3" />
+<rect x="260" y="324" width="139" height="138" fill="#d65b5b" stroke="#29404b" stroke-width="2" />
+<circle cx="299" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="330" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="360" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<text x="260" y="314" font-family="Arial,sans-serif" font-size="18" fill="#173042">RED</text>
+<rect x="451" y="246" width="138" height="139" fill="#399a69" stroke="#29404b" stroke-width="2" />
+<circle cx="490" cy="315" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="520" cy="315" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="550" cy="315" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<text x="451" y="236" font-family="Arial,sans-serif" font-size="18" fill="#173042">GREEN</text>
+<rect x="641" y="324" width="139" height="138" fill="#477bd1" stroke="#29404b" stroke-width="2" />
+<circle cx="680" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="710" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<circle cx="741" cy="393" r="6" fill="#fff" stroke="#152b38" stroke-width="2"/>
+<text x="641" y="314" font-family="Arial,sans-serif" font-size="18" fill="#173042">BLUE</text>
+<circle cx="477" cy="817" r="5" fill="#566e7a" stroke="#fff"/>
+<circle cx="520" cy="817" r="5" fill="#566e7a" stroke="#fff"/>
+<circle cx="563" cy="817" r="5" fill="#566e7a" stroke="#fff"/>
+<circle cx="477" cy="765" r="5" fill="#566e7a" stroke="#fff"/>
+<circle cx="520" cy="765" r="5" fill="#566e7a" stroke="#fff"/>
+<circle cx="563" cy="765" r="5" fill="#566e7a" stroke="#fff"/>
+<rect x="506" y="561" width="28" height="28" fill="#173042" stroke="#fff" stroke-width="2"/>
+<text x="540" y="605" font-family="Arial,sans-serif" font-size="18" fill="#173042">BASE</text>
+<text x="405" y="1090" font-family="Arial,sans-serif" font-size="22" fill="#173042">X, m</text>
+<text x="20" y="560" font-family="Arial,sans-serif" font-size="22" fill="#173042">Y, m</text>
+<text x="1040" y="160" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#173042">Границы и чтение графика</text>
+<text x="1040" y="215" font-family="Arial,sans-serif" font-size="19" fill="#173042">Допустимая область: r=0.1150…0.430 m</text>
+<text x="1040" y="260" font-family="Arial,sans-serif" font-size="19" fill="#173042">Внутренняя граница задается лимитом J2 ±150°</text>
+<text x="1040" y="305" font-family="Arial,sans-serif" font-size="19" fill="#173042">Теоретическая геометрия: r_min=0.030 m</text>
+<text x="1040" y="375" font-family="Arial,sans-serif" font-size="19" fill="#173042">Вход: серый прямоугольник; точки — объекты</text>
+<text x="1040" y="420" font-family="Arial,sans-serif" font-size="19" fill="#173042">Лотки: цветные прямоугольники; точки — слоты</text>
+<text x="1040" y="540" font-family="Arial,sans-serif" font-size="22" fill="#173042">TCP z=0.006…0.103 m</text>
+<text x="1040" y="585" font-family="Arial,sans-serif" font-size="19" fill="#173042">Pick z=0.008 m; place z=0.012 m</text>
+<text x="1040" y="670" font-family="Arial,sans-serif" font-size="19" fill="#173042">FK-сетка: 21,901 конфигураций</text>
+<text x="1040" y="715" font-family="Arial,sans-serif" font-size="19" fill="#173042">Ориентация достижима по q4; это не карта коллизий.</text>
+</svg>

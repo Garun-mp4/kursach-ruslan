@@ -1,0 +1,5 @@
+# M2 dependencies for the parameterized model and independent checks.
+mujoco==3.14.0
+numpy==2.5.3
+PyYAML==6.0.3
+Pillow==12.0.0

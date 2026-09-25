@@ -1,0 +1,2 @@
+-r ../planning/requirements.txt
+-r ../perception/requirements.txt

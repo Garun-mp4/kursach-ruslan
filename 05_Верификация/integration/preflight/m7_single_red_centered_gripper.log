@@ -1,0 +1,230 @@
+{
+  "run_id": "single_red_center-86d33b5542",
+  "state": "DONE",
+  "controller_summary": {
+    "run_id": "single_red_center-86d33b5542",
+    "final_state": "DONE",
+    "simulation_time_s": 0.06000000000000004,
+    "simulated_elapsed_s": 0.06000000000000004,
+    "control_ticks": 7,
+    "wall_time_s": 14.28620679999949,
+    "terminal_result": {
+      "run_id": "single_red_center-86d33b5542",
+      "status": "DONE",
+      "simulation_time_s": 0.06000000000000004,
+      "controller_track_status_counts": {
+        "PENDING": 0,
+        "RESERVED": 0,
+        "PLACED_CONTROLLER_CONFIRMED": 0,
+        "SKIPPED_UNKNOWN": 0,
+        "SKIPPED_UNREACHABLE": 1,
+        "SKIPPED_FULL_ZONE": 0,
+        "SAFE_FAILURE": 0,
+        "FAILED": 0
+      },
+      "controller_confirmed_placements": 0,
+      "safe_failures": 0,
+      "skipped_unknown": 0,
+      "skipped_unreachable": 1,
+      "skipped_full_zone": 0,
+      "evaluator_result": null,
+      "note": "DONE means the batch controller terminated; it does not imply 100% sort success.",
+      "slot_states": [
+        {
+          "slot_id": "BLUE:0",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "BLUE:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "BLUE:2",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "GREEN:0",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "GREEN:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "GREEN:2",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:0",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:2",
+          "status": "FREE"
+        }
+      ]
+    },
+    "track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SKIPPED_UNREACHABLE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "COLLISION_GRASP"
+        ]
+      }
+    },
+    "slot_states": [
+      {
+        "slot_id": "BLUE:0",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:1",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:2",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:0",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:1",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:2",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:0",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": "PLANNER_COLLISION_GRASP"
+      },
+      {
+        "slot_id": "RED:1",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:2",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      }
+    ],
+    "executor": {
+      "command_id": null,
+      "phase": null,
+      "active": false,
+      "max_joint_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_error_m": 0.0,
+      "terminal_status": null,
+      "terminal_reason": null
+    },
+    "controller_event_count": 21,
+    "controller_events_path": "controller_events.jsonl",
+    "telemetry_path": "telemetry.csv",
+    "perception_snapshots_path": "perception_snapshots.jsonl",
+    "initial_occupied_slots_from_public_rgb": []
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.0",
+    "run_id": "single_red_center-86d33b5542",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 0.06000000000000004,
+    "controller_final_state": "DONE",
+    "controller_track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SKIPPED_UNREACHABLE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "COLLISION_GRASP"
+        ]
+      }
+    },
+    "controller_reports_done": true,
+    "items": [
+      {
+        "body_name": "object_red_01",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          0.0,
+          -0.25,
+          0.007900670019429653
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          0.0014968598006102013
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.4969346033433373,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_red_01": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      }
+    },
+    "physical_sort_success_count": 0,
+    "physical_sort_failure_count": 1,
+    "all_active_objects_physically_sorted": false,
+    "controller_done_and_physical_success": false,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  }
+}

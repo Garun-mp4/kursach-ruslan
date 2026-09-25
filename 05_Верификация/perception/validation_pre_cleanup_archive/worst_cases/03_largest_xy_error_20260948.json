@@ -1,0 +1,109 @@
+{
+  "case_type": "largest_xy_error",
+  "seed": 20260948,
+  "ground_truth_objects_evaluator_only": [
+    {
+      "evaluator_key": "seed-20260948-item-0",
+      "class_label": "GREEN",
+      "x_m": 0.04958850957117402,
+      "y_m": -0.28182998070785525,
+      "yaw_rad": 0.10221384981943392,
+      "rgba": [
+        0.044000000000000004,
+        0.8580000000000001,
+        0.08800000000000001,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20260948-item-1",
+      "class_label": "BLUE",
+      "x_m": -0.04985076945276686,
+      "y_m": -0.21769722285343465,
+      "yaw_rad": 1.367068370868153,
+      "rgba": [
+        0.0288,
+        0.08639999999999999,
+        0.6624,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20260948-item-2",
+      "class_label": "BLUE",
+      "x_m": -0.0008126756038147063,
+      "y_m": -0.21705205090547275,
+      "yaw_rad": 0.25325569810236415,
+      "rgba": [
+        0.0512,
+        0.1536,
+        0.98,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20260948-item-3",
+      "class_label": "GREEN",
+      "x_m": -0.0001320338880782864,
+      "y_m": -0.28339264947641973,
+      "yaw_rad": 1.078299771892846,
+      "rgba": [
+        0.048,
+        0.9359999999999999,
+        0.096,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20260948-item-4",
+      "class_label": "RED",
+      "x_m": -0.04644650128170843,
+      "y_m": -0.2797629836991447,
+      "yaw_rad": 0.0277914312266016,
+      "rgba": [
+        0.98,
+        0.0768,
+        0.0512,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20260948-item-5",
+      "class_label": "UNKNOWN",
+      "x_m": 0.04863667729690158,
+      "y_m": -0.21863005099117394,
+      "yaw_rad": 0.08148453562850368,
+      "rgba": [
+        0.78,
+        0.06,
+        0.72,
+        1.0
+      ]
+    }
+  ],
+  "metrics_row": {
+    "seed": 20260948,
+    "truth_key": "seed-20260948-item-5",
+    "true_class": "UNKNOWN",
+    "predicted_class": "UNKNOWN",
+    "x_true_m": 0.04863667729690158,
+    "y_true_m": -0.21863005099117394,
+    "x_est_m": 0.05038960707055593,
+    "y_est_m": -0.21919458141157255,
+    "dx_m": 0.0017529297736543492,
+    "dy_m": -0.0005645304203986123,
+    "planar_error_m": 0.001841590993385698,
+    "yaw_true_mod_pi2_rad": 0.08148453562850368,
+    "yaw_est_mod_pi2_rad": 0.08331354061630769,
+    "yaw_error_mod_pi2_rad": 0.0018290049878040282,
+    "centroid_planar_error_m": 0.001841590993385698,
+    "min_rect_center_planar_error_m": 0.0018561202466775934,
+    "color_core_centroid_planar_error_m": 0.001841590993385698,
+    "color_core_rect_center_planar_error_m": 0.0018561202466775934,
+    "status": "UNKNOWN",
+    "reason": "NO_CONFIDENT_HSV_CLASS",
+    "confidence": 0.0,
+    "area_px": 210.5
+  },
+  "note": "Ground truth is retained in the evaluator-only worst-case report; controller perception receives image only."
+}

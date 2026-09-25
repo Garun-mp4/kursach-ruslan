@@ -1,0 +1,42 @@
+flowchart LR
+  CONF["Единый SSOT<br/>параметры и версии"]
+  SG["Генератор сцены<br/>конфигурация + seed"]
+  PHY["MuJoCo<br/>динамика, суставы, контакты"]
+  SA["Адаптер сенсоров<br/>RGB-кадр, разрешенные сигналы"]
+  PER["Perception<br/>цвет, XY, yaw, уверенность"]
+  KIN["Кинематика<br/>FK/IK, пределы сочленений"]
+  PLAN["Планировщик<br/>проверенные цель и траектория"]
+  CTRL["Контроллер / FSM<br/>решения и безопасные отказы"]
+  PA["Адаптер физики<br/>команды суставам"]
+  GTS["Изолированное хранилище<br/>истинный цвет, поза, ID, контакты"]
+  EVAL["Независимый оценщик<br/>метрики и фактический исход"]
+  REC["Визуализация и запись<br/>кадры + журналы, без обратной связи"]
+
+  CONF --> SG
+  CONF --> PHY
+  CONF --> KIN
+  CONF --> PLAN
+  SG -->|начальное размещение| PHY
+  PHY -->|отрендеренный RGB| SA
+  PHY -->|разрешенные суставы и контакт| SA
+  SA --> PER
+  PER --> PLAN
+  KIN --> PLAN
+  PLAN --> CTRL
+  CTRL --> PA
+  PA -->|ограниченные команды приводам| PHY
+  PHY -.->|истина только для оценки| GTS
+  GTS -.->|после/вне управляющего цикла| EVAL
+  PHY --> REC
+  CTRL --> REC
+
+  classDef config fill:#EEF2F7,stroke:#526273,color:#17212B,stroke-width:1.5px;
+  classDef engine fill:#E6F3F1,stroke:#16766B,color:#12312E,stroke-width:2px;
+  classDef control fill:#EDF2FF,stroke:#3156A3,color:#152B59,stroke-width:1.5px;
+  classDef truth fill:#FFF1EF,stroke:#C23B31,color:#54211D,stroke-width:2px,stroke-dasharray:6 4;
+  classDef record fill:#F7F2E8,stroke:#91713A,color:#3F321B,stroke-width:1.5px;
+  class CONF,SG config;
+  class PHY,PA engine;
+  class SA,PER,KIN,PLAN,CTRL control;
+  class GTS,EVAL truth;
+  class REC record;

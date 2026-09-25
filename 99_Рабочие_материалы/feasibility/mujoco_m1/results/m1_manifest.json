@@ -1,0 +1,22 @@
+{
+  "run_id": "M1-FS-20260924-R02-CLEAN",
+  "created_utc": "2026-09-24T16:16:18Z",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "mujoco": "3.14.0",
+  "numpy": "2.5.3",
+  "imageio": "2.37.0",
+  "imageio_ffmpeg": "0.6.0",
+  "seed": null,
+  "seed_note": "All feasibility scenes are deterministic and contain no randomized sampling.",
+  "input_sha256": {
+    "run_m1_feasibility.py": "96e0f95f3d965b5d774d4f2eaebf4983a83522fd41e87ff90a68850250f62704",
+    "requirements.txt": "3e4f35e824dae127566909b73d2fbe4ad0aba91c5e8c9570cadb5862837791ab",
+    "requirements-lock.txt": "77a94599984e4c7611689900e37205262a6ffd36670f0cf23a6dce50c05a91e0",
+    "models/gripper_probe_template.xml": "7afddeb9e82bb063765eeead787577c156fc2d0c6818f2e7fc08b6a41dc6c31a",
+    "models/prismatic_probe.xml": "8feb139e3b7c443cfe12be8d17d7c2cd5893254dc0c13df112c0ede4b17977e2",
+    "models/revolute_probe.xml": "2092f30811d8f6faad6eaa2138e5966a7b1f0ffff549dcba6bf83faa1eec1a30",
+    "models/rgb_camera_probe.xml": "10ffab446f5003d08b83dade81a2d9e601e154ea80ae3d5af00f53c66fe6e5c1"
+  },
+  "result_sha256": "565db0eb7f5f77064e6fb3a3241ad2e8a9e97558d24ab0eb157beb59dce0afcd"
+}

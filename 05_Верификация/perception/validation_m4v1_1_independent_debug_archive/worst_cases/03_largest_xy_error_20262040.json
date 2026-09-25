@@ -1,0 +1,500 @@
+{
+  "case_type": "largest_xy_error",
+  "seed": 20262040,
+  "ground_truth_objects_evaluator_only": [
+    {
+      "evaluator_key": "seed-20262040-item-0",
+      "class_label": "BLUE",
+      "x_m": -0.106,
+      "y_m": -0.27740049573041814,
+      "yaw_rad": 0.0,
+      "rgba": [
+        0.048,
+        0.144,
+        0.98,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20262040-item-1",
+      "class_label": "GREEN",
+      "x_m": 0.0014687428028821638,
+      "y_m": -0.2234802958112881,
+      "yaw_rad": 0.7853981633974483,
+      "rgba": [
+        0.044000000000000004,
+        0.8580000000000001,
+        0.08800000000000001,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20262040-item-2",
+      "class_label": "BLUE",
+      "x_m": 0.05334478465789956,
+      "y_m": -0.2776606210106042,
+      "yaw_rad": 1.5707963267948966,
+      "rgba": [
+        0.048,
+        0.144,
+        0.98,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20262040-item-3",
+      "class_label": "RED",
+      "x_m": -7.143037673131101e-05,
+      "y_m": -0.27751286729447533,
+      "yaw_rad": 0.8545316525120166,
+      "rgba": [
+        0.8370000000000001,
+        0.0558,
+        0.037200000000000004,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20262040-item-4",
+      "class_label": "GREEN",
+      "x_m": 0.04896579549259232,
+      "y_m": -0.21886873222404238,
+      "yaw_rad": 1.2720998977555744,
+      "rgba": [
+        0.0512,
+        0.98,
+        0.1024,
+        1.0
+      ]
+    },
+    {
+      "evaluator_key": "seed-20262040-item-5",
+      "class_label": "UNKNOWN",
+      "x_m": -0.050861836929071126,
+      "y_m": -0.22279339200151224,
+      "yaw_rad": 0.9382113270926609,
+      "rgba": [
+        0.35,
+        0.37,
+        0.39,
+        1.0
+      ]
+    }
+  ],
+  "case_target_evaluator_only": {
+    "evaluator_key": "seed-20262040-item-5",
+    "class_label": "UNKNOWN",
+    "x_m": -0.050861836929071126,
+    "y_m": -0.22279339200151224,
+    "yaw_rad": 0.9382113270926609,
+    "rgba": [
+      0.35,
+      0.37,
+      0.39,
+      1.0
+    ]
+  },
+  "detector_detections": [
+    {
+      "track_id": 40,
+      "class_label": "BLUE",
+      "xy_base_m": [
+        -0.10560811427827238,
+        -0.277646978328357
+      ],
+      "yaw_base_rad": 1.570656808214732,
+      "confidence": 0.9285714285714286,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 208.0,
+      "bbox_xywh_px": [
+        260,
+        369,
+        15,
+        16
+      ],
+      "center_uv_px": [
+        267.0,
+        377.5
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.0,
+          "GREEN": 0.0,
+          "BLUE": 0.9285714285714286,
+          "UNKNOWN": 0.07142857142857142
+        },
+        "class_margin": 0.8571428571428572,
+        "aspect_ratio": 1.0714285714285714,
+        "centroid_xy_base_m": [
+          -0.10560783127007303,
+          -0.2756352945985085
+        ],
+        "min_area_rect_center_xy_base_m": [
+          -0.10560783127007303,
+          -0.2756352945985085
+        ],
+        "color_core_centroid_xy_base_m": [
+          -0.10560811427827238,
+          -0.277646978328357
+        ],
+        "color_core_rect_center_xy_base_m": [
+          -0.10560811427827238,
+          -0.277646978328357
+        ],
+        "centroid_uv_px": [
+          267.0,
+          376.5
+        ],
+        "rect_center_uv_px": [
+          267.0,
+          376.5
+        ]
+      }
+    },
+    {
+      "track_id": 26,
+      "class_label": "UNKNOWN",
+      "xy_base_m": [
+        -0.050494305275184406,
+        -0.22131703609342446
+      ],
+      "yaw_base_rad": 0.9274353106790265,
+      "confidence": 1.0,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 212.0,
+      "bbox_xywh_px": [
+        285,
+        340,
+        20,
+        20
+      ],
+      "center_uv_px": [
+        294.40330188679246,
+        349.50235849056605
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.0,
+          "GREEN": 0.0,
+          "BLUE": 0.0,
+          "UNKNOWN": 1.0
+        },
+        "class_margin": 1.0,
+        "aspect_ratio": 1.067567695571697,
+        "centroid_xy_base_m": [
+          -0.050494305275184406,
+          -0.22131703609342446
+        ],
+        "min_area_rect_center_xy_base_m": [
+          -0.05046068277529408,
+          -0.2211917147397281
+        ],
+        "color_core_centroid_xy_base_m": [
+          -0.050494305275184406,
+          -0.22131703609342446
+        ],
+        "color_core_rect_center_xy_base_m": [
+          -0.05046068277529408,
+          -0.2211917147397281
+        ],
+        "centroid_uv_px": [
+          294.40330188679246,
+          349.50235849056605
+        ],
+        "rect_center_uv_px": [
+          294.4200134277344,
+          349.4400634765625
+        ]
+      }
+    },
+    {
+      "track_id": 25,
+      "class_label": "RED",
+      "xy_base_m": [
+        3.054177549951231e-05,
+        -0.2778625187279177
+      ],
+      "yaw_base_rad": 0.7855905612283429,
+      "confidence": 0.8300970873786407,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 227.0,
+      "bbox_xywh_px": [
+        310,
+        366,
+        20,
+        22
+      ],
+      "center_uv_px": [
+        319.53203040173725,
+        377.614549402823
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.8300970873786407,
+          "GREEN": 0.0,
+          "BLUE": 0.0,
+          "UNKNOWN": 0.16990291262135923
+        },
+        "class_margin": 0.6601941747572815,
+        "aspect_ratio": 1.0,
+        "centroid_xy_base_m": [
+          -3.804233062291781e-05,
+          -0.27586410512436765
+        ],
+        "min_area_rect_center_xy_base_m": [
+          -3.35202623008488e-05,
+          -0.2756204587195577
+        ],
+        "color_core_centroid_xy_base_m": [
+          3.054177549951231e-05,
+          -0.2778625187279177
+        ],
+        "color_core_rect_center_xy_base_m": [
+          -0.0005365801070125963,
+          -0.278135145088626
+        ],
+        "centroid_uv_px": [
+          319.4977973568282,
+          376.6211453744493
+        ],
+        "rect_center_uv_px": [
+          319.5000305175781,
+          376.5000305175781
+        ]
+      }
+    },
+    {
+      "track_id": 37,
+      "class_label": "GREEN",
+      "xy_base_m": [
+        0.0015082000392507738,
+        -0.2237924919316739
+      ],
+      "yaw_base_rad": 0.7852244536068778,
+      "confidence": 0.8636363636363636,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 218.0,
+      "bbox_xywh_px": [
+        311,
+        340,
+        20,
+        21
+      ],
+      "center_uv_px": [
+        320.2633879781421,
+        350.73661202185787
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.0,
+          "GREEN": 0.8636363636363636,
+          "BLUE": 0.0,
+          "UNKNOWN": 0.13636363636363635
+        },
+        "class_margin": 0.7272727272727273,
+        "aspect_ratio": 1.0,
+        "centroid_xy_base_m": [
+          0.001984201425867934,
+          -0.2223106053383887
+        ],
+        "min_area_rect_center_xy_base_m": [
+          0.001984201425867934,
+          -0.2223106053383887
+        ],
+        "color_core_centroid_xy_base_m": [
+          0.0015082000392507738,
+          -0.2237924919316739
+        ],
+        "color_core_rect_center_xy_base_m": [
+          0.0014812742326099767,
+          -0.22381942795133436
+        ],
+        "centroid_uv_px": [
+          320.5,
+          350.0
+        ],
+        "rect_center_uv_px": [
+          320.5,
+          350.0
+        ]
+      }
+    },
+    {
+      "track_id": 29,
+      "class_label": "GREEN",
+      "xy_base_m": [
+        0.04889299037832261,
+        -0.21912436666113888
+      ],
+      "yaw_base_rad": 1.2793369611077985,
+      "confidence": 0.8854166666666666,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 217.5,
+      "bbox_xywh_px": [
+        335,
+        339,
+        18,
+        19
+      ],
+      "center_uv_px": [
+        343.82662192393735,
+        348.41946308724835
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.0,
+          "GREEN": 0.8854166666666666,
+          "BLUE": 0.0,
+          "UNKNOWN": 0.11458333333333333
+        },
+        "class_margin": 0.7708333333333333,
+        "aspect_ratio": 1.037267066148962,
+        "centroid_xy_base_m": [
+          0.04866704147688327,
+          -0.21771792739342818
+        ],
+        "min_area_rect_center_xy_base_m": [
+          0.04873455098211234,
+          -0.21762546224053037
+        ],
+        "color_core_centroid_xy_base_m": [
+          0.04889299037832261,
+          -0.21912436666113888
+        ],
+        "color_core_rect_center_xy_base_m": [
+          0.048992609507099084,
+          -0.21911109392170905
+        ],
+        "centroid_uv_px": [
+          343.7141762452107,
+          347.7203065134099
+        ],
+        "rect_center_uv_px": [
+          343.74774169921875,
+          347.6743469238281
+        ]
+      }
+    },
+    {
+      "track_id": 22,
+      "class_label": "BLUE",
+      "xy_base_m": [
+        0.05325624910655201,
+        -0.2786304229335196
+      ],
+      "yaw_base_rad": 1.570675404863902,
+      "confidence": 0.8666666666666667,
+      "position_sigma_m": 0.0015,
+      "yaw_sigma_rad": 0.08,
+      "status": "VALID",
+      "reason": null,
+      "frame_id": 42,
+      "simulation_time_s": 0.8,
+      "area_px": 222.0,
+      "bbox_xywh_px": [
+        339,
+        369,
+        15,
+        17
+      ],
+      "center_uv_px": [
+        346.0,
+        378.0
+      ],
+      "frame_age_s": null,
+      "diagnostics": {
+        "hsv_scores": {
+          "RED": 0.0,
+          "GREEN": 0.0,
+          "BLUE": 0.8666666666666667,
+          "UNKNOWN": 0.13333333333333333
+        },
+        "class_margin": 0.7333333333333334,
+        "aspect_ratio": 1.1428571428571428,
+        "centroid_xy_base_m": [
+          0.05325649514790875,
+          -0.2766187258889368
+        ],
+        "min_area_rect_center_xy_base_m": [
+          0.05325649514790875,
+          -0.2766187258889368
+        ],
+        "color_core_centroid_xy_base_m": [
+          0.05325624910655201,
+          -0.2786304229335196
+        ],
+        "color_core_rect_center_xy_base_m": [
+          0.05325624910655201,
+          -0.2786304229335196
+        ],
+        "centroid_uv_px": [
+          346.0,
+          377.0
+        ],
+        "rect_center_uv_px": [
+          346.0,
+          377.0
+        ]
+      }
+    }
+  ],
+  "metrics_row": {
+    "seed": 20262040,
+    "truth_key": "seed-20262040-item-5",
+    "true_class": "UNKNOWN",
+    "predicted_class": "UNKNOWN",
+    "local_contrast_delta_e76": 40.45985794067383,
+    "x_true_m": -0.050861836929071126,
+    "y_true_m": -0.22279339200151224,
+    "x_est_m": -0.050494305275184406,
+    "y_est_m": -0.22131703609342446,
+    "dx_m": 0.0003675316538867199,
+    "dy_m": 0.0014763559080877842,
+    "planar_error_m": 0.0015214158813271319,
+    "yaw_true_mod_pi2_rad": 0.9382113270926609,
+    "yaw_est_mod_pi2_rad": 0.9274353106790265,
+    "yaw_error_mod_pi2_rad": 0.010776016413634348,
+    "centroid_planar_error_m": 0.0015214158813271319,
+    "min_rect_center_planar_error_m": 0.001651149510495321,
+    "color_core_centroid_planar_error_m": 0.0015214158813271319,
+    "color_core_rect_center_planar_error_m": 0.001651149510495321,
+    "status": "VALID",
+    "reason": null,
+    "confidence": 1.0,
+    "area_px": 212.0
+  },
+  "interpretation": "Matched localization residual retained with raw frame, candidate mask and overlay for manual perspective, edge, orientation and noise analysis.",
+  "lighting_scale_evaluator_only": 1.0,
+  "noise_sigma_evaluator_only": 3.0,
+  "note": "Ground truth is retained only in the evaluator-side worst-case report; perception receives the RGB frame only."
+}

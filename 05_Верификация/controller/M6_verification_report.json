@@ -1,0 +1,155 @@
+{
+  "controlled_trace": {
+    "event_count": 46,
+    "event_types": [
+      "CYCLE_CLOSED",
+      "EXECUTION_COMMAND_ISSUED",
+      "HOLD_CONFIRMED",
+      "OBSERVATION_REQUESTED",
+      "PLACEMENT_CONTROLLER_CONFIRMED",
+      "PLAN_ACCEPTED",
+      "PLAN_REQUESTED",
+      "STATE_ENTERED",
+      "STATE_TRANSITION",
+      "TARGET_SELECTED",
+      "TEST_LIFT_COMPLETE"
+    ],
+    "evidence_class": "CONTROLLED_TEST_DOUBLE",
+    "final_state": "OBSERVE",
+    "run_id": "M6-controlled-nominal",
+    "slot_states": [
+      {
+        "slot_id": "RED:0",
+        "status": "OCCUPIED"
+      }
+    ],
+    "success_contract": "PLACED_CONTROLLER_CONFIRMED from public evidence only; not evaluator-confirmed physical sorting",
+    "trace": "05_Верификация/controller/events/M6_nominal_controlled_double.jsonl",
+    "track_statuses": {
+      "7": "PLACED_CONTROLLER_CONFIRMED"
+    }
+  },
+  "controller_policy_version": "M6-v1.0",
+  "created_at_utc": "2026-09-25T11:32:12.676747+00:00",
+  "diagram_exports": {
+    "fsm_state": {
+      "pdf_bytes": 77792,
+      "png_bytes": 271920,
+      "png_size_px": [
+        1614,
+        1002
+      ],
+      "source_bytes": 14532,
+      "svg_bytes": 835495,
+      "valid_pdf": true,
+      "valid_png": true,
+      "valid_xml": true
+    },
+    "sorting_flow": {
+      "pdf_bytes": 90352,
+      "png_bytes": 603802,
+      "png_size_px": [
+        1706,
+        1163
+      ],
+      "source_bytes": 13547,
+      "svg_bytes": 1790779,
+      "valid_pdf": true,
+      "valid_png": true,
+      "valid_xml": true
+    }
+  },
+  "environment_packages": {
+    "Pillow": "12.0.0",
+    "PyYAML": "6.0.3",
+    "mujoco": "3.14.0",
+    "numpy": "2.5.3",
+    "opencv-python-headless": "4.14.0.94"
+  },
+  "implementation_sha256": {
+    "04_Программа/controller/__init__.py": "39b55c167b857e3c4f76b702d8d4a44d61fd102aa34e9a4eb5f5ecf998d20e8d",
+    "04_Программа/controller/config.py": "229f6f1815d458136695893c1fef0e41ac23d7902aca95f2cab268edd2c43f1b",
+    "04_Программа/controller/controller.py": "6b4f754448a4f92f2fd4013e9455658c08782b1988361f8156eaab76759d7e6f",
+    "04_Программа/controller/fsm_spec.py": "844bd0101f532cc0a0ff66704b3b7d5863d67b7213e7772af251bc59fa31e6ba",
+    "04_Программа/controller/requirements-verification.txt": "0d8269892c7c8ffb9f170ad017ff98ce9799bb8e5d61eb4ea9dca8b8b336d682",
+    "04_Программа/controller/reservations.py": "5d54ffabdf0f4052e1952c2546c99da94530dab72be29cdba59a52d1c0d122b8",
+    "04_Программа/controller/tests/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "04_Программа/controller/tests/test_controller.py": "9d4c7fde2e3a4aea1e21777cef031a429a714e44f186c0b7e8ba9c6f4d28feeb",
+    "04_Программа/controller/tools/generate_m6_artifacts.py": "728b4a2e048a9ff7d767fba2ab4d82349b40aab3edb80ab7b8e13d7a2cde6dff",
+    "04_Программа/controller/tools/run_m6_verification.py": "65d50576304668382cc1cbaa92b8e58c0da28e39298bc86bc5ffe39df6918bfe",
+    "04_Программа/controller/types.py": "03d6130051e162b475842242b5d6d6a94e5467967313a35edaea5155615e8c74"
+  },
+  "mjcf_sha256": "c76f67828dd5ffd6f3dc543b302729c394579e2d4b393df67e8bcae557bc748b",
+  "passed": true,
+  "project_root": "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "report_schema": "M6-v1.0",
+  "scope_note": "M6 controller contract/unit verification only; no M7 physics integration or M9 campaign.",
+  "specification_sha256": {
+    "02_Спецификация/FSM.md": "612f399a8b7cf6229cad28aa1e21e3a90991dd8e625d493d9d2c932ee7925f33",
+    "02_Спецификация/Инварианты_FSM.md": "debbaa7e3937e69475888b119fa6fe9f8836df0ac901d0c6b424459096c7244e",
+    "02_Спецификация/Контракт_M7_исполнения.md": "01cd3e1e57ff7ce57f2b681ef10992e66889ad91f3eaabea32d411723187b847",
+    "02_Спецификация/Контракт_M9_телеметрии.md": "1f4bcf6ed14133d69ce01dd95956aeb7e3cf3255925f2b4a3031f11bfe29e4a5",
+    "02_Спецификация/Матрица_ошибок_и_реакций.csv": "8e6f22e08548d5a09d14aade170586d730dd52aed4131a37d6aa6af35e51f696",
+    "02_Спецификация/Политика_сортировки.md": "d598e8b66000315b484e760f0d9e96320f600a83df2d73ef42e25843c7c2edaf",
+    "05_Верификация/controller/event_taxonomy.csv": "e683c193732357bca282e841099e668dab8a943e01a4d235ca3bda8b4641512c",
+    "05_Верификация/controller/ground_truth_boundary_audit.md": "61f743df9575792e54f3c53c93ad4adb9057d651ad2c224f8ea10810621e2ac2",
+    "05_Верификация/controller/state_handler_coverage.csv": "a6ef0dd0e74cd5f8cd921d77db80de3d53afa4e25a4a2e8a591d24fc50720f44",
+    "05_Верификация/controller/transition_coverage.csv": "402264f6836036c9cad7a97a30bb46430241555421bfc886b48d9953dc991019"
+  },
+  "ssot_sha256": "ba6323299b342dfb901b206991b7181282ce609d0e500d5cc02905abb9a2ea48",
+  "suite_results": [
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\controller\\tests",
+        "-v"
+      ],
+      "duration_s": 0.128,
+      "exit_code": 0,
+      "log": "05_Верификация/controller/controller_unittest.log",
+      "name": "controller",
+      "passed": true,
+      "tests_run": 45
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\planning\\tests",
+        "-v"
+      ],
+      "duration_s": 14.962,
+      "exit_code": 0,
+      "log": "05_Верификация/controller/planning_unittest.log",
+      "name": "planning",
+      "passed": true,
+      "tests_run": 21
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\robot-arm-m6-venv-20260925\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\perception\\tests",
+        "-v"
+      ],
+      "duration_s": 1.298,
+      "exit_code": 0,
+      "log": "05_Верификация/controller/perception_unittest.log",
+      "name": "perception",
+      "passed": true,
+      "tests_run": 10
+    }
+  ],
+  "verification_requirements_sha256": "0d8269892c7c8ffb9f170ad017ff98ce9799bb8e5d61eb4ea9dca8b8b336d682"
+}

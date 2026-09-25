@@ -1,0 +1,3407 @@
+{
+  "status": "PASS",
+  "milestone": "M4-v1.3",
+  "configuration_version": "M4-v1.3",
+  "ssot_version_at_run_start": "M5-v1.1",
+  "m3_predecessor_ssot_version": "M3-v1.0",
+  "camera_calibration": {
+    "n": 64,
+    "mean_x_error_m": 3.735615666177459e-05,
+    "mean_y_error_m": -4.6929263417001886e-05,
+    "rmse_x_m": 0.00025914411324930625,
+    "rmse_y_m": 0.00018953788564047164,
+    "mean_planar_error_m": 0.00027684401618719475,
+    "p95_planar_error_m": 0.000511785107825167,
+    "max_planar_error_m": 0.0008793145175878263,
+    "max_error_point_index": 52
+  },
+  "camera_calibration_id": "M4-HOMOGRAPHY-TOP-PLANE-v1.1",
+  "frozen_config_sha256": "55c87dcd96f6146a1214765c0fcab66a1be452fc55467ed2ae3a19046a7e19f2",
+  "ssot_sha256_after_profile_freeze": "1a941e7421c08d483bd4c6c541cb4b2e258cfadbf82bece17b0fdf022987975b",
+  "runtime_config_sha256": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+  "validation_seed_ids": [
+    20265000,
+    20265001,
+    20265002,
+    20265003,
+    20265004,
+    20265005,
+    20265006,
+    20265007,
+    20265008,
+    20265009,
+    20265010,
+    20265011,
+    20265012,
+    20265013,
+    20265014,
+    20265015,
+    20265016,
+    20265017,
+    20265018,
+    20265019,
+    20265020,
+    20265021,
+    20265022,
+    20265023,
+    20265024,
+    20265025,
+    20265026,
+    20265027,
+    20265028,
+    20265029,
+    20265030,
+    20265031,
+    20265032,
+    20265033,
+    20265034,
+    20265035,
+    20265036,
+    20265037,
+    20265038,
+    20265039,
+    20265040,
+    20265041,
+    20265042,
+    20265043,
+    20265044,
+    20265045,
+    20265046,
+    20265047,
+    20265048,
+    20265049,
+    20265050,
+    20265051,
+    20265052,
+    20265053,
+    20265054,
+    20265055,
+    20265056,
+    20265057,
+    20265058,
+    20265059,
+    20265060,
+    20265061,
+    20265062,
+    20265063,
+    20265064,
+    20265065,
+    20265066,
+    20265067
+  ],
+  "validation_frame_count": 68,
+  "validation_object_count": 368,
+  "validation_dataset_hash": "e0624aacfa8e3666509979911fc97a0c84b3077055ad34b8f5566dc0fbeb6558",
+  "validation_metrics": {
+    "object_detection": {
+      "tp": 368,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "color_confusion_matrix_counts": {
+      "RED": {
+        "RED": 114,
+        "GREEN": 0,
+        "BLUE": 0,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "GREEN": {
+        "RED": 0,
+        "GREEN": 119,
+        "BLUE": 0,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "BLUE": {
+        "RED": 0,
+        "GREEN": 0,
+        "BLUE": 120,
+        "UNKNOWN": 0,
+        "NO_DETECTION": 0
+      },
+      "UNKNOWN": {
+        "RED": 0,
+        "GREEN": 0,
+        "BLUE": 0,
+        "UNKNOWN": 15,
+        "NO_DETECTION": 0
+      }
+    },
+    "color_metrics": {
+      "RED": {
+        "support": 114,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "GREEN": {
+        "support": 119,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "BLUE": {
+        "support": 120,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "UNKNOWN": {
+        "support": 15,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "color_sample_counts": {
+      "RED": 114,
+      "GREEN": 119,
+      "BLUE": 120,
+      "UNKNOWN": 15
+    },
+    "xy_planar_error_summary_m": {
+      "n": 365,
+      "mean": 0.000476473435866466,
+      "median": 0.00039768705411822474,
+      "p95": 0.0010421218236791345,
+      "max": 0.0021776825919091114
+    },
+    "x_signed_error_summary_m": {
+      "n": 365,
+      "mean": -3.572228325231131e-05,
+      "median": -3.208789660132799e-05,
+      "p95": 0.0003373023570460959,
+      "max": 0.0007364342792509082
+    },
+    "y_signed_error_summary_m": {
+      "n": 365,
+      "mean": -0.00029523612536366556,
+      "median": -0.0003554244084325586,
+      "p95": 0.0002248469401212817,
+      "max": 0.0021774829239926685
+    },
+    "yaw_error_summary_rad": {
+      "n": 365,
+      "mean": 0.015302778114190296,
+      "median": 0.007494557154135051,
+      "p95": 0.06879177531427412,
+      "max": 0.11601126852537125
+    },
+    "candidate_yaw_error_summary_rad": {
+      "n": 368,
+      "mean": 0.015239785520250751,
+      "median": 0.0074677411977040475,
+      "p95": 0.06820358311226335,
+      "max": 0.11601126852537125
+    },
+    "center_estimator_comparison": {
+      "contour_centroid_planar_error_m": {
+        "n": 368,
+        "mean": 0.0015563308889815165,
+        "median": 0.0014344980528741454,
+        "p95": 0.0018764036734106964,
+        "max": 0.01563446139829372
+      },
+      "min_area_rectangle_center_planar_error_m": {
+        "n": 368,
+        "mean": 0.0015237553167495436,
+        "median": 0.0014162088948435523,
+        "p95": 0.0019361546955485329,
+        "max": 0.015614618352720034
+      },
+      "color_core_centroid_planar_error_m": {
+        "n": 365,
+        "mean": 0.00043828686370384415,
+        "median": 0.0003774009477871441,
+        "p95": 0.0008960672192420729,
+        "max": 0.0019867584086304887
+      },
+      "color_core_rectangle_center_planar_error_m": {
+        "n": 365,
+        "mean": 0.000476473435866466,
+        "median": 0.00039768705411822474,
+        "p95": 0.0010421218236791345,
+        "max": 0.0021776825919091114
+      }
+    },
+    "lighting_strata": {
+      "0.75": {
+        "frames": 23,
+        "gt": 123,
+        "tp": 123,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "1.0": {
+        "frames": 23,
+        "gt": 123,
+        "tp": 123,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "1.25": {
+        "frames": 22,
+        "gt": 122,
+        "tp": 122,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "operating_domain": {
+      "definition": "At least the configured visibility fraction of the projected 28x28 mm object-top footprint has per-pixel Lab Euclidean contrast ΔE*ab above the frozen candidate threshold; coverage is estimated only by the evaluator from ground truth and RGB frame.",
+      "foreground_contrast_threshold_delta_e76": 16.0,
+      "minimum_foreground_coverage_ratio": 0.58,
+      "supported_object_count": 365,
+      "supported_matched_count": 365,
+      "supported_false_negative_count": 0,
+      "supported_misses_with_nearby_safe_rejection": 0,
+      "unaccounted_supported_false_negative_count": 0,
+      "supported_false_positive_count": 0,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0,
+      "supported_valid_count": 365,
+      "supported_rejected_count": 0,
+      "unmatched_valid_prediction_count": 0,
+      "unmatched_rejected_candidate_count": 0,
+      "out_of_domain_object_count": 3,
+      "contrast_by_object": [
+        {
+          "seed": 20265000,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 137.20787048339844,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265001,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 107.11209106445312,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265002,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 161.536376953125,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265003,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 128.5106964111328,
+          "foreground_coverage_ratio": 0.9634703196347032,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265004,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 111.09005737304688,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265005,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 163.9451141357422,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265006,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265007,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 151.99012756347656,
+          "foreground_coverage_ratio": 0.9778761061946902,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 123.63656616210938,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 99.29753112792969,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 145.18264770507812,
+          "foreground_coverage_ratio": 0.9733333333333334,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 106.21205139160156,
+          "foreground_coverage_ratio": 0.990990990990991,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 130.32650756835938,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265008,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 136.98904418945312,
+          "foreground_coverage_ratio": 0.9866666666666667,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 151.75637817382812,
+          "foreground_coverage_ratio": 0.9862385321100917,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 166.88319396972656,
+          "foreground_coverage_ratio": 0.9773755656108597,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 0.990990990990991,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 107.5685806274414,
+          "foreground_coverage_ratio": 0.9680365296803652,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 139.95713806152344,
+          "foreground_coverage_ratio": 0.9911111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265009,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 132.7554168701172,
+          "foreground_coverage_ratio": 0.9953703703703703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 108.3143539428711,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 104.85704803466797,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 133.7348175048828,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 128.05467224121094,
+          "foreground_coverage_ratio": 0.9953271028037384,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 175.48219299316406,
+          "foreground_coverage_ratio": 0.9777777777777777,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265010,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 144.79295349121094,
+          "foreground_coverage_ratio": 0.9736842105263158,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 106.21205139160156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 126.70043182373047,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 109.46232604980469,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 146.96258544921875,
+          "foreground_coverage_ratio": 0.9737991266375546,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 132.24598693847656,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265011,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 148.7615509033203,
+          "foreground_coverage_ratio": 0.961038961038961,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 0.995260663507109,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 140.30323791503906,
+          "foreground_coverage_ratio": 0.9817351598173516,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 110.45361328125,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 167.38876342773438,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 149.5894317626953,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265012,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 85.66212463378906,
+          "foreground_coverage_ratio": 0.9768518518518519,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 103.50362396240234,
+          "foreground_coverage_ratio": 0.9773755656108597,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 162.0555419921875,
+          "foreground_coverage_ratio": 0.990990990990991,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 0.9823788546255506,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 110.18620300292969,
+          "foreground_coverage_ratio": 0.9953051643192489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 141.9612579345703,
+          "foreground_coverage_ratio": 0.9778761061946902,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265013,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 0.9769585253456221,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 0.985981308411215,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 103.50362396240234,
+          "foreground_coverage_ratio": 0.9911111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 155.38983154296875,
+          "foreground_coverage_ratio": 0.9952830188679245,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 141.75331115722656,
+          "foreground_coverage_ratio": 0.986784140969163,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 100.64790344238281,
+          "foreground_coverage_ratio": 0.9688888888888889,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265014,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 138.4990997314453,
+          "foreground_coverage_ratio": 0.9819004524886877,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 138.14846801757812,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 164.2041473388672,
+          "foreground_coverage_ratio": 0.995260663507109,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 137.36083984375,
+          "foreground_coverage_ratio": 0.9333333333333333,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 108.101806640625,
+          "foreground_coverage_ratio": 0.9823788546255506,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 151.16217041015625,
+          "foreground_coverage_ratio": 0.9862385321100917,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265015,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 105.75916290283203,
+          "foreground_coverage_ratio": 0.9771689497716894,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 139.79270935058594,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 104.85704803466797,
+          "foreground_coverage_ratio": 0.9864253393665159,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 107.74042510986328,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 141.4496307373047,
+          "foreground_coverage_ratio": 0.9911504424778761,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 148.85227966308594,
+          "foreground_coverage_ratio": 0.986046511627907,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265016,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 0.0,
+          "foreground_coverage_ratio": 0.11764705882352941,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 129.49903869628906,
+          "foreground_coverage_ratio": 0.9953488372093023,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 103.46980285644531,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 141.03900146484375,
+          "foreground_coverage_ratio": 0.9774774774774775,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 106.8363265991211,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 146.96258544921875,
+          "foreground_coverage_ratio": 0.9688888888888889,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265017,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 127.83583068847656,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 132.8946990966797,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 159.3831787109375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 137.20787048339844,
+          "foreground_coverage_ratio": 0.9953917050691244,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 172.24691772460938,
+          "foreground_coverage_ratio": 0.9953271028037384,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 111.73181915283203,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265018,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 110.45813751220703,
+          "foreground_coverage_ratio": 0.9688888888888889,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 165.24526977539062,
+          "foreground_coverage_ratio": 0.9336283185840708,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 108.7474136352539,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 0.9861111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 128.2029571533203,
+          "foreground_coverage_ratio": 0.9866666666666667,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 0.9951923076923077,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265019,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 175.48219299316406,
+          "foreground_coverage_ratio": 0.9911111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 134.27210998535156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 157.54681396484375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 128.5106964111328,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 108.74281311035156,
+          "foreground_coverage_ratio": 0.9866666666666667,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 146.96258544921875,
+          "foreground_coverage_ratio": 0.9907834101382489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265020,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 18.493242263793945,
+          "foreground_coverage_ratio": 0.7924528301886793,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 108.3143539428711,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 137.36083984375,
+          "foreground_coverage_ratio": 0.9773755656108597,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 164.7391815185547,
+          "foreground_coverage_ratio": 0.9866666666666667,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 178.70086669921875,
+          "foreground_coverage_ratio": 0.9952830188679245,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 129.16268920898438,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265021,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 110.45361328125,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 170.3555145263672,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 101.25709533691406,
+          "foreground_coverage_ratio": 0.986046511627907,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 138.4990997314453,
+          "foreground_coverage_ratio": 0.9911111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 0.9529914529914529,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 140.40655517578125,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265022,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 134.4209747314453,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 106.21205139160156,
+          "foreground_coverage_ratio": 0.9742489270386266,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 146.96258544921875,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 134.4209747314453,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 126.22994995117188,
+          "foreground_coverage_ratio": 0.9858490566037735,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 98.69650268554688,
+          "foreground_coverage_ratio": 0.9606986899563319,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265023,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 141.75331115722656,
+          "foreground_coverage_ratio": 0.9955156950672646,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 107.74042510986328,
+          "foreground_coverage_ratio": 0.9691629955947136,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 150.41941833496094,
+          "foreground_coverage_ratio": 0.9955156950672646,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 134.82582092285156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 110.29052734375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 131.5940704345703,
+          "foreground_coverage_ratio": 0.9817351598173516,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265024,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 52.182373046875,
+          "foreground_coverage_ratio": 0.9576271186440678,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 141.24093627929688,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 0.995260663507109,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 105.59355926513672,
+          "foreground_coverage_ratio": 0.9333333333333333,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 150.69837951660156,
+          "foreground_coverage_ratio": 0.978448275862069,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 130.43772888183594,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265025,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 136.50640869140625,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 137.20787048339844,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 150.09996032714844,
+          "foreground_coverage_ratio": 0.978448275862069,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 100.1898193359375,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 130.79754638671875,
+          "foreground_coverage_ratio": 0.9954545454545455,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 99.29753112792969,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265026,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 164.46884155273438,
+          "foreground_coverage_ratio": 0.9819819819819819,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 170.12054443359375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 129.34449768066406,
+          "foreground_coverage_ratio": 0.9768518518518519,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 151.16217041015625,
+          "foreground_coverage_ratio": 0.9557522123893806,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 136.67478942871094,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 110.82418823242188,
+          "foreground_coverage_ratio": 0.9861751152073732,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265027,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 0.9523809523809523,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 130.9389190673828,
+          "foreground_coverage_ratio": 0.9778761061946902,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 106.48943328857422,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 138.3148651123047,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 150.92713928222656,
+          "foreground_coverage_ratio": 0.985781990521327,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 0.9952830188679245,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265028,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 134.31678771972656,
+          "foreground_coverage_ratio": 0.9952830188679245,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 149.80320739746094,
+          "foreground_coverage_ratio": 0.995260663507109,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 128.6934356689453,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 136.2791290283203,
+          "foreground_coverage_ratio": 0.9734513274336283,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 135.13327026367188,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 98.98484802246094,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265029,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 102.2790298461914,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 137.0146026611328,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 162.0555419921875,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 111.09005737304688,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 108.82554626464844,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 130.4645538330078,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265030,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 174.37889099121094,
+          "foreground_coverage_ratio": 0.9690265486725663,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 108.82554626464844,
+          "foreground_coverage_ratio": 0.9775784753363229,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 159.12887573242188,
+          "foreground_coverage_ratio": 0.9634703196347032,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 149.5894317626953,
+          "foreground_coverage_ratio": 0.9812206572769953,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 132.09844970703125,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265031,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 136.85394287109375,
+          "foreground_coverage_ratio": 0.9646017699115044,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 164.9757537841797,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 100.64790344238281,
+          "foreground_coverage_ratio": 0.9817351598173516,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 150.92713928222656,
+          "foreground_coverage_ratio": 0.9531914893617022,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 102.61091613769531,
+          "foreground_coverage_ratio": 0.9655172413793104,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 128.83322143554688,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265032,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 87.60137176513672,
+          "foreground_coverage_ratio": 0.978448275862069,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 170.6399688720703,
+          "foreground_coverage_ratio": 0.9658119658119658,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 164.46884155273438,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 0.9910313901345291,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 138.8560333251953,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 139.79270935058594,
+          "foreground_coverage_ratio": 0.973568281938326,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265033,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 109.0962905883789,
+          "foreground_coverage_ratio": 0.9780701754385965,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 175.48219299316406,
+          "foreground_coverage_ratio": 0.9773755656108597,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 136.50640869140625,
+          "foreground_coverage_ratio": 0.9956709956709957,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 106.74268341064453,
+          "foreground_coverage_ratio": 0.9568965517241379,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 162.0555419921875,
+          "foreground_coverage_ratio": 0.9819004524886877,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 134.86660766601562,
+          "foreground_coverage_ratio": 0.9955156950672646,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265034,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 102.88829040527344,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 134.4209747314453,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 140.20343017578125,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 99.28242492675781,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 162.0555419921875,
+          "foreground_coverage_ratio": 0.990909090909091,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 133.7348175048828,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265035,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 97.64220428466797,
+          "foreground_coverage_ratio": 0.9688888888888889,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 107.59646606445312,
+          "foreground_coverage_ratio": 0.9650655021834061,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 140.59161376953125,
+          "foreground_coverage_ratio": 0.9772727272727273,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 141.2586212158203,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 169.03549194335938,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 150.33628845214844,
+          "foreground_coverage_ratio": 0.9911111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265036,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 10.488088607788086,
+          "foreground_coverage_ratio": 0.14479638009049775,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 131.26309204101562,
+          "foreground_coverage_ratio": 0.9469026548672567,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 130.2958221435547,
+          "foreground_coverage_ratio": 0.9953917050691244,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 108.37435150146484,
+          "foreground_coverage_ratio": 0.9424778761061947,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 158.3729705810547,
+          "foreground_coverage_ratio": 0.9688888888888889,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 141.03900146484375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265037,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 104.81411743164062,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 126.5661849975586,
+          "foreground_coverage_ratio": 0.9513274336283186,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 134.27210998535156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 156.97451782226562,
+          "foreground_coverage_ratio": 0.9906976744186047,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 102.44022369384766,
+          "foreground_coverage_ratio": 0.9822222222222222,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 104.24010467529297,
+          "foreground_coverage_ratio": 0.963302752293578,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265038,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 155.72732543945312,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 149.5894317626953,
+          "foreground_coverage_ratio": 0.9822222222222222,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 176.27818298339844,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 135.0370330810547,
+          "foreground_coverage_ratio": 0.9952830188679245,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 108.3143539428711,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 135.71661376953125,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265039,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 111.73181915283203,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 136.85394287109375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 157.79733276367188,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 101.25709533691406,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 163.3829803466797,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 0.9646017699115044,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265040,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 50.25932693481445,
+          "foreground_coverage_ratio": 0.9907834101382489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 101.87246704101562,
+          "foreground_coverage_ratio": 0.9952153110047847,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 129.16268920898438,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 138.4990997314453,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 166.06324768066406,
+          "foreground_coverage_ratio": 0.981042654028436,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 155.14187622070312,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265041,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 101.87246704101562,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 104.40785217285156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 171.67701721191406,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 108.02314758300781,
+          "foreground_coverage_ratio": 0.9444444444444444,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 137.36083984375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 134.9962921142578,
+          "foreground_coverage_ratio": 0.9612068965517241,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265042,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 170.3555145263672,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 139.00718688964844,
+          "foreground_coverage_ratio": 0.9734513274336283,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 137.20787048339844,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 102.44022369384766,
+          "foreground_coverage_ratio": 0.9730941704035875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 175.9857940673828,
+          "foreground_coverage_ratio": 0.9820627802690582,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 107.46627044677734,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265043,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 154.31785583496094,
+          "foreground_coverage_ratio": 0.9547511312217195,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 170.07644653320312,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 130.26895141601562,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 102.2790298461914,
+          "foreground_coverage_ratio": 0.9786324786324786,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 160.9720458984375,
+          "foreground_coverage_ratio": 0.9908256880733946,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 104.85704803466797,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265044,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 51.332252502441406,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 167.66036987304688,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 135.37355041503906,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 103.17460632324219,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 108.82554626464844,
+          "foreground_coverage_ratio": 0.9952153110047847,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 157.79733276367188,
+          "foreground_coverage_ratio": 0.9953917050691244,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265045,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 138.4990997314453,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 104.24010467529297,
+          "foreground_coverage_ratio": 0.995260663507109,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 154.0746612548828,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 130.2958221435547,
+          "foreground_coverage_ratio": 0.9649122807017544,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 160.61444091796875,
+          "foreground_coverage_ratio": 0.947136563876652,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 133.7348175048828,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265046,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 150.41941833496094,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 109.46232604980469,
+          "foreground_coverage_ratio": 0.9955947136563876,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 123.77803039550781,
+          "foreground_coverage_ratio": 0.9683257918552036,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 158.88046264648438,
+          "foreground_coverage_ratio": 0.9861111111111112,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 123.79822540283203,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265047,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 106.21205139160156,
+          "foreground_coverage_ratio": 0.9698275862068966,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 136.85394287109375,
+          "foreground_coverage_ratio": 0.9822222222222222,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 172.24691772460938,
+          "foreground_coverage_ratio": 0.9650655021834061,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 140.65560913085938,
+          "foreground_coverage_ratio": 0.9644444444444444,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 110.18620300292969,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 151.16217041015625,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265048,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 135.69082641601562,
+          "foreground_coverage_ratio": 0.9953703703703703,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 138.65785217285156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 150.92713928222656,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 100.64790344238281,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 156.214599609375,
+          "foreground_coverage_ratio": 0.9813084112149533,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265049,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 0.9608695652173913,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 127.86320495605469,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 160.20611572265625,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 170.3555145263672,
+          "foreground_coverage_ratio": 0.9772727272727273,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 97.34988403320312,
+          "foreground_coverage_ratio": 0.9814814814814815,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265050,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 135.21095275878906,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 167.38876342773438,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 136.50640869140625,
+          "foreground_coverage_ratio": 0.9905660377358491,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 130.79754638671875,
+          "foreground_coverage_ratio": 0.9730941704035875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 110.24064636230469,
+          "foreground_coverage_ratio": 0.9905660377358491,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265051,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 158.0537872314453,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 136.50640869140625,
+          "foreground_coverage_ratio": 0.9820627802690582,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 144.79295349121094,
+          "foreground_coverage_ratio": 0.9953051643192489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 133.2291259765625,
+          "foreground_coverage_ratio": 0.9781659388646288,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 104.5227279663086,
+          "foreground_coverage_ratio": 0.9870689655172413,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265052,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 87.60137176513672,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 131.5940704345703,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 135.12586975097656,
+          "foreground_coverage_ratio": 0.9864253393665159,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 137.20787048339844,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 150.69837951660156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 97.64220428466797,
+          "foreground_coverage_ratio": 0.960352422907489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265053,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 102.88829040527344,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 180.31361389160156,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 106.8363265991211,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 141.088623046875,
+          "foreground_coverage_ratio": 0.9817351598173516,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 104.12492370605469,
+          "foreground_coverage_ratio": 0.9868421052631579,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 135.71661376953125,
+          "foreground_coverage_ratio": 0.9650655021834061,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265054,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 161.79307556152344,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 144.05902099609375,
+          "foreground_coverage_ratio": 0.9333333333333333,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 131.93179321289062,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 139.95713806152344,
+          "foreground_coverage_ratio": 0.9333333333333333,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 110.1044921875,
+          "foreground_coverage_ratio": 0.9906542056074766,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 161.79307556152344,
+          "foreground_coverage_ratio": 0.990990990990991,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265055,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 109.82258605957031,
+          "foreground_coverage_ratio": 0.9818181818181818,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 140.67694091796875,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 134.52880859375,
+          "foreground_coverage_ratio": 0.9730941704035875,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 140.3068084716797,
+          "foreground_coverage_ratio": 0.9741379310344828,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 124.91197204589844,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 100.64790344238281,
+          "foreground_coverage_ratio": 0.9910313901345291,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265056,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 1.4142135381698608,
+          "foreground_coverage_ratio": 0.12217194570135746,
+          "in_declared_domain": false
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 140.30323791503906,
+          "foreground_coverage_ratio": 0.9906542056074766,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 173.06068420410156,
+          "foreground_coverage_ratio": 0.9820627802690582,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 106.10843658447266,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 130.79754638671875,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 111.09005737304688,
+          "foreground_coverage_ratio": 0.9864253393665159,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265057,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 178.70086669921875,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 129.16268920898438,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 159.12887573242188,
+          "foreground_coverage_ratio": 0.9863636363636363,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 166.06324768066406,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 139.79270935058594,
+          "foreground_coverage_ratio": 0.9954954954954955,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 101.25709533691406,
+          "foreground_coverage_ratio": 0.9683257918552036,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265058,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 105.4798583984375,
+          "foreground_coverage_ratio": 0.9775784753363229,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 136.85394287109375,
+          "foreground_coverage_ratio": 0.963302752293578,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 123.79822540283203,
+          "foreground_coverage_ratio": 0.9908675799086758,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 100.64790344238281,
+          "foreground_coverage_ratio": 0.9829059829059829,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 156.47683715820312,
+          "foreground_coverage_ratio": 0.9698275862068966,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 160.9720458984375,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265059,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 106.8363265991211,
+          "foreground_coverage_ratio": 0.9819004524886877,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 106.8363265991211,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 173.06068420410156,
+          "foreground_coverage_ratio": 0.976303317535545,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 110.45361328125,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 138.65785217285156,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 172.24691772460938,
+          "foreground_coverage_ratio": 0.9908675799086758,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265060,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 74.17546844482422,
+          "foreground_coverage_ratio": 0.9909502262443439,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 101.25709533691406,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 176.27818298339844,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 161.79307556152344,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 100.04499053955078,
+          "foreground_coverage_ratio": 0.9823008849557522,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 136.50640869140625,
+          "foreground_coverage_ratio": 0.9867256637168141,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265061,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 132.77801513671875,
+          "foreground_coverage_ratio": 0.9766355140186916,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 107.11209106445312,
+          "foreground_coverage_ratio": 0.948051948051948,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 129.34449768066406,
+          "foreground_coverage_ratio": 0.968609865470852,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 102.88829040527344,
+          "foreground_coverage_ratio": 0.9771689497716894,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 140.40655517578125,
+          "foreground_coverage_ratio": 0.96,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 128.33160400390625,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265062,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 151.16217041015625,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 140.2355194091797,
+          "foreground_coverage_ratio": 0.9863013698630136,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 107.46627044677734,
+          "foreground_coverage_ratio": 0.9910313901345291,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 138.7407684326172,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 106.8363265991211,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 164.46884155273438,
+          "foreground_coverage_ratio": 0.9596412556053812,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265063,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 163.92071533203125,
+          "foreground_coverage_ratio": 0.9812206572769953,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 133.1277618408203,
+          "foreground_coverage_ratio": 0.9866666666666667,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 167.2064666748047,
+          "foreground_coverage_ratio": 0.9904761904761905,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 106.74268341064453,
+          "foreground_coverage_ratio": 0.9819004524886877,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 170.3555145263672,
+          "foreground_coverage_ratio": 0.9864864864864865,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 109.73149108886719,
+          "foreground_coverage_ratio": 0.9736842105263158,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265064,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 52.009613037109375,
+          "foreground_coverage_ratio": 0.9690265486725663,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 127.031494140625,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 104.81411743164062,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 103.50362396240234,
+          "foreground_coverage_ratio": 0.9955555555555555,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 155.38983154296875,
+          "foreground_coverage_ratio": 0.9953051643192489,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 130.8357696533203,
+          "foreground_coverage_ratio": 0.9954128440366973,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265065,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 132.8946990966797,
+          "foreground_coverage_ratio": 0.9732142857142857,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 135.0370330810547,
+          "foreground_coverage_ratio": 1.0,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 111.73181915283203,
+          "foreground_coverage_ratio": 0.9700854700854701,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 155.14187622070312,
+          "foreground_coverage_ratio": 0.9907407407407407,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 161.23585510253906,
+          "foreground_coverage_ratio": 0.9908256880733946,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 140.30323791503906,
+          "foreground_coverage_ratio": 0.9812206572769953,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265066,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 108.82554626464844,
+          "foreground_coverage_ratio": 0.9656652360515021,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 0,
+          "median_local_contrast_delta_e76": 104.24010467529297,
+          "foreground_coverage_ratio": 0.9724770642201835,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 1,
+          "median_local_contrast_delta_e76": 166.33700561523438,
+          "foreground_coverage_ratio": 0.9726027397260274,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 2,
+          "median_local_contrast_delta_e76": 108.19426727294922,
+          "foreground_coverage_ratio": 0.9906103286384976,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 3,
+          "median_local_contrast_delta_e76": 139.79270935058594,
+          "foreground_coverage_ratio": 0.995475113122172,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 4,
+          "median_local_contrast_delta_e76": 127.86320495605469,
+          "foreground_coverage_ratio": 0.9952153110047847,
+          "in_declared_domain": true
+        },
+        {
+          "seed": 20265067,
+          "truth_index": 5,
+          "median_local_contrast_delta_e76": 144.56832885742188,
+          "foreground_coverage_ratio": 0.9906976744186047,
+          "in_declared_domain": true
+        }
+      ]
+    },
+    "detection_status_counts": {
+      "VALID": 365,
+      "OCCLUDED": 3
+    }
+  },
+  "grasp_budget": {
+    "perception_xy_budget_m": 0.002,
+    "total_xy_budget_m": 0.004,
+    "yaw_error_limit_rad": 0.17453292519943295,
+    "xy_p95_remaining_total_budget_m": 0.0029578781763208656
+  },
+  "sensor_contract_checks": {
+    "synthetic_rgb_to_hsv": [
+      [
+        0,
+        255,
+        255
+      ],
+      [
+        60,
+        255,
+        255
+      ],
+      [
+        120,
+        255,
+        255
+      ]
+    ],
+    "synthetic_rgb_channel_order_test_pass": true,
+    "actual_mujoco_render_channel_order_samples": {
+      "RED": [
+        {
+          "mean_rgb": [
+            254.63999938964844,
+            65.80000305175781,
+            57.91999816894531
+          ],
+          "dominant_channel": 0,
+          "pass": true
+        }
+      ]
+    },
+    "actual_mujoco_rgb_channel_order_test_pass": true,
+    "rgb_channel_order_test_pass": true,
+    "fresh_frame_status": "OK",
+    "missing_frame_status": "NO_FRAME",
+    "stale_frame_status": "STALE",
+    "malformed_frame_status": "INVALID",
+    "wrong_camera_status": "INVALID",
+    "future_timestamp_status": "INVALID",
+    "failure_returns_no_detections": true,
+    "fresh_frame_age_test_s": 0.02
+  },
+  "tracking_contract": {
+    "frame1_track_ids": [
+      1,
+      2
+    ],
+    "frame2_track_ids": [
+      1,
+      2
+    ],
+    "matched_observation_pairs": [
+      {
+        "distance_m": 0.0,
+        "track_id_frame1": 1,
+        "track_id_frame2": 1,
+        "stable": true
+      },
+      {
+        "distance_m": 0.0,
+        "track_id_frame1": 2,
+        "track_id_frame2": 2,
+        "stable": true
+      }
+    ],
+    "stable_track_ids": true,
+    "unique_ids_per_frame": true,
+    "uses_internal_simulator_id": false
+  },
+  "occlusion_tests": {
+    "cases": [
+      {
+        "name": "partial_occlusion_proxy",
+        "candidate_count": 1,
+        "statuses": [
+          "OCCLUDED"
+        ],
+        "reasons": [
+          "OVERSIZED_OR_MERGED_CANDIDATE"
+        ],
+        "safe_rejection": true,
+        "ground_truth_only_evaluator": true
+      },
+      {
+        "name": "m2_arm_over_input",
+        "candidate_count": 0,
+        "statuses": [],
+        "reasons": [],
+        "detection_xy_error_m": [],
+        "safe_rejection": true,
+        "ground_truth_only_evaluator": true
+      }
+    ]
+  },
+  "empty_scene_stress": {
+    "frame_count": 36,
+    "lighting_levels": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "noise_sigma_levels": [
+      0.0,
+      1.5,
+      3.0
+    ],
+    "repeats_per_combination": 4,
+    "false_positive_total": 0,
+    "empty_scene_no_candidates": true,
+    "rows": [
+      {
+        "seed": 20261100,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261101,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261102,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261103,
+        "lighting_scale": 0.75,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261104,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261105,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261106,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261107,
+        "lighting_scale": 0.75,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261108,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261109,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261110,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261111,
+        "lighting_scale": 0.75,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261112,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261113,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261114,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261115,
+        "lighting_scale": 1.0,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261116,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261117,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261118,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261119,
+        "lighting_scale": 1.0,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261120,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261121,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261122,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261123,
+        "lighting_scale": 1.0,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261124,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261125,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261126,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261127,
+        "lighting_scale": 1.25,
+        "noise_sigma": 0.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261128,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261129,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261130,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261131,
+        "lighting_scale": 1.25,
+        "noise_sigma": 1.5,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261132,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261133,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261134,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      },
+      {
+        "seed": 20261135,
+        "lighting_scale": 1.25,
+        "noise_sigma": 3.0,
+        "candidate_count": 0,
+        "status": "NO_CANDIDATES",
+        "reasons": []
+      }
+    ]
+  },
+  "sorting_zone_exclusion": {
+    "zones_tested": [
+      {
+        "zone": "RED",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      },
+      {
+        "zone": "GREEN",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      },
+      {
+        "zone": "BLUE",
+        "candidate_count": 0,
+        "batch_status": "NO_CANDIDATES",
+        "excluded_from_input_detection": true
+      }
+    ],
+    "all_sorting_zones_excluded": true
+  },
+  "neighbor_object_checks": {
+    "cases": [
+      {
+        "name": "separated_8mm_gap",
+        "center_separation_m": 0.036,
+        "candidate_count": 2,
+        "statuses": [
+          "VALID",
+          "VALID"
+        ],
+        "reasons": [
+          null,
+          null
+        ],
+        "matched_objects": 2,
+        "missed_objects": 0,
+        "false_detections": 0,
+        "pass": true
+      },
+      {
+        "name": "touching_faces",
+        "center_separation_m": 0.028,
+        "candidate_count": 2,
+        "statuses": [
+          "VALID",
+          "VALID"
+        ],
+        "reasons": [
+          null,
+          null
+        ],
+        "matched_objects": 2,
+        "missed_objects": 0,
+        "false_detections": 0,
+        "pass": true
+      }
+    ],
+    "all_neighbor_checks_pass": true
+  },
+  "acceptance_checks": {
+    "supported_objects_are_valid_or_explicitly_safely_rejected": true,
+    "no_unsafe_known_color_cross_classification": true,
+    "unknown_not_promoted_to_supported_color": true,
+    "xy_p95_within_perception_budget": true,
+    "yaw_p95_within_limit": true,
+    "rgb_channel_order": true,
+    "missing_stale_malformed_handled": true,
+    "tracking_ids_stable_under_small_noise": true,
+    "sorting_zones_excluded": true,
+    "empty_scene_has_no_false_candidates": true,
+    "neighbor_object_cases_handled": true,
+    "occlusion_cases_rejected_safely": true,
+    "ground_truth_boundary_audit": true,
+    "tuning_validation_seeds_disjoint": true,
+    "config_frozen_before_validation": true
+  },
+  "classification_safety_counts": {
+    "known_color_cross_classifications": 0,
+    "unknown_promoted_to_supported_color": 0
+  },
+  "worst_cases": [
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20265052,
+      "files_prefix": "01_largest_xy_error_20265052"
+    },
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20265020,
+      "files_prefix": "02_largest_xy_error_20265020"
+    },
+    {
+      "case_type": "largest_xy_error",
+      "seed": 20265040,
+      "files_prefix": "03_largest_xy_error_20265040"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20265016,
+      "files_prefix": "04_rejected_candidate_large_residual_20265016"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20265056,
+      "files_prefix": "05_rejected_candidate_large_residual_20265056"
+    },
+    {
+      "case_type": "rejected_candidate_large_residual",
+      "seed": 20265036,
+      "files_prefix": "06_rejected_candidate_large_residual_20265036"
+    }
+  ],
+  "ground_truth_boundary": {
+    "runtime_perception_files": [
+      "__init__.py",
+      "detector.py",
+      "geometry.py",
+      "tracker.py",
+      "types.py"
+    ],
+    "violations": [],
+    "no_hidden_ground_truth_access": true,
+    "sensor_input_contract": "RGB CameraFrame + calibration/config + static background reference",
+    "evaluator_truth_separate": true
+  },
+  "versions": {
+    "python": "3.12.10",
+    "opencv": "4.14.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.5.3",
+    "config_sha256": "55c87dcd96f6146a1214765c0fcab66a1be452fc55467ed2ae3a19046a7e19f2"
+  },
+  "limitations": [
+    "Objects are matte RGB cuboids rendered with controlled MuJoCo lighting; real camera color response is not modeled.",
+    "Position estimation is calibrated for one fixed object-top plane at z=16 mm; other object heights are unsupported.",
+    "The candidate detector is ROI/background based and requires a clear, calibrated tabletop background.",
+    "Neutral objects whose rendered local contrast from the tabletop falls below the measured operating limit cannot be guaranteed detectable; a pale-gray-on-white miss remains a documented limitation and remains counted in raw recall.",
+    "Touching/merged objects and substantial occlusion require rejection; this module does not separate arbitrary piles.",
+    "The homography validates image-to-BASE geometry but is not a collision-free grasp or trajectory proof."
+  ]
+}

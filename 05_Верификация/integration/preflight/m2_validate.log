@@ -1,0 +1,11 @@
+M2 SSOT/model validation failed: Parameter controller.hold_evidence_max_age_s has unsupported origin inherited
+Traceback (most recent call last):
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\m2\validate_ssot.py", line 355, in <module>
+    print(json.dumps(main(),ensure_ascii=False,indent=2))
+                     ^^^^^^
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\m2\validate_ssot.py", line 102, in main
+    config = build_model.load_ssot()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Desktop\Ruslan-agtu\курсач-руслан\04_Программа\m2\build_model.py", line 41, in load_ssot
+    raise ValueError(f"Parameter {key} has unsupported origin {item['origin']}")
+ValueError: Parameter controller.hold_evidence_max_age_s has unsupported origin inherited

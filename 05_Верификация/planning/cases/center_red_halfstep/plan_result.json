@@ -1,0 +1,735 @@
+{
+  "case": {
+    "case_id": "center_red_halfstep",
+    "xy_estimate_m": [
+      0.0,
+      -0.25
+    ],
+    "class_label": "RED",
+    "yaw_estimate_rad": 0.0,
+    "obstacles": [],
+    "step_scale": 0.5,
+    "expected": "SUCCESS",
+    "purpose": "Half-baseline sampling for convergence comparison with center_red_yaw0.",
+    "resolved_sample_step_m": 0.0005,
+    "baseline_sample_step_m": 0.001
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "mujoco": "3.14.0",
+    "numpy": "2.5.3",
+    "PyYAML": "6.0.3",
+    "Pillow": "12.0.0"
+  },
+  "configuration_version": "M7-v1.0",
+  "ssot_sha256": "7699a5120b7bd90158b4494efe5275fc544af46167765c56621690bc8dd60c73",
+  "model_sha256": "3158478697d27e44abb3430c9c8e54137a42e9dd9c1145610648b4105f16eeb4",
+  "planner_source_sha256": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+  "source_sha256": {
+    "04_Программа\\planning\\context.py": "297d73dc8d80e83e13e4fb7f97ea95d8056e1ce5280f4f7852b2f5b2ecc0fe8c",
+    "04_Программа\\planning\\records.py": "52cc3faf24d3aa95f812dfeec3d2cb9ab301f8c24263c6a522204975412f53e4",
+    "04_Программа\\planning\\collision.py": "8ecadd2a93a35d599c08584b567875a3cc283f709430f341bc7bb87233b31d9d",
+    "04_Программа\\planning\\sampling.py": "8ac50bfb5b2955188e1a3c0984591d2457e1b03f91b342cd7214f00ad4aabb17",
+    "04_Программа\\planning\\trajectory.py": "f37ed8a43642bc6f164dd6a23613832511317455324148b908bfe967e6d86baa",
+    "04_Программа\\planning\\planner.py": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+    "04_Программа\\planning\\run_m5_verification.py": "84cb9da32bff145a266ac1db7374cd91b06b808f1fd8b5b3d4d5f40b2c927308",
+    "04_Программа\\kinematics\\scara.py": "f04b6aee86d9b235e2e9183e58b837c9731bcef6486dd9d5353004016d951151",
+    "04_Программа\\perception\\types.py": "664418a291f68443b7c6bbe237e424ffe5f1054a37c583e332e660c235150611"
+  },
+  "batch": {
+    "status": "OK",
+    "frame_id": 51007,
+    "simulation_time_s": 10.0,
+    "detections": [
+      {
+        "track_id": 52007,
+        "class_label": "RED",
+        "xy_base_m": [
+          0.0,
+          -0.25
+        ],
+        "yaw_base_rad": 0.0,
+        "confidence": 0.99,
+        "position_sigma_m": 0.001,
+        "yaw_sigma_rad": 0.03490658503988659,
+        "status": "VALID",
+        "reason": null,
+        "frame_id": 51007,
+        "simulation_time_s": 10.0,
+        "area_px": 225.0,
+        "bbox_xywh_px": [
+          300,
+          200,
+          15,
+          15
+        ],
+        "center_uv_px": [
+          307.5,
+          207.5
+        ],
+        "frame_age_s": 0.0,
+        "diagnostics": {
+          "source": "M5 deterministic DetectionBatch contract fixture"
+        }
+      }
+    ]
+  },
+  "current_q": [
+    2.6179938779914944,
+    1.0471975511965976,
+    0.015,
+    0.0
+  ],
+  "current_gripper_m": 0.0,
+  "available_slot_ids": [
+    "RED:1"
+  ],
+  "collision_sample_step_m": 0.0005,
+  "complete_sampled_trajectory_csv": null,
+  "wall_time_s": 26.967198700000154,
+  "result": {
+    "code": "COLLISION_GRASP",
+    "reason": "Full-cycle sampled collision check rejected a configuration.",
+    "phase": "DESCENT",
+    "plan": null,
+    "diagnostics": {
+      "attempts": [
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            0,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            0,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            0,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            1,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161264222e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983307613922,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            0,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            1,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161264222e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983307613922,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            1,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161264222e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983307613922,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 0,
+          "yaw_rad": 0.0,
+          "ring_directions": [
+            1,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161264222e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983307613922,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            0,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            0,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            0,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            1,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161266648e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982833154587,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            0,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            1,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161266648e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982833154587,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            1,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161266648e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982833154587,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 3,
+          "yaw_rad": 4.71238898038469,
+          "ring_directions": [
+            1,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161266648e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982833154587,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            0,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            0,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            0,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            1,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "TRANSFER",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.312347838203813e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983209867928,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            0,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            1,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "TRANSFER",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.312347838203813e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983209867928,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            1,
+            1,
+            0
+          ],
+          "code": "COLLISION_GRASP",
+          "phase": "DESCENT",
+          "reason": "Full-cycle sampled collision check rejected a configuration.",
+          "diagnostics": {
+            "sample_index": 23166,
+            "time_s": 74.0682128161025,
+            "violation": {
+              "category": "robot_environment",
+              "geom_a": "finger_left_collision",
+              "geom_b": "table_top_collision",
+              "phase": "DESCENT",
+              "distance_m": 0.005723131481739726,
+              "required_m": 0.00575,
+              "reason": "Signed distance is below the required phase clearance."
+            },
+            "violation_count": 2,
+            "checked_pairs": 342,
+            "exact_near_pairs": 3
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 1,
+          "yaw_rad": 1.5707963267948966,
+          "ring_directions": [
+            1,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "SAFE_RETURN",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.058073933507289e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983555878347,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            0,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            0,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            0,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            1,
+            0,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161311456e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982377126816,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            0,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 3.959926001184119e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999983103055453,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            1,
+            0,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161311456e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982377126816,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            1,
+            1,
+            0
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161311456e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982377126816,
+            "allowed_joint_step": 0.02
+          }
+        },
+        {
+          "slot_id": "RED:1",
+          "symmetry_index": 2,
+          "yaw_rad": 3.141592653589793,
+          "ring_directions": [
+            1,
+            1,
+            1
+          ],
+          "code": "BRANCH_DISCONTINUITY",
+          "phase": "PREGRASP_ROUTE",
+          "reason": "Adaptive Cartesian/joint subdivision exhausted.",
+          "diagnostics": {
+            "cartesian_step_m": 4.040603161311456e-06,
+            "yaw_step_rad": 0.0,
+            "normalized_joint_step": 0.9999982377126816,
+            "allowed_joint_step": 0.02
+          }
+        }
+      ],
+      "selected_diagnostics": {
+        "sample_index": 23166,
+        "time_s": 74.0682128161025,
+        "violation": {
+          "category": "robot_environment",
+          "geom_a": "finger_left_collision",
+          "geom_b": "table_top_collision",
+          "phase": "DESCENT",
+          "distance_m": 0.005723131481739726,
+          "required_m": 0.00575,
+          "reason": "Signed distance is below the required phase clearance."
+        },
+        "violation_count": 2,
+        "checked_pairs": 342,
+        "exact_near_pairs": 3
+      }
+    }
+  }
+}

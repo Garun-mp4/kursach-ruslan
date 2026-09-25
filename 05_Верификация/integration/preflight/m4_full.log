@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "acceptance": {
+    "supported_objects_are_valid_or_explicitly_safely_rejected": true,
+    "no_unsafe_known_color_cross_classification": true,
+    "unknown_not_promoted_to_supported_color": true,
+    "xy_p95_within_perception_budget": true,
+    "yaw_p95_within_limit": true,
+    "rgb_channel_order": true,
+    "missing_stale_malformed_handled": true,
+    "tracking_ids_stable_under_small_noise": true,
+    "sorting_zones_excluded": true,
+    "empty_scene_has_no_false_candidates": true,
+    "neighbor_object_cases_handled": true,
+    "occlusion_cases_rejected_safely": true,
+    "ground_truth_boundary_audit": true,
+    "tuning_validation_seeds_disjoint": true,
+    "config_frozen_before_validation": true
+  },
+  "detection": {
+    "tp": 368,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "xy": {
+    "n": 365,
+    "mean": 0.000476473435866466,
+    "median": 0.00039768705411822474,
+    "p95": 0.0010421218236791345,
+    "max": 0.0021776825919091114
+  },
+  "yaw": {
+    "n": 365,
+    "mean": 0.015302778114190296,
+    "median": 0.007494557154135051,
+    "p95": 0.06879177531427412,
+    "max": 0.11601126852537125
+  },
+  "confusion": {
+    "RED": {
+      "RED": 114,
+      "GREEN": 0,
+      "BLUE": 0,
+      "UNKNOWN": 0,
+      "NO_DETECTION": 0
+    },
+    "GREEN": {
+      "RED": 0,
+      "GREEN": 119,
+      "BLUE": 0,
+      "UNKNOWN": 0,
+      "NO_DETECTION": 0
+    },
+    "BLUE": {
+      "RED": 0,
+      "GREEN": 0,
+      "BLUE": 120,
+      "UNKNOWN": 0,
+      "NO_DETECTION": 0
+    },
+    "UNKNOWN": {
+      "RED": 0,
+      "GREEN": 0,
+      "BLUE": 0,
+      "UNKNOWN": 15,
+      "NO_DETECTION": 0
+    }
+  },
+  "calibration": {
+    "n": 64,
+    "mean_x_error_m": 3.735615666177459e-05,
+    "mean_y_error_m": -4.6929263417001886e-05,
+    "rmse_x_m": 0.00025914411324930625,
+    "rmse_y_m": 0.00018953788564047164,
+    "mean_planar_error_m": 0.00027684401618719475,
+    "p95_planar_error_m": 0.000511785107825167,
+    "max_planar_error_m": 0.0008793145175878263,
+    "max_error_point_index": 52
+  },
+  "config_hash": "55c87dcd96f6146a1214765c0fcab66a1be452fc55467ed2ae3a19046a7e19f2"
+}
