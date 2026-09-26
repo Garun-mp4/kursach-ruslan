@@ -1,0 +1,61 @@
+{
+  "schema_version": "M7-evaluator-v1.0",
+  "run_id": "single_red_center-3209b37efa",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 194.28000000019955,
+  "controller_final_state": "DONE",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    }
+  },
+  "controller_reports_done": true,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.2506355333267917,
+        0.21063890334114882,
+        0.011947088747119477
+      ],
+      "linear_velocity_m_s": [
+        -5.0092521807491596e-18,
+        1.1442053770305022e-17,
+        -2.1960096736221093e-16
+      ],
+      "angular_velocity_rad_s": [
+        -1.0813276785544311e-15,
+        2.5612843853753685e-16,
+        3.294585879885621e-19
+      ],
+      "nearest_slot_id": "RED:0",
+      "nearest_zone": "RED",
+      "horizontal_slot_error_m": 0.0015066408933874038,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 81.56,
+      "bilateral_contact_samples": 1570,
+      "maximum_relative_slip_m": 0.000790679163
+    }
+  },
+  "physical_sort_success_count": 1,
+  "physical_sort_failure_count": 0,
+  "all_active_objects_physically_sorted": true,
+  "controller_done_and_physical_success": true,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

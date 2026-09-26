@@ -1,0 +1,13 @@
+scenario_id: zone_full_red
+seed: 20260930
+active_objects:
+  - body_name: object_red_01
+    xy_m: [0.0, -0.25]
+    yaw_rad: 0.0
+initial_slot_occupants:
+  - body_name: object_red_02
+    slot_id: RED:0
+  - body_name: object_green_01
+    slot_id: RED:1
+  - body_name: object_blue_01
+    slot_id: RED:2

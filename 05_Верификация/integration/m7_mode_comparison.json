@@ -1,0 +1,108 @@
+{
+  "schema_version": "M7-run-comparison-v1.0",
+  "run_ids": [
+    "single_red_center-4955e767ff",
+    "single_red_center-95a4e8b5eb"
+  ],
+  "scenario_id": "single_red_center",
+  "seed": 20260925,
+  "modes": [
+    "batch",
+    "interactive"
+  ],
+  "comparison_method": "Compare reproducible configuration/source hashes and normalized controller, public RGB, plan, telemetry, evaluator, and final physics data. Exclude only wall-clock measurements and run-ID strings from functional equivalence.",
+  "checks": {
+    "same_scenario_and_seed": true,
+    "same_physics_and_runtime_configuration": true,
+    "same_input_hashes": true,
+    "same_requested_modes": true,
+    "same_simulation_duration": true,
+    "same_control_ticks": true,
+    "same_controller_summary_except_wall_timing": true,
+    "same_controller_events": true,
+    "same_public_rgb_observations": true,
+    "same_controller_telemetry": true,
+    "same_plan_artifacts": true,
+    "same_evaluator_report": true,
+    "same_final_state_within_1e-12": true,
+    "same_physical_sort_outcome": true
+  },
+  "accepted": true,
+  "simulation_time_s": [
+    164.81000000005884,
+    164.81000000005884
+  ],
+  "control_ticks": [
+    16482,
+    16482
+  ],
+  "wall_clock_elapsed_s": [
+    105.0382765999966,
+    113.43949759998941
+  ],
+  "performance": [
+    {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.5695979073780784,
+      "control_cycle_count": 16482,
+      "control_cycle_wall_average_s": 0.0063680779031505515,
+      "control_cycle_wall_max_s": 29.23309799999697,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 82405,
+      "physics_step_wall_average_s": 0.00011838427035760852,
+      "physics_step_wall_max_s": 0.02011480000510346,
+      "sensor_capture": {
+        "capture_count": 6,
+        "render_wall_total_s": 0.048524899990297854,
+        "render_wall_average_s": 0.008087483331716308,
+        "render_wall_max_s": 0.01004079999984242,
+        "perception_wall_total_s": 0.3183343999698991,
+        "perception_wall_average_s": 0.053055733328316514,
+        "perception_wall_max_s": 0.07223909998720046
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.048524899990297854,
+      "render_and_display_wall_fraction": 0.0004621356803620827
+    },
+    {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.4530699521836243,
+      "control_cycle_count": 16482,
+      "control_cycle_wall_average_s": 0.006878974153600872,
+      "control_cycle_wall_max_s": 33.18183340001269,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 82405,
+      "physics_step_wall_average_s": 0.00011030614281726567,
+      "physics_step_wall_max_s": 0.0012123999913455918,
+      "sensor_capture": {
+        "capture_count": 6,
+        "render_wall_total_s": 0.18915769999148324,
+        "render_wall_average_s": 0.031526283331913874,
+        "render_wall_max_s": 0.04194219999772031,
+        "perception_wall_total_s": 0.2778262000065297,
+        "perception_wall_average_s": 0.04630436666775495,
+        "perception_wall_max_s": 0.054883200005861
+      },
+      "viewer_sync_count": 32963,
+      "viewer_sync_wall_total_s": 4.045007401364273,
+      "viewer_sync_wall_average_s": 0.000122713569801422,
+      "viewer_sync_wall_max_s": 0.0021579000022029504,
+      "render_and_display_wall_total_s": 4.234165101355757,
+      "render_and_display_wall_fraction": 0.037331096907726374
+    }
+  ],
+  "physical_sort_success_count": [
+    1,
+    1
+  ],
+  "final_state_max_abs_difference": {
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "simulation_time_s": 0.0
+  }
+}

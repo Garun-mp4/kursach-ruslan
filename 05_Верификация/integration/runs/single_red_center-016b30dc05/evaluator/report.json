@@ -1,0 +1,64 @@
+{
+  "schema_version": "M7-evaluator-v1.0",
+  "run_id": "single_red_center-016b30dc05",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 194.7700000002019,
+  "controller_final_state": "DONE",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": [
+        "PLACE_VERIFICATION_TIMEOUT",
+        "RETREAT_COMPLETED_WITHOUT_PLACE_CONFIRMATION"
+      ]
+    }
+  },
+  "controller_reports_done": true,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.2506355333267917,
+        0.21063890334114882,
+        0.011947088747119477
+      ],
+      "linear_velocity_m_s": [
+        -3.982872971703704e-18,
+        4.555380367677978e-18,
+        -2.23169769773289e-16
+      ],
+      "angular_velocity_rad_s": [
+        -4.55507131051411e-16,
+        2.8236137815425403e-16,
+        5.442404091985815e-18
+      ],
+      "nearest_slot_id": "RED:0",
+      "nearest_zone": "RED",
+      "horizontal_slot_error_m": 0.0015066408933874038,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 81.56,
+      "bilateral_contact_samples": 1570,
+      "maximum_relative_slip_m": 0.000790679163
+    }
+  },
+  "physical_sort_success_count": 1,
+  "physical_sort_failure_count": 0,
+  "all_active_objects_physically_sorted": true,
+  "controller_done_and_physical_success": true,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

@@ -1,0 +1,8 @@
+scenario_id: unknown_cyan_object
+seed: 20260929
+active_objects:
+  - body_name: object_red_01
+    xy_m: [0.0, -0.25]
+    yaw_rad: 0.0
+render_rgba_overrides:
+  object_red_01: [0.0, 0.8, 1.0, 1.0]

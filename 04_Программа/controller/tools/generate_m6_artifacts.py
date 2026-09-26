@@ -63,10 +63,10 @@ TRANSITION_LABEL = {
     (State.VERIFY_HOLD, State.RECOVER): "явный no-hold",
     (State.TRANSFER, State.PLACE): "перенос завершён, hold свежий",
     (State.PLACE, State.RELEASE): "опускание завершено, hold свежий",
-    (State.RELEASE, State.VERIFY_PLACE): "захват пуст по свежему датчику",
-    (State.VERIFY_PLACE, State.RETREAT): "публичная проверка или безопасный исход",
+    (State.RELEASE, State.RETREAT): "свежий датчик подтвердил пустой захват",
+    (State.RETREAT, State.VERIFY_PLACE): "отход открыл камере обзор слота",
+    (State.VERIFY_PLACE, State.OBSERVE): "исход укладки учтен; запросить новую сцену",
     (State.VERIFY_PLACE, State.RECOVER): "лимит цикла без удерживаемого груза",
-    (State.RETREAT, State.OBSERVE): "цикл закрыт",
     (State.RETREAT, State.RECOVER): "ошибка отхода без груза",
     (State.RECOVER, State.OBSERVE): "восстановление подтверждено",
     (State.SAFE_STOP, State.INIT): "операторский сброс + безопасное разрешение",
@@ -101,13 +101,13 @@ BEHAVIOR_TESTS = {
     (State.TRANSFER, State.SAFE_STOP): "test_lost_payload_during_transfer_quarantines_slot_and_stops",
     (State.PLACE, State.RELEASE): "test_nominal_cycle_requires_public_hold_and_place_evidence",
     (State.PLACE, State.SAFE_STOP): "test_emergency_stop_latches_from_every_active_state",
-    (State.RELEASE, State.VERIFY_PLACE): "test_nominal_cycle_requires_public_hold_and_place_evidence",
+    (State.RELEASE, State.RETREAT): "test_nominal_cycle_requires_public_hold_and_place_evidence",
+    (State.RETREAT, State.VERIFY_PLACE): "test_nominal_cycle_requires_public_hold_and_place_evidence",
+    (State.VERIFY_PLACE, State.OBSERVE): "test_nominal_cycle_requires_public_hold_and_place_evidence",
     (State.RELEASE, State.SAFE_STOP): "test_release_confirmation_timeout_preserves_slot_and_stops",
-    (State.VERIFY_PLACE, State.RETREAT): "test_nominal_cycle_requires_public_hold_and_place_evidence",
     (State.VERIFY_PLACE, State.RECOVER): "test_verify_place_cycle_timeout_enters_recover_without_claiming_sort",
     (State.VERIFY_PLACE, State.SAFE_STOP): "test_emergency_stop_latches_from_every_active_state",
-    (State.RETREAT, State.OBSERVE): "test_nominal_cycle_requires_public_hold_and_place_evidence",
-    (State.RETREAT, State.RECOVER): "test_retreat_execution_failure_recovers_without_reclassifying_placed_track",
+    (State.RETREAT, State.RECOVER): "test_retreat_execution_failure_never_claims_placement",
     (State.RETREAT, State.SAFE_STOP): "test_emergency_stop_latches_from_every_active_state",
     (State.RECOVER, State.OBSERVE): "test_recovery_budget_resets_after_completed_safe_recovery",
     (State.RECOVER, State.SAFE_STOP): "test_recovery_failure_and_timeout_escalate_to_safe_stop",
@@ -125,9 +125,9 @@ STATE_HANDLER_TESTS = {
     State.VERIFY_HOLD: "test_hold_verification_timeout_with_no_fresh_sensor_is_safe_stop; test_grasp_attempt_budget_stops_after_one_bounded_retry",
     State.TRANSFER: "test_lost_payload_during_transfer_quarantines_slot_and_stops; test_stale_hold_signal_during_transfer_latches_safe_stop",
     State.PLACE: "test_nominal_cycle_requires_public_hold_and_place_evidence; test_transfer_invariant_requires_fresh_public_hold",
-    State.RELEASE: "test_release_confirmation_timeout_preserves_slot_and_stops",
-    State.VERIFY_PLACE: "test_evaluator_only_placement_evidence_is_ignored; test_place_timeout_quarantines_instead_of_counting_success; test_verify_place_cycle_timeout_enters_recover_without_claiming_sort",
-    State.RETREAT: "test_nominal_cycle_requires_public_hold_and_place_evidence; test_retreat_execution_failure_recovers_without_reclassifying_placed_track",
+    State.RELEASE: "test_release_confirmation_timeout_preserves_slot_and_stops; test_multiple_objects_are_processed_once_across_batch_cycles",
+    State.VERIFY_PLACE: "test_nominal_cycle_requires_public_hold_and_place_evidence; test_evaluator_only_placement_evidence_is_ignored; test_place_timeout_quarantines_instead_of_counting_success; test_verify_place_cycle_timeout_enters_recover_without_claiming_sort",
+    State.RETREAT: "test_nominal_cycle_requires_public_hold_and_place_evidence; test_retreat_execution_failure_never_claims_placement",
     State.RECOVER: "test_recovery_budget_resets_after_completed_safe_recovery; test_recovery_failure_and_timeout_escalate_to_safe_stop",
     State.SAFE_STOP: "test_safe_stop_holding_payload_preserves_slot_and_never_opens_gripper; test_safe_stop_reset_requires_explicit_safe_disposition",
     State.DONE: "test_done_means_controller_terminated_not_all_items_sorted",
@@ -145,7 +145,7 @@ ERROR_ROWS = [
     ("ERR-009", "No-hold после тестового подъёма", "Свежий разрешенный датчик сообщает holding=false после LIFT.", "Ограниченный OPEN_AND_RETREAT_NO_PAYLOAD, освободить резервы, повторить цель до бюджета.", "Освободить; slot не занят.", "GRASP_FAILED / RECOVERY_REQUESTED", "Максимум 2 grasp attempts; recovery один раз на recovery episode.", "test_grasp_failure_uses_bounded_recovery_without_claiming_hold; test_grasp_attempt_budget_stops_after_one_bounded_retry", "Использовать только finger contact/effort proxy."),
     ("ERR-010", "Hold неизвестен/устарел после подъема", "Нет свежего разрешенного сигнала или источник запрещен.", "SAFE_STOP и удержание захвата; no-hold не выводить из старого false.", "Сохранить track и slot.", "HOLD_EVIDENCE_TIMEOUT_UNKNOWN / SAFE_STOP", "Повтор захвата запрещен без свежего false.", "test_hold_verification_timeout_with_no_fresh_sensor_is_safe_stop; test_grasp_execution_failure_with_unknown_hold_latches_safe_stop", "M7 обязан помечать timestamp/source/valid."),
     ("ERR-011", "Удержание потеряно/устарело при TRANSFER или PLACE", "Fresh false либо срок hold evidence превысил 0.04 s.", "Защелкнуть SAFE_STOP, отменить дальнейшее движение и не отпускать автоматически.", "Slot QUARANTINED; при unknown цикл остается диагностически активен.", "PUBLIC_HOLD_SIGNAL_LOST / PUBLIC_HOLD_SIGNAL_STALE_OR_UNKNOWN", "Без повтора.", "test_lost_payload_during_transfer_quarantines_slot_and_stops; test_stale_hold_signal_during_transfer_latches_safe_stop", "Не подменять потерю по evaluator ground truth."),
-    ("ERR-012", "Сбой выполнения движения", "command_id/status/timestamp в ExecutionFeedback.", "В approach/descent — recovery только при свежем подтверждении пустого захвата; возможный груз — SAFE_STOP.", "No-payload recovery releases; uncertain hold preserves.", "EXECUTION_FAILED / SAFE_STOP", "State/cycle timeouts конечны; stale command ID игнорируется.", "test_execution_failure_without_payload_releases_reservations; test_descend_execution_failure_with_fresh_no_hold_enters_recover; test_grasp_execution_failure_with_fresh_no_hold_enters_recover; test_grasp_execution_failure_with_unknown_hold_latches_safe_stop; test_retreat_execution_failure_recovers_without_reclassifying_placed_track", "M7 обеспечивает stop/hold adapter."),
+    ("ERR-012", "Сбой выполнения движения", "command_id/status/timestamp в ExecutionFeedback.", "В approach/descent — recovery только при свежем подтверждении пустого захвата; возможный груз — SAFE_STOP.", "No-payload recovery releases; uncertain hold preserves.", "EXECUTION_FAILED / SAFE_STOP", "State/cycle timeouts конечны; stale command ID игнорируется.", "test_execution_failure_without_payload_releases_reservations; test_descend_execution_failure_with_fresh_no_hold_enters_recover; test_grasp_execution_failure_with_fresh_no_hold_enters_recover; test_grasp_execution_failure_with_unknown_hold_latches_safe_stop; test_retreat_execution_failure_never_claims_placement", "M7 обеспечивает stop/hold adapter."),
     ("ERR-013", "Захват не подтвержден датчиком после закрытия", "Свежий публичный сенсорный сигнал false; закрытие пальцев само по себе не считается успехом.", "Только тогда выполнить bounded recovery; stale/unknown — SAFE_STOP.", "Освободить на подтвержденном no-hold; сохранить на uncertain.", "GRASP_FAILED / HOLD_CONFIRMED", "2 попытки на цель.", "test_grasp_attempt_budget_stops_after_one_bounded_retry", "Не читать истинную позицию объекта или контакты evaluator."),
     ("ERR-014", "Release не подтвержден пустым захватом", "После команды RELEASE не поступает свежий false.", "Остаться в RELEASE до timeout, затем SAFE_STOP; не объявлять VERIFY_PLACE.", "Сохранить slot reservation.", "RELEASE_WAITING_FOR_EMPTY_GRIPPER / RELEASE_STATE_UNCERTAIN", "controller.gripper_release_confirmation_timeout_s=0.25 s.", "test_release_confirmation_timeout_preserves_slot_and_stops", "M7 public sensor must cover release transition."),
     ("ERR-015", "Placement evidence запрещен/устарел/неоднозначен", "Источник evaluator, старый frame_id, не-новый кадр или низкая уверенность.", "Игнорировать и ждать публичную камеру до bounded timeout.", "Slot сохраняется RESERVED до исхода; при timeout — QUARANTINED.", "PLACE_EVIDENCE_IGNORED / PLACE_EVIDENCE_INCONCLUSIVE", "Не повторять release/placement.", "test_evaluator_only_placement_evidence_is_ignored; test_place_timeout_quarantines_instead_of_counting_success", "Evaluator полностью отделен от controller."),
@@ -206,12 +206,14 @@ def write_fsm_doc(config: ControllerConfig) -> None:
     lines = [
         "# Конечный автомат контроллера цветовой сортировки",
         "",
-        f"Версия политики: **{config.policy_version}**  ",
-        f"Версия аппаратной/геометрической SSOT, передаваемая в M5: **{config.config_version}**  ",
-        f"SHA-256 SSOT на генерации: `{config.ssot_sha256}`  ",
+        f"Версия политики: **{config.policy_version}**",
+        "",
+        f"Версия SSOT, применённая для текущей M7-интеграции: **{config.config_version}**",
+        "",
+        f"SHA-256 SSOT на генерации: `{config.ssot_sha256}`",
         f"SHA-256 MJCF модели: `{config.model_sha256}`",
         "",
-        "Контроллер — независимый логический слой: perception, M5 planner и исполнительные операции приходят через типизированные интерфейсы. В M6 физический исполнитель не реализуется; проверка FSM выполняется управляемыми входными последовательностями и test doubles.",
+        "Контроллер — независимый логический слой: perception, M5 planner и исполнительные операции приходят через типизированные интерфейсы. На M6 FSM проверялась управляемыми входными последовательностями и test doubles; на M7 исполнительные интерфейсы связаны с контактной моделью MuJoCo и публичными RGB-адаптерами (приёмка — `01_Управление/приемка/M07.md`).",
         "",
         "## Диаграммы",
         "",
@@ -319,9 +321,9 @@ def flowchart_cells() -> tuple[list[dict], list[dict]]:
         ("step4", "<b>04 · ПОЛНЫЙ M5 PREFLIGHT</b><br>Проверить все фазы цикла, свежесть M4, SSOT/model hash, геометрию и события.<br>До полного SUCCESS команды движения запрещены.", 1225, 350, 470, 130, "process"),
         ("step5", "<b>05 · ПОДХОД И ЗАХВАТ</b><br>APPROACH → DESCEND → GRASP_CLOSE → test LIFT.<br>Закрытие захвата не доказывает удержание: нужны свежий публичный датчик и новая сцена у источника.", 645, 350, 470, 130, "process"),
         ("step6", "<b>06 · ПЕРЕНОС И ОТПУСКАНИЕ</b><br>TRANSFER → PLACE → RELEASE.<br>Контролировать свежее удержание; движение и release выполняются только по принятому M5 plan и в зарезервированный slot.", 65, 350, 470, 130, "process"),
-        ("step7", "<b>07 · ПУБЛИЧНАЯ ПРОВЕРКА УКЛАДКИ</b><br>После release ждать новый camera-perception кадр.<br>Сверить класс, зону, slot и порог confidence; evaluator ground truth контроллеру недоступен.", 65, 580, 470, 130, "decision"),
-        ("step8", "<b>08 · ФИКСАЦИЯ ИСХОДА</b><br>Совпадение → PLACED_CONTROLLER_CONFIRMED и slot OCCUPIED.<br>Несовпадение/неопределенность → SAFE_FAILURE; slot QUARANTINED.", 645, 580, 470, 130, "success"),
-        ("step9", "<b>09 · ОТХОД И СЛЕДУЮЩИЙ ЦИКЛ</b><br>Выполнить M5 RETREAT/SAFE_RETURN/SAFE_HOME; запросить новый кадр.<br>Track history исключает повторный учет завершенного объекта.", 1225, 580, 470, 130, "process"),
+        ("step7", "<b>07 · ОТХОД ОТ ЛОТКА</b><br>После свежего подтверждения пустого захвата выполнить M5 RETREAT/SAFE_RETURN/SAFE_HOME.<br>Затем запросить новый кадр placement-камеры.", 65, 580, 470, 130, "process"),
+        ("step8", "<b>08 · ПУБЛИЧНАЯ ПРОВЕРКА УКЛАДКИ</b><br>Сверить класс, зону, slot и порог confidence по новому RGB-кадру после отхода.<br>Evaluator ground truth контроллеру недоступен.", 645, 580, 470, 130, "decision"),
+        ("step9", "<b>09 · ФИКСАЦИЯ ИСХОДА</b><br>Совпадение → PLACED_CONTROLLER_CONFIRMED и slot OCCUPIED.<br>Иначе → SAFE_FAILURE; slot QUARANTINED. Track history не допускает повторного учета.", 1225, 580, 470, 130, "success"),
         ("policy_retry", "<b>ПОВТОР / ПРОПУСК</b><br>Transient M5: не более 1 retry с новым кадром.<br>Нет slot → SKIPPED_FULL_ZONE.<br>Постоянный unreachable/route failure → SKIPPED_UNREACHABLE.<br>Не-starvation: рассматривается следующий кандидат.", 65, 850, 510, 205, "warning"),
         ("policy_recover", "<b>ОГРАНИЧЕННОЕ ВОССТАНОВЛЕНИЕ</b><br>Только свежий подтвержденный no-hold позволяет открыть захват, отойти и повторить цикл в заданном бюджете.<br>После подтвержденного recovery бюджет episode сбрасывается.", 645, 850, 510, 205, "warning"),
         ("policy_stop", "<b>SAFE_STOP / КАРАНТИН</b><br>Unknown/stale payload, потеря груза, fatal contract mismatch, release ambiguity, timeout с неизвестным грузом или emergency: отменить движение, сохранить безопасное удержание, не засчитывать сортировку.", 1225, 850, 510, 205, "stop"),
@@ -401,8 +403,8 @@ def write_state_diagram() -> None:
         State.APPROACH: (1210, 125), State.DESCEND: (1210, 330),
         State.GRASP: (920, 330), State.VERIFY_HOLD: (630, 330),
         State.TRANSFER: (340, 330), State.PLACE: (50, 330),
-        State.RELEASE: (50, 535), State.VERIFY_PLACE: (340, 535),
-        State.RETREAT: (630, 535), State.DONE: (50, 755),
+        State.RELEASE: (50, 535), State.RETREAT: (340, 535),
+        State.VERIFY_PLACE: (630, 535), State.DONE: (50, 755),
         State.RECOVER: (460, 755), State.SAFE_STOP: (870, 755),
     }
     fills = {
@@ -412,8 +414,8 @@ def write_state_diagram() -> None:
     main_path = (
         State.INIT, State.OBSERVE, State.SELECT, State.PLAN,
         State.APPROACH, State.DESCEND, State.GRASP, State.VERIFY_HOLD,
-        State.TRANSFER, State.PLACE, State.RELEASE, State.VERIFY_PLACE,
-        State.RETREAT,
+        State.TRANSFER, State.PLACE, State.RELEASE, State.RETREAT,
+        State.VERIFY_PLACE,
     )
     short_state = {
         State.INIT: "readiness + safe state",
@@ -427,8 +429,8 @@ def write_state_diagram() -> None:
         State.TRANSFER: "hold monitored",
         State.PLACE: "reserved slot only",
         State.RELEASE: "fresh empty-gripper proof",
-        State.VERIFY_PLACE: "public class/zone/slot",
-        State.RETREAT: "safe return + next frame",
+        State.VERIFY_PLACE: "fresh public class/zone/slot after retreat",
+        State.RETREAT: "M5 safe retreat clears tray view",
         State.DONE: "batch ended; success rate is separate",
         State.RECOVER: "bounded, feedback-confirmed",
         State.SAFE_STOP: "latched; no automatic release",
@@ -451,9 +453,9 @@ def write_state_diagram() -> None:
                             x=x, y=y, width=230, height=82,
                             metadata={"state": state.value})
         main_edges = list(zip(main_path, main_path[1:]))
-        main_edges.append((State.RETREAT, State.OBSERVE))
+        main_edges.append((State.VERIFY_PLACE, State.OBSERVE))
         for index, (source, target) in enumerate(main_edges, 1):
-            is_cycle_return = (source, target) == (State.RETREAT, State.OBSERVE)
+            is_cycle_return = (source, target) == (State.VERIFY_PLACE, State.OBSERVE)
             style = (
                 "edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;"
                 "endArrow=block;endFill=1;strokeColor=#385D7A;strokeWidth=2;"
@@ -550,7 +552,7 @@ def write_sorting_policy(config: ControllerConfig) -> None:
     lines = [
         "# Политика сортировки и принятия решений M6",
         "",
-        f"Версия controller policy: `{config.policy_version}`. Версия конфигурации: `{config.config_version}`. ",
+        f"Версия controller policy: `{config.policy_version}`. Версия конфигурации: `{config.config_version}`.",
         f"SSOT SHA-256: `{config.ssot_sha256}`; MJCF SHA-256: `{config.model_sha256}`.",
         "",
         "Этот документ фиксирует логику высокого уровня, реализованную в `04_Программа/controller/`. M6 проверяет решения контроллера на контролируемых интерфейсных последовательностях и тестовых doubles. Исполнение контактов, динамическая физика, реальное удержание и окончательная кампания виртуальных испытаний сюда не входят.",
@@ -564,7 +566,7 @@ def write_sorting_policy(config: ControllerConfig) -> None:
         "",
         "## Основной функциональный цикл",
         "",
-        "`INIT → OBSERVE → SELECT → PLAN → APPROACH → DESCEND → GRASP → VERIFY_HOLD → TRANSFER → PLACE → RELEASE → VERIFY_PLACE → RETREAT → OBSERVE`.",
+        "`INIT → OBSERVE → SELECT → PLAN → APPROACH → DESCEND → GRASP → VERIFY_HOLD → TRANSFER → PLACE → RELEASE → RETREAT → VERIFY_PLACE → OBSERVE`.",
         "",
         "1. `INIT` проверяет конфигурацию, зависимости, arm/gripper state, конечность/актуальность времени и отсутствие зависших резервов. До успешной инициализации движение не выдаётся.",
         "2. `OBSERVE` запрашивает кадр с `frame_id` новее последнего принятого. Ошибка камеры, частичная сцена, валидная пустая сцена и неполное измерение различаются.",
@@ -573,8 +575,8 @@ def write_sorting_policy(config: ControllerConfig) -> None:
         "5. `PLAN` отправляет полный цикл M5. Проверяются track/class/slot, версия и хеш SSOT/MJCF, source frame/time, точная последовательность M5 фаз, монотонность samples, конечность q/TCP/gripper, согласование duration и уникальные согласованные маркеры attachment/release. До принятия полного плана motion запрещён.",
         "6. Исполнение идёт только фазовыми группами из принятого плана. Закрытие пальцев само по себе не считается захватом. `VERIFY_HOLD` требует завершённый test lift, свежий разрешённый hold sensor и новый M4 кадр, в котором объект отсутствует у source estimate.",
         "7. На `TRANSFER` и `PLACE` hold evidence проверяется вновь и должно оставаться свежим. Потеря, устаревание или неизвестный груз вызывают `SAFE_STOP`; контроллер не пытается автоматически открыть захват.",
-        "8. После команды `RELEASE` нужен свежий public sensor `holding=False`. Только затем начинается `VERIFY_PLACE`. Успех требует нового public camera кадра, совпадающих class/zone/slot и confidence выше порога. `RELEASE` или завершение FSM сами по себе не доказывают sorting.",
-        "9. После подтверждения slot получает `OCCUPIED`, объект — `PLACED_CONTROLLER_CONFIRMED`; после неясного/ошибочного результата слот карантинируется и успех не засчитывается. Затем исполняется M5 retreat/return.",
+        "8. После команды `RELEASE` нужен свежий public sensor `holding=False`; затем исполнитель выполняет M5 retreat/return, чтобы освободить поле зрения над лотком.",
+        "9. Только после завершения отхода `VERIFY_PLACE` запрашивает новый public RGB frame. Успех требует совпадающих class/zone/slot и confidence выше порога; подтвержденный слот становится `OCCUPIED`, неоднозначный или неверный результат переводится в `QUARANTINED`. `RELEASE` или завершение FSM сами по себе не доказывают sorting.",
         "",
         "## Детерминированный выбор цели и сортировочного места",
         "",
@@ -630,7 +632,7 @@ def write_sorting_policy(config: ControllerConfig) -> None:
         "",
         "## Известные границы",
         "",
-        "Текущий M4 ROI не наблюдает sorting trays. В M7 требуется добавить публичный `PlacementEvidence` adapter камеры для class/zone/slot; нельзя заменять его evaluator data. Приёмка M6 проверяет только controller-side freshness/source/threshold/slot logic, не визуальную точность будущего адаптера.",
+        "M4 input ROI не наблюдает sorting trays; M7 добавляет отдельную фиксированную public RGB placement view и `PlacementEvidence` adapter. Проверка выполняется только после M5 отхода и не использует evaluator data. M7 acceptance проверяет camera freshness, классификацию и сопоставление всех 9 слотов; геометрическая точность камеры проверена на виртуальной калибровочной сетке.",
         "",
     ]
     (SPEC_DIR / "Политика_сортировки.md").write_text("\n".join(lines), encoding="utf-8")
@@ -642,7 +644,7 @@ def write_forward_contracts(config: ControllerConfig) -> None:
         "",
         f"Baseline controller policy `{config.policy_version}` / SSOT `{config.config_version}` / SSOT SHA-256 `{config.ssot_sha256}`.",
         "",
-        "Документ задаёт будущую границу модулей. В M6 никакая симуляционная физика, renderer/executor или размещение не реализованы.",
+        "Документ фиксировал будущую границу модулей на M6; M7 интегрировал MuJoCo execution, public RGB placement view, grasp evidence и evaluator-isolated run artifacts.",
         "",
         "## Вход M6 controller из M7 ports",
         "",
@@ -652,7 +654,7 @@ def write_forward_contracts(config: ControllerConfig) -> None:
         "- `PlanResponse` коррелирует по request ID и возвращает M5 full-cycle result. Контроллер повторно проверяет SSOT/model hashes, source frame, phases, samples и events.",
         "- `ExecutionFeedback` коррелирует по точному `command_id`; статусы RUNNING/COMPLETED/FAILED и timestamp реальны для выполненного M7 motion adapter. Устаревший ID/time не продвигает FSM.",
         "- `GraspEvidence` допускает только `FINGER_CONTACT_SENSOR` либо `GRIPPER_EFFORT_PROXY`, а также `valid`, nullable holding и simulation timestamp. Закрытая команда пальцев не равна контакту.",
-        "- `PlacementEvidence` должен приходить только из `PUBLIC_CAMERA_PERCEPTION`, содержать новый frame, status, class/zone/slot/confidence/reason/timestamp. В M4 текущая камера смотрит на рабочую область без ROI лотков, поэтому M7 должен добавить отдельную public placement-perception view/adapter.",
+        "- `PlacementEvidence` поступает только из `PUBLIC_CAMERA_PERCEPTION`, содержит новый frame, status, class/zone/slot/confidence/reason/timestamp. M7 реализовал отдельную фиксированную RGB-view над лотками и публичный адаптер; truth из evaluator в контроллер не передается.",
         "- `RecoveryFeedback` коррелирует по recovery request ID и подтверждает arm state, known gripper state и `holding=False`; без этого controller не разрешит no-payload retry.",
         "- `emergency_stop` передаётся при любом аварийном событии; операторский reset несёт отдельные `operator_reset` и `payload_safely_resolved` interlocks.",
         "",
@@ -669,7 +671,7 @@ def write_forward_contracts(config: ControllerConfig) -> None:
         "2. Evaluator truth хранится отдельно и вызывается только после завершения цикла для независимой проверки. Он не корректирует target selection, plan, grasp, release или FSM transition.",
         "3. Executor обязан публиковать ошибки контакта и фактическую потерю груза открыто; успешная команда и событие M5 `OBJECT_ATTACHED/OBJECT_RELEASED` не заменяют измерение выполнения.",
         "4. Если физическое состояние противоречит plan marker/sensor evidence, адаптер сообщает FAILED/uncertain state; controller fail-closed policy остаётся обязательной.",
-        "5. M7 интеграционная проверка должна доказать корреляцию request/command IDs, свежесть сигналов, cancel/hold semantics и public placement camera без запуска итоговой M9 кампании.",
+        "5. M7 интеграционные проверки подтверждают корреляцию request/command IDs, свежесть сигналов, cancel/hold semantics и public placement camera; они не заменяют итоговую M9 кампанию.",
         "",
     ]
     (SPEC_DIR / "Контракт_M7_исполнения.md").write_text("\n".join(m7), encoding="utf-8")
@@ -820,12 +822,12 @@ def validate_generated_artifacts() -> None:
                 for source, target in zip((
                     State.INIT, State.OBSERVE, State.SELECT, State.PLAN,
                     State.APPROACH, State.DESCEND, State.GRASP, State.VERIFY_HOLD,
-                    State.TRANSFER, State.PLACE, State.RELEASE, State.VERIFY_PLACE,
-                    State.RETREAT,
+                    State.TRANSFER, State.PLACE, State.RELEASE, State.RETREAT,
+                    State.VERIFY_PLACE,
                 ), (
                     State.OBSERVE, State.SELECT, State.PLAN, State.APPROACH,
                     State.DESCEND, State.GRASP, State.VERIFY_HOLD, State.TRANSFER,
-                    State.PLACE, State.RELEASE, State.VERIFY_PLACE, State.RETREAT,
+                    State.PLACE, State.RELEASE, State.RETREAT, State.VERIFY_PLACE,
                     State.OBSERVE,
                 ))
             }

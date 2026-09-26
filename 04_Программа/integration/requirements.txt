@@ -1,0 +1,2 @@
+# M7 integration requires the runtime and perception pins used by M2-M4.
+-r ../perception/requirements.txt

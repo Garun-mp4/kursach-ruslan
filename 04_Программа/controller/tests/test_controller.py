@@ -217,7 +217,7 @@ class ControllerTests(unittest.TestCase):
         self.assertEqual(output.state, State.TRANSFER)
         return output
 
-    def run_through_to_verify_place(self, controller, scene, output):
+    def run_through_to_release(self, controller, scene, output):
         output = self.run_through_to_transfer(controller, scene, output)
         now = output.events[-1].simulation_time_s
         transfer_id = controller.active_command_id
@@ -238,7 +238,10 @@ class ControllerTests(unittest.TestCase):
             grasp_evidence=GraspEvidence(True, now + 0.05, "FINGER_CONTACT_SENSOR"),
         ))
         self.assertEqual(output.state, State.RELEASE)
+        return output
 
+    def run_through_to_verify_place(self, controller, scene, output):
+        output = self.run_through_to_release(controller, scene, output)
         now = output.events[-1].simulation_time_s
         release_id = controller.active_command_id
         output = controller.step(inp(
@@ -246,6 +249,14 @@ class ControllerTests(unittest.TestCase):
             execution_feedback=ExecutionFeedback(release_id, ExecutionStatus.COMPLETED,
                                                  now + 0.05),
             grasp_evidence=GraspEvidence(False, now + 0.05, "FINGER_CONTACT_SENSOR"),
+        ))
+        self.assertEqual(output.state, State.RETREAT)
+        retreat_id = controller.active_command_id
+        now = output.events[-1].simulation_time_s + 0.05
+        output = controller.step(inp(
+            now,
+            execution_feedback=ExecutionFeedback(retreat_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
         ))
         self.assertEqual(output.state, State.VERIFY_PLACE)
         return output
@@ -268,18 +279,11 @@ class ControllerTests(unittest.TestCase):
             observed_slot_id=slot_id, observed_class=class_label, confidence=0.91,
         )
         output = controller.step(inp(now, placement_evidence=evidence))
-        self.assertEqual(output.state, State.RETREAT)
+        self.assertEqual(output.state, State.OBSERVE)
         self.assertEqual(controller.reservations.status(slot_id), SlotStatus.OCCUPIED)
         self.assertEqual(controller.track_records[track_id].status,
                          TrackStatus.PLACED_CONTROLLER_CONFIRMED)
-        retreat_id = controller.active_command_id
-        now = output.events[-1].simulation_time_s
-        output = controller.step(inp(
-            now + 0.05,
-            execution_feedback=ExecutionFeedback(retreat_id, ExecutionStatus.COMPLETED, now + 0.05),
-            grasp_evidence=GraspEvidence(False, now + 0.05, "FINGER_CONTACT_SENSOR"),
-        ))
-        self.assertEqual(output.state, State.OBSERVE)
+        self.assertTrue(output.observation_requests)
         return output
 
     def test_nominal_cycle_requires_public_hold_and_place_evidence(self):
@@ -577,26 +581,33 @@ class ControllerTests(unittest.TestCase):
         self.assertFalse(any(event.event_type == "PLACEMENT_CONTROLLER_CONFIRMED"
                             for event in controller.event_log))
 
-    def test_retreat_execution_failure_recovers_without_reclassifying_placed_track(self):
+    def test_retreat_execution_failure_never_claims_placement(self):
         controller, scene, request, output = self.start_with_plan()
-        output = self.run_through_to_verify_place(controller, scene, output)
-        class_label = controller._active_class
+        output = self.run_through_to_transfer(controller, scene, output)
         slot_id = controller._active_slot_id
         track_id = controller._active_track_id
-        observation_request = output.observation_requests[-1]
-        now = output.events[-1].simulation_time_s + 0.01
-        evidence = PlacementEvidence(
-            EvidenceStatus.CONFIRMED, now, "PUBLIC_CAMERA_PERCEPTION",
-            frame_id=observation_request.minimum_frame_id,
-            observed_zone_id=controller.config.class_to_zone[class_label],
-            observed_slot_id=slot_id, observed_class=class_label, confidence=0.91,
-        )
-        output = controller.step(inp(now, placement_evidence=evidence))
+        now = output.events[-1].simulation_time_s + 0.05
+        transfer_id = controller.active_command_id
+        output = controller.step(inp(
+            now, execution_feedback=ExecutionFeedback(
+                transfer_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(True, now, "FINGER_CONTACT_SENSOR"),
+        ))
+        now = output.events[-1].simulation_time_s + 0.05
+        place_id = controller.active_command_id
+        output = controller.step(inp(
+            now, execution_feedback=ExecutionFeedback(
+                place_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(True, now, "FINGER_CONTACT_SENSOR"),
+        ))
+        now = output.events[-1].simulation_time_s + 0.05
+        release_id = controller.active_command_id
+        output = controller.step(inp(
+            now, execution_feedback=ExecutionFeedback(
+                release_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
+        ))
         self.assertEqual(output.state, State.RETREAT)
-        self.assertEqual(controller.track_records[track_id].status,
-                         TrackStatus.PLACED_CONTROLLER_CONFIRMED)
-        self.assertEqual(controller.reservations.status(slot_id), SlotStatus.OCCUPIED)
-
         retreat_id = controller.active_command_id
         failed_at = output.events[-1].simulation_time_s + 0.01
         output = controller.step(inp(
@@ -609,9 +620,9 @@ class ControllerTests(unittest.TestCase):
 
         self.assertEqual(output.state, State.RECOVER)
         self.assertEqual(output.recovery_requests[0].action, "OPEN_AND_RETREAT_NO_PAYLOAD")
-        self.assertEqual(controller.track_records[track_id].status,
-                         TrackStatus.PLACED_CONTROLLER_CONFIRMED)
-        self.assertEqual(controller.reservations.status(slot_id), SlotStatus.OCCUPIED)
+        self.assertNotEqual(controller.track_records[track_id].status,
+                            TrackStatus.PLACED_CONTROLLER_CONFIRMED)
+        self.assertNotEqual(controller.reservations.status(slot_id), SlotStatus.OCCUPIED)
         self.assertIsNone(controller.reservations.reserved_track_id)
         self.assertIsNone(controller.reservations.reserved_slot_id)
 
@@ -733,7 +744,42 @@ class ControllerTests(unittest.TestCase):
             plan_response=PlanResponse(output.plan_requests[0].request_id, second_plan),
         ))
         self.assertEqual(output.state, State.APPROACH)
-        self.complete_nominal_cycle(controller, next_batch, output)
+        output = self.run_through_to_release(controller, next_batch, output)
+        release_id = controller.active_command_id
+        release_confirmation_timeout = float(
+            self.config.p("gripper_release_confirmation_timeout_s")
+        )
+        self.assertGreater(controller._state_timeout_s(), release_confirmation_timeout)
+        # The previous cycle's confirmation window has elapsed, but the second
+        # release motion is still running and must retain its execution timeout.
+        now = output.events[-1].simulation_time_s + release_confirmation_timeout + 0.01
+        output = controller.step(inp(
+            now,
+            execution_feedback=ExecutionFeedback(release_id, ExecutionStatus.RUNNING, now),
+            grasp_evidence=GraspEvidence(True, now, "FINGER_CONTACT_SENSOR"),
+        ))
+        self.assertEqual(output.state, State.RELEASE)
+        self.assertFalse(output.safety_hold_requested)
+        now += 0.05
+        output = controller.step(inp(
+            now,
+            execution_feedback=ExecutionFeedback(release_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
+        ))
+        self.assertEqual(output.state, State.RETREAT)
+        output = drive_command(controller, output, holding=False)
+        self.assertEqual(output.state, State.VERIFY_PLACE)
+        now = output.events[-1].simulation_time_s + 0.01
+        request = output.observation_requests[-1]
+        output = controller.step(inp(
+            now,
+            placement_evidence=PlacementEvidence(
+                EvidenceStatus.CONFIRMED, now, "PUBLIC_CAMERA_PERCEPTION",
+                frame_id=request.minimum_frame_id, observed_zone_id="GREEN",
+                observed_slot_id="GREEN:0", observed_class="GREEN", confidence=0.91,
+            ),
+        ))
+        self.assertEqual(output.state, State.OBSERVE)
         self.assertEqual(controller.reservations.status("RED:0"), SlotStatus.OCCUPIED)
         self.assertEqual(controller.reservations.status("GREEN:0"), SlotStatus.OCCUPIED)
         self.assertEqual(controller.track_records[7].status,
@@ -970,6 +1016,17 @@ class ControllerTests(unittest.TestCase):
             execution_feedback=ExecutionFeedback(release_id, ExecutionStatus.COMPLETED, now),
             grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
         ))
+        self.assertEqual(output.state, State.RETREAT)
+        self.assertEqual(output.execution_commands[-1].phase_names,
+                         EXECUTION_PHASES[State.RETREAT])
+        self.assertFalse(output.observation_requests)
+        retreat_id = controller.active_command_id
+        now += 0.05
+        output = controller.step(inp(
+            now,
+            execution_feedback=ExecutionFeedback(retreat_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
+        ))
         self.assertEqual(output.state, State.VERIFY_PLACE)
         self.assertTrue(output.observation_requests)
 
@@ -1066,6 +1123,14 @@ class ControllerTests(unittest.TestCase):
             execution_feedback=ExecutionFeedback(release_id, ExecutionStatus.COMPLETED, now + .05),
             grasp_evidence=GraspEvidence(False, now + .05, "FINGER_CONTACT_SENSOR"),
         ))
+        self.assertEqual(output.state, State.RETREAT)
+        retreat_id = controller.active_command_id
+        now += 0.10
+        output = controller.step(inp(
+            now,
+            execution_feedback=ExecutionFeedback(retreat_id, ExecutionStatus.COMPLETED, now),
+            grasp_evidence=GraspEvidence(False, now, "FINGER_CONTACT_SENSOR"),
+        ))
         self.assertEqual(output.state, State.VERIFY_PLACE)
         req = output.observation_requests[-1]
         now += .06
@@ -1104,9 +1169,16 @@ class ControllerTests(unittest.TestCase):
                 release_id, ExecutionStatus.COMPLETED, now + .05),
             grasp_evidence=GraspEvidence(False, now + .05, "FINGER_CONTACT_SENSOR"),
         ))
+        self.assertEqual(output.state, State.RETREAT)
+        retreat_id = controller.active_command_id
+        output = controller.step(inp(
+            now + .1,
+            execution_feedback=ExecutionFeedback(retreat_id, ExecutionStatus.COMPLETED, now + .1),
+            grasp_evidence=GraspEvidence(False, now + .1, "FINGER_CONTACT_SENSOR"),
+        ))
         self.assertEqual(output.state, State.VERIFY_PLACE)
-        out = controller.step(inp(now + .6))
-        self.assertEqual(out.state, State.RETREAT)
+        out = controller.step(inp(now + .7))
+        self.assertEqual(out.state, State.OBSERVE)
         self.assertEqual(controller.reservations.status("RED:0"), SlotStatus.QUARANTINED)
         self.assertEqual(controller.track_records[7].status, TrackStatus.SAFE_FAILURE)
 

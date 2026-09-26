@@ -1,0 +1,23 @@
+schema_version: M7-v1.0
+runtime:
+  control_period_s: 0.01
+  telemetry_period_s: 0.04
+  observation_settle_s: 0.01
+  actuator_settle_timeout_s: 0.25
+  actuator_settle_stable_s: 0.02
+  recovery_gripper_open_s: 0.50
+  joint_position_tolerance_rad: 0.02
+  slide_position_tolerance_m: 0.001
+  gripper_position_tolerance_m: 0.0005
+  touch_contact_threshold_N: 0.001
+  placement_slot_acceptance_radius_m: 0.0175
+  evaluator_rest_height_tolerance_m: 0.006
+  evaluator_linear_speed_tolerance_m_s: 0.03
+  evaluator_angular_speed_tolerance_rad_s: 1.0
+  renderer_width_px: 640
+  renderer_height_px: 480
+  randomized_scene_min_object_spacing_m: 0.05
+  randomized_scene_max_attempts: 10000
+  # A seeded three-object batch can require about 600 s of simulation time.
+  # Keep a 50% margin so the run watchdog does not interrupt a valid final cycle.
+  default_max_simulation_time_s: 900.0

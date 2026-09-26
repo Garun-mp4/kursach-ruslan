@@ -32,7 +32,7 @@ def load_ssot() -> dict[str, Any]:
         raise ValueError("SSOT must define project, parameters, and assemblies mappings")
     if config.get("schema_version") != "1.0":
         raise ValueError(f"Unsupported schema_version: {config.get('schema_version')!r}")
-    if config.get("config_version") not in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1"}:
+    if config.get("config_version") not in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1", "M7-v1.2", "M7-v1.3", "M7-v1.4", "M7-v1.5", "M7-v1.6", "M7-v1.7", "M7-v1.8"}:
         raise ValueError("Unsupported config_version; record a controlled project revision")
     for key, item in config["parameters"].items():
         if not isinstance(item, dict):
@@ -241,7 +241,8 @@ def make_world(config: dict[str,Any], props: dict[str,BodyProperties]) -> ET.Ele
     add(root,"compiler",angle="radian",autolimits="true",fusestatic="false",inertiafromgeom="false",balanceinertia="false")
     add(root,"option",timestep=parameter(config,"environment.timestep_s"),
         gravity=[0,0,-float(parameter(config,"environment.gravity_m_s2"))],integrator="implicitfast",solver="Newton",
-        iterations=parameter(config,"environment.solver_iterations"),tolerance=parameter(config,"environment.solver_tolerance"),cone="elliptic")
+        iterations=parameter(config,"environment.solver_iterations"),tolerance=parameter(config,"environment.solver_tolerance"),
+        impratio=parameter(config,"environment.impratio"),noslip_iterations=parameter(config,"environment.noslip_iterations"),cone="elliptic")
     add(root,"size",njmax=3000,nconmax=800)
     visual=add(root,"visual")
     camera_width, camera_height = [int(value) for value in parameter(config,"camera.resolution_px")]
@@ -414,8 +415,9 @@ def make_world(config: dict[str,Any], props: dict[str,BodyProperties]) -> ET.Ele
 
 
 def write_registry(config: dict[str,Any]) -> None:
-    lines=["# Реестр параметров проекта","",f"**SSOT:** `параметры_системы.yaml`  ",
-           f"**Версия конфигурации:** `{config['config_version']}`  ",
+    lines=["# Реестр параметров проекта","",f"**SSOT:** `параметры_системы.yaml`",
+           "",
+           f"**Версия конфигурации:** `{config['config_version']}`",
            f"**Геометрическая база:** `{config['project'].get('geometry_baseline_version', 'UNKNOWN')}`; YAML — единственный редактируемый источник чисел, этот реестр формируется генератором модели.","",
            "| Ключ | Значение | Единица | Происхождение | Основание / владелец |","|---|---|---|---|---|"]
     for key,item in config["parameters"].items():
@@ -520,7 +522,7 @@ def write_calculations(config: dict[str,Any], props: dict[str,BodyProperties]) -
         f"Параметры pinhole: {p('camera.resolution_px')[0]}×{p('camera.resolution_px')[1]} px, vertical FOV {p('camera.fovy_deg'):.1f}°, высота {p('camera.position_world_m')[2]:.3f} m. `fx=fy=H/(2tan(FOV/2))={fx:.2f} px`; центр `{cx:.1f},{cy:.1f} px`. Геометрическое покрытие стола на z=0: {covw:.3f}×{covh:.3f} m, размеры столешницы {p('cell.table_size_xy_m')[0]:.3f}×{p('cell.table_size_xy_m')[1]:.3f} m.",
         "Покрытие вычислено для идеальной камеры и не учитывает перекрытие рукой, фотометрию и calibration residual. M4 владеет калибровочной проверкой.","",
         "## Контакт и границы модели","",
-        f"Начальные assumptions: μtable={p('contact.friction_table_slide')}, μfinger/object={p('gripper.friction_slide')}, condim={p('contact.condim')}, solref={p('contact.solref')}, solimp={p('contact.solimp')}. Отдельный измеренный restitution coefficient отсутствует: близко неупругое поведение является качеством выбранного damping/solver response, а не измеренным свойством PLA.",
+        f"Параметры контакта: μtable={p('contact.friction_table_slide')}, μfinger/object={p('gripper.friction_slide')}, condim={p('contact.condim')}, solref={p('contact.solref')}, solimp={p('contact.solimp')}, elliptic cone, impratio={p('environment.impratio')}, NoSlip iterations={p('environment.noslip_iterations')}. M7 обнаружил медленное сползание при стандартной регуляризации мягких контактов; одна NoSlip-постобработка подавила drift в воспроизводимом захвате без изменения коэффициента трения и нормальной силы. Это численная настройка симулятора, не свойство материала. Отдельный измеренный restitution coefficient отсутствует: близко неупругое поведение является качеством выбранного damping/solver response, а не измеренным свойством PLA.",
         "Inertia упрощена: без крепежа, проводки, приводов и гибкости; расчет массы годится для учебной динамики и требует проверки чувствительности в M7. Физических измерений не проводилось.",""
     ]
     (ROOT/"02_Спецификация"/"Расчеты_геометрии_и_нагрузок.md").write_text("\n".join(lines),encoding="utf-8")

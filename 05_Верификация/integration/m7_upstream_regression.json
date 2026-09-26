@@ -1,0 +1,801 @@
+{
+  "schema_version": "M7-upstream-regression-v1.0",
+  "started_utc": "2026-09-26T07:50:59.182382+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "mujoco": "3.14.0",
+  "numpy": "2.5.3",
+  "opencv": "4.14.0",
+  "suites": {
+    "M3_kinematics": {
+      "tests_run": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_wall_s": 0.34201360000588465,
+      "success": true,
+      "details": "test_all_named_input_and_sort_slots_are_kinematically_reachable (test_scara_kinematics.ScaraKinematicsTests.test_all_named_input_and_sort_slots_are_kinematically_reachable) ... ok\ntest_analytic_jacobian_matches_finite_differences (test_scara_kinematics.ScaraKinematicsTests.test_analytic_jacobian_matches_finite_differences) ... ok\ntest_engine_parity_for_seeded_joint_states (test_scara_kinematics.ScaraKinematicsTests.test_engine_parity_for_seeded_joint_states) ... ok\ntest_fk_home_matches_manual_coordinates (test_scara_kinematics.ScaraKinematicsTests.test_fk_home_matches_manual_coordinates) ... ok\ntest_fk_quarter_turn_and_wrist_cancel (test_scara_kinematics.ScaraKinematicsTests.test_fk_quarter_turn_and_wrist_cancel) ... ok\ntest_fk_rejects_out_of_limit_joint_without_wrapping (test_scara_kinematics.ScaraKinematicsTests.test_fk_rejects_out_of_limit_joint_without_wrapping) ... ok\ntest_fk_zero_configuration_matches_link_sum_and_vertical_offset (test_scara_kinematics.ScaraKinematicsTests.test_fk_zero_configuration_matches_link_sum_and_vertical_offset) ... ok\ntest_folded_configuration_is_outside_physical_j2_range (test_scara_kinematics.ScaraKinematicsTests.test_folded_configuration_is_outside_physical_j2_range) ... ok\ntest_ik_accepts_only_roundoff_sized_outer_boundary_excess (test_scara_kinematics.ScaraKinematicsTests.test_ik_accepts_only_roundoff_sized_outer_boundary_excess) ... ok\ntest_ik_accepts_only_roundoff_sized_z_boundary_excess (test_scara_kinematics.ScaraKinematicsTests.test_ik_accepts_only_roundoff_sized_z_boundary_excess) ... ok\ntest_ik_distant_and_geometric_hole_targets_are_rejected (test_scara_kinematics.ScaraKinematicsTests.test_ik_distant_and_geometric_hole_targets_are_rejected) ... ok\ntest_ik_full_wrist_range_boundary_and_no_symmetry (test_scara_kinematics.ScaraKinematicsTests.test_ik_full_wrist_range_boundary_and_no_symmetry) ... ok\ntest_ik_geometrically_possible_but_joint_limited_inner_region_is_diagnosed (test_scara_kinematics.ScaraKinematicsTests.test_ik_geometrically_possible_but_joint_limited_inner_region_is_diagnosed) ... ok\ntest_ik_outer_and_inner_joint_limited_boundaries (test_scara_kinematics.ScaraKinematicsTests.test_ik_outer_and_inner_joint_limited_boundaries) ... ok\ntest_ik_reports_invalid_current_configuration (test_scara_kinematics.ScaraKinematicsTests.test_ik_reports_invalid_current_configuration) ... ok\ntest_ik_reports_invalid_nan_and_inf_targets (test_scara_kinematics.ScaraKinematicsTests.test_ik_reports_invalid_nan_and_inf_targets) ... ok\ntest_ik_reports_orientation_unreachable_for_a_limited_wrist (test_scara_kinematics.ScaraKinematicsTests.test_ik_reports_orientation_unreachable_for_a_limited_wrist) ... ok\ntest_ik_residual_outside_acceptance_is_reported_as_numerical_failure (test_scara_kinematics.ScaraKinematicsTests.test_ik_residual_outside_acceptance_is_reported_as_numerical_failure) ... ok\ntest_ik_returns_both_elbow_branches_and_selects_nearest_current (test_scara_kinematics.ScaraKinematicsTests.test_ik_returns_both_elbow_branches_and_selects_nearest_current) ... ok\ntest_ik_square_object_symmetry_selects_equivalent_yaw (test_scara_kinematics.ScaraKinematicsTests.test_ik_square_object_symmetry_selects_equivalent_yaw) ... ok\ntest_ik_z_boundaries_and_outside_are_not_silently_clamped (test_scara_kinematics.ScaraKinematicsTests.test_ik_z_boundaries_and_outside_are_not_silently_clamped) ... ok\ntest_near_straight_is_flagged_but_not_rejected (test_scara_kinematics.ScaraKinematicsTests.test_near_straight_is_flagged_but_not_rejected) ... ok\ntest_transform_chain_ends_at_tcp_and_contains_all_frames (test_scara_kinematics.ScaraKinematicsTests.test_transform_chain_ends_at_tcp_and_contains_all_frames) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.342s\n\nOK\n"
+    },
+    "M4_perception": {
+      "tests_run": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_wall_s": 0.9878035000001546,
+      "success": true,
+      "details": "test_camera_frame_exposes_rgb_metadata_without_truth (test_perception_contract.PerceptionContractTests.test_camera_frame_exposes_rgb_metadata_without_truth) ... ok\ntest_canonical_square_yaw_has_quarter_turn_symmetry (test_perception_contract.PerceptionContractTests.test_canonical_square_yaw_has_quarter_turn_symmetry) ... ok\ntest_homography_pixel_base_round_trip (test_perception_contract.PerceptionContractTests.test_homography_pixel_base_round_trip) ... ok\ntest_invalid_camera_frames_fail_closed (test_perception_contract.PerceptionContractTests.test_invalid_camera_frames_fail_closed) ... ok\ntest_low_contrast_neutral_object_is_never_promoted_to_supported_color (test_perception_contract.PerceptionContractTests.test_low_contrast_neutral_object_is_never_promoted_to_supported_color) ... ok\ntest_oversized_connected_mask_splits_at_distinct_known_color_cores (test_perception_contract.PerceptionContractTests.test_oversized_connected_mask_splits_at_distinct_known_color_cores) ... ok\ntest_primary_rgb_order_and_cyclic_red_hue (test_perception_contract.PerceptionContractTests.test_primary_rgb_order_and_cyclic_red_hue) ... ok\ntest_rendered_red_candidate_returns_structured_valid_pose (test_perception_contract.PerceptionContractTests.test_rendered_red_candidate_returns_structured_valid_pose) ... ok\ntest_runtime_yaml_is_exact_ssot_export (test_perception_contract.PerceptionContractTests.test_runtime_yaml_is_exact_ssot_export) ... ok\ntest_unsupported_saturated_hue_is_preserved_as_unknown (test_perception_contract.PerceptionContractTests.test_unsupported_saturated_hue_is_preserved_as_unknown) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.988s\n\nOK\n"
+    },
+    "M5_planning": {
+      "tests_run": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_wall_s": 14.877154500005418,
+      "success": true,
+      "details": "test_centered_fingers_clear_the_table_only_during_target_grasp_phases (test_collision.CollisionTests.test_centered_fingers_clear_the_table_only_during_target_grasp_phases) ... ok\ntest_finger_tray_floor_margin_is_limited_to_reserved_place_and_vertical_retreat (test_collision.CollisionTests.test_finger_tray_floor_margin_is_limited_to_reserved_place_and_vertical_retreat) ... ok\ntest_grasp_clearance_does_not_allow_table_penetration_or_relax_other_obstacles (test_collision.CollisionTests.test_grasp_clearance_does_not_allow_table_penetration_or_relax_other_obstacles) ... ok\ntest_signed_distance_report_keeps_a_conservative_global_lower_bound (test_collision.CollisionTests.test_signed_distance_report_keeps_a_conservative_global_lower_bound) ... ok\ntest_thin_static_obstacle_is_missed_at_endpoints_but_caught_mid_sweep (test_collision.CollisionTests.test_thin_static_obstacle_is_missed_at_endpoints_but_caught_mid_sweep) ... ok\ntest_both_ik_branches_are_available_and_scored_without_branch_switch (test_planner.PlannerTests.test_both_ik_branches_are_available_and_scored_without_branch_switch) ... ok\ntest_full_cycle_is_preflighted_before_plan_success (test_planner.PlannerTests.test_full_cycle_is_preflighted_before_plan_success) ... ok\ntest_invalid_obstacle_track_makes_the_scene_incomplete (test_planner.PlannerTests.test_invalid_obstacle_track_makes_the_scene_incomplete) ... ok\ntest_no_explicit_free_slot_is_rejected_before_pick (test_planner.PlannerTests.test_no_explicit_free_slot_is_rejected_before_pick) ... ok\ntest_stale_perception_is_rejected_fail_closed (test_planner.PlannerTests.test_stale_perception_is_rejected_fail_closed) ... ok\ntest_uncertainty_over_budget_is_rejected_before_pick (test_planner.PlannerTests.test_uncertainty_over_budget_is_rejected_before_pick) ... ok\ntest_unknown_color_with_valid_geometry_remains_a_collision_obstacle (test_planner.PlannerTests.test_unknown_color_with_valid_geometry_remains_a_collision_obstacle) ... ok\ntest_unknown_target_is_rejected_without_a_motion_plan (test_planner.PlannerTests.test_unknown_target_is_rejected_without_a_motion_plan) ... ok\ntest_unknown_target_remains_unselectable (test_planner.PlannerTests.test_unknown_target_remains_unselectable) ... ok\ntest_annotation_only_series_are_not_legend_entries (test_plot_layout.LegendLayoutTests.test_annotation_only_series_are_not_legend_entries) ... ok\ntest_single_row_keeps_legacy_baseline (test_plot_layout.LegendLayoutTests.test_single_row_keeps_legacy_baseline) ... ok\ntest_wrapped_legend_stays_above_x_axis_label (test_plot_layout.LegendLayoutTests.test_wrapped_legend_stays_above_x_axis_label) ... ok\ntest_different_observation_fails_comparison (test_sampling.SamplingRefinementTests.test_different_observation_fails_comparison) ... ok\ntest_material_path_change_fails_convergence (test_sampling.SamplingRefinementTests.test_material_path_change_fails_convergence) ... ok\ntest_refined_collision_fails_convergence (test_sampling.SamplingRefinementTests.test_refined_collision_fails_convergence) ... ok\ntest_same_safe_route_passes_and_reports_grid_sensitive_clearance (test_sampling.SamplingRefinementTests.test_same_safe_route_passes_and_reports_grid_sensitive_clearance) ... ok\ntest_invalid_or_nonpositive_sweep_step_is_rejected (test_trajectory.TrajectoryTests.test_invalid_or_nonpositive_sweep_step_is_rejected) ... ok\ntest_quintic_phase_parameterization_respects_joint_and_gripper_limits (test_trajectory.TrajectoryTests.test_quintic_phase_parameterization_respects_joint_and_gripper_limits) ... ok\ntest_tcp_fk_velocity_and_acceleration_match_jacobian_chain_rule (test_trajectory.TrajectoryTests.test_tcp_fk_velocity_and_acceleration_match_jacobian_chain_rule) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 14.877s\n\nOK\n"
+    },
+    "M6_controller": {
+      "tests_run": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_wall_s": 0.12276050000218675,
+      "success": true,
+      "details": "test_all_slots_full_yields_safe_skip_without_planning_or_fake_placement (test_controller.ControllerTests.test_all_slots_full_yields_safe_skip_without_planning_or_fake_placement) ... ok\ntest_camera_failures_are_bounded_and_latch_safe_stop (test_controller.ControllerTests.test_camera_failures_are_bounded_and_latch_safe_stop) ... ok\ntest_conflicting_duplicate_track_fails_closed_instead_of_double_counting (test_controller.ControllerTests.test_conflicting_duplicate_track_fails_closed_instead_of_double_counting) ... ok\ntest_contact_loss_during_release_is_evaluated_at_release_completion (test_controller.ControllerTests.test_contact_loss_during_release_is_evaluated_at_release_completion) ... ok\ntest_cycle_timeout_without_payload_releases_reservations (test_controller.ControllerTests.test_cycle_timeout_without_payload_releases_reservations) ... ok\ntest_descend_execution_failure_with_fresh_no_hold_enters_recover (test_controller.ControllerTests.test_descend_execution_failure_with_fresh_no_hold_enters_recover) ... ok\ntest_done_means_controller_terminated_not_all_items_sorted (test_controller.ControllerTests.test_done_means_controller_terminated_not_all_items_sorted) ... ok\ntest_emergency_stop_latches_from_every_active_state (test_controller.ControllerTests.test_emergency_stop_latches_from_every_active_state) ... ok\ntest_equal_candidate_scores_break_tie_by_lower_track_id (test_controller.ControllerTests.test_equal_candidate_scores_break_tie_by_lower_track_id) ... ok\ntest_evaluator_only_placement_evidence_is_ignored (test_controller.ControllerTests.test_evaluator_only_placement_evidence_is_ignored) ... ok\ntest_execution_failure_without_payload_releases_reservations (test_controller.ControllerTests.test_execution_failure_without_payload_releases_reservations) ... ok\ntest_forbidden_transition_is_detected (test_controller.ControllerTests.test_forbidden_transition_is_detected) ... ok\ntest_grasp_attempt_budget_stops_after_one_bounded_retry (test_controller.ControllerTests.test_grasp_attempt_budget_stops_after_one_bounded_retry) ... ok\ntest_grasp_execution_failure_with_fresh_no_hold_enters_recover (test_controller.ControllerTests.test_grasp_execution_failure_with_fresh_no_hold_enters_recover) ... ok\ntest_grasp_execution_failure_with_unknown_hold_latches_safe_stop (test_controller.ControllerTests.test_grasp_execution_failure_with_unknown_hold_latches_safe_stop) ... ok\ntest_grasp_failure_uses_bounded_recovery_without_claiming_hold (test_controller.ControllerTests.test_grasp_failure_uses_bounded_recovery_without_claiming_hold) ... ok\ntest_hold_verification_timeout_with_no_fresh_sensor_is_safe_stop (test_controller.ControllerTests.test_hold_verification_timeout_with_no_fresh_sensor_is_safe_stop) ... ok\ntest_init_fails_closed_without_fresh_empty_gripper_signal (test_controller.ControllerTests.test_init_fails_closed_without_fresh_empty_gripper_signal) ... ok\ntest_lost_payload_during_transfer_quarantines_slot_and_stops (test_controller.ControllerTests.test_lost_payload_during_transfer_quarantines_slot_and_stops) ... ok\ntest_m5_plan_with_reordered_phases_is_rejected_before_motion (test_controller.ControllerTests.test_m5_plan_with_reordered_phases_is_rejected_before_motion) ... ok\ntest_m5_plan_without_release_marker_is_rejected_before_motion (test_controller.ControllerTests.test_m5_plan_without_release_marker_is_rejected_before_motion) ... ok\ntest_multiple_objects_are_processed_once_across_batch_cycles (test_controller.ControllerTests.test_multiple_objects_are_processed_once_across_batch_cycles) ... ok\ntest_nominal_cycle_requires_public_hold_and_place_evidence (test_controller.ControllerTests.test_nominal_cycle_requires_public_hold_and_place_evidence) ... ok\ntest_permanent_planner_failure_releases_reservations_and_skips_track (test_controller.ControllerTests.test_permanent_planner_failure_releases_reservations_and_skips_track) ... ok\ntest_place_timeout_quarantines_instead_of_counting_success (test_controller.ControllerTests.test_place_timeout_quarantines_instead_of_counting_success) ... ok\ntest_problematic_candidate_does_not_starve_next_candidate (test_controller.ControllerTests.test_problematic_candidate_does_not_starve_next_candidate) ... ok\ntest_recovery_budget_resets_after_completed_safe_recovery (test_controller.ControllerTests.test_recovery_budget_resets_after_completed_safe_recovery) ... ok\ntest_recovery_failure_and_timeout_escalate_to_safe_stop (test_controller.ControllerTests.test_recovery_failure_and_timeout_escalate_to_safe_stop) ... ok\ntest_release_confirmation_timeout_preserves_slot_and_stops (test_controller.ControllerTests.test_release_confirmation_timeout_preserves_slot_and_stops) ... ok\ntest_retreat_execution_failure_never_claims_placement (test_controller.ControllerTests.test_retreat_execution_failure_never_claims_placement) ... ok\ntest_safe_stop_holding_payload_preserves_slot_and_never_opens_gripper (test_controller.ControllerTests.test_safe_stop_holding_payload_preserves_slot_and_never_opens_gripper) ... ok\ntest_safe_stop_reset_requires_explicit_safe_disposition (test_controller.ControllerTests.test_safe_stop_reset_requires_explicit_safe_disposition) ... ok\ntest_safe_stop_without_payload_releases_reservations (test_controller.ControllerTests.test_safe_stop_without_payload_releases_reservations) ... ok\ntest_same_m4_track_duplicates_collapse_before_reservation (test_controller.ControllerTests.test_same_m4_track_duplicates_collapse_before_reservation) ... ok\ntest_selection_uses_composite_score_not_only_nearest_distance (test_controller.ControllerTests.test_selection_uses_composite_score_not_only_nearest_distance) ... ok\ntest_simulation_clock_regression_latches_stop (test_controller.ControllerTests.test_simulation_clock_regression_latches_stop) ... ok\ntest_stale_frame_is_rejected_before_selection (test_controller.ControllerTests.test_stale_frame_is_rejected_before_selection) ... ok\ntest_stale_hold_signal_during_transfer_latches_safe_stop (test_controller.ControllerTests.test_stale_hold_signal_during_transfer_latches_safe_stop) ... ok\ntest_transfer_invariant_requires_fresh_public_hold (test_controller.ControllerTests.test_transfer_invariant_requires_fresh_public_hold) ... ok\ntest_transient_planner_failure_has_one_bounded_retry (test_controller.ControllerTests.test_transient_planner_failure_has_one_bounded_retry) ... ok\ntest_transition_guard_covers_all_declared_and_forbidden_edges (test_controller.ControllerTests.test_transition_guard_covers_all_declared_and_forbidden_edges) ... ok\ntest_transition_spec_covers_every_state_and_is_explicit (test_controller.ControllerTests.test_transition_spec_covers_every_state_and_is_explicit) ... ok\ntest_unknown_is_never_mapped_to_a_sorting_zone (test_controller.ControllerTests.test_unknown_is_never_mapped_to_a_sorting_zone) ... ok\ntest_unknown_obstacle_does_not_prevent_selecting_known_target (test_controller.ControllerTests.test_unknown_obstacle_does_not_prevent_selecting_known_target) ... ok\ntest_valid_empty_scene_is_not_treated_as_camera_failure (test_controller.ControllerTests.test_valid_empty_scene_is_not_treated_as_camera_failure) ... ok\ntest_verify_place_cycle_timeout_enters_recover_without_claiming_sort (test_controller.ControllerTests.test_verify_place_cycle_timeout_enters_recover_without_claiming_sort) ... ok\n\n----------------------------------------------------------------------\nRan 46 tests in 0.123s\n\nOK\n"
+    }
+  },
+  "success": true,
+  "M2_ssot_mjcf_validator": {
+    "exit_code": 0,
+    "status": "PASS",
+    "config_version": "M7-v1.8",
+    "model_sha256": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "elapsed_wall_s": 1.342029299994465,
+    "report": {
+      "status": "PASS",
+      "config_version": "M7-v1.8",
+      "model_sha256": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+      "mujoco_version": "3.14.0",
+      "model_shape": {
+        "nbody": 19,
+        "njnt": 12,
+        "nq": 48,
+        "nv": 42,
+        "nu": 5,
+        "neq": 1,
+        "nsensor": 2,
+        "nkey": 1
+      },
+      "explicit_adjacent_pair_exclusions": [
+        [
+          "base_static",
+          "link1"
+        ],
+        [
+          "finger_left",
+          "wrist"
+        ],
+        [
+          "finger_right",
+          "wrist"
+        ],
+        [
+          "link1",
+          "link2"
+        ],
+        [
+          "link2",
+          "z_slide"
+        ],
+        [
+          "wrist",
+          "z_slide"
+        ]
+      ],
+      "joint_report": {
+        "j1_shoulder": {
+          "type": "hinge",
+          "range": [
+            -3.141592653589793,
+            3.141592653589793
+          ],
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "qpos_address": 0
+        },
+        "j2_elbow": {
+          "type": "hinge",
+          "range": [
+            -2.6179938779914944,
+            2.6179938779914944
+          ],
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "qpos_address": 1
+        },
+        "j3_lift": {
+          "type": "slide",
+          "range": [
+            0.0,
+            0.097
+          ],
+          "axis": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "qpos_address": 2
+        },
+        "j4_wrist": {
+          "type": "hinge",
+          "range": [
+            -3.141592653589793,
+            3.141592653589793
+          ],
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "qpos_address": 3
+        },
+        "j5_finger_left": {
+          "type": "slide",
+          "range": [
+            0.0,
+            0.027
+          ],
+          "axis": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "qpos_address": 4
+        },
+        "j6_finger_right": {
+          "type": "slide",
+          "range": [
+            0.0,
+            0.027
+          ],
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "qpos_address": 5
+        }
+      },
+      "actuator_report": {
+        "act_j1_shoulder": {
+          "ctrlrange": [
+            -3.141592653589793,
+            3.141592653589793
+          ],
+          "forcerange": [
+            -0.5,
+            0.5
+          ]
+        },
+        "act_j2_elbow": {
+          "ctrlrange": [
+            -2.6179938779914944,
+            2.6179938779914944
+          ],
+          "forcerange": [
+            -0.3,
+            0.3
+          ]
+        },
+        "act_j3_lift": {
+          "ctrlrange": [
+            0.0,
+            0.097
+          ],
+          "forcerange": [
+            -4.0,
+            4.0
+          ]
+        },
+        "act_j4_wrist": {
+          "ctrlrange": [
+            -3.141592653589793,
+            3.141592653589793
+          ],
+          "forcerange": [
+            -0.08,
+            0.08
+          ]
+        },
+        "act_gripper_left": {
+          "ctrlrange": [
+            0.0,
+            0.027
+          ],
+          "forcerange": [
+            -1.2,
+            1.2
+          ]
+        }
+      },
+      "inertial_report": {
+        "link1": {
+          "mass_kg": 0.15639872000000005,
+          "com_local_m": [
+            0.1629403463148547,
+            0.0,
+            0.0
+          ],
+          "principal_inertia_kg_m2": [
+            0.0009361612679787683,
+            0.0009071340484587682,
+            6.058353973333336e-05
+          ],
+          "inertial_quat_wxyz": [
+            0.0,
+            0.7071067811865489,
+            0.0,
+            0.7071067811865489
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              6.0583539733333845e-05,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0009071340484587754,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0009361612679787759
+            ]
+          ]
+        },
+        "link2": {
+          "mass_kg": 0.14031840000000007,
+          "com_local_m": [
+            0.14852863202545072,
+            0.0,
+            0.0
+          ],
+          "principal_inertia_kg_m2": [
+            0.0007080473125679748,
+            0.0006331531477679747,
+            0.00016186201120000002
+          ],
+          "inertial_quat_wxyz": [
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              0.0001618620112000009,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0007080473125679785,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0006331531477679782
+            ]
+          ]
+        },
+        "z_slide": {
+          "mass_kg": 0.03753727999999999,
+          "com_local_m": [
+            0.0,
+            0.0,
+            0.0002938689217758986
+          ],
+          "principal_inertia_kg_m2": [
+            4.1413737093502464e-05,
+            4.1413737093502464e-05,
+            1.110320469333333e-05
+          ],
+          "inertial_quat_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              4.1413737093502464e-05,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              4.1413737093502464e-05,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.110320469333333e-05
+            ]
+          ]
+        },
+        "wrist": {
+          "mass_kg": 0.044290778963741395,
+          "com_local_m": [
+            0.0,
+            0.0,
+            0.01
+          ],
+          "principal_inertia_kg_m2": [
+            2.039687602922541e-05,
+            1.2092736962177605e-05,
+            9.763917762177603e-06
+          ],
+          "inertial_quat_wxyz": [
+            0.5000000000000007,
+            0.5000000000000007,
+            -0.5000000000000007,
+            0.5000000000000007
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              1.209273696217767e-05,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              9.763917762177654e-06,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.039687602922552e-05
+            ]
+          ]
+        },
+        "finger_left": {
+          "mass_kg": 0.004464,
+          "com_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "principal_inertia_kg_m2": [
+            1.3763999999999999e-06,
+            1.352592e-06,
+            5.0592e-08
+          ],
+          "inertial_quat_wxyz": [
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              5.0592000000000265e-08,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.376400000000007e-06,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.3525920000000072e-06
+            ]
+          ]
+        },
+        "finger_right": {
+          "mass_kg": 0.004464,
+          "com_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "principal_inertia_kg_m2": [
+            1.3763999999999999e-06,
+            1.352592e-06,
+            5.0592e-08
+          ],
+          "inertial_quat_wxyz": [
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007,
+            0.5000000000000007
+          ],
+          "reconstructed_body_frame_inertia_kg_m2": [
+            [
+              5.0592000000000265e-08,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.376400000000007e-06,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.3525920000000072e-06
+            ]
+          ]
+        }
+      },
+      "home_qpos_joints": {
+        "j1_shoulder": -0.5,
+        "j2_elbow": 1.0471975511965976,
+        "j3_lift": 0.015,
+        "j4_wrist": 0.0,
+        "j5_finger_left": 0.0,
+        "j6_finger_right": 0.0
+      },
+      "initial_contact_point_count": 24,
+      "initial_unique_support_pair_count": 6,
+      "initial_expected_contacts": [
+        {
+          "body1": "table",
+          "body2": "object_red_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_01",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_red_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_green_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_02",
+          "distance_m": 0.0
+        },
+        {
+          "body1": "table",
+          "body2": "object_blue_02",
+          "distance_m": 0.0
+        }
+      ],
+      "radial_reach_m": [
+        0.11500288192837443,
+        0.43000000000000005
+      ],
+      "target_radial_checks": [
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            -0.05,
+            -0.28
+          ],
+          "radius_m": 0.28442925306655786,
+          "radial_margin_m": 0.14557074693344219
+        },
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            0.0,
+            -0.28
+          ],
+          "radius_m": 0.28,
+          "radial_margin_m": 0.15000000000000002
+        },
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            0.05,
+            -0.28
+          ],
+          "radius_m": 0.28442925306655786,
+          "radial_margin_m": 0.14557074693344219
+        },
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            -0.05,
+            -0.22
+          ],
+          "radius_m": 0.22561028345356957,
+          "radial_margin_m": 0.11060740152519513
+        },
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            0.0,
+            -0.22
+          ],
+          "radius_m": 0.22,
+          "radial_margin_m": 0.10499711807162557
+        },
+        {
+          "zone": "INPUT",
+          "xy_m": [
+            0.05,
+            -0.22
+          ],
+          "radius_m": 0.22561028345356957,
+          "radial_margin_m": 0.11060740152519513
+        },
+        {
+          "zone": "RED",
+          "xy_m": [
+            -0.252,
+            0.21
+          ],
+          "radius_m": 0.32803048638807947,
+          "radial_margin_m": 0.10196951361192058
+        },
+        {
+          "zone": "RED",
+          "xy_m": [
+            -0.22,
+            0.21
+          ],
+          "radius_m": 0.30413812651491096,
+          "radial_margin_m": 0.1258618734850891
+        },
+        {
+          "zone": "RED",
+          "xy_m": [
+            -0.188,
+            0.21
+          ],
+          "radius_m": 0.2818581203371654,
+          "radial_margin_m": 0.14814187966283465
+        },
+        {
+          "zone": "GREEN",
+          "xy_m": [
+            -0.032,
+            0.3
+          ],
+          "radius_m": 0.30170183957012925,
+          "radial_margin_m": 0.1282981604298708
+        },
+        {
+          "zone": "GREEN",
+          "xy_m": [
+            0.0,
+            0.3
+          ],
+          "radius_m": 0.3,
+          "radial_margin_m": 0.13000000000000006
+        },
+        {
+          "zone": "GREEN",
+          "xy_m": [
+            0.032,
+            0.3
+          ],
+          "radius_m": 0.30170183957012925,
+          "radial_margin_m": 0.1282981604298708
+        },
+        {
+          "zone": "BLUE",
+          "xy_m": [
+            0.188,
+            0.21
+          ],
+          "radius_m": 0.2818581203371654,
+          "radial_margin_m": 0.14814187966283465
+        },
+        {
+          "zone": "BLUE",
+          "xy_m": [
+            0.22,
+            0.21
+          ],
+          "radius_m": 0.30413812651491096,
+          "radial_margin_m": 0.1258618734850891
+        },
+        {
+          "zone": "BLUE",
+          "xy_m": [
+            0.252,
+            0.21
+          ],
+          "radius_m": 0.32803048638807947,
+          "radial_margin_m": 0.10196951361192058
+        }
+      ],
+      "tray_slot_clearances": [
+        {
+          "class": "RED",
+          "x_offset_m": -0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        },
+        {
+          "class": "RED",
+          "x_offset_m": 0.0,
+          "object_wall_clearance_m": 0.06620101012677666,
+          "finger_wall_clearance_m": 0.055999999999999994
+        },
+        {
+          "class": "RED",
+          "x_offset_m": 0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        },
+        {
+          "class": "GREEN",
+          "x_offset_m": -0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        },
+        {
+          "class": "GREEN",
+          "x_offset_m": 0.0,
+          "object_wall_clearance_m": 0.06620101012677666,
+          "finger_wall_clearance_m": 0.055999999999999994
+        },
+        {
+          "class": "GREEN",
+          "x_offset_m": 0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        },
+        {
+          "class": "BLUE",
+          "x_offset_m": -0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        },
+        {
+          "class": "BLUE",
+          "x_offset_m": 0.0,
+          "object_wall_clearance_m": 0.06620101012677666,
+          "finger_wall_clearance_m": 0.055999999999999994
+        },
+        {
+          "class": "BLUE",
+          "x_offset_m": 0.032,
+          "object_wall_clearance_m": 0.03420101012677666,
+          "finger_wall_clearance_m": 0.023999999999999994
+        }
+      ],
+      "camera_coverage_m": [
+        1.305661442833996,
+        0.979246082125497
+      ],
+      "camera_intrinsics_fx_fy_cx_cy_px": [
+        514.6816609222941,
+        514.6816609222941,
+        319.5,
+        239.5
+      ],
+      "object_mass_kg": 0.015554560000000002,
+      "grasp_force_min_per_finger_N": 0.39495555456000003,
+      "grasp_force_model_per_finger_N": 0.6,
+      "z_axis_moving_mass_with_payload_kg": 0.10631061896374139,
+      "z_axis_load_estimate_N": 1.0797597480980838,
+      "documentation_render_resolution_px": [
+        1280,
+        960
+      ],
+      "renders": [
+        "m2_model_overhead.png",
+        "m2_model_isometric.png"
+      ],
+      "scope_note": "Geometry and model compilation only; no FK/IK, perception calibration, trajectory planning, FSM, full sorting run, or final tuning."
+    },
+    "stderr": ""
+  },
+  "finished_utc": "2026-09-26T07:51:17.048371+00:00"
+}

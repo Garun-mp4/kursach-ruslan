@@ -1,0 +1,6 @@
+scenario_id: mixed_random_three
+seed: 20260928
+randomized:
+  count_per_class: 1
+  yaw_range_rad: [-0.7853981633974483, 0.7853981633974483]
+

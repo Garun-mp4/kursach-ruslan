@@ -27,7 +27,7 @@ def require(condition: bool, message: str) -> None:
 
 def validate_ssot_contract(config: dict) -> None:
     require(config.get("schema_version") == "1.0", "Unsupported or missing SSOT schema_version")
-    require(config.get("config_version") in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1"}, "Unexpected configuration version")
+    require(config.get("config_version") in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1", "M7-v1.2", "M7-v1.3", "M7-v1.4", "M7-v1.5", "M7-v1.6", "M7-v1.7", "M7-v1.8"}, "Unexpected configuration version")
     require(isinstance(config.get("project"), dict), "Missing project metadata mapping")
     require(isinstance(config.get("assemblies"), dict) and config["assemblies"], "Missing assembly definitions")
     require(isinstance(config.get("parameters"), dict) and config["parameters"], "Missing parameter registry")
@@ -36,6 +36,8 @@ def validate_ssot_contract(config: dict) -> None:
     required = (
         "environment.engine", "environment.engine_version", "environment.python_version",
         "environment.timestep_s", "environment.gravity_m_s2", "environment.density_pla_kg_m3",
+        "environment.solver_iterations", "environment.solver_tolerance",
+        "environment.impratio", "environment.noslip_iterations",
         "coordinates.world_definition", "coordinates.base_definition", "coordinates.transform_semantics",
         "robot.type", "robot.arm_dof", "robot.gripper_actuated_dof", "robot.link1_length_m",
         "robot.link2_length_m", "robot.j3_range_m", "robot.finger_range_m", "robot.touch_site_radius_m", "robot.j1_range_rad",
@@ -49,12 +51,46 @@ def validate_ssot_contract(config: dict) -> None:
     for key in required:
         require(key in config["parameters"], f"Required SSOT parameter is missing: {key}")
 
+    if str(config.get("config_version", "")).startswith("M7-"):
+        placement_required = (
+            "camera.placement_name", "camera.placement_config_id",
+            "camera.placement_position_world_m", "camera.placement_target_world_m",
+            "camera.placement_fovy_deg", "camera.placement_resolution_px",
+            "camera.placement_object_top_plane_z_m", "camera.placement_max_age_s",
+            "camera.placement_nominal_object_area_px", "camera.placement_anchor_xy_bounds_m",
+        )
+        for key in placement_required:
+            require(key in config["parameters"], f"Required M7 camera parameter is missing: {key}")
+        expected_top_z = (
+            float(p("cell.table_top_z_m"))
+            + float(p("cell.tray_floor_thickness_m"))
+            + float(p("object.size_xyz_m")[2])
+        )
+        require(math.isclose(float(p("camera.placement_object_top_plane_z_m")),
+                              expected_top_z, rel_tol=0.0, abs_tol=1e-12),
+                "M7 placement camera plane must match the top face of an object in a tray")
+        for key in ("camera.placement_position_world_m", "camera.placement_target_world_m"):
+            vector = np.asarray(p(key), dtype=float)
+            require(vector.shape == (3,) and np.all(np.isfinite(vector)),
+                    f"M7 placement camera parameter {key} must be a finite 3D vector")
+        require(not np.allclose(p("camera.placement_position_world_m"),
+                                p("camera.placement_target_world_m"), rtol=0, atol=1e-9),
+                "M7 placement camera position and target must be distinct")
+        require(1.0 < float(p("camera.placement_fovy_deg")) < 179.0,
+                "M7 placement camera field of view is invalid")
+        resolution = np.asarray(p("camera.placement_resolution_px"), dtype=int)
+        require(resolution.shape == (2,) and np.all(resolution > 0),
+                "M7 placement camera resolution must be positive width/height")
+
     for key in ("environment.timestep_s", "environment.gravity_m_s2", "environment.density_pla_kg_m3",
+                "environment.solver_iterations", "environment.solver_tolerance", "environment.impratio",
                 "robot.link1_length_m", "robot.link2_length_m", "robot.shoulder_z_m",
                 "robot.finger_length_m", "robot.finger_thickness_m", "robot.finger_height_m",
                 "robot.j3_velocity_m_s", "robot.j3_acceleration_m_s2", "robot.j3_effort_N",
                 "object.mass_kg", "camera.fovy_deg"):
         require(float(p(key)) > 0, f"Parameter {key} must be positive")
+    require(int(p("environment.noslip_iterations")) >= 0,
+            "NoSlip iteration count cannot be negative")
 
     for key in ("cell.table_size_xy_m", "cell.input_size_xy_m", "cell.tray_outer_size_xy_m",
                 "cell.tray_inner_size_xy_m", "object.size_xyz_m", "robot.finger_xyz_m",
@@ -144,6 +180,12 @@ def main() -> dict:
     model = mujoco.MjModel.from_xml_path(str(MODEL_PATH))
     data = mujoco.MjData(model)
     require(model.opt.timestep == float(p("environment.timestep_s")), "MuJoCo time step mismatch")
+    require(int(model.opt.iterations) == int(p("environment.solver_iterations")),
+            "MuJoCo solver iteration mismatch")
+    require(int(model.opt.noslip_iterations) == int(p("environment.noslip_iterations")),
+            "MuJoCo NoSlip iteration mismatch")
+    require(abs(float(model.opt.impratio) - float(p("environment.impratio"))) <= 1e-12,
+            "MuJoCo friction impedance ratio mismatch")
     np.testing.assert_allclose(model.opt.gravity, [0, 0, -float(p("environment.gravity_m_s2"))], rtol=0, atol=1e-12)
 
     expected_joints = {

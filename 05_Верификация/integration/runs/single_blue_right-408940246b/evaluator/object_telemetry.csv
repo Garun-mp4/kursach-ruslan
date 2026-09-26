@@ -1,0 +1,3 @@
+simulation_time_s,body_name,ground_truth_color,x_m,y_m,z_m,vx_m_s,vy_m_s,vz_m_s,wx_rad_s,wy_rad_s,wz_rad_s,touch_left_N,touch_right_N,bilateral_finger_contact,wrist_relative_x_m,wrist_relative_y_m,wrist_relative_z_m,slip_from_first_bilateral_contact_m
+0,object_blue_01,BLUE,0.075,-0.215,0.008,0,0,0,0,0,0,0,0,0,-0.272451905,0.422881305,-0.092,
+0.04,object_blue_01,BLUE,0.075,-0.215,0.0078649486,-3.83622178e-18,-2.95758487e-18,0.00199105093,-7.50858081e-16,-3.03394138e-16,-2.82753058e-31,0,0,0,-0.272451905,0.422881305,-0.0918379848,

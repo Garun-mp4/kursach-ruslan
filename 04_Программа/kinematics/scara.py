@@ -152,7 +152,7 @@ def load_config(path: str | Path = DEFAULT_SSOT) -> ArmConfig:
     if not isinstance(document, dict) or not isinstance(document.get("parameters"), dict):
         raise ValueError("SSOT must contain a parameters mapping")
     version = str(document.get("config_version", ""))
-    if version not in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1"}:
+    if version not in {"M2-v1.0", "M3-v1.0", "M4-v1.1", "M4-v1.2", "M4-v1.3", "M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1", "M7-v1.2", "M7-v1.3", "M7-v1.4", "M7-v1.5", "M7-v1.6", "M7-v1.7", "M7-v1.8"}:
         raise ValueError(f"Unsupported SSOT config_version {version!r}")
     p = document["parameters"]
 

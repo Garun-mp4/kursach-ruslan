@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="scara_color_sorter_m2">
+  <compiler angle="radian" autolimits="true" fusestatic="false" inertiafromgeom="false" balanceinertia="false" />
+  <option timestep="0.002" gravity="0 0 -9.8066499999999994" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-08" impratio="1" noslip_iterations="1" cone="elliptic" />
+  <size njmax="3000" nconmax="800" />
+  <visual>
+    <global azimuth="135" elevation="-25" offwidth="1280" offheight="960" />
+  </visual>
+  <default>
+    <joint limited="true" armature="0.001" />
+    <geom contype="1" conaffinity="1" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+  </default>
+  <worldbody>
+    <light name="key_light" pos="0 0 1.3500000000000001" dir="0 0 -1" directional="true" diffuse="0.81999999999999995 0.81999999999999995 0.81999999999999995" ambient="0.35999999999999999 0.35999999999999999 0.35999999999999999" specular="0.10000000000000001 0.10000000000000001 0.10000000000000001" />
+    <camera name="overhead_rgb" pos="0 0 1.05" quat="1 0 0 0" fovy="50" mode="fixed" />
+    <body name="table" pos="0 0 0">
+      <geom name="table_top_visual" type="box" size="0.5 0.45000000000000001 0.014999999999999999" pos="0 0 -0.014999999999999999" rgba="0.80000000000000004 0.81999999999999995 0.81000000000000005 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="table_top_collision" type="box" size="0.5 0.45000000000000001 0.014999999999999999" pos="0 0 -0.014999999999999999" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="base_static" pos="0 0 0">
+      <geom name="base_foot_visual" type="box" size="0.070000000000000007 0.070000000000000007 0.040000000000000001" pos="0 0 0.040000000000000001" rgba="0.28000000000000003 0.34000000000000002 0.41999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="base_foot_collision" type="box" size="0.070000000000000007 0.070000000000000007 0.040000000000000001" pos="0 0 0.040000000000000001" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="base_column_visual" type="box" size="0.035000000000000003 0.035000000000000003 0.042500000000000003" pos="0 0 0.1225" rgba="0.32000000000000001 0.39000000000000001 0.46999999999999997 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="base_column_collision" type="box" size="0.035000000000000003 0.035000000000000003 0.042500000000000003" pos="0 0 0.1225" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="base_axle_visual" type="cylinder" size="0.01 0.02" pos="0 0 0.185" rgba="0.38 0.44 0.52000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="base_axle_collision" type="cylinder" size="0.01 0.02" pos="0 0 0.185" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="input_zone_visual" pos="0 0 0">
+      <geom name="input_mark_xmin_visual" type="box" size="0.001 0.080000000000000002 0.00050000000000000001" pos="-0.12 -0.25 0.00050000000000000001" rgba="0.45000000000000001 0.47999999999999998 0.52000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="input_mark_xmax_visual" type="box" size="0.001 0.080000000000000002 0.00050000000000000001" pos="0.12 -0.25 0.00050000000000000001" rgba="0.45000000000000001 0.47999999999999998 0.52000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="input_mark_ymin_visual" type="box" size="0.12 0.001 0.00050000000000000001" pos="0 -0.33000000000000002 0.00050000000000000001" rgba="0.45000000000000001 0.47999999999999998 0.52000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="input_mark_ymax_visual" type="box" size="0.12 0.001 0.00050000000000000001" pos="0 -0.16999999999999998 0.00050000000000000001" rgba="0.45000000000000001 0.47999999999999998 0.52000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+    </body>
+    <body name="tray_red" pos="-0.22 0.20999999999999999 0">
+      <geom name="tray_red_floor_visual" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0.87039999999999995 0.3664 0.3664 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_red_floor_collision" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_red_left_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0.81999999999999995 0.12 0.12 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_red_left_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_red_right_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0.81999999999999995 0.12 0.12 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_red_right_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_red_front_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0.81999999999999995 0.12 0.12 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_red_front_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_red_back_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0.81999999999999995 0.12 0.12 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_red_back_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="tray_green" pos="0 0.29999999999999999 0">
+      <geom name="tray_green_floor_visual" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0.3664 0.72639999999999993 0.42400000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_green_floor_collision" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_green_left_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0.12 0.62 0.20000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_green_left_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_green_right_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0.12 0.62 0.20000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_green_right_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_green_front_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0.12 0.62 0.20000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_green_front_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_green_back_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0.12 0.62 0.20000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_green_back_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="tray_blue" pos="0.22 0.20999999999999999 0">
+      <geom name="tray_blue_floor_visual" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0.3664 0.496 0.85599999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_blue_floor_collision" type="box" size="0.091999999999999998 0.080000000000000002 0.002" pos="0 0 0.002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_blue_left_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0.12 0.29999999999999999 0.80000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_blue_left_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="-0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_blue_right_wall_visual" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0.12 0.29999999999999999 0.80000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_blue_right_wall_collision" type="box" size="0.0030000000000000001 0.073999999999999996 0.0040000000000000001" pos="0.088999999999999996 0 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_blue_front_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0.12 0.29999999999999999 0.80000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_blue_front_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 -0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="tray_blue_back_wall_visual" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0.12 0.29999999999999999 0.80000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="tray_blue_back_wall_collision" type="box" size="0.091999999999999998 0.0030000000000000001 0.0040000000000000001" pos="0 0.076999999999999999 0.0080000000000000002" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="link1" pos="0 0 0.19">
+      <joint name="j1_shoulder" type="hinge" axis="0 0 1" range="-3.1415926535897931 3.1415926535897931" damping="0.050000000000000003" />
+      <inertial pos="0.16294034631485471 0 0" mass="0.15639872000000005" fullinertia="6.0583539733333357e-05 0.00090713404845876823 0.00093616126797876832 0 0 0" />
+      <geom name="link1_link1_tube_visual" type="box" size="0.097500000000000003 0.025000000000000001 0.016" pos="0.097500000000000003 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="link1_link1_tube_collision" type="box" size="0.097500000000000003 0.025000000000000001 0.016" pos="0.097500000000000003 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="link1_link1_connector_visual" type="box" size="0.0040000000000000001 0.025000000000000001 0.016" pos="0.19900000000000001 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="link1_link1_connector_collision" type="box" size="0.0040000000000000001 0.025000000000000001 0.016" pos="0.19900000000000001 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <geom name="link1_elbow_plate_visual" type="box" size="0.027 0.027 0.0089999999999999993" pos="0.23000000000000001 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="link1_elbow_plate_collision" type="box" size="0.027 0.027 0.0089999999999999993" pos="0.23000000000000001 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+      <body name="link2" pos="0.23000000000000001 0 0">
+        <joint name="j2_elbow" type="hinge" axis="0 0 1" range="-2.6179938779914944 2.6179938779914944" damping="0.040000000000000001" />
+        <inertial pos="0.14852863202545072 0 0" mass="0.14031840000000007" fullinertia="0.00016186201120000002 0.00070804731256797482 0.00063315314776797474 0 0 0" />
+        <geom name="link2_link2_tube_visual" type="box" size="0.082500000000000004 0.021999999999999999 0.014999999999999999" pos="0.082500000000000004 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+        <geom name="link2_link2_tube_collision" type="box" size="0.082500000000000004 0.021999999999999999 0.014999999999999999" pos="0.082500000000000004 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+        <geom name="link2_link2_connector_visual" type="box" size="0.0050000000000000001 0.021999999999999999 0.014999999999999999" pos="0.17000000000000001 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+        <geom name="link2_link2_connector_collision" type="box" size="0.0050000000000000001 0.021999999999999999 0.014999999999999999" pos="0.17000000000000001 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+        <geom name="link2_z_guide_visual" type="box" size="0.025000000000000001 0.025000000000000001 0.070000000000000007" pos="0.20000000000000001 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+        <geom name="link2_z_guide_collision" type="box" size="0.025000000000000001 0.025000000000000001 0.070000000000000007" pos="0.20000000000000001 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+        <body name="z_slide" pos="0.20000000000000001 0 0">
+          <joint name="j3_lift" type="slide" axis="0 0 -1" range="0 0.097000000000000003" damping="1" />
+          <inertial pos="0 0 0.00029386892177589858" mass="0.037537279999999992" fullinertia="4.1413737093502464e-05 4.1413737093502464e-05 1.110320469333333e-05 0 0 0" />
+          <geom name="z_slide_z_carriage_visual" type="box" size="0.025999999999999999 0.025999999999999999 0.0060000000000000001" pos="0 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+          <geom name="z_slide_z_carriage_collision" type="box" size="0.025999999999999999 0.025999999999999999 0.0060000000000000001" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+          <geom name="z_slide_z_upper_rod_visual" type="box" size="0.0089999999999999993 0.0089999999999999993 0.032000000000000001" pos="0 0 0.037999999999999999" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+          <geom name="z_slide_z_upper_rod_collision" type="box" size="0.0089999999999999993 0.0089999999999999993 0.032000000000000001" pos="0 0 0.037999999999999999" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+          <geom name="z_slide_z_lower_rod_visual" type="box" size="0.0089999999999999993 0.0089999999999999993 0.0315" pos="0 0 -0.037499999999999999" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+          <geom name="z_slide_z_lower_rod_collision" type="box" size="0.0089999999999999993 0.0089999999999999993 0.0315" pos="0 0 -0.037499999999999999" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+          <body name="wrist" pos="0 0 -0.074999999999999997">
+            <joint name="j4_wrist" type="hinge" axis="0 0 1" range="-3.1415926535897931 3.1415926535897931" damping="0.01" />
+            <inertial pos="0 0 0.01" mass="0.044290778963741395" fullinertia="1.2092736962177605e-05 9.763917762177603e-06 2.039687602922541e-05 0 0 0" />
+            <geom name="wrist_wrist_hub_visual" type="cylinder" size="0.021999999999999999 0.0060000000000000001" pos="0 0 0.01" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+            <geom name="wrist_wrist_hub_collision" type="cylinder" size="0.021999999999999999 0.0060000000000000001" pos="0 0 0.01" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+            <geom name="wrist_palm_visual" type="box" size="0.027 0.032000000000000001 0.0060000000000000001" pos="0 0 0.01" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+            <geom name="wrist_palm_collision" type="box" size="0.027 0.032000000000000001 0.0060000000000000001" pos="0 0 0.01" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+            <site name="tcp" pos="0 0 -0.012" type="sphere" size="0.0030000000000000001" rgba="1 1 0 1" group="2" />
+            <body name="finger_left" pos="0 0.033000000000000002 -0.012">
+              <joint name="j5_finger_left" type="slide" axis="0 -1 0" range="0 0.027" damping="0.5" />
+              <inertial pos="0 0 0" mass="0.0044640000000000001" fullinertia="5.0592000000000001e-08 1.3763999999999999e-06 1.352592e-06 0 0 0" />
+              <geom name="finger_left_visual" type="box" size="0.029999999999999999 0.0030000000000000001 0.0050000000000000001" pos="0 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+              <geom name="finger_left_collision" type="box" size="0.029999999999999999 0.0030000000000000001 0.0050000000000000001" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+              <site name="touch_left_site" type="sphere" pos="0 -0.0030000000000000001 0" size="0.017999999999999999" rgba="1 0.20000000000000001 0.20000000000000001 0.34999999999999998" group="2" />
+            </body>
+            <body name="finger_right" pos="0 -0.033000000000000002 -0.012">
+              <joint name="j6_finger_right" type="slide" axis="0 1 0" range="0 0.027" damping="0.5" />
+              <inertial pos="0 0 0" mass="0.0044640000000000001" fullinertia="5.0592000000000001e-08 1.3763999999999999e-06 1.352592e-06 0 0 0" />
+              <geom name="finger_right_visual" type="box" size="0.029999999999999999 0.0030000000000000001 0.0050000000000000001" pos="0 0 0" rgba="0.28000000000000003 0.38 0.47999999999999998 1" contype="0" conaffinity="0" group="1" mass="0" />
+              <geom name="finger_right_collision" type="box" size="0.029999999999999999 0.0030000000000000001 0.0050000000000000001" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.59999999999999998 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+              <site name="touch_right_site" type="sphere" pos="0 0.0030000000000000001 0" size="0.017999999999999999" rgba="0.20000000000000001 0.20000000000000001 1 0.34999999999999998" group="2" />
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="object_red_01" pos="-0.050000000000000003 -0.28000000000000003 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_red_01_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_red_01_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.90000000000000002 0.059999999999999998 0.040000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_red_01_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="object_green_01" pos="0 -0.28000000000000003 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_green_01_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_green_01_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.040000000000000001 0.78000000000000003 0.080000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_green_01_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="object_blue_01" pos="0.050000000000000003 -0.28000000000000003 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_blue_01_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_blue_01_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.040000000000000001 0.12 0.92000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_blue_01_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="object_red_02" pos="-0.050000000000000003 -0.22 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_red_02_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_red_02_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.90000000000000002 0.059999999999999998 0.040000000000000001 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_red_02_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="object_green_02" pos="0 -0.22 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_green_02_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_green_02_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.040000000000000001 0.78000000000000003 0.080000000000000002 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_green_02_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+    <body name="object_blue_02" pos="0.050000000000000003 -0.22 0.0080000000000000002" quat="1 0 0 0">
+      <freejoint name="object_blue_02_free" />
+      <inertial pos="0 0 0" mass="0.015554560000000002" fullinertia="1.348061866666667e-06 1.348061866666667e-06 2.0324625066666672e-06 0 0 0" />
+      <geom name="object_blue_02_visual" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0.040000000000000001 0.12 0.92000000000000004 1" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="object_blue_02_collision" type="box" size="0.014 0.014 0.0080000000000000002" pos="0 0 0" rgba="0 0 0 0" contype="1" conaffinity="1" group="3" mass="0" friction="0.5 0.0050000000000000001 0.001" condim="6" solref="0.02 1" solimp="0.94999999999999996 0.98999999999999999 0.001" />
+    </body>
+      <camera name="placement_rgb" pos="0 0.26000000000000001 0.94999999999999996" quat="0.99977393461800179 0.021262164951848763 -0 -0" fovy="50" mode="fixed" />
+  </worldbody>
+  <contact>
+    <exclude body1="base_static" body2="link1" />
+    <exclude body1="link1" body2="link2" />
+    <exclude body1="link2" body2="z_slide" />
+    <exclude body1="z_slide" body2="wrist" />
+    <exclude body1="wrist" body2="finger_left" />
+    <exclude body1="wrist" body2="finger_right" />
+  </contact>
+  <equality>
+    <joint name="finger_mimic" joint1="j6_finger_right" joint2="j5_finger_left" polycoef="0 1 0 0 0" />
+  </equality>
+  <actuator>
+    <position name="act_j1_shoulder" joint="j1_shoulder" kp="20" kv="1" ctrllimited="true" ctrlrange="-3.1415926535897931 3.1415926535897931" forcelimited="true" forcerange="-0.5 0.5" />
+    <position name="act_j2_elbow" joint="j2_elbow" kp="15" kv="0.80000000000000004" ctrllimited="true" ctrlrange="-2.6179938779914944 2.6179938779914944" forcelimited="true" forcerange="-0.29999999999999999 0.29999999999999999" />
+    <position name="act_j3_lift" joint="j3_lift" kp="3000" kv="20" ctrllimited="true" ctrlrange="0 0.097000000000000003" forcelimited="true" forcerange="-4 4" />
+    <position name="act_j4_wrist" joint="j4_wrist" kp="2" kv="0.10000000000000001" ctrllimited="true" ctrlrange="-3.1415926535897931 3.1415926535897931" forcelimited="true" forcerange="-0.080000000000000002 0.080000000000000002" />
+    <position name="act_gripper_left" joint="j5_finger_left" kp="95" kv="1.2" ctrllimited="true" ctrlrange="0 0.027" forcelimited="true" forcerange="-1.2 1.2" />
+  </actuator>
+  <sensor>
+    <touch name="touch_left" site="touch_left_site" />
+    <touch name="touch_right" site="touch_right_site" />
+  </sensor>
+  <keyframe>
+    <key name="home_observation" qpos="-0.5 1.0471975511965976 0.014999999999999999 0 0 0 -0.050000000000000003 -0.28000000000000003 0.0080000000000000002 1 0 0 0 0 -0.28000000000000003 0.0080000000000000002 1 0 0 0 0.050000000000000003 -0.28000000000000003 0.0080000000000000002 1 0 0 0 -0.050000000000000003 -0.22 0.0080000000000000002 1 0 0 0 0 -0.22 0.0080000000000000002 1 0 0 0 0.050000000000000003 -0.22 0.0080000000000000002 1 0 0 0" ctrl="-0.5 1.0471975511965976 0.014999999999999999 0 0" />
+  </keyframe>
+</mujoco>

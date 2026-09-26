@@ -54,7 +54,7 @@ def load_context(ssot_path: str | Path = SSOT_PATH, model_path: str | Path = MOD
     if not isinstance(ssot, dict) or not isinstance(ssot.get("parameters"), dict):
         raise ValueError("SSOT is malformed")
     version = str(ssot.get("config_version", ""))
-    if version not in {"M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1"}:
+    if version not in {"M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1", "M7-v1.2", "M7-v1.3", "M7-v1.4", "M7-v1.5", "M7-v1.6", "M7-v1.7", "M7-v1.8"}:
         raise ValueError(f"Planner requires an M5-frozen SSOT, got {version!r}")
     for key, meta in ssot["parameters"].items():
         if not isinstance(meta, dict) or not all(k in meta for k in ("value", "unit", "origin", "basis", "owner")):

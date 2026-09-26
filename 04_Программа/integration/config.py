@@ -34,11 +34,12 @@ class RuntimeConfig:
     randomized_scene_min_object_spacing_m: float
     randomized_scene_max_attempts: int
     default_max_simulation_time_s: float
+    wall_clock_cycle_warning_s: float
 
     @classmethod
     def load(cls, path: str | Path = RUNTIME_CONFIG_PATH) -> "RuntimeConfig":
         raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
-        if not isinstance(raw, dict) or raw.get("schema_version") != "M7-v1.0":
+        if not isinstance(raw, dict) or raw.get("schema_version") != "M7-v1.1":
             raise ValueError("Unsupported M7 runtime configuration")
         values = raw.get("runtime")
         if not isinstance(values, dict):
@@ -63,7 +64,7 @@ class RuntimeConfig:
 
 def load_ssot(path: str | Path = SSOT_PATH) -> dict[str, Any]:
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8-sig"))
-    if not isinstance(raw, dict) or raw.get("config_version") not in {"M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1"}:
+    if not isinstance(raw, dict) or raw.get("config_version") not in {"M5-v1.0", "M5-v1.1", "M5-v1.2", "M5-v1.3", "M7-v1.0", "M7-v1.1", "M7-v1.2", "M7-v1.3", "M7-v1.4", "M7-v1.5", "M7-v1.6", "M7-v1.7", "M7-v1.8"}:
         raise ValueError("M7 requires the accepted M5 SSOT baseline")
     for section in ("parameters", "project"):
         if not isinstance(raw.get(section), dict):

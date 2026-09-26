@@ -1,0 +1,2 @@
+simulation_time_s,body_name,ground_truth_color,x_m,y_m,z_m,vx_m_s,vy_m_s,vz_m_s,wx_rad_s,wy_rad_s,wz_rad_s,touch_left_N,touch_right_N,bilateral_finger_contact,wrist_relative_x_m,wrist_relative_y_m,wrist_relative_z_m,slip_from_first_bilateral_contact_m
+0,object_red_01,RED,0,-0.25,0.008,0,0,0,0,0,0,0,0,0,-0.19,0.415692194,-0.092,

@@ -1,0 +1,108 @@
+{
+  "schema_version": "M7-run-comparison-v1.0",
+  "run_ids": [
+    "mixed_random_three-27c85b851a",
+    "mixed_random_three-0f65bdfca8"
+  ],
+  "scenario_id": "mixed_random_three",
+  "seed": 20260928,
+  "modes": [
+    "batch",
+    "batch"
+  ],
+  "comparison_method": "Compare reproducible configuration/source hashes and normalized controller, public RGB, plan, telemetry, evaluator, and final physics data. Exclude only wall-clock measurements and run-ID strings from functional equivalence.",
+  "checks": {
+    "same_scenario_and_seed": true,
+    "same_physics_and_runtime_configuration": true,
+    "same_input_hashes": true,
+    "same_requested_modes": true,
+    "same_simulation_duration": true,
+    "same_control_ticks": true,
+    "same_controller_summary_except_wall_timing": true,
+    "same_controller_events": true,
+    "same_public_rgb_observations": true,
+    "same_controller_telemetry": true,
+    "same_plan_artifacts": true,
+    "same_evaluator_report": true,
+    "same_final_state_within_1e-12": true,
+    "same_physical_sort_outcome": true
+  },
+  "accepted": true,
+  "simulation_time_s": [
+    428.55000000131815,
+    428.55000000131815
+  ],
+  "control_ticks": [
+    42856,
+    42856
+  ],
+  "wall_clock_elapsed_s": [
+    231.82442979999178,
+    262.3859366999968
+  ],
+  "performance": [
+    {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.8489830641525944,
+      "control_cycle_count": 42856,
+      "control_cycle_wall_average_s": 0.0054062872573623355,
+      "control_cycle_wall_max_s": 27.349175499999546,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 214275,
+      "physics_step_wall_average_s": 0.00010788806485551777,
+      "physics_step_wall_max_s": 0.003489499998977408,
+      "sensor_capture": {
+        "capture_count": 12,
+        "render_wall_total_s": 0.085529799995129,
+        "render_wall_average_s": 0.007127483332927416,
+        "render_wall_max_s": 0.009135100001003593,
+        "perception_wall_total_s": 0.5215419000305701,
+        "perception_wall_average_s": 0.043461825002547506,
+        "perception_wall_max_s": 0.05536700000811834
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.085529799995129,
+      "render_and_display_wall_fraction": 0.00036901913818892954
+    },
+    {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.6334756092863039,
+      "control_cycle_count": 42856,
+      "control_cycle_wall_average_s": 0.006119584865590559,
+      "control_cycle_wall_max_s": 33.20682659999875,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 214275,
+      "physics_step_wall_average_s": 0.00011297405669520534,
+      "physics_step_wall_max_s": 0.0023278000007849187,
+      "sensor_capture": {
+        "capture_count": 12,
+        "render_wall_total_s": 0.08681690001685638,
+        "render_wall_average_s": 0.007234741668071365,
+        "render_wall_max_s": 0.00970239999878686,
+        "perception_wall_total_s": 0.550409400020726,
+        "perception_wall_average_s": 0.04586745000172717,
+        "perception_wall_max_s": 0.05526809999719262
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.08681690001685638,
+      "render_and_display_wall_fraction": 0.0003309142192298364
+    }
+  ],
+  "physical_sort_success_count": [
+    3,
+    3
+  ],
+  "final_state_max_abs_difference": {
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "simulation_time_s": 0.0
+  }
+}

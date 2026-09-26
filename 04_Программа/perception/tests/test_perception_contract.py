@@ -92,6 +92,8 @@ class PerceptionContractTests(unittest.TestCase):
         batch = self.make_detector().detect(frame)
         self.assertEqual(len(batch.detections), 1)
         self.assertEqual(batch.detections[0].class_label, "UNKNOWN")
+        self.assertEqual(batch.detections[0].status, "UNKNOWN")
+        self.assertEqual(batch.detections[0].reason, "UNSUPPORTED_COLOR_CLASS")
         self.assertNotIn(batch.detections[0].class_label, {"RED", "GREEN", "BLUE"})
 
     def test_low_contrast_neutral_object_is_never_promoted_to_supported_color(self) -> None:
