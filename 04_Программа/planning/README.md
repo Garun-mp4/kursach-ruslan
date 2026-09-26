@@ -7,7 +7,7 @@ The package reads the frozen project SSOT (`M5-v1.1`) and M2 MJCF (`M2-v1.1`). `
 From the project root, using Python 3.12.10 and the shared M2/M3 dependencies:
 
 ```powershell
-& .\99_Рабочие_материалы\m2_validation\.venv\Scripts\python.exe -m unittest discover -s .\04_Программа\planning\tests -p "test_*.py" -v
+& .\99_Рабочие_материалы\integration\.venv\Scripts\python.exe -m unittest discover -s .\04_Программа\planning\tests -p "test_*.py" -v
 ```
 
 The suite uses Python's standard `unittest`; no pytest dependency is required.
@@ -15,7 +15,7 @@ The suite uses Python's standard `unittest`; no pytest dependency is required.
 ## Rebuild M5 verification evidence
 
 ```powershell
-& .\99_Рабочие_материалы\m2_validation\.venv\Scripts\python.exe .\04_Программа\planning\run_m5_verification.py
+& .\99_Рабочие_материалы\integration\.venv\Scripts\python.exe .\04_Программа\planning\run_m5_verification.py
 ```
 
 The deterministic route campaign writes M4-contract inputs, compact plan JSON (waypoints, events, status and provenance), full sampled trajectories and clearance profiles as CSV, convergence and thin-obstacle evidence, and paired SVG/PNG plots into `05_Верификация/planning/`. CSV columns include analytic FK-derived TCP linear/angular rates and accelerations, checked against conservative bounds derived from the configured joint limits and link lengths. The report records package versions and SHA-256 hashes for the configuration, model and relevant source modules. It uses no random seed because it draws no randomness. A nonzero exit means one of the predefined expected outcomes changed or a required convergence/collision check failed.
@@ -25,7 +25,7 @@ The M5-v1.1 wall-clock preflight timeout is 90 s. The half-step route took 58.4 
 The route cases use deterministic synthetic records conforming to the M4 `DetectionBatch` interface. They verify planner behavior from perception estimates; they are not end-to-end camera/perception runs and do not establish batch-sorting performance. A targeted compatibility regression for the M2-v1.1 wrist/finger geometry repeats M4's arm-occlusion fixture against the frozen M4-v1.3 detector and calibration:
 
 ```powershell
-& .\99_Рабочие_материалы\m2_validation\.venv\Scripts\python.exe .\04_Программа\planning\verify_m4_model_compatibility.py
+& .\99_Рабочие_материалы\integration\.venv\Scripts\python.exe .\04_Программа\planning\verify_m4_model_compatibility.py
 ```
 
 This is a focused interface regression, not a rerun of the full M4 acceptance campaign.

@@ -1,0 +1,7 @@
+# Re-creatable Python environments; install packages from the pinned requirements.
+**/.venv/
+**/.validation_env/
+
+# Python bytecode caches.
+**/__pycache__/
+**/*.py[cod]

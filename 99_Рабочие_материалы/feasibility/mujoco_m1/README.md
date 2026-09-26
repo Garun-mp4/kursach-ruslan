@@ -8,11 +8,11 @@ From this directory in PowerShell with CPython 3.12 x64 installed:
 
 ```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
 .\.venv\Scripts\python.exe run_m1_feasibility.py
 ```
 
-Direct dependencies are pinned in `requirements.txt`; the exact transitive package snapshot from the clean M1 run is in `requirements-lock.txt`. The clean venv used for the recorded install check is retained locally as `.validation_env`; the portable commands above recreate a separate `.venv`. The probe does not use random sampling, so the seed is not applicable. Offscreen RGB rendering requires a working OpenGL context/graphics driver on the machine.
+Direct dependencies are pinned in `requirements.txt`; the exact transitive package snapshot from the clean M1 run is in `requirements-lock.txt`. Local virtual environments are intentionally excluded from the project tree because they are reproducible from this lock file; the clean-install log and manifest retain the recorded environment evidence. The probe does not use random sampling, so the seed is not applicable. Offscreen RGB rendering requires a working OpenGL context/graphics driver on the machine.
 
 ## What the harness checks
 
