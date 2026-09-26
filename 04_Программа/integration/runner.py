@@ -238,8 +238,7 @@ def _run_one(*, scenario_name: str, mode: str, out_root: Path, profile: str,
     viewer_context = None
     viewer = None
     if mode == "interactive":
-        from mujoco import viewer as mujoco_viewer
-        viewer_context = IsolatedInteractiveDisplay(model, data, mujoco_viewer)
+        viewer_context = IsolatedInteractiveDisplay(model, data)
         viewer = viewer_context
     runtime = SorterRuntime(
         model, data, run_id=run_id, runtime_config=runtime_config,
