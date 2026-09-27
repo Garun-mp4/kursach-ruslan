@@ -1,0 +1,65 @@
+{
+  "schema_version": "M10-source-audit-v1",
+  "created_utc": "2026-09-27T15:38:39.149843+00:00",
+  "ssot_version": "M7-v1.8",
+  "campaign_id": "M9-RC-2026-01",
+  "campaign_protocol_sha256": "be7bb93f56c04ad2ea1d7cfee033c52ab6182fb09988b5dce8321c625445a765",
+  "analyzed_trials": 98,
+  "v03_trials": 30,
+  "v03_matched_public_observations": 90,
+  "v03_xy_mean_m": 0.00041455481953011275,
+  "v03_xy_max_m": 0.0013160950057934213,
+  "v03_yaw_mean_rad": 0.01346581091012301,
+  "v03_yaw_max_rad": 0.08640579201805332,
+  "m9_source_copies_byte_identical": 10,
+  "source_copy_hashes": [
+    {
+      "path": "08_Записка\\tables\\source__campaign_results.json",
+      "sha256": "dc121ce08023b5f4a78b1df32246ecb52e3153d94257a6a45d5136412209774f"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Матрица_ошибок_цвета_V03.csv",
+      "sha256": "42857d5a2d1cb06bd9aba6cf7add0086f398b4bb04c1ff26bcf54857470e669e"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Матрица_сценариев.csv",
+      "sha256": "0564880ccb3302f7484de292b8095f1a07a772f32006a8573aa6bb3750e89b47"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Матрица_цветов_по_условиям.csv",
+      "sha256": "4d6bcdee8c40261b859f990cc38011dc53c8b4e1b27a27fff77121f73e61869e"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Метрики_классификации_V03.csv",
+      "sha256": "2cc0b4c42fd99c8c3fab48a11bba19f73acd476c7b2e24c7bcbcb1326955c26c"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Проверка_повторяемости_V14.json",
+      "sha256": "2e691a256bb9aa886184d6dada4250904c873715cd8f8c8196dccde6953ec9d1"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Результаты_по_объектам.csv",
+      "sha256": "aa22db3d79d24df14dfc3b898cfad0f7fa403572a20c701b3edee8bb97f7bb74"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Результаты_по_прогонам.csv",
+      "sha256": "b950f222a7e2ab3310a93dc52fbd2edc781566d60e3957f6aa1a6c873f65420c"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Сводка_по_сериям.csv",
+      "sha256": "af9f109df9d734c8f73d83871b47b6b5e33e99b664c48eaed72bd225c86059f0"
+    },
+    {
+      "path": "08_Записка\\tables\\source__Сравнение_парных_seed.csv",
+      "sha256": "a6d6d4306477182187ce2f7bc079c54872a0c4d3f077802ecf704f8679fc964f"
+    }
+  ],
+  "figures_verified": 13,
+  "tables_verified": 4,
+  "crosswalk_rows": 57,
+  "summary_rows": 13,
+  "checks": {
+    "result": "PASS",
+    "failures": []
+  }
+}

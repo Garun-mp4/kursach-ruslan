@@ -1,0 +1,11 @@
+{
+  "schema_version": "M10-figure-provenance-v1",
+  "ssot_version": "M7-v1.8",
+  "layout_source": "08_Записка\\source\\robot_layout_m7.drawio",
+  "dimension_source": "08_Записка\\source\\robot_dimensions_m7.drawio",
+  "drawio_generator": "04_Программа/m2/draw_m2_diagrams.py, regenerated from final SSOT",
+  "isometric_image": "08_Записка\\figures\\02_SCARA_изометрия_M7.png",
+  "isometric_model_sha256": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+  "isometric_engine_version": "3.14.0",
+  "isometric_validation_status": "PASS"
+}

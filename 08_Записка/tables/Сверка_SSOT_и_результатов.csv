@@ -1,0 +1,58 @@
+﻿Источник,Ключ,Значение,Единица,Происхождение_SSOT,Владелец,Раздел_рисунок_таблица,Назначение_сверки,Статус
+02_Спецификация/параметры_системы.yaml,robot.type,"""SCARA R-R-P-R""",topology,source,M1,§ 2.2; рис. 2.1,SCARA topology,PASS
+02_Спецификация/параметры_системы.yaml,robot.arm_dof,4,coordinate,source,M1,§ 2.2; табл. 3.1,Arm degrees of freedom,PASS
+02_Спецификация/параметры_системы.yaml,robot.gripper_actuated_dof,1,coordinate,source,M1,§ 2.2; табл. 3.1,Actuated gripper coordinate,PASS
+02_Спецификация/параметры_системы.yaml,robot.link1_length_m,0.23,m,design_assumption,M2,§ 3.2; табл. 3.1,Link geometry,PASS
+02_Спецификация/параметры_системы.yaml,robot.link2_length_m,0.2,m,design_assumption,M2,§ 3.2; табл. 3.1,Link geometry,PASS
+02_Спецификация/параметры_системы.yaml,robot.shoulder_z_m,0.19,m,design_assumption,M2,§ 3.2; табл. 3.1,Vertical geometry,PASS
+02_Спецификация/параметры_системы.yaml,robot.j3_range_m,"[0.0, 0.097]",m,design_assumption,M2,§ 3.2; табл. 3.1,Vertical joint limits,PASS
+02_Спецификация/параметры_системы.yaml,robot.j1_range_rad,"[-3.141592653589793, 3.141592653589793]",rad,design_assumption,M2,§ 3.2; табл. 3.1,Joint limits,PASS
+02_Спецификация/параметры_системы.yaml,robot.j2_range_rad,"[-2.6179938779914944, 2.6179938779914944]",rad,design_assumption,M2,§ 3.2; табл. 3.1,Joint limits,PASS
+02_Спецификация/параметры_системы.yaml,robot.j4_range_rad,"[-3.141592653589793, 3.141592653589793]",rad,design_assumption,M2,§ 3.2; табл. 3.1,Joint limits,PASS
+02_Спецификация/параметры_системы.yaml,robot.radial_reach_min_max_m,"[0.11500288192837443, 0.43000000000000005]",m,calculation,M2,§ 3.2; § 4.2,Reach envelope,PASS
+02_Спецификация/параметры_системы.yaml,object.size_xyz_m,"[0.028, 0.028, 0.016]","m; X,Y,Z",design_assumption,M2,§ 3.2; табл. 3.1,Object dimensions,PASS
+02_Спецификация/параметры_системы.yaml,object.mass_kg,0.015554560000000002,kg,calculation,M2,§ 3.2–3.3,Calculated object mass,PASS
+02_Спецификация/параметры_системы.yaml,object.count_per_class,2,object,design_assumption,M2,§ 3.2,Batch composition,PASS
+02_Спецификация/параметры_системы.yaml,object.color_class_labels,"[""RED"", ""GREEN"", ""BLUE"", ""UNKNOWN""]",class label,source,M1,§ 1.1; § 5.2,Color classes and UNKNOWN,PASS
+02_Спецификация/параметры_системы.yaml,cell.table_size_xy_m,"[1.0, 0.9]","m; X,Y",design_assumption,M2,§ 3.2; рис. 3.2–3.4,Workcell envelope,PASS
+02_Спецификация/параметры_системы.yaml,cell.input_center_xy_m,"[0.0, -0.25]","m; X,Y",design_assumption,M2,§ 3.2; рис. 3.2,Input area location,PASS
+02_Спецификация/параметры_системы.yaml,cell.input_size_xy_m,"[0.24, 0.16]","m; X,Y",design_assumption,M2,§ 3.2; табл. 3.1,Input area size,PASS
+02_Спецификация/параметры_системы.yaml,cell.tray_outer_size_xy_m,"[0.184, 0.16]","m; X,Y",tuned_parameter,M7,§ 3.2; табл. 3.1,Final M7 tray dimensions,PASS
+02_Спецификация/параметры_системы.yaml,cell.tray_centers_xy_m,"{""RED"": [-0.22, 0.21], ""GREEN"": [0.0, 0.3], ""BLUE"": [0.22, 0.21]}","m; X,Y",design_assumption,M2,§ 3.2; рис. 3.2,Sorting area locations,PASS
+02_Спецификация/параметры_системы.yaml,cell.tray_slot_x_offsets_m,"[-0.032, 0.0, 0.032]",m,tuned_parameter,M7,§ 3.2; § 4.3,Final slot count and reachability,PASS
+02_Спецификация/параметры_системы.yaml,cell.tray_slot_y_offset_m,0.0,m,design_assumption,M2,§ 3.2,Slot layout,PASS
+02_Спецификация/параметры_системы.yaml,camera.position_world_m,"[0.0, 0.0, 1.05]",m,design_assumption,M2,§ 5.1; рис. 5.1,Primary camera pose,PASS
+02_Спецификация/параметры_системы.yaml,camera.placement_position_world_m,"[0.0, 0.26, 0.95]",m,tuned_parameter,M7,§ 5.1,Placement camera pose,PASS
+02_Спецификация/параметры_системы.yaml,camera.placement_target_world_m,"[0.0, 0.3, 0.01]",m,tuned_parameter,M7,§ 5.1,Placement camera view,PASS
+02_Спецификация/параметры_системы.yaml,camera.resolution_px,"[640, 480]","pixel; W,H",design_assumption,M2,§ 5.1,Image dimensions,PASS
+02_Спецификация/параметры_системы.yaml,camera.fovy_deg,50.0,degree,design_assumption,M2,§ 5.1,Camera field of view,PASS
+02_Спецификация/параметры_системы.yaml,camera.placement_max_age_s,0.04,s,inherited,M7,§ 5.1; § 7,Freshness limit,PASS
+02_Спецификация/параметры_системы.yaml,environment.engine,"""MuJoCo""",name,source,M1,§ 2.3; § 8–11,Simulation engine,PASS
+02_Спецификация/параметры_системы.yaml,environment.engine_version,"""3.14.0""",version,source,M1,§ 2.3; § 9,Pinned engine version,PASS
+02_Спецификация/параметры_системы.yaml,environment.python_version,"""3.12.10""",version,source,M1,§ 2.3; § 8,Pinned Python version,PASS
+02_Спецификация/параметры_системы.yaml,environment.timestep_s,0.002,s,source,M7,§ 6.2; § 8,Physics step,PASS
+02_Спецификация/параметры_системы.yaml,planning.static_clearance_m,0.005,m,design_assumption,M5,§ 6.2,Static collision clearance,PASS
+02_Спецификация/параметры_системы.yaml,planning.perceived_object_clearance_m,0.015,m,design_assumption,M5,§ 6.2,Object clearance,PASS
+02_Спецификация/параметры_системы.yaml,planning.path_sweep_sample_step_m,0.001,m,design_assumption,M5,§ 6.2,Sampled path step,PASS
+02_Спецификация/параметры_системы.yaml,robot.gripper_actuator_total_force_N,1.2,N generalized,design_assumption,M2,§ 3.3,Virtual gripper actuator force,PASS
+02_Спецификация/параметры_системы.yaml,gripper.friction_slide,0.6,dimensionless,design_assumption,M7,§ 3.3; § 11,Contact-model assumption,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,Campaign identity,M9-RC-2026-01,,registered virtual trial data,M9,§ 9.1,Frozen campaign and protocol hash,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,Registered / analyzed trials,98 / 98; missing=0,,registered virtual trial data,M9,§ 9.1,Campaign aggregate and run-level CSV,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,Expected outcomes across heterogeneous tests,84 / 98,,registered virtual trial data,M9,§ 10.4,Not a sorting-success rate,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 complete batches,21 / 30 (70.0%),,registered virtual trial data,M9,§ 10.1; табл. 10.1; рис. 10.1,Independent unit is a three-object seeded batch,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 Wilson 95% interval,52.1%–83.3%,,registered virtual trial data,M9,§ 10.1; рис. 10.1,Calculated over 30 seeded batches,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,Frozen V03 threshold,27 / 30 (90%); pass=False,,registered virtual trial data,M9,§ 1.2; § 10.1,Threshold was not modified post hoc,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 correctly placed objects,73 / 90,,registered virtual trial data,M9,§ 10.1; табл. 10.1,"Evaluator truth, not controller self-report",PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 planner rejections,17 COLLISION_GRASP; rejected targets received no motion commands,,registered virtual trial data,M9,§ 10.1; § 10.2,Derived by raw run and plan evidence,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 wrong bins / forbidden contacts / limit violations,0 / 0 / 0,,registered virtual trial data,M9,§ 10.1,V03 scope only; not universal guarantee,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 median simulation / wall time,409.605 / 241.686 s,,registered virtual trial data,M9,§ 10.1,Wall-clock is machine-dependent,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 median TCP path,8.166 m,,registered virtual trial data,M9,§ 10.1,Median over 30 batch trials,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 first-view classifications,90 / 90,,registered virtual trial data,M9,§ 5.3; § 10.2; рис. 5.2,Public first observation under registered palette/conditions,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 first-view XY mean / max,0.415 / 1.316 mm,,registered virtual trial data,M9,§ 5.3; § 10.2,Weighted across 90 matched object observations,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V03 first-view yaw mean / max,0.01347 / 0.08641 rad,,registered virtual trial data,M9,§ 5.3; § 10.2,Square symmetry handled modulo pi/2,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V01 fixed-color tests,3 / 3 expected outcomes,,registered virtual trial data,M9,табл. 10.1,Three fixed single-object scenes,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V02 batch / forbidden contact,3 / 6 sorted; 1 episode,,registered virtual trial data,M9,табл. 10.1; § 10.2,The campaign did not pass this case,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V07 RGB noise,σ=0: 10/10; σ=4: 10/10; σ=8: 10/10,,registered virtual trial data,M9,табл. 10.1; рис. 10.1,Paired seed samples of n=10 per level,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V10 low-friction expected outcomes,10 / 10,,registered virtual trial data,M9,§ 10.1 figure note; рис. 10.1,Expected safe response is not successful sorting,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,V14 repeatability,accepted=True; 14/14 recorded checks true,,registered virtual trial data,M9,табл. 10.1; § 9.1,One repeated seed pair; not broad statistical evidence,PASS
+07_Испытания/campaign_results.json + исходные таблицы/логи,M9 representative video,"single_red_center-2d771e58cc; 826 frames, 1280×720, 25 fps, 33.04 s",,registered virtual trial data,M9,§ 8; video/source materials,Sequential frames decoded; simulation recording,PASS
