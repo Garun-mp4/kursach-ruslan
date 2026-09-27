@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -11,6 +12,22 @@ SOURCE_DIR = ROOT / "08_Записка" / "source"
 FIGURE_DIR = ROOT / "08_Записка" / "figures"
 RENDERED_M7_MODEL = ROOT / "99_Рабочие_материалы" / "m2_validation" / "results" / "m2_model_isometric.png"
 M7_VALIDATION = ROOT / "99_Рабочие_материалы" / "m2_validation" / "results" / "m2_validation.json"
+
+
+def remove_figure_heading(xml_text: str) -> str:
+    document = ET.fromstring(xml_text)
+    graph_root = document.find("./diagram/mxGraphModel/root")
+    if graph_root is None:
+        raise ValueError("Generated M10 layout is missing its draw.io graph root")
+    removed: set[str] = set()
+    for cell in list(graph_root):
+        if cell.tag.rsplit("}", 1)[-1] == "mxCell" and cell.get("id") in {"2", "3"}:
+            removed.add(cell.get("id"))
+            graph_root.remove(cell)
+    if removed != {"2", "3"}:
+        raise ValueError(f"Expected to remove title and subtitle cells, removed {sorted(removed)}")
+    ET.indent(document, space="  ")
+    return ET.tostring(document, encoding="unicode", xml_declaration=True)
 
 sys.path.insert(0, str(M2_MODULES))
 import build_model  # noqa: E402
@@ -53,8 +70,8 @@ def main() -> None:
     )
     if "Диапазон z_TCP: 6–103 mm; ход J3: 97 mm" not in dimensions_xml:
         raise ValueError("The expected final M7 vertical TCP range label was not updated")
-    layout_src.write_text(layout_xml, encoding="utf-8")
-    dims_src.write_text(dimensions_xml, encoding="utf-8")
+    layout_src.write_text(remove_figure_heading(layout_xml), encoding="utf-8")
+    dims_src.write_text(remove_figure_heading(dimensions_xml), encoding="utf-8")
     layout_tmp.unlink()
     dims_tmp.unlink()
 

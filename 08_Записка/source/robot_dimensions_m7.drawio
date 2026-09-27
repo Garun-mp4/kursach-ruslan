@@ -5,12 +5,6 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="Размерная схема финальной модели M7-v1.8 и ячейки" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=22;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="35.000" y="18.000" width="1250.000" height="34.000" as="geometry" />
-        </mxCell>
-        <mxCell id="3" value="Плановый масштаб для ячейки; боковой разрез схематический. Значения — параметры учебной модели, не паспорт реального изделия." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#5D6B78;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
-          <mxGeometry x="35.000" y="52.000" width="1250.000" height="25.000" as="geometry" />
-        </mxCell>
         <mxCell id="4" value="РАБОЧИЙ СТОЛ · Z = 0" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#F7F9FB;strokeColor=#667788;fontColor=#667788;fontSize=11;fontFamily=Arial;align=left;verticalAlign=top;rounded=0;opacity=100;spacingLeft=8;spacingTop=6;" vertex="1" parent="1">
           <mxGeometry x="115.000" y="133.500" width="470.000" height="423.000" as="geometry" />
         </mxCell>

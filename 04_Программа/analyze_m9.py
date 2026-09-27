@@ -1140,11 +1140,9 @@ def _draw_rate_plot(rows: list[dict[str, Any]], path: Path) -> None:
     width, height = 1600, 920
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
-    title = _font(34)
     label = _font(19)
     small = _font(16)
-    draw.text((80, 38), "Доля выполненных критериев зарегистрированных серий", font=title, fill="#162A35")
-    left, right, top, bottom = 475, 1490, 150, 770
+    left, right, top, bottom = 475, 1490, 90, 770
     for tick in range(0, 11):
         value = tick / 10
         x = left + int(value * (right - left))
@@ -1179,14 +1177,11 @@ def _draw_confusion_matrix(matrix: dict[tuple[str, str], int], path: Path) -> No
     rows = (*COLORS, "NO_OBJECT")
     columns = PREDICTION_LABELS
     cell_w, cell_h = 205, 110
-    left, top = 250, 180
+    left, top = 250, 145
     image = Image.new("RGB", (left + cell_w * len(columns) + 80, top + cell_h * (len(rows) + 1) + 70), "white")
     draw = ImageDraw.Draw(image)
-    title = _font(32)
     label = _font(20)
     small = _font(18)
-    draw.text((55, 34), "Сопоставление первого публичного распознавания с истинными классами",
-              font=title, fill="#162A35")
     draw.text((left, top - 72), "Метка первого кадра →", font=small, fill="#445761")
     draw.text((65, top - 4), "Истинный класс", font=small, fill="#445761")
     draw.text((left, top + cell_h * len(rows) + 18),
@@ -1214,11 +1209,9 @@ def _draw_trajectory(
     width, height = 1400, 1100
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
-    title, label, small = _font(30), _font(18), _font(15)
-    draw.text((50, 28), f"Измеренная TCP-траектория — {metric['run_id']} ({outcome_label})",
-              font=title, fill="#162A35")
+    label, small = _font(18), _font(15)
     xmin, xmax, ymin, ymax = -0.52, 0.52, -0.44, 0.44
-    l, r, t, b = 130, 1320, 120, 1000
+    l, r, t, b = 130, 1320, 70, 1000
     def xy(point: tuple[float, float]) -> tuple[int, int]:
         x, y = point
         return (int(l + (x - xmin) / (xmax - xmin) * (r - l)),
@@ -1285,12 +1278,11 @@ def _draw_joint_error(metric: dict[str, Any], path: Path) -> None:
     width, height = 1500, 790
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
-    title, label, small = _font(30), _font(18), _font(16)
-    draw.text((60, 24), f"Ошибка слежения по осям — {metric['run_id']}", font=title, fill="#162A35")
+    label, small = _font(18), _font(16)
     left, right = 135, 1430
     panels = [
-        ("Поворотные оси J1/J2/J4, рад", angular, 115, 365, 1.0),
-        ("Вертикальный ползун J3, мм", vertical, 435, 685, 1000.0),
+        ("Поворотные оси J1/J2/J4, рад", angular, 75, 325, 1.0),
+        ("Вертикальный ползун J3, мм", vertical, 395, 645, 1000.0),
     ]
     for panel_title, series, top, bottom, unit_scale in panels:
         draw.text((left, top - 32), panel_title, font=label, fill="#213843")

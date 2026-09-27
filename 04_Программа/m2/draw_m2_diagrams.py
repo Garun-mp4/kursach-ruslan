@@ -278,8 +278,6 @@ def create_dimensioned(p) -> None:
 
 def create_frames(p) -> None:
     d = Diagram("M2 frames", 1160, 760)
-    d.text(35, 18, 1090, 36, "Системы координат и кинематические соглашения", size=22, bold=True)
-    d.text(35, 56, 1090, 25, "Схема показывает нулевую конфигурацию звеньев; координатные оси и нули заданы в SSOT.", size=12, color="#5D6B78")
     # Zero-pose planar geometry.
     scale, x0, y0 = 700, 160, 500
     l1, l2 = float(p("robot.link1_length_m")), float(p("robot.link2_length_m"))
@@ -326,8 +324,6 @@ def create_frames(p) -> None:
 
 def create_camera(p) -> None:
     d = Diagram("M2 camera and workspace", 1080, 720)
-    d.text(35,18,1010,36,"Камера и предварительная геометрия рабочей зоны",size=22,bold=True)
-    d.text(35,56,1010,25,"Вид сверху · границы радиального кольца являются грубой проверкой M2, не полной достижимой областью.",size=12,color="#5D6B78")
     add_plan(d,p,cx=390,cy=380,scale=430,show_camera=True,show_reach=True,robot_home=False)
     cov=p("camera.coverage_width_height_m")
     ppx=p("camera.intrinsics_fx_fy_cx_cy_px")

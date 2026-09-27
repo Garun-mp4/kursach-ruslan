@@ -5,106 +5,100 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="Системы координат и кинематические соглашения" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=22;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="35.000" y="18.000" width="1090.000" height="36.000" as="geometry" />
-        </mxCell>
-        <mxCell id="3" value="Схема показывает нулевую конфигурацию звеньев; координатные оси и нули заданы в SSOT." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#5D6B78;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
-          <mxGeometry x="35.000" y="56.000" width="1090.000" height="25.000" as="geometry" />
-        </mxCell>
-        <mxCell id="4" style="edgeStyle=none;html=1;rounded=1;strokeColor=#4479A8;strokeWidth=16;startArrow=none;endArrow=none;" edge="1" parent="1">
+        <mxCell id="2" style="edgeStyle=none;html=1;rounded=1;strokeColor=#4479A8;strokeWidth=16;startArrow=none;endArrow=none;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="160.000" y="500.000" as="sourcePoint" />
             <mxPoint x="321.000" y="500.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5" style="edgeStyle=none;html=1;rounded=1;strokeColor=#68A1C5;strokeWidth=14;startArrow=none;endArrow=none;" edge="1" parent="1">
+        <mxCell id="3" style="edgeStyle=none;html=1;rounded=1;strokeColor=#68A1C5;strokeWidth=14;startArrow=none;endArrow=none;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="321.000" y="500.000" as="sourcePoint" />
             <mxPoint x="461.000" y="500.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6" value="J1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#1B4567;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="4" value="J1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#1B4567;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="149.000" y="489.000" width="22.000" height="22.000" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="J2" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#1B4567;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="5" value="J2" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#1B4567;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="310.000" y="489.000" width="22.000" height="22.000" as="geometry" />
         </mxCell>
-        <mxCell id="8" value="J3" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#E9A23B;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="6" value="J3" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#E9A23B;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="450.000" y="489.000" width="22.000" height="22.000" as="geometry" />
         </mxCell>
-        <mxCell id="9" style="edgeStyle=none;html=1;rounded=1;strokeColor=#9B6A15;strokeWidth=5;startArrow=none;endArrow=none;" edge="1" parent="1">
+        <mxCell id="7" style="edgeStyle=none;html=1;rounded=1;strokeColor=#9B6A15;strokeWidth=5;startArrow=none;endArrow=none;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="461.000" y="500.000" as="sourcePoint" />
             <mxPoint x="461.000" y="605.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="10" value="J4" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#8A5B19;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="8" value="J4" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#8A5B19;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="448.000" y="595.000" width="26.000" height="20.000" as="geometry" />
         </mxCell>
-        <mxCell id="11" value="TCP" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#E9A23B;strokeColor=#FFFFFF;fontColor=#172B3A;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="9" value="TCP" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#E9A23B;strokeColor=#FFFFFF;fontColor=#172B3A;fontSize=9;fontFamily=Arial;align=center;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="443.000" y="635.000" width="36.000" height="22.000" as="geometry" />
         </mxCell>
-        <mxCell id="12" style="edgeStyle=none;html=1;rounded=0;strokeColor=#C14B43;strokeWidth=2;startArrow=none;endArrow=classic;" edge="1" parent="1">
+        <mxCell id="10" style="edgeStyle=none;html=1;rounded=0;strokeColor=#C14B43;strokeWidth=2;startArrow=none;endArrow=classic;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="160.000" y="500.000" as="sourcePoint" />
             <mxPoint x="252.000" y="500.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" style="edgeStyle=none;html=1;rounded=0;strokeColor=#3E8B62;strokeWidth=2;startArrow=none;endArrow=classic;" edge="1" parent="1">
+        <mxCell id="11" style="edgeStyle=none;html=1;rounded=0;strokeColor=#3E8B62;strokeWidth=2;startArrow=none;endArrow=classic;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="160.000" y="500.000" as="sourcePoint" />
             <mxPoint x="160.000" y="408.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="14" value="+X" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#C14B43;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="12" value="+X" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#C14B43;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="256.000" y="486.000" width="42.000" height="24.000" as="geometry" />
         </mxCell>
-        <mxCell id="15" value="+Y" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#3E8B62;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="13" value="+Y" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#3E8B62;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="146.000" y="384.000" width="42.000" height="24.000" as="geometry" />
         </mxCell>
-        <mxCell id="16" value="WORLD = BASE XY" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="14" value="WORLD = BASE XY" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=12;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="152.000" y="528.000" width="120.000" height="26.000" as="geometry" />
         </mxCell>
-        <mxCell id="17" style="edgeStyle=none;html=1;rounded=0;strokeColor=#365E7F;strokeWidth=1.4;startArrow=classic;endArrow=classic;" edge="1" parent="1">
+        <mxCell id="15" style="edgeStyle=none;html=1;rounded=0;strokeColor=#365E7F;strokeWidth=1.4;startArrow=classic;endArrow=classic;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="170.000" y="460.000" as="sourcePoint" />
             <mxPoint x="311.000" y="460.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" value="L1 = 230 mm" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="16" value="L1 = 230 mm" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="198.500" y="430.000" width="84.000" height="23.000" as="geometry" />
         </mxCell>
-        <mxCell id="19" style="edgeStyle=none;html=1;rounded=0;strokeColor=#365E7F;strokeWidth=1.4;startArrow=classic;endArrow=classic;" edge="1" parent="1">
+        <mxCell id="17" style="edgeStyle=none;html=1;rounded=0;strokeColor=#365E7F;strokeWidth=1.4;startArrow=classic;endArrow=classic;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="331.000" y="460.000" as="sourcePoint" />
             <mxPoint x="451.000" y="460.000" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="20" value="L2 = 200 mm" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="18" value="L2 = 200 mm" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="349.000" y="430.000" width="84.000" height="23.000" as="geometry" />
         </mxCell>
-        <mxCell id="21" value="Оси и преобразования" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=16;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="19" value="Оси и преобразования" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=16;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="112.000" width="350.000" height="27.000" as="geometry" />
         </mxCell>
-        <mxCell id="22" value="WORLD: правая система; начало на центре стола; +Z вверх.&#10;BASE совпадает с WORLD и закреплена.&#10;J1/J2/J4 вращаются вокруг локальной +Z.&#10;J3 перемещается вдоль локальной −Z.&#10;Пальцы движутся симметрично по ±Y." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="20" value="WORLD: правая система; начало на центре стола; +Z вверх.&#10;BASE совпадает с WORLD и закреплена.&#10;J1/J2/J4 вращаются вокруг локальной +Z.&#10;J3 перемещается вдоль локальной −Z.&#10;Пальцы движутся симметрично по ±Y." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="150.000" width="350.000" height="115.000" as="geometry" />
         </mxCell>
-        <mxCell id="23" value="T_A_B переводит координаты из B в A: p_A = T_A_B · p_B. Столбцовые векторы; длина — m, угол — rad." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="21" value="T_A_B переводит координаты из B в A: p_A = T_A_B · p_B. Столбцовые векторы; длина — m, угол — rad." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="282.000" width="350.000" height="82.000" as="geometry" />
         </mxCell>
-        <mxCell id="24" value="TCP в J4: [0.0, 0.0, -0.012] m&#10;J4 в каретке: [0.0, 0.0, -0.075] m&#10;J1 в BASE: [0, 0, 0.19] m" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#F2F5F7;strokeColor=#AAB5BF;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;spacingLeft=10;" vertex="1" parent="1">
+        <mxCell id="22" value="TCP в J4: [0.0, 0.0, -0.012] m&#10;J4 в каретке: [0.0, 0.0, -0.075] m&#10;J1 в BASE: [0, 0, 0.19] m" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#F2F5F7;strokeColor=#AAB5BF;fontColor=#34495E;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;spacingLeft=10;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="395.000" width="330.000" height="122.000" as="geometry" />
         </mxCell>
-        <mxCell id="25" value="Камера: два разных соглашения" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=15;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="23" value="Камера: два разных соглашения" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#172B3A;fontSize=15;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="540.000" width="340.000" height="26.000" as="geometry" />
         </mxCell>
-        <mxCell id="26" value="CAM_MJ&#10;MuJoCo-камера&#10;локальная −Z направлена вниз&#10;quaternion wxyz: [1,0,0,0]" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#EFEAF7;strokeColor=#73569A;fontColor=#49386A;fontSize=10;fontFamily=Arial;align=center;verticalAlign=middle;rounded=1;opacity=100;" vertex="1" parent="1">
+        <mxCell id="24" value="CAM_MJ&#10;MuJoCo-камера&#10;локальная −Z направлена вниз&#10;quaternion wxyz: [1,0,0,0]" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#EFEAF7;strokeColor=#73569A;fontColor=#49386A;fontSize=10;fontFamily=Arial;align=center;verticalAlign=middle;rounded=1;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="770.000" y="570.000" width="168.000" height="106.000" as="geometry" />
         </mxCell>
-        <mxCell id="27" value="CAM_CV&#10;оптический кадр OpenCV&#10;X→+X, Y→−Y, Z→−Z&#10;R = diag(1,−1,−1)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#F5EFFA;strokeColor=#73569A;fontColor=#49386A;fontSize=10;fontFamily=Arial;align=center;verticalAlign=middle;rounded=1;opacity=100;" vertex="1" parent="1">
+        <mxCell id="25" value="CAM_CV&#10;оптический кадр OpenCV&#10;X→+X, Y→−Y, Z→−Z&#10;R = diag(1,−1,−1)" style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=#F5EFFA;strokeColor=#73569A;fontColor=#49386A;fontSize=10;fontFamily=Arial;align=center;verticalAlign=middle;rounded=1;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="950.000" y="570.000" width="168.000" height="106.000" as="geometry" />
         </mxCell>
-        <mxCell id="28" value="Положительное вращение J1/J2/J4 — правило правой руки вокруг +Z. Уравнения FK/IK и проверка знаков принадлежат M3." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#7A4B17;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
+        <mxCell id="26" value="Положительное вращение J1/J2/J4 — правило правой руки вокруг +Z. Уравнения FK/IK и проверка знаков принадлежат M3." style="shape=rectangle;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#7A4B17;fontSize=11;fontFamily=Arial;align=left;verticalAlign=middle;rounded=0;opacity=100;" vertex="1" parent="1">
           <mxGeometry x="40.000" y="700.000" width="650.000" height="38.000" as="geometry" />
         </mxCell>
       </root>

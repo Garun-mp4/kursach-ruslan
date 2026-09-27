@@ -437,11 +437,6 @@ def write_state_diagram() -> None:
     }
 
     def build(root: ET.Element) -> None:
-        title = ("FSM · ЦИКЛ УСПЕШНОЙ СОРТИРОВКИ\n" 
-                 "Основной путь показан сплошными стрелками; исключения и все точные дуги — в FSM.md и transition_coverage.csv.")
-        xml_cell_object(root, "fsm_title", title,
-                        "text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#172B34;",
-                        x=50, y=20, width=1460, height=68)
         for state in State:
             x, y = layout[state]
             label = (f"<b>{escape(state.value)}</b><br>"
@@ -498,11 +493,6 @@ def write_flowchart() -> None:
     }
 
     def build(root: ET.Element) -> None:
-        xml_cell_object(root, "flow_title",
-                        "M6 · ПОТОК СОРТИРОВКИ И ПОЛИТИКИ ОТКАЗА<br>" 
-                        "Основной путь состоит из девяти шагов; evaluator ground truth используется только для независимой оценки после решения контроллера.",
-                        "text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;strokeColor=none;fillColor=none;fontSize=17;fontStyle=1;fontColor=#172B34;",
-                        x=65, y=20, width=1630, height=70)
         for node_id, label, x, y, width, height, kind in nodes:
             fill, stroke, shape = colors[kind]
             style_shape = shape if shape in {"ellipse", "rhombus"} else "rounded=1"
