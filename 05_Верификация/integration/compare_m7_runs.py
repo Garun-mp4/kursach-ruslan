@@ -19,6 +19,13 @@ NONDETERMINISTIC_KEYS = {
 }
 
 
+def _normalize_controller_summary(value: Any, run_ids: tuple[str, str]) -> Any:
+    """Ignore M8's optional recording metadata while comparing controller behavior."""
+    if isinstance(value, dict):
+        value = {key: item for key, item in value.items() if key != "recording"}
+    return _normalize(value, run_ids)
+
+
 def _normalize(value: Any, run_ids: tuple[str, str]) -> Any:
     if isinstance(value, dict):
         return {
@@ -90,7 +97,8 @@ def compare_runs(first_dir: Path, second_dir: Path, *, require_mode_pair: bool) 
         "same_simulation_duration": first_summary.get("simulation_time_s") == second_summary.get("simulation_time_s"),
         "same_control_ticks": first_summary.get("control_ticks") == second_summary.get("control_ticks"),
         "same_controller_summary_except_wall_timing": (
-            _normalize(first_summary, run_ids) == _normalize(second_summary, run_ids)
+            _normalize_controller_summary(first_summary, run_ids)
+            == _normalize_controller_summary(second_summary, run_ids)
         ),
         "same_controller_events": _json_lines(
             first_dir / first["relative_outputs"]["controller_events"], run_ids
@@ -154,9 +162,10 @@ def compare_runs(first_dir: Path, second_dir: Path, *, require_mode_pair: bool) 
         "seed": first.get("scenario_seed"),
         "modes": [first.get("mode"), second.get("mode")],
         "comparison_method": (
-            "Compare reproducible configuration/source hashes and normalized controller, "
-            "public RGB, plan, telemetry, evaluator, and final physics data. Exclude only "
-            "wall-clock measurements and run-ID strings from functional equivalence."
+        "Compare reproducible configuration/source hashes and normalized controller, "
+        "public RGB, plan, telemetry, evaluator, and final physics data. Exclude only "
+        "wall-clock measurements, optional M8 recording metadata, and run-ID strings "
+        "from functional equivalence."
         ),
         "checks": checks,
         "accepted": accepted,

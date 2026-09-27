@@ -1,0 +1,154 @@
+{
+  "schema_version": "M8-recording-lineage-audit-v1",
+  "run_id": "single_red_center-a213e5eae5",
+  "recording_manifest": "06_Медиа/проверка_записи/single_red_center-a213e5eae5/Запись_и_связанные_логи.json",
+  "source_run_manifest": "05_Верификация/integration/runs/single_red_center-a213e5eae5/evaluator_private/recording/source_run_manifest.json",
+  "source_output_group_count": 7,
+  "check_count": 13,
+  "checks": [
+    {
+      "name": "run_identity",
+      "passed": true,
+      "details": {
+        "requested_run_id": "single_red_center-a213e5eae5",
+        "recording_run_id": "single_red_center-a213e5eae5",
+        "source_run_id": "single_red_center-a213e5eae5"
+      }
+    },
+    {
+      "name": "source_run_manifest_sha256",
+      "passed": true,
+      "details": {
+        "expected": "c6459160c489532b0d5603619ddd1eb1033db0dbd89eba957a3460961ede9f2d",
+        "actual": "c6459160c489532b0d5603619ddd1eb1033db0dbd89eba957a3460961ede9f2d"
+      }
+    },
+    {
+      "name": "state_stream_sha256",
+      "passed": true,
+      "details": {
+        "expected": "c0c5f96771dcab3a9b37c244d7d40b726b1471844ced60e93a34a61bb078b7f7",
+        "actual": "c0c5f96771dcab3a9b37c244d7d40b726b1471844ced60e93a34a61bb078b7f7"
+      }
+    },
+    {
+      "name": "video_sha256",
+      "passed": true,
+      "details": {
+        "expected": "b704aaaa38eb28f6c79a6afbf81e1b61c7ee8806421aad47709088431602d956",
+        "actual": "b704aaaa38eb28f6c79a6afbf81e1b61c7ee8806421aad47709088431602d956"
+      }
+    },
+    {
+      "name": "source_output_catalog",
+      "passed": true,
+      "details": {
+        "expected_groups": [
+          "controller_events",
+          "controller_telemetry",
+          "evaluator_contact_events",
+          "evaluator_object_telemetry",
+          "evaluator_report",
+          "m5_plan_samples",
+          "perception_snapshots"
+        ],
+        "logged_groups": [
+          "controller_events",
+          "controller_telemetry",
+          "evaluator_contact_events",
+          "evaluator_object_telemetry",
+          "evaluator_report",
+          "m5_plan_samples",
+          "perception_snapshots"
+        ]
+      }
+    },
+    {
+      "name": "source_output:controller_events",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/controller/controller_events.jsonl",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "source_output:controller_telemetry",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/controller/telemetry.csv",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "source_output:evaluator_contact_events",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/evaluator/contact_events.jsonl",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "source_output:evaluator_object_telemetry",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/evaluator/object_telemetry.csv",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "source_output:evaluator_report",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/evaluator/report.json",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "source_output:m5_plan_samples",
+      "passed": true,
+      "details": {
+        "kind": "directory",
+        "file_count": 2,
+        "logged_file_count": 2,
+        "files_match": true
+      }
+    },
+    {
+      "name": "source_output:perception_snapshots",
+      "passed": true,
+      "details": {
+        "kind": "file",
+        "path": "05_Верификация/integration/runs/single_red_center-a213e5eae5/controller/perception_snapshots.jsonl",
+        "exists": true,
+        "sha256_matches": true
+      }
+    },
+    {
+      "name": "video_decode_and_format",
+      "passed": true,
+      "details": {
+        "decoded_frames": 826,
+        "expected_frames": 826,
+        "state_count": 826,
+        "timeline_count": 826,
+        "timeline_matches_run": true,
+        "fps": 25.0,
+        "resolution_px": [
+          1280,
+          720
+        ]
+      }
+    }
+  ],
+  "accepted": true
+}
