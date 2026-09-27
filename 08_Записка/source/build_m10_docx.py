@@ -6,12 +6,13 @@ import re
 from pathlib import Path
 
 from docx import Document
-from docx.enum.section import WD_SECTION
 from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT, WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_TAB_ALIGNMENT, WD_TAB_LEADER
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
+
+from prepare_m10_front_matter import sanitize_package_metadata
 
 
 TITLE = "Моделирование и симуляция робота-манипулятора, выполняющего задачу сортировки объектов по цвету"
@@ -215,8 +216,13 @@ def add_page_number(paragraph) -> None:
     paragraph._p.append(fld)
 
 
-def toc_headings(markdown: str) -> list[str]:
-    entries = []
+def body_heading_level(markdown_level: int) -> int:
+    """Map Markdown headings (which include a discarded annotation title) to Word outline levels."""
+    return max(1, min(markdown_level - 1, 3))
+
+
+def toc_headings(markdown: str) -> list[tuple[int, str]]:
+    entries: list[tuple[int, str]] = []
     body_started = False
     for line in markdown.splitlines():
         match = HEADING_RE.match(line.strip())
@@ -225,32 +231,120 @@ def toc_headings(markdown: str) -> list[str]:
         level, title = len(match.group(1)), match.group(2)
         if title.upper() == "ВВЕДЕНИЕ":
             body_started = True
-        if body_started and level <= 2:
-            entries.append(title)
+        if body_started and level <= 4:
+            entries.append((body_heading_level(level), title))
+    titles = [title for _, title in entries]
+    duplicates = sorted({title for title in titles if titles.count(title) > 1})
+    if duplicates:
+        raise ValueError(f"Duplicate heading text makes the TOC page map ambiguous: {duplicates}")
     return entries
 
 
-def add_toc(doc: Document, entries: list[str], pages: dict[str, str]) -> None:
-    title = doc.add_paragraph()
-    title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    title.paragraph_format.first_line_indent = Cm(0)
-    title.paragraph_format.space_after = Pt(14)
-    title.paragraph_format.keep_with_next = True
-    run = title.add_run("СОДЕРЖАНИЕ")
-    set_font(run, size=16, bold=True)
-    for entry in entries:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        p.paragraph_format.first_line_indent = Cm(0)
-        p.paragraph_format.left_indent = Cm(0)
-        p.paragraph_format.space_before = Pt(0)
-        p.paragraph_format.space_after = Pt(3)
-        p.paragraph_format.line_spacing = 1.05
-        p.paragraph_format.keep_together = True
-        p.paragraph_format.tab_stops.add_tab_stop(Cm(17.4), WD_TAB_ALIGNMENT.RIGHT, WD_TAB_LEADER.DOTS)
-        add_inline(p, entry, size=11.5)
-        page = pages.get(entry, "?")
-        add_inline(p, "\t" + str(page), size=11.5)
+def _field_run(field_type: str) -> object:
+    run = OxmlElement("w:r")
+    field = OxmlElement("w:fldChar")
+    field.set(qn("w:fldCharType"), field_type)
+    run.append(field)
+    return run
+
+
+def _text_run(text: str) -> object:
+    run = OxmlElement("w:r")
+    node = OxmlElement("w:t")
+    if text[:1].isspace() or text[-1:].isspace():
+        node.set(qn("xml:space"), "preserve")
+    node.text = text
+    run.append(node)
+    return run
+
+
+def _toc_entry_paragraph(doc: Document, level: int, title: str, page: str,
+                         *, field_start: bool = False, field_end: bool = False):
+    p = OxmlElement("w:p")
+    ppr = OxmlElement("w:pPr")
+    pstyle = OxmlElement("w:pStyle")
+    pstyle.set(qn("w:val"), doc.styles[f"toc {level}"].style_id)
+    ppr.append(pstyle)
+    tabs = OxmlElement("w:tabs")
+    tab = OxmlElement("w:tab")
+    tab.set(qn("w:val"), "right")
+    tab.set(qn("w:leader"), "dot")
+    tab.set(qn("w:pos"), "9975")
+    tabs.append(tab)
+    ppr.append(tabs)
+    p.append(ppr)
+    if field_start:
+        p.append(_field_run("begin"))
+        instruction = OxmlElement("w:r")
+        instr_text = OxmlElement("w:instrText")
+        instr_text.set(qn("xml:space"), "preserve")
+        instr_text.text = ' TOC \\o "1-3" \\h \\z \\u '
+        instruction.append(instr_text)
+        p.append(instruction)
+        p.append(_field_run("separate"))
+    p.append(_text_run(title))
+    tab_run = OxmlElement("w:r")
+    tab_run.append(OxmlElement("w:tab"))
+    p.append(tab_run)
+    p.append(_text_run(page))
+    if field_end:
+        p.append(_field_run("end"))
+    return p
+
+
+def populate_reference_toc(doc: Document, entries: list[tuple[int, str]],
+                           pages: dict[str, str]) -> None:
+    controls = [element for element in doc.element.body if element.tag == qn("w:sdt")]
+    control = next(
+        (
+            item for item in controls
+            if item.find(qn("w:sdtPr")) is not None
+            and item.find(qn("w:sdtPr")).find(qn("w:docPartObj")) is not None
+            and item.find(qn("w:sdtPr")).find(qn("w:docPartObj")).find(qn("w:docPartGallery")) is not None
+            and item.find(qn("w:sdtPr")).find(qn("w:docPartObj")).find(qn("w:docPartGallery")).get(qn("w:val")) == "Table of Contents"
+        ),
+        None,
+    )
+    if control is None:
+        raise ValueError("AGTU template has no Table of Contents content control")
+    content = control.find(qn("w:sdtContent"))
+    if content is None:
+        raise ValueError("Table of Contents content control has no content container")
+    if not entries:
+        raise ValueError("Markdown body has no headings to include in the table of contents")
+
+    titles = [title for _, title in entries]
+    missing = [title for title in titles if title not in pages]
+    if missing and pages:
+        raise ValueError(f"No rendered page number was supplied for TOC headings: {missing}")
+    for child in list(content):
+        content.remove(child)
+    for index, (level, title) in enumerate(entries):
+        if level not in (1, 2, 3):
+            raise ValueError(f"Unsupported TOC heading level: {level}")
+        content.append(
+            _toc_entry_paragraph(
+                doc,
+                level,
+                title,
+                str(pages.get(title, "?")),
+                field_start=index == 0,
+                field_end=index == len(entries) - 1,
+            )
+        )
+
+    title_paragraph = next(
+        (p for p in doc.paragraphs if p.text.strip().casefold() == "содержание"),
+        None,
+    )
+    if title_paragraph is None:
+        raise ValueError("AGTU template is missing the contents heading")
+    if title_paragraph.runs:
+        title_paragraph.runs[0].text = "СОДЕРЖАНИЕ"
+        for run in title_paragraph.runs[1:]:
+            run.text = ""
+    else:
+        title_paragraph.add_run("СОДЕРЖАНИЕ")
 
 
 def add_bottom_rule(paragraph) -> None:
@@ -272,7 +366,11 @@ def add_running_header(section) -> None:
     section.footer_distance = Cm(0.8)
     section.header.is_linked_to_previous = False
     header = section.header
-    first = header.paragraphs[0]
+    # The imported template has its own running header in this section. Remove
+    # every old paragraph/table before writing the project-specific header.
+    for child in list(header._element):
+        header._element.remove(child)
+    first = header.add_paragraph()
     first.clear()
     first.alignment = WD_ALIGN_PARAGRAPH.CENTER
     first.paragraph_format.first_line_indent = Cm(0)
@@ -544,22 +642,10 @@ def set_page_number_start(section, start: int = 1) -> None:
 def build(input_path: Path, output_path: Path, project_root: Path, template_path: Path,
           toc_pages: dict[str, str], body_page_start: int) -> None:
     text = input_path.read_text(encoding="utf-8")
-    annotation, keywords = parse_annotation(text)
     doc = Document(template_path)
     configure_style(doc)
-    section = doc.sections[0]
-    section.page_width = Cm(21)
-    section.page_height = Cm(29.7)
-    section.left_margin = Cm(2)
-    section.right_margin = Cm(1.5)
-    section.top_margin = Cm(2.5)
-    section.bottom_margin = Cm(1.5)
-    section.header_distance = Cm(1.0)
-    section.footer_distance = Cm(0.8)
-    section.different_first_page_header_footer = False
-    add_front_pages(doc, annotation, keywords, project_root,
-                    toc_headings(text), toc_pages)
-    body_section = doc.add_section(WD_SECTION.NEW_PAGE)
+    populate_reference_toc(doc, toc_headings(text), toc_pages)
+    body_section = doc.sections[-1]
     body_section.page_width = Cm(21)
     body_section.page_height = Cm(29.7)
     body_section.left_margin = Cm(2)
@@ -639,7 +725,7 @@ def build(input_path: Path, output_path: Path, project_root: Path, template_path
             flush()
             title = heading.group(2)
             markdown_level = len(heading.group(1))
-            word_level = 1 if markdown_level <= 2 else min(2, markdown_level - 1)
+            word_level = body_heading_level(markdown_level)
             add_heading(doc, title, word_level)
             i += 1
             continue
@@ -685,6 +771,7 @@ def build(input_path: Path, output_path: Path, project_root: Path, template_path
     doc.core_properties.keywords = "SCARA, сортировка по цвету, симуляция, MuJoCo"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(output_path)
+    sanitize_package_metadata(output_path)
 
 
 def main() -> None:

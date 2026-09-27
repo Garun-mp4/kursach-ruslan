@@ -30,7 +30,7 @@ def page_map(pdf_path: Path, markdown_path: Path) -> tuple[int, dict[str, int]]:
 
     headings = toc_headings(markdown_path.read_text(encoding="utf-8"))
     result: dict[str, int] = {}
-    for heading in headings:
+    for _, heading in headings:
         needle = normalize(heading)
         matches = [i for i in range(body_index, len(pages)) if needle in normalize(pages[i])]
         if not matches:
@@ -40,7 +40,7 @@ def page_map(pdf_path: Path, markdown_path: Path) -> tuple[int, dict[str, int]]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate a static, page-accurate M10 contents map from the rendered PDF.")
+    parser = argparse.ArgumentParser(description="Generate the cached page map for the Word TOC field from the rendered PDF.")
     parser.add_argument("--pdf", type=Path, required=True)
     parser.add_argument("--markdown", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -48,7 +48,7 @@ def main() -> None:
     body_page, mapping = page_map(args.pdf, args.markdown)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(mapping, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Body begins on printed page {body_page}; mapped {len(mapping)} contents entries")
+    print(f"Body begins on printed page {body_page}; mapped {len(mapping)} heading-style TOC entries")
     for heading, page in mapping.items():
         print(f"{page:>3}  {heading}")
 
