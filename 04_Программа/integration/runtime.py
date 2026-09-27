@@ -43,6 +43,9 @@ class SorterRuntime:
     def __init__(self, model: mujoco.MjModel, data: mujoco.MjData, *, run_id: str,
                  runtime_config: RuntimeConfig, output_dir: Path,
                  viewer: Any | None = None, sensor_pipeline: PublicSensorPipeline | None = None,
+                 rgb_gain: float = 1.0, rgb_noise_sigma: float = 0.0,
+                 sensor_noise_seed: int = 0,
+                 input_calibration_bias_xy_m: tuple[float, float] = (0.0, 0.0),
                  camera_fault_injection: bool = False,
                  stale_camera_age_s: float | None = None,
                  placement_camera_failure_at_verify: bool = False,
@@ -98,7 +101,13 @@ class SorterRuntime:
                 self.ssot, "robot.gripper_preload_position_offset_m"
             )),
         )
-        self.sensors = sensor_pipeline or PublicSensorPipeline(model)
+        self.sensors = sensor_pipeline or PublicSensorPipeline(
+            model,
+            rgb_gain=rgb_gain,
+            rgb_noise_sigma=rgb_noise_sigma,
+            noise_seed=sensor_noise_seed,
+            input_calibration_bias_xy_m=input_calibration_bias_xy_m,
+        )
         self.placement_verifier = PublicPlacementVerifier(self.ssot, runtime_config)
         initial_snapshot = self.sensors.capture(
             data, simulation_time_s=float(data.time), valid=True

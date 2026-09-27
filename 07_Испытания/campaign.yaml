@@ -1,0 +1,248 @@
+schema_version: M9-campaign-v1.2
+campaign_id: M9-RC-2026-01
+campaign_title: Приемочная кампания виртуальной сортировки SCARA
+project: SCARA_COLOR_SORTER
+scope: MuJoCo software simulation; no physical prototype or physical measurements
+protocol_status: preregistered-before-acceptance-runs
+runtime:
+  python: 3.12.10
+  mujoco: 3.14.0
+  physics_profile: nominal
+  max_simulation_time_s: 900.0
+  record_video_during_trials: false
+  scenario_seed_controls_scene_and_noise_seed_unless_overridden: true
+primary_acceptance:
+  baseline_experiment: V03_RANDOM_MIXED
+  independent_unit: complete three-object seeded batch
+  required_seeds: 30
+  minimum_complete_batch_rate: 0.90
+  minimum_complete_batches: 27
+  wrong_bin_placements_allowed: 0
+  forbidden_collision_episodes_allowed: 0
+  joint_or_actuator_limit_violations_allowed: 0
+  rule: A batch is complete only when every active supported-color object is independently confirmed by the post-run evaluator in a settled slot of its true color and the controller ends in DONE.
+secondary_acceptance:
+  deterministic_color_cases: all supported colors sort correctly in V01
+  six_object_batch: all 6 objects sort correctly in V02
+  near_boundary_cases: DONE or a reason-coded safe skip; never a wrong placement, forbidden contact, or limit violation
+  safe_refusal_cases: expected status/reason, no false success, no unplanned actuator motion
+  perturbation_cases: no wrong-color placement; record correct classification, UNKNOWN abstention, and safe stop separately
+  repeatability: identical seed/config produces identical controller/evaluator outcomes and matching deterministic logs within numeric serialization tolerance
+  confidence_interval: Wilson 95% interval at the independent run/batch level; do not treat objects within a batch as independent runs
+seed_sets:
+  mixed_baseline: [20261001, 20261002, 20261003, 20261004, 20261005, 20261006, 20261007, 20261008, 20261009, 20261010, 20261011, 20261012, 20261013, 20261014, 20261015, 20261016, 20261017, 20261018, 20261019, 20261020, 20261021, 20261022, 20261023, 20261024, 20261025, 20261026, 20261027, 20261028, 20261029, 20261030]
+  paired_sensor_and_friction: [20261001, 20261002, 20261003, 20261004, 20261005, 20261006, 20261007, 20261008, 20261009, 20261010]
+experiments:
+  - experiment_id: V03_RANDOM_MIXED
+    scenario: m9_random_mixed_three
+    scenario_dir: 07_Испытания/scenarios
+    seeds: mixed_baseline
+    variants:
+      - variant_id: nominal
+        expected_kind: sort_all
+        tags: [V02, V03, V14-control]
+        parameters: {}
+  - experiment_id: V07_RGB_NOISE
+    scenario: m9_random_red_one
+    scenario_dir: 07_Испытания/scenarios
+    seeds: paired_sensor_and_friction
+    variants:
+      - variant_id: sigma_0
+        expected_kind: sort_all
+        tags: [V07-control, V10-friction-control]
+        parameters: {rgb_noise_sigma: 0.0}
+      - variant_id: sigma_4
+        expected_kind: safe_completion
+        tags: [V07-noise]
+        parameters: {rgb_noise_sigma: 4.0}
+      - variant_id: sigma_8
+        expected_kind: safe_completion
+        tags: [V07-noise]
+        parameters: {rgb_noise_sigma: 8.0}
+  - experiment_id: V10_GRIP_FRICTION
+    scenario: m9_random_red_one
+    scenario_dir: 07_Испытания/scenarios
+    seeds: paired_sensor_and_friction
+    paired_control: {experiment_id: V07_RGB_NOISE, variant_id: sigma_0}
+    variants:
+      - variant_id: scale_0_001
+        expected_kind: contained_fault
+        tags: [V10-friction]
+        parameters: {gripper_friction_scale: 0.001}
+fixed_trials:
+  - trial_id: v01_red
+    scenario: single_red_center
+    expected_kind: sort_all
+    tags: [V01]
+  - trial_id: v01_green
+    scenario: single_green_left
+    expected_kind: sort_all
+    tags: [V01]
+  - trial_id: v01_blue
+    scenario: single_blue_right
+    expected_kind: sort_all
+    tags: [V01]
+  - trial_id: v02_two_per_color
+    scenario: m9_six_object_grid
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261040
+    expected_kind: sort_all
+    tags: [V02]
+  - trial_id: v04_boundary_sw
+    scenario: m9_boundary_sw
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261051
+    expected_kind: safe_completion
+    tags: [V04, V12]
+  - trial_id: v04_boundary_se
+    scenario: m9_boundary_se
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261052
+    expected_kind: safe_completion
+    tags: [V04, V12]
+  - trial_id: v04_boundary_nw
+    scenario: m9_boundary_nw
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261053
+    expected_kind: safe_completion
+    tags: [V04, V12]
+  - trial_id: v04_boundary_ne
+    scenario: m9_boundary_ne
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261054
+    expected_kind: safe_completion
+    tags: [V04, V12]
+  - trial_id: v12_outer_left
+    scenario: m9_outer_left
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261057
+    expected_kind: safe_completion
+    tags: [V12]
+  - trial_id: v12_outer_right
+    scenario: m9_outer_right
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261058
+    expected_kind: safe_completion
+    tags: [V12]
+  - trial_id: v05_blocked_plus_reachable
+    scenario: m9_blocked_plus_reachable
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261056
+    expected_kind: mixed_partial
+    expected_object_outcomes:
+      object_green_01: SKIPPED_UNREACHABLE
+      object_red_01: SKIPPED_UNKNOWN
+      object_blue_01: SKIPPED_UNKNOWN
+      object_red_02: SORTED
+    tags: [V05, V11, SORT-007]
+  - trial_id: v06_unknown_cyan
+    scenario: unknown_cyan_object
+    expected_kind: safe_skip
+    expected_track_status: SKIPPED_UNKNOWN
+    expected_failure_reason: UNKNOWN_COLOR_CONFIRMED
+    tags: [V06]
+  - trial_id: v06_unknown_gray
+    scenario: unknown_gray_object
+    expected_kind: safe_skip
+    expected_track_status: SKIPPED_UNKNOWN
+    expected_failure_reason: UNKNOWN_COLOR_CONFIRMED
+    tags: [V06]
+  - trial_id: v07_light_low
+    scenario: m9_random_red_one
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261001
+    expected_kind: safe_completion
+    tags: [V07-light]
+    parameters: {lighting_scale: 0.70}
+  - trial_id: v07_light_high
+    scenario: m9_random_red_one
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261001
+    expected_kind: safe_completion
+    tags: [V07-light]
+    parameters: {lighting_scale: 1.30}
+  - trial_id: v07_calibration_bias
+    scenario: m9_random_red_one
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261001
+    expected_kind: safe_completion
+    tags: [V07-calibration]
+    parameters: {calibration_bias_x_m: 0.002, calibration_bias_y_m: -0.002}
+  - trial_id: v08_adjacent_pair
+    scenario: m9_adjacent_pair
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261055
+    expected_kind: safe_skip
+    expected_track_status: SKIPPED_UNREACHABLE
+    expected_failure_reason: BRANCH_DISCONTINUITY
+    expected_object_outcomes:
+      object_red_01: SKIPPED_UNREACHABLE
+      object_green_01: SKIPPED_UNREACHABLE
+    required_perception_checks:
+      first_frame_detection_count: 2
+      first_frame_merged_candidate_split_count: 2
+      first_frame_correct_classification_count: 2
+    tags: [V08]
+  - trial_id: v09_camera_failure
+    scenario: single_red_center
+    expected_kind: safe_stop
+    expected_reason: CAMERA_FAILURE_LIMIT
+    tags: [V09]
+    parameters: {camera_failure: true}
+  - trial_id: v09_stale_camera
+    scenario: single_red_center
+    expected_kind: safe_stop
+    expected_reason: CAMERA_FAILURE_LIMIT
+    tags: [V09]
+    parameters: {stale_camera_age_s: 1.0}
+  - trial_id: v09_placement_camera_failure
+    scenario: single_red_center
+    expected_kind: safe_stop_no_false_confirmation
+    tags: [V09]
+    parameters: {placement_camera_failure_at_verify: true}
+  - trial_id: v10_gripper_actuator_disabled
+    scenario: single_red_center
+    expected_kind: contained_fault
+    tags: [V10]
+    parameters: {disable_gripper_actuator: true}
+  - trial_id: v10_payload_loss
+    scenario: single_red_center
+    expected_kind: contained_fault
+    tags: [V10]
+    parameters: {payload_loss_after_hold: true, payload_loss_impulse_ns: 0.12}
+  - trial_id: v10_release_actuator_failure
+    scenario: single_red_center
+    expected_kind: safe_stop_no_false_confirmation
+    tags: [V10]
+    parameters: {release_actuator_failure: true}
+  - trial_id: v11_blocked_path
+    scenario: blocked_grasp_route
+    expected_kind: safe_skip
+    expected_object_outcomes:
+      object_green_01: SKIPPED_UNREACHABLE
+      object_red_01: SKIPPED_UNKNOWN
+      object_blue_01: SKIPPED_UNKNOWN
+    tags: [V11, SAFE-003]
+  - trial_id: v13_full_red_zone
+    scenario: zone_full_red
+    expected_kind: safe_skip
+    expected_track_status: SKIPPED_FULL_ZONE
+    expected_failure_reason: ZONE_CAPACITY_EXHAUSTED
+    tags: [V13, SORT-002, SORT-006]
+  - trial_id: v13_empty_input
+    scenario: m9_empty_input
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261050
+    expected_kind: no_task
+    tags: [V13, SORT-006]
+  - trial_id: v14_repeat_seed_20261001
+    scenario: m9_random_mixed_three
+    scenario_dir: 07_Испытания/scenarios
+    seed: 20261001
+    expected_kind: sort_all
+    tags: [V14-repeat]
+  - trial_id: v15_emergency_stop_after_hold
+    scenario: single_red_center
+    expected_kind: safe_stop_no_false_confirmation
+    tags: [V15, SAFE-005]
+    parameters: {emergency_stop_after_hold: true}

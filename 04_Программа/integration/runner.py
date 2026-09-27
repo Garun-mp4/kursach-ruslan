@@ -134,7 +134,10 @@ def _apply_profile(model: mujoco.MjModel, profile: str, ssot: dict) -> dict[str,
     return effective
 
 
-def _load_model(scenario: dict[str, Any], profile: str) -> tuple[mujoco.MjModel, mujoco.MjData, dict[str, Any], Any]:
+def _load_model(scenario: dict[str, Any], profile: str, *,
+                lighting_scale: float = 1.0) -> tuple[mujoco.MjModel, mujoco.MjData, dict[str, Any], Any]:
+    if not math.isfinite(lighting_scale) or lighting_scale <= 0:
+        raise ValueError("Lighting scale must be finite and positive")
     ssot = load_ssot()
     model = load_integrated_model(ssot)
     data = mujoco.MjData(model)
@@ -145,6 +148,10 @@ def _load_model(scenario: dict[str, Any], profile: str) -> tuple[mujoco.MjModel,
     physics = _apply_profile(model, profile, ssot)
     runtime_config = RuntimeConfig.load()
     generated = SceneGenerator(ssot, runtime_config).generate(model, data, scenario)
+    if lighting_scale != 1.0:
+        for field in ("light_diffuse", "light_ambient", "light_specular"):
+            values = getattr(model, field)
+            values[:] *= float(lighting_scale)
     for body_name, rgba in scenario.get("render_rgba_overrides", {}).items():
         geom_name = f"{body_name}_visual"
         geom_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_GEOM, geom_name)
@@ -189,6 +196,7 @@ def _disable_gripper_actuator(model: mujoco.MjModel) -> tuple[float, float]:
 
 
 def _run_one(*, scenario_name: str, mode: str, out_root: Path, profile: str,
+             scenario_dir: Path | None = None, scenario_seed: int | None = None,
              max_simulation_time_s: float | None = None,
              record: bool = False,
              recording_out_root: Path | None = None,
@@ -200,16 +208,36 @@ def _run_one(*, scenario_name: str, mode: str, out_root: Path, profile: str,
              payload_loss_impulse_Ns: float = 0.012,
              gripper_friction_scale: float | None = None,
              disable_gripper_actuator: bool = False,
-             release_actuator_failure: bool = False) -> tuple[dict[str, Any], dict[str, Any]]:
+             release_actuator_failure: bool = False,
+             lighting_scale: float = 1.0,
+             rgb_gain: float = 1.0,
+             rgb_noise_sigma: float = 0.0,
+             sensor_noise_seed: int | None = None,
+             calibration_bias_x_m: float = 0.0,
+             calibration_bias_y_m: float = 0.0) -> tuple[dict[str, Any], dict[str, Any]]:
     if emergency_stop_after_hold and payload_loss_after_hold:
         raise ValueError("Emergency-stop and payload-loss fault injections are mutually exclusive")
-    scenario_path = ROOT / "04_Программа" / "integration" / "scenarios" / f"{scenario_name}.yaml"
-    scenario = load_scenario(scenario_name)
+    resolved_scenario_dir = Path(scenario_dir or (ROOT / "04_Программа" / "integration" / "scenarios")).resolve()
+    scenario_path = resolved_scenario_dir / f"{scenario_name}.yaml"
+    scenario = load_scenario(scenario_name, resolved_scenario_dir)
+    if scenario_seed is not None:
+        if isinstance(scenario_seed, bool) or not isinstance(scenario_seed, int):
+            raise ValueError("Scenario seed override must be an integer")
+        scenario = {**scenario, "seed": int(scenario_seed)}
+    if sensor_noise_seed is None:
+        sensor_noise_seed = int(scenario["seed"])
+    if (not math.isfinite(rgb_gain) or rgb_gain <= 0
+            or not math.isfinite(rgb_noise_sigma) or rgb_noise_sigma < 0
+            or not math.isfinite(calibration_bias_x_m)
+            or not math.isfinite(calibration_bias_y_m)):
+        raise ValueError("Public sensor perturbation values must be finite and in range")
     run_id = f"{scenario_name}-{uuid.uuid4().hex[:10]}"
     run_dir = out_root / run_id
     run_dir.mkdir(parents=True, exist_ok=False)
     hashes = _snapshot(run_dir, scenario_path)
-    model, data, physics, generated = _load_model(scenario, profile)
+    model, data, physics, generated = _load_model(
+        scenario, profile, lighting_scale=lighting_scale
+    )
     if gripper_friction_scale is not None and len(generated.active_objects) != 1:
         raise ValueError("Gripper-friction fault currently requires a one-object scenario")
     effective_friction = _apply_gripper_friction_scale(
@@ -260,6 +288,10 @@ def _run_one(*, scenario_name: str, mode: str, out_root: Path, profile: str,
     runtime = SorterRuntime(
         model, data, run_id=run_id, runtime_config=runtime_config,
         output_dir=run_dir / "controller", viewer=viewer,
+        rgb_gain=rgb_gain,
+        rgb_noise_sigma=rgb_noise_sigma,
+        sensor_noise_seed=sensor_noise_seed,
+        input_calibration_bias_xy_m=(calibration_bias_x_m, calibration_bias_y_m),
         camera_fault_injection=camera_failure,
         stale_camera_age_s=stale_camera_age_s,
         placement_camera_failure_at_verify=placement_camera_failure_at_verify,
@@ -304,6 +336,16 @@ def _run_one(*, scenario_name: str, mode: str, out_root: Path, profile: str,
         "runtime_versions": {"python": sys.version, "mujoco": mujoco.__version__,
                               "numpy": np.__version__},
         "physics": physics,
+        "m9_public_input_conditions": {
+            "lighting_scale": float(lighting_scale),
+            "rgb_gain": float(rgb_gain),
+            "rgb_noise_sigma_8bit": float(rgb_noise_sigma),
+            "sensor_noise_seed": int(sensor_noise_seed),
+            "input_calibration_bias_xy_m": [
+                float(calibration_bias_x_m), float(calibration_bias_y_m)
+            ],
+            "note": "Test-only perturbations are applied before M4 perception; evaluator ground truth is not exposed.",
+        },
         "sensor_views": {
             "input": "overhead_rgb_M2_validated_v1",
             "placement": str(value(load_ssot(), "camera.placement_config_id")),
@@ -389,6 +431,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="M7 physical MuJoCo integration runner")
     parser.add_argument("--mode", choices=("batch", "interactive"), default="batch")
     parser.add_argument("--scenario", default="single_red_center")
+    parser.add_argument("--scenario-dir", type=Path,
+                        help="Directory containing a YAML scenario named by --scenario")
+    parser.add_argument("--seed", type=int,
+                        help="Override the scenario seed for reproducible seeded campaigns")
     parser.add_argument("--physics-profile", choices=("nominal", "fine_timestep", "coarse_timestep", "solver_50", "solver_150"), default="nominal")
     parser.add_argument("--out", type=Path, default=ROOT / "05_Верификация" / "integration" / "runs")
     parser.add_argument("--max-simulation-time", type=float)
@@ -407,9 +453,23 @@ def main() -> int:
     parser.add_argument("--gripper-friction-scale", type=float)
     parser.add_argument("--disable-gripper-actuator", action="store_true")
     parser.add_argument("--release-actuator-failure", action="store_true")
+    parser.add_argument("--lighting-scale", type=float, default=1.0,
+                        help="Scale MuJoCo light diffuse/ambient/specular intensity for public RGB tests")
+    parser.add_argument("--rgb-gain", type=float, default=1.0,
+                        help="Scale public RGB pixel intensity before perception")
+    parser.add_argument("--rgb-noise-sigma", type=float, default=0.0,
+                        help="Gaussian public RGB image-plane noise standard deviation in 8-bit levels")
+    parser.add_argument("--sensor-noise-seed", type=int,
+                        help="Seed for public RGB noise; defaults to the scenario seed")
+    parser.add_argument("--calibration-bias-x-m", type=float, default=0.0,
+                        help="Test-only offset added to overhead-camera XY estimates")
+    parser.add_argument("--calibration-bias-y-m", type=float, default=0.0,
+                        help="Test-only offset added to overhead-camera XY estimates")
     args = parser.parse_args()
     manifest, report = _run_one(
         scenario_name=args.scenario, mode=args.mode, out_root=args.out.resolve(),
+        scenario_dir=args.scenario_dir.resolve() if args.scenario_dir else None,
+        scenario_seed=args.seed,
         profile=args.physics_profile, max_simulation_time_s=args.max_simulation_time,
         record=args.record, recording_out_root=args.recording_out.resolve(),
         camera_failure=args.camera_failure,
@@ -421,6 +481,12 @@ def main() -> int:
         gripper_friction_scale=args.gripper_friction_scale,
         disable_gripper_actuator=args.disable_gripper_actuator,
         release_actuator_failure=args.release_actuator_failure,
+        lighting_scale=args.lighting_scale,
+        rgb_gain=args.rgb_gain,
+        rgb_noise_sigma=args.rgb_noise_sigma,
+        sensor_noise_seed=args.sensor_noise_seed,
+        calibration_bias_x_m=args.calibration_bias_x_m,
+        calibration_bias_y_m=args.calibration_bias_y_m,
     )
     print(json.dumps({"run_id": manifest["run_id"], "state": manifest["controller_summary"]["final_state"],
                       "controller_summary": manifest["controller_summary"],

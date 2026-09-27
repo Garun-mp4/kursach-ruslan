@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 from dataclasses import dataclass, replace
 import json
+import math
 from pathlib import Path
 import time
 from typing import Any
@@ -21,6 +22,52 @@ from .config import ROOT, load_ssot
 from .placement_camera import CAMERA_NAME, placement_camera_values
 
 
+def apply_rgb_perturbation(
+    frame: CameraFrame,
+    *,
+    gain: float,
+    noise_sigma: float,
+    rng: np.random.Generator,
+) -> CameraFrame:
+    """Apply a reproducible image-plane gain/noise perturbation to a public RGB frame."""
+    if not math.isfinite(gain) or gain <= 0:
+        raise ValueError("RGB gain must be finite and positive")
+    if not math.isfinite(noise_sigma) or noise_sigma < 0:
+        raise ValueError("RGB noise sigma must be finite and nonnegative")
+    if not frame.valid or frame.rgb is None:
+        return frame
+    if gain == 1.0 and noise_sigma == 0.0:
+        return frame
+    values = frame.rgb.astype(np.float32) * float(gain)
+    if noise_sigma:
+        values += rng.normal(0.0, float(noise_sigma), values.shape)
+    rgb = np.ascontiguousarray(np.clip(np.rint(values), 0, 255).astype(np.uint8))
+    rgb.setflags(write=False)
+    return replace(frame, rgb=rgb)
+
+
+def offset_planar_calibration(
+    calibration: PlanarCalibration,
+    bias_xy_m: tuple[float, float],
+) -> PlanarCalibration:
+    """Return a calibration whose public pixel-to-world estimates have a fixed XY bias."""
+    dx, dy = map(float, bias_xy_m)
+    if not all(math.isfinite(value) for value in (dx, dy)):
+        raise ValueError("Calibration bias must be finite")
+    if dx == 0.0 and dy == 0.0:
+        return calibration
+    homography = np.asarray(calibration.pixel_to_base_xy, dtype=np.float64).copy()
+    homography[0, :] += dx * homography[2, :]
+    homography[1, :] += dy * homography[2, :]
+    inverse = np.linalg.inv(homography)
+    return PlanarCalibration(
+        homography,
+        inverse,
+        calibration.object_top_z_m,
+        f"{calibration.calibration_id}+bias({dx:.6g},{dy:.6g})m",
+    )
+
+
 @dataclass(frozen=True)
 class SensorSnapshot:
     frame: CameraFrame
@@ -32,7 +79,20 @@ class SensorSnapshot:
 class PublicSensorPipeline:
     """Separate overhead input and oblique placement RGB views; never exposes scene truth."""
 
-    def __init__(self, model: mujoco.MjModel, *, renderer: mujoco.Renderer | None = None):
+    def __init__(self, model: mujoco.MjModel, *, renderer: mujoco.Renderer | None = None,
+                 rgb_gain: float = 1.0, rgb_noise_sigma: float = 0.0,
+                 noise_seed: int = 0,
+                 input_calibration_bias_xy_m: tuple[float, float] = (0.0, 0.0)):
+        if not math.isfinite(rgb_gain) or rgb_gain <= 0:
+            raise ValueError("RGB gain must be finite and positive")
+        if not math.isfinite(rgb_noise_sigma) or rgb_noise_sigma < 0:
+            raise ValueError("RGB noise sigma must be finite and nonnegative")
+        if isinstance(noise_seed, bool) or not isinstance(noise_seed, (int, np.integer)):
+            raise ValueError("RGB noise seed must be an integer")
+        self.rgb_gain = float(rgb_gain)
+        self.rgb_noise_sigma = float(rgb_noise_sigma)
+        self.noise_seed = int(noise_seed)
+        self._noise_rng = np.random.default_rng(self.noise_seed)
         self.model = model
         self.ssot = load_ssot()
         perception_dir = ROOT / "04_Программа" / "perception"
@@ -48,6 +108,9 @@ class PublicSensorPipeline:
             )
         self.input_calibration = PlanarCalibration.from_json(
             str(verification_dir / "calibration" / "camera_calibration.json")
+        )
+        self.input_calibration = offset_planar_calibration(
+            self.input_calibration, input_calibration_bias_xy_m
         )
         self.input_background = np.load(
             verification_dir / "validation" / "background_reference_rgb.npy",
@@ -163,6 +226,14 @@ class PublicSensorPipeline:
             data,
             simulation_time_s=simulation_time_s,
             valid=valid if placement_valid is None else placement_valid,
+        )
+        current_frame = apply_rgb_perturbation(
+            current_frame, gain=self.rgb_gain,
+            noise_sigma=self.rgb_noise_sigma, rng=self._noise_rng,
+        )
+        placement_frame = apply_rgb_perturbation(
+            placement_frame, gain=self.rgb_gain,
+            noise_sigma=self.rgb_noise_sigma, rng=self._noise_rng,
         )
         render_elapsed = time.perf_counter() - render_started
         if (current_frame.frame_id != placement_frame.frame_id

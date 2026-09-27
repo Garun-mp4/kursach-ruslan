@@ -72,6 +72,13 @@ class SceneGenerator:
         count = randomized.get("count_per_class")
         if not isinstance(count, int) or isinstance(count, bool) or not 1 <= count <= 2:
             raise ValueError("randomized.count_per_class must be 1 or 2")
+        raw_colors = randomized.get("colors", ("RED", "GREEN", "BLUE"))
+        if not isinstance(raw_colors, (list, tuple)) or not raw_colors:
+            raise ValueError("randomized.colors must be a non-empty list of supported classes")
+        colors = tuple(str(color).upper() for color in raw_colors)
+        if (len(set(colors)) != len(colors)
+                or any(color not in {"RED", "GREEN", "BLUE"} for color in colors)):
+            raise ValueError("randomized.colors must contain unique RED/GREEN/BLUE classes")
         yaw_range = tuple(map(float, randomized.get("yaw_range_rad", (-math.pi / 4, math.pi / 4))))
         if len(yaw_range) != 2 or yaw_range[0] > yaw_range[1]:
             raise ValueError("yaw_range_rad must be an ordered pair")
@@ -85,7 +92,7 @@ class SceneGenerator:
         rng = random.Random(int(config["seed"]))
         points: list[tuple[float, float]] = []
         max_attempts = self.runtime_config.randomized_scene_max_attempts
-        target_count = 3 * count
+        target_count = len(colors) * count
         while len(points) < target_count and max_attempts:
             max_attempts -= 1
             candidate = (rng.uniform(xmin, xmax), rng.uniform(ymin, ymax))
@@ -95,7 +102,7 @@ class SceneGenerator:
             raise RuntimeError("Could not generate a non-overlapping randomized scene")
         objects: list[dict[str, Any]] = []
         cursor = 0
-        for color in ("RED", "GREEN", "BLUE"):
+        for color in colors:
             for body_index in range(1, count + 1):
                 objects.append({
                     "body_name": f"object_{color.lower()}_{body_index:02d}",
@@ -103,6 +110,11 @@ class SceneGenerator:
                     "yaw_rad": rng.uniform(*yaw_range),
                 })
                 cursor += 1
+        shuffle_order = randomized.get("shuffle_order", False)
+        if not isinstance(shuffle_order, bool):
+            raise ValueError("randomized.shuffle_order must be a boolean")
+        if shuffle_order:
+            rng.shuffle(objects)
         return objects
 
     def generate(
@@ -117,8 +129,8 @@ class SceneGenerator:
             if "randomized" not in config:
                 raise ValueError("Scenario must define active_objects or randomized settings")
             active_specs = self._randomized_objects(config)
-        if not isinstance(active_specs, list) or not active_specs:
-            raise ValueError("Scenario must contain at least one active object")
+        if not isinstance(active_specs, list):
+            raise ValueError("Scenario active_objects must be a list (which may be empty)")
         seen: set[str] = set()
         table_z = float(value(self.ssot, "cell.table_top_z_m"))
         object_height = float(value(self.ssot, "object.size_xyz_m")[2])
