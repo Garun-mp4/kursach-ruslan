@@ -1,0 +1,66 @@
+{
+  "schema_version": "M7-evaluator-v1.1",
+  "run_id": "m9_random_red_one-989db608f1",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 45.80000000001001,
+  "controller_final_state": "SAFE_STOP",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 1,
+      "failure_reasons": [
+        "NO_HOLD_AFTER_TEST_LIFT",
+        "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+      ]
+    }
+  },
+  "controller_reports_done": false,
+  "controller_confirmed_track_count": 0,
+  "controller_all_tracks_confirmed": false,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.052110480111511336,
+        -0.26377484797409206,
+        0.007907149359725266
+      ],
+      "linear_velocity_m_s": [
+        1.0693037763985886e-17,
+        -1.029770901680345e-18,
+        -0.00010178144698392923
+      ],
+      "angular_velocity_rad_s": [
+        -1.7607220898427386e-16,
+        2.4144992022281033e-16,
+        1.662133662279086e-17
+      ],
+      "nearest_slot_id": null,
+      "nearest_zone": null,
+      "horizontal_slot_error_m": 0.4928778430690489,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": false
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 39.48,
+      "bilateral_contact_samples": 58,
+      "maximum_relative_slip_m": 0.0133297664
+    }
+  },
+  "physical_sort_success_count": 0,
+  "physical_sort_failure_count": 1,
+  "all_active_objects_physically_sorted": false,
+  "controller_done_and_physical_success": false,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

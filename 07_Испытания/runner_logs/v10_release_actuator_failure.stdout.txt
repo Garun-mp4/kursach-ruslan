@@ -1,0 +1,225 @@
+{
+  "run_id": "single_red_center-ef3f0d76a9",
+  "state": "SAFE_STOP",
+  "controller_summary": {
+    "run_id": "single_red_center-ef3f0d76a9",
+    "final_state": "SAFE_STOP",
+    "simulation_time_s": 107.42999999993103,
+    "simulated_elapsed_s": 107.42999999993103,
+    "control_ticks": 10744,
+    "wall_time_s": 91.0679725000009,
+    "performance": {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.1796682966663166,
+      "control_cycle_count": 10744,
+      "control_cycle_wall_average_s": 0.008474334056201745,
+      "control_cycle_wall_max_s": 29.979388100000506,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 53715,
+      "physics_step_wall_average_s": 0.0001246796537287423,
+      "physics_step_wall_max_s": 0.0007753999962005764,
+      "evaluator_contact_sample_count": 53715,
+      "evaluator_contact_wall_total_s": 14.240874399598397,
+      "evaluator_contact_wall_max_s": 0.0018844000005628914,
+      "sensor_capture": {
+        "capture_count": 2,
+        "render_wall_total_s": 0.017961500001547392,
+        "render_wall_average_s": 0.008980750000773696,
+        "render_wall_max_s": 0.013860300001397263,
+        "perception_wall_total_s": 0.09438239999872167,
+        "perception_wall_average_s": 0.04719119999936083,
+        "perception_wall_max_s": 0.05002080000122078
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.017961500001547392,
+      "render_and_display_wall_fraction": 0.00019723179849586762
+    },
+    "viewer_detached_early": false,
+    "terminal_result": {
+      "run_id": "single_red_center-ef3f0d76a9",
+      "status": "SAFE_STOP",
+      "reason_code": "EXECUTION_FAILED_WITH_POSSIBLE_PAYLOAD",
+      "simulation_time_s": 107.42999999993103,
+      "holding_state": false,
+      "active_track_id": null,
+      "reserved_slot_id": null,
+      "no_automatic_release": true
+    },
+    "track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SAFE_FAILURE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "EXECUTION_FAILED_WITH_POSSIBLE_PAYLOAD"
+        ]
+      }
+    },
+    "slot_states": [
+      {
+        "slot_id": "BLUE:0",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:1",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:2",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:0",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:1",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:2",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:0",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": "SAFE_STOP_NO_PAYLOAD_EXECUTION_FAILED_WITH_POSSIBLE_PAYLOAD"
+      },
+      {
+        "slot_id": "RED:1",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:2",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      }
+    ],
+    "executor": {
+      "command_id": "single_red_center-ef3f0d76a9:0007:RELEASE",
+      "phase": "RELEASE",
+      "active": false,
+      "max_joint_error": [
+        0.00043943243481137095,
+        0.0001355655115484744,
+        0.0003128680475650153,
+        0.0002792150375994229
+      ],
+      "gripper_error_m": 0.013679887012617718,
+      "terminal_status": "FAILED",
+      "terminal_reason": "ACTUATOR_TRACKING_TIMEOUT"
+    },
+    "controller_event_count": 37,
+    "controller_events_path": "controller_events.jsonl",
+    "telemetry_path": "telemetry.csv",
+    "perception_snapshots_path": "perception_snapshots.jsonl",
+    "recording": null,
+    "initial_occupied_slots_from_public_rgb": [],
+    "fault_injection_events": [
+      {
+        "fault": "GRIPPER_RELEASE_ACTUATOR_DISABLED",
+        "simulation_time_s": 101.20999999994552,
+        "original_forcerange_N": [
+          -1.2,
+          1.2
+        ],
+        "trigger": "CONTROLLER_RELEASE_STATE"
+      }
+    ]
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "single_red_center-ef3f0d76a9",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 107.42999999993103,
+    "controller_final_state": "SAFE_STOP",
+    "controller_track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SAFE_FAILURE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "EXECUTION_FAILED_WITH_POSSIBLE_PAYLOAD"
+        ]
+      }
+    },
+    "controller_reports_done": false,
+    "controller_confirmed_track_count": 0,
+    "controller_all_tracks_confirmed": false,
+    "items": [
+      {
+        "body_name": "object_red_01",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          -0.24986675976355122,
+          0.2106628489021502,
+          0.011947033153746307
+        ],
+        "linear_velocity_m_s": [
+          -8.299503327758511e-18,
+          -1.3960342244755857e-18,
+          2.495169235925078e-16
+        ],
+        "angular_velocity_rad_s": [
+          -6.911294598238994e-16,
+          -9.281904033417759e-17,
+          -2.8084385438897044e-18
+        ],
+        "nearest_slot_id": "RED:0",
+        "nearest_zone": "RED",
+        "horizontal_slot_error_m": 0.002233849272776883,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_red_01": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": 38.4,
+        "bilateral_contact_samples": 1571,
+        "maximum_relative_slip_m": 0.00195517287
+      }
+    },
+    "physical_sort_success_count": 1,
+    "physical_sort_failure_count": 0,
+    "all_active_objects_physically_sorted": true,
+    "controller_done_and_physical_success": false,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  }
+}

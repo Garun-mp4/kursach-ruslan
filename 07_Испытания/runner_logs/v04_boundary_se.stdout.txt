@@ -1,0 +1,261 @@
+{
+  "run_id": "m9_boundary_se-7cfb823d51",
+  "state": "DONE",
+  "controller_summary": {
+    "run_id": "m9_boundary_se-7cfb823d51",
+    "final_state": "DONE",
+    "simulation_time_s": 124.23999999989185,
+    "simulated_elapsed_s": 124.23999999989185,
+    "control_ticks": 12425,
+    "wall_time_s": 79.75346300000092,
+    "performance": {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 1.5578006938694364,
+      "control_cycle_count": 12425,
+      "control_cycle_wall_average_s": 0.0064169570221565666,
+      "control_cycle_wall_max_s": 20.421466800005874,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 62120,
+      "physics_step_wall_average_s": 0.00011761728108927961,
+      "physics_step_wall_max_s": 0.002754799999820534,
+      "evaluator_contact_sample_count": 62120,
+      "evaluator_contact_wall_total_s": 16.328444299957482,
+      "evaluator_contact_wall_max_s": 0.008239599999797065,
+      "sensor_capture": {
+        "capture_count": 6,
+        "render_wall_total_s": 0.0546319999921252,
+        "render_wall_average_s": 0.009105333332020868,
+        "render_wall_max_s": 0.013971599997603334,
+        "perception_wall_total_s": 0.34814120000373805,
+        "perception_wall_average_s": 0.058023533333956344,
+        "perception_wall_max_s": 0.07197930000256747
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.0546319999921252,
+      "render_and_display_wall_fraction": 0.0006850110068841095
+    },
+    "viewer_detached_early": false,
+    "terminal_result": {
+      "run_id": "m9_boundary_se-7cfb823d51",
+      "status": "DONE",
+      "simulation_time_s": 124.23999999989185,
+      "controller_track_status_counts": {
+        "PENDING": 0,
+        "RESERVED": 0,
+        "PLACED_CONTROLLER_CONFIRMED": 1,
+        "SKIPPED_UNKNOWN": 0,
+        "SKIPPED_UNREACHABLE": 0,
+        "SKIPPED_FULL_ZONE": 0,
+        "SAFE_FAILURE": 0,
+        "FAILED": 0
+      },
+      "controller_confirmed_placements": 1,
+      "safe_failures": 0,
+      "skipped_unknown": 0,
+      "skipped_unreachable": 0,
+      "skipped_full_zone": 0,
+      "evaluator_result": null,
+      "note": "DONE means the batch controller terminated; it does not imply 100% sort success.",
+      "slot_states": [
+        {
+          "slot_id": "BLUE:0",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "BLUE:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "BLUE:2",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "GREEN:0",
+          "status": "OCCUPIED"
+        },
+        {
+          "slot_id": "GREEN:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "GREEN:2",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:0",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:1",
+          "status": "FREE"
+        },
+        {
+          "slot_id": "RED:2",
+          "status": "FREE"
+        }
+      ]
+    },
+    "track_records": {
+      "1": {
+        "class_label": "GREEN",
+        "status": "PLACED_CONTROLLER_CONFIRMED",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      }
+    },
+    "slot_states": [
+      {
+        "slot_id": "BLUE:0",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:1",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:2",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:0",
+        "class_label": "GREEN",
+        "status": "OCCUPIED",
+        "owner_track_id": null,
+        "reason_code": "PUBLIC_PERCEPTION_CONFIRMED"
+      },
+      {
+        "slot_id": "GREEN:1",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:2",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:0",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:1",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:2",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      }
+    ],
+    "executor": {
+      "command_id": "m9_boundary_se-7cfb823d51:0008:RETREAT",
+      "phase": "SAFE_HOME",
+      "active": false,
+      "max_joint_error": [
+        0.008686754717783352,
+        0.008080384782209071,
+        0.0006735328093946912,
+        0.007710983670632721
+      ],
+      "gripper_error_m": 2.4663341890605975e-07,
+      "terminal_status": "COMPLETED",
+      "terminal_reason": null
+    },
+    "controller_event_count": 61,
+    "controller_events_path": "controller_events.jsonl",
+    "telemetry_path": "telemetry.csv",
+    "perception_snapshots_path": "perception_snapshots.jsonl",
+    "recording": null,
+    "initial_occupied_slots_from_public_rgb": [],
+    "fault_injection_events": []
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "m9_boundary_se-7cfb823d51",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 124.23999999989185,
+    "controller_final_state": "DONE",
+    "controller_track_records": {
+      "1": {
+        "class_label": "GREEN",
+        "status": "PLACED_CONTROLLER_CONFIRMED",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      }
+    },
+    "controller_reports_done": true,
+    "controller_confirmed_track_count": 1,
+    "controller_all_tracks_confirmed": true,
+    "items": [
+      {
+        "body_name": "object_green_01",
+        "ground_truth_class": "GREEN",
+        "final_xyz_m": [
+          -0.02912053275496694,
+          0.29971658345713753,
+          0.011947019983536294
+        ],
+        "linear_velocity_m_s": [
+          -1.0611312649956439e-17,
+          6.760805375759052e-18,
+          2.2985399524210826e-16
+        ],
+        "angular_velocity_rad_s": [
+          1.2969203821272917e-15,
+          -9.506070484891286e-16,
+          -1.1634837221432203e-18
+        ],
+        "nearest_slot_id": "GREEN:0",
+        "nearest_zone": "GREEN",
+        "horizontal_slot_error_m": 0.0028933815081987353,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_green_01": {
+        "ground_truth_color": "GREEN",
+        "first_bilateral_contact_time_s": 31.0,
+        "bilateral_contact_samples": 1158,
+        "maximum_relative_slip_m": 0.00189122865
+      }
+    },
+    "physical_sort_success_count": 1,
+    "physical_sort_failure_count": 0,
+    "all_active_objects_physically_sorted": true,
+    "controller_done_and_physical_success": true,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  }
+}

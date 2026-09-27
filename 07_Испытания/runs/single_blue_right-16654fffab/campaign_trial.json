@@ -1,0 +1,214 @@
+{
+  "schema_version": "M9-trial-record-v1",
+  "trial_id": "v01_blue",
+  "experiment_id": "v01_blue",
+  "variant_id": "fixed",
+  "scenario": "single_blue_right",
+  "scenario_dir": null,
+  "seed": null,
+  "expected_kind": "sort_all",
+  "expected_reason": null,
+  "expected_track_status": null,
+  "expected_failure_reason": null,
+  "expected_object_outcomes": {},
+  "required_perception_checks": {},
+  "tags": [
+    "V01"
+  ],
+  "parameters": {},
+  "paired_control": null,
+  "campaign_id": "M9-RC-2026-01",
+  "campaign_sha256": "be7bb93f56c04ad2ea1d7cfee033c52ab6182fb09988b5dce8321c625445a765",
+  "software_revision": "ffb3727d2c163b085c5957c2ee1e5f053700cb15",
+  "started_utc": "2026-09-27T10:18:52.258524+00:00",
+  "finished_utc": "2026-09-27T10:20:05.323765+00:00",
+  "runner_returncode": 0,
+  "run_id": "single_blue_right-16654fffab",
+  "run_manifest_sha256": "bb674d8626c1e68cc7f763575718f04684dc37f64679bc7b4b6ba711526b9d24",
+  "run_directory": "07_Испытания/runs/single_blue_right-16654fffab",
+  "input_hashes_sha256": {
+    "ssot": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95",
+    "mjcf": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "runtime_config": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "scenario": "3c23076196854a200d8a814e09fc9c5c00b65b6e62fc3188f8a960654bdf7b79",
+    "perception_config": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "camera_calibration": "035e5fd2a7af3e17c43bede7320b8c06a17986faeaae14b03be3b542928e02da",
+    "background_reference": "f40946e44bd5b10fd7d133b793a46462311e1f64760a979ae8d99862d3c5573f",
+    "placement_camera_calibration": "6e9502952a8a71d07882a6ea341a39f80f6a8cf912e076b687b136c6fde6715a",
+    "placement_camera_background": "16f4911760fee24f13a5eaf55d0d3144fb33ce02aa87a3fa9a7016c79a446571",
+    "runner": "733ebfd17d1bc12952a0d59b6e848f873e19d550dfdce6763825c4cb700c7897",
+    "placement_camera_model": "37f3d65de1afb9adc1aa56aec1455f4854569d0dfa95859df5dc360d2c18f91a",
+    "placement_camera_asset_builder": "ac1ec72c576f519e101ff2e5ac8233ab09e08583d9880397bd717409ba15663c",
+    "runtime": "2c9ee923ec417682567e89b9c9fbe919591ff7d7573b7ea22aed5347c38c2ebd",
+    "recording": "a561be7edcd04c9cf543c20041a34d08dfe000852f942e1f34d6eb83cfc379d5",
+    "actuator": "466c46b1760fd728b8835d347e9b1247784b96615c5610dd987295d4f99409d2",
+    "scene_generator": "77b11504a0ec7cb905c104ebe8ff48cc3017971b9cf2a8022ff6c7b07118ccf0",
+    "sensor_adapter": "cefd483bbbfb893c5c9dd51b88a3f137e195bb72843d4d900fb5e509a4f6e737",
+    "placement_adapter": "8a5a7603997fd5b3af68181852828f4ee55c698b2f3f308a5a9b004df1c63d62",
+    "interactive_display": "503401202871c56a3f421238388a92d5161d899478d2801c155c1770345ca8f0",
+    "controller": "34d2976bf3e3ab4125c2229714fd89b01bfa9837bf28f110669493872c06bcac",
+    "planner": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+    "perception": "399663fdb42d4dc2766e3d6ef0dfeaa2fe008b6c12d7efb3d1215c0d4ae4ee30",
+    "evaluator": "99dc56780397600a56bf7c3a07124a6589af465169ac261ddcb4206cf93018b2",
+    "evaluator_telemetry": "d6b3ddff9919189e7aa69d738b72b86a6da616764dbfee921fff787556b8b53b",
+    "m7_integrated_model": "a9fcb542d428ca3a8408b0af30728ae81d097d1379311af4d543742be1b096ee"
+  },
+  "evidence_hashes_sha256": {
+    "controller/controller_events.jsonl": "5b756cabd2ce9f4c5df1d2518feb3c036b6096fa4572639c8a0f92a481d3c186",
+    "controller/perception_snapshots.jsonl": "45565cdb95aaba319cff39b9007f9c624401c546ce0559c39c31c289e5301f3b",
+    "controller/plans/m5_plan_2.csv": "7daea9727ce085ecb14c7a4a8c18f1964db6cf00ee65bd393773ccff498b9a2d",
+    "controller/plans/m5_plan_2.json": "ae0f3cbfd4efc0db5b1256ec87bfc7ca7038ba75c7633fc9afc7505099a42411",
+    "controller/telemetry.csv": "7450e7e1940f45ae77673669bc55ef29810bd808d1dc5571ef032a6a2f696593",
+    "evaluator/contact_events.jsonl": "5dbf8896abc52fe399e29d1e222bb328a603aad8df10d81f6ab299ce558be7ed",
+    "evaluator/object_telemetry.csv": "c1b720b1c5ec91f9136e8070ad1d40f1eadb03a5994adeff55fa51c835387bd9",
+    "evaluator/report.json": "762a24038af67687a89431bf972ce6f8b2819b1754a971975a381ea6c593c3ee",
+    "evaluator_private/scene_truth.json": "681156f5ff6101926ff949b0b580f624c536d01607af87bd269b40921db5d55a",
+    "snapshots/m7_integrated_model.xml": "d744d8fd19abb33f30d074d37a90576284516d4389301ef19715a8f0b6064dc4",
+    "snapshots/perception_config.yaml": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "snapshots/runtime_config.yaml": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "snapshots/scenario.yaml": "3c23076196854a200d8a814e09fc9c5c00b65b6e62fc3188f8a960654bdf7b79",
+    "snapshots/ssot.yaml": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95"
+  },
+  "compressed_evidence": {
+    "controller/controller_events.jsonl": {
+      "path": "controller/controller_events.jsonl.gz",
+      "uncompressed_sha256": "5b756cabd2ce9f4c5df1d2518feb3c036b6096fa4572639c8a0f92a481d3c186",
+      "compressed_sha256": "f1f5f56b68b88b02fb45b5635492857c6813724a361550fa1cd750b0170d0847"
+    },
+    "controller/perception_snapshots.jsonl": {
+      "path": "controller/perception_snapshots.jsonl.gz",
+      "uncompressed_sha256": "45565cdb95aaba319cff39b9007f9c624401c546ce0559c39c31c289e5301f3b",
+      "compressed_sha256": "e460371541c330be658618e1b90e9e3cbcd33f9aa184881bdb273d97eba1db38"
+    },
+    "controller/plans/m5_plan_2.csv": {
+      "path": "controller/plans/m5_plan_2.csv.gz",
+      "uncompressed_sha256": "7daea9727ce085ecb14c7a4a8c18f1964db6cf00ee65bd393773ccff498b9a2d",
+      "compressed_sha256": "b7eaff5373bbd084b0542938da454c6de81466a87444c4a21a1386743c5ecad2"
+    },
+    "controller/plans/m5_plan_2.json": {
+      "path": "controller/plans/m5_plan_2.json.gz",
+      "uncompressed_sha256": "ae0f3cbfd4efc0db5b1256ec87bfc7ca7038ba75c7633fc9afc7505099a42411",
+      "compressed_sha256": "d2d65510a6df9032e7a9cb9317da7a11253f442f2ef3b7169e73e69aa49f595a"
+    },
+    "controller/telemetry.csv": {
+      "path": "controller/telemetry.csv.gz",
+      "uncompressed_sha256": "7450e7e1940f45ae77673669bc55ef29810bd808d1dc5571ef032a6a2f696593",
+      "compressed_sha256": "a2ad2adb74419e691039f77372a86117ae4681e669f2c9e8b3a68a92d4692c43"
+    },
+    "evaluator/contact_events.jsonl": {
+      "path": "evaluator/contact_events.jsonl.gz",
+      "uncompressed_sha256": "5dbf8896abc52fe399e29d1e222bb328a603aad8df10d81f6ab299ce558be7ed",
+      "compressed_sha256": "aa522ffb2fd52228c625630250c3b8d296909e296f97c0a91519e62912861d27"
+    },
+    "evaluator/object_telemetry.csv": {
+      "path": "evaluator/object_telemetry.csv.gz",
+      "uncompressed_sha256": "c1b720b1c5ec91f9136e8070ad1d40f1eadb03a5994adeff55fa51c835387bd9",
+      "compressed_sha256": "8ec613295e0ab21b2dc9f768f84292f378581c3a90aa28189105d60dcc1606f4"
+    }
+  },
+  "scenario_seed": 20260927,
+  "final_state": "DONE",
+  "simulation_time_s": 115.92999999991122,
+  "fault_injection": {
+    "camera_failure": false,
+    "stale_camera_age_s": null,
+    "placement_camera_failure_at_verify": false,
+    "emergency_stop_after_hold": false,
+    "payload_loss_after_hold": false,
+    "payload_loss_body_name": null,
+    "payload_loss_impulse_Ns": null,
+    "gripper_friction_scale": null,
+    "effective_grasp_contact_slide_friction": null,
+    "gripper_actuator_disabled": false,
+    "release_actuator_failure": false,
+    "original_gripper_actuator_forcerange_N": null,
+    "events": null,
+    "render_rgba_overrides": {}
+  },
+  "public_input_conditions": {
+    "lighting_scale": 1.0,
+    "rgb_gain": 1.0,
+    "rgb_noise_sigma_8bit": 0.0,
+    "sensor_noise_seed": 20260927,
+    "input_calibration_bias_xy_m": [
+      0.0,
+      0.0
+    ],
+    "note": "Test-only perturbations are applied before M4 perception; evaluator ground truth is not exposed."
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "single_blue_right-16654fffab",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 115.92999999991122,
+    "controller_final_state": "DONE",
+    "controller_track_records": {
+      "1": {
+        "class_label": "BLUE",
+        "status": "PLACED_CONTROLLER_CONFIRMED",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      }
+    },
+    "controller_reports_done": true,
+    "controller_confirmed_track_count": 1,
+    "controller_all_tracks_confirmed": true,
+    "items": [
+      {
+        "body_name": "object_blue_01",
+        "ground_truth_class": "BLUE",
+        "final_xyz_m": [
+          0.18964660186612098,
+          0.20836355290672162,
+          0.011947107078176982
+        ],
+        "linear_velocity_m_s": [
+          -2.545392760169304e-19,
+          5.1293710162794276e-18,
+          2.3742890885857935e-16
+        ],
+        "angular_velocity_rad_s": [
+          -4.319977191081637e-16,
+          8.21069975001958e-16,
+          3.963745887065875e-18
+        ],
+        "nearest_slot_id": "BLUE:0",
+        "nearest_zone": "BLUE",
+        "horizontal_slot_error_m": 0.0023214772871196295,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_blue_01": {
+        "ground_truth_color": "BLUE",
+        "first_bilateral_contact_time_s": 31.84,
+        "bilateral_contact_samples": 994,
+        "maximum_relative_slip_m": 0.00160656585
+      }
+    },
+    "physical_sort_success_count": 1,
+    "physical_sort_failure_count": 0,
+    "all_active_objects_physically_sorted": true,
+    "controller_done_and_physical_success": true,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  },
+  "command": [
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\99_Рабочие_материалы\\integration\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\run_m7.py",
+    "--mode",
+    "batch",
+    "--scenario",
+    "single_blue_right",
+    "--physics-profile",
+    "nominal",
+    "--out",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\07_Испытания\\runs"
+  ]
+}

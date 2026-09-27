@@ -7,8 +7,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from analyze_m9 import (
+    analyze,
     _controller_target_at,
     _expected_object_outcome_failures,
     _object_outcomes_accounted,
@@ -24,6 +26,72 @@ from analyze_m9 import (
 
 
 class M9AnalysisTests(unittest.TestCase):
+    def test_analyzer_indexes_run_by_registered_trial_id_not_run_folder_name(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            campaign_path = root / "campaign.yaml"
+            campaign_path.write_text(
+                "campaign_id: test-campaign\n"
+                "primary_acceptance:\n"
+                "  minimum_complete_batch_rate: 0.9\n"
+                "  required_seeds: 1\n"
+                "  minimum_complete_batches: 1\n",
+                encoding="utf-8",
+            )
+            run_dir = root / "runs" / "scenario-generated-folder-1234"
+            run_dir.mkdir(parents=True)
+            (run_dir / "campaign_trial.json").write_text(
+                json.dumps({"trial_id": "registered-trial-1"}), encoding="utf-8"
+            )
+            job = {
+                "trial_id": "registered-trial-1",
+                "experiment_id": "FIXED_CASE",
+                "variant_id": "fixed",
+                "scenario": "one-object",
+                "expected_kind": "safe_completion",
+                "tags": [],
+            }
+            metric = {
+                "trial_id": "registered-trial-1",
+                "experiment_id": "FIXED_CASE",
+                "variant_id": "fixed",
+                "test_pass": True,
+                "wrong_bin_count": 0,
+                "forbidden_contact_episodes": 0,
+                "position_limit_violation_samples": 0,
+                "force_limit_violation_samples": 0,
+                "simulation_time_s": 0.02,
+                "active_objects": 0,
+                "sorted_correctly": 0,
+                "_object_records": [],
+            }
+            tables, plots = root / "tables", root / "plots"
+            legacy_tables, legacy_plots = root / "legacy-tables", root / "legacy-plots"
+            with (
+                patch("analyze_m9._expand_campaign_jobs", return_value=[job]),
+                patch("analyze_m9._verify_trial_integrity"),
+                patch("analyze_m9._trial_metrics", return_value=(metric, [])),
+                patch("analyze_m9._series_summary", return_value=[]),
+                patch("analyze_m9._paired_comparisons", return_value=([], [])),
+                patch("analyze_m9._draw_rate_plot"),
+                patch("analyze_m9._draw_confusion_matrix"),
+                patch("analyze_m9.TABLES_ROOT", legacy_tables),
+                patch("analyze_m9.PLOTS_ROOT", legacy_plots),
+                patch("analyze_m9.RESULTS_PATH", root / "results.json"),
+            ):
+                result = analyze(
+                    campaign_path,
+                    root / "runs",
+                    tables_root=tables,
+                    plots_root=plots,
+                )
+            self.assertEqual(result["analyzed_trials"], 1)
+            self.assertEqual(result["missing_trials"], [])
+            self.assertTrue((tables / "Результаты_по_прогонам.csv").is_file())
+            self.assertTrue(plots.is_dir())
+            self.assertFalse(legacy_tables.exists())
+            self.assertFalse(legacy_plots.exists())
+
     def test_csv_serializes_nested_values_as_deterministic_json(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "matrix.csv"

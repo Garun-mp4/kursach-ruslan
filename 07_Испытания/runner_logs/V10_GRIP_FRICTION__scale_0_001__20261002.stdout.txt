@@ -1,0 +1,217 @@
+{
+  "run_id": "m9_random_red_one-4cf4d7b3b2",
+  "state": "SAFE_STOP",
+  "controller_summary": {
+    "run_id": "m9_random_red_one-4cf4d7b3b2",
+    "final_state": "SAFE_STOP",
+    "simulation_time_s": 45.690000000009874,
+    "simulated_elapsed_s": 45.690000000009874,
+    "control_ticks": 4570,
+    "wall_time_s": 50.04136870000366,
+    "performance": {
+      "measurement_scope": "runtime control loop; diagnostics only, no wall-clock input to simulated control",
+      "simulation_to_wall_time_ratio": 0.9130445706615241,
+      "control_cycle_count": 4570,
+      "control_cycle_wall_average_s": 0.010948219737406112,
+      "control_cycle_wall_max_s": 27.998982099998102,
+      "control_cycle_wall_warning_threshold_s": 60.0,
+      "control_cycle_wall_warning_count": 0,
+      "physics_step_count": 22845,
+      "physics_step_wall_average_s": 0.00010373448018142805,
+      "physics_step_wall_max_s": 0.0006713999973726459,
+      "evaluator_contact_sample_count": 22845,
+      "evaluator_contact_wall_total_s": 5.117561199927877,
+      "evaluator_contact_wall_max_s": 0.0015094999980647117,
+      "sensor_capture": {
+        "capture_count": 2,
+        "render_wall_total_s": 0.012464000006730203,
+        "render_wall_average_s": 0.006232000003365101,
+        "render_wall_max_s": 0.009490500000538304,
+        "perception_wall_total_s": 0.08033979999891017,
+        "perception_wall_average_s": 0.04016989999945508,
+        "perception_wall_max_s": 0.04189980000228388
+      },
+      "viewer_sync_count": 0,
+      "viewer_sync_wall_total_s": 0.0,
+      "viewer_sync_wall_average_s": 0.0,
+      "viewer_sync_wall_max_s": 0.0,
+      "render_and_display_wall_total_s": 0.012464000006730203,
+      "render_and_display_wall_fraction": 0.00024907392284674444
+    },
+    "viewer_detached_early": false,
+    "terminal_result": {
+      "run_id": "m9_random_red_one-4cf4d7b3b2",
+      "status": "SAFE_STOP",
+      "reason_code": "RECOVERY_FAILED_OR_STATE_UNKNOWN",
+      "simulation_time_s": 45.690000000009874,
+      "holding_state": false,
+      "active_track_id": null,
+      "reserved_slot_id": null,
+      "no_automatic_release": true
+    },
+    "track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SAFE_FAILURE",
+        "attempts": 1,
+        "grasp_attempts": 1,
+        "failure_reasons": [
+          "NO_HOLD_AFTER_TEST_LIFT",
+          "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+        ]
+      }
+    },
+    "slot_states": [
+      {
+        "slot_id": "BLUE:0",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:1",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "BLUE:2",
+        "class_label": "BLUE",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:0",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:1",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "GREEN:2",
+        "class_label": "GREEN",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:0",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": "GRASP_FAILURE_NO_PAYLOAD_NO_HOLD_AFTER_TEST_LIFT"
+      },
+      {
+        "slot_id": "RED:1",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      },
+      {
+        "slot_id": "RED:2",
+        "class_label": "RED",
+        "status": "FREE",
+        "owner_track_id": null,
+        "reason_code": null
+      }
+    ],
+    "executor": {
+      "command_id": "m9_random_red_one-4cf4d7b3b2:0004:VERIFY_HOLD",
+      "phase": "LIFT",
+      "active": false,
+      "max_joint_error": [
+        0.0013057137845433608,
+        0.000351770305738075,
+        0.00037407855444253346,
+        0.00022398642637666555
+      ],
+      "gripper_error_m": 0.01202040189422646,
+      "terminal_status": "COMPLETED",
+      "terminal_reason": null
+    },
+    "controller_event_count": 31,
+    "controller_events_path": "controller_events.jsonl",
+    "telemetry_path": "telemetry.csv",
+    "perception_snapshots_path": "perception_snapshots.jsonl",
+    "recording": null,
+    "initial_occupied_slots_from_public_rgb": [],
+    "fault_injection_events": []
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "m9_random_red_one-4cf4d7b3b2",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 45.690000000009874,
+    "controller_final_state": "SAFE_STOP",
+    "controller_track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "SAFE_FAILURE",
+        "attempts": 1,
+        "grasp_attempts": 1,
+        "failure_reasons": [
+          "NO_HOLD_AFTER_TEST_LIFT",
+          "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+        ]
+      }
+    },
+    "controller_reports_done": false,
+    "controller_confirmed_track_count": 0,
+    "controller_all_tracks_confirmed": false,
+    "items": [
+      {
+        "body_name": "object_red_01",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          -0.09094298791697478,
+          -0.31227093965022884,
+          0.007908014941878727
+        ],
+        "linear_velocity_m_s": [
+          -1.8515368620370266e-18,
+          -8.486836674357467e-18,
+          2.261474873913607e-05
+        ],
+        "angular_velocity_rad_s": [
+          7.051194435571231e-16,
+          3.6682381420274095e-16,
+          -1.9825779104702896e-17
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.5312127615161533,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_red_01": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": 39.4,
+        "bilateral_contact_samples": 57,
+        "maximum_relative_slip_m": 0.0125652619
+      }
+    },
+    "physical_sort_success_count": 0,
+    "physical_sort_failure_count": 1,
+    "all_active_objects_physically_sorted": false,
+    "controller_done_and_physical_success": false,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  }
+}

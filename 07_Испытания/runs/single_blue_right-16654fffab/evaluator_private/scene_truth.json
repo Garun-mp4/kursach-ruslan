@@ -1,0 +1,23 @@
+{
+  "scenario_id": "single_blue_right",
+  "seed": 20260927,
+  "active_objects": [
+    {
+      "body_name": "object_blue_01",
+      "class_label": "BLUE",
+      "initial_xy_m": [
+        0.075,
+        -0.215
+      ],
+      "yaw_rad": 0.5235987755982988
+    }
+  ],
+  "initial_slot_occupants": [],
+  "inactive_bodies": [
+    "object_red_01",
+    "object_green_01",
+    "object_red_02",
+    "object_green_02",
+    "object_blue_02"
+  ]
+}

@@ -1,0 +1,21 @@
+scenario_id: m9_six_object_grid
+seed: 20261040
+active_objects:
+  - body_name: object_red_01
+    xy_m: [-0.09, -0.19]
+    yaw_rad: 0.0
+  - body_name: object_green_01
+    xy_m: [0.0, -0.19]
+    yaw_rad: 0.0
+  - body_name: object_blue_01
+    xy_m: [0.09, -0.19]
+    yaw_rad: 0.0
+  - body_name: object_red_02
+    xy_m: [-0.09, -0.31]
+    yaw_rad: 0.0
+  - body_name: object_green_02
+    xy_m: [0.0, -0.31]
+    yaw_rad: 0.0
+  - body_name: object_blue_02
+    xy_m: [0.09, -0.31]
+    yaw_rad: 0.0

@@ -1,0 +1,63 @@
+{
+  "schema_version": "M7-evaluator-v1.1",
+  "run_id": "m9_boundary_ne-ae81991719",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 141.48999999994749,
+  "controller_final_state": "DONE",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    }
+  },
+  "controller_reports_done": true,
+  "controller_confirmed_track_count": 1,
+  "controller_all_tracks_confirmed": true,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.24956362270326166,
+        0.20927328144879148,
+        0.011947014974573778
+      ],
+      "linear_velocity_m_s": [
+        8.409185370468737e-18,
+        -7.097196086869235e-20,
+        -2.117797593470087e-16
+      ],
+      "angular_velocity_rad_s": [
+        5.13306183141885e-16,
+        -5.3973697021814e-16,
+        -4.170936702091595e-21
+      ],
+      "nearest_slot_id": "RED:0",
+      "nearest_zone": "RED",
+      "horizontal_slot_error_m": 0.0025424504291593664,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 28.48,
+      "bilateral_contact_samples": 1453,
+      "maximum_relative_slip_m": 0.00215471174
+    }
+  },
+  "physical_sort_success_count": 1,
+  "physical_sort_failure_count": 0,
+  "all_active_objects_physically_sorted": true,
+  "controller_done_and_physical_success": true,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

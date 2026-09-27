@@ -1,0 +1,66 @@
+{
+  "schema_version": "M7-evaluator-v1.1",
+  "run_id": "m9_random_red_one-09425eafc7",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 40.28000000000326,
+  "controller_final_state": "SAFE_STOP",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "SAFE_FAILURE",
+      "attempts": 1,
+      "grasp_attempts": 1,
+      "failure_reasons": [
+        "NO_HOLD_AFTER_TEST_LIFT",
+        "RECOVERY_FAILED_OR_STATE_UNKNOWN"
+      ]
+    }
+  },
+  "controller_reports_done": false,
+  "controller_confirmed_track_count": 0,
+  "controller_all_tracks_confirmed": false,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        0.04488514521517605,
+        -0.20053365280600866,
+        0.007947233675526494
+      ],
+      "linear_velocity_m_s": [
+        -3.2078111615837004e-18,
+        -3.5046200670696476e-18,
+        2.444904728851787e-16
+      ],
+      "angular_velocity_rad_s": [
+        -9.227120070308047e-17,
+        -3.0349949069771374e-16,
+        6.2910802726466924e-18
+      ],
+      "nearest_slot_id": null,
+      "nearest_zone": null,
+      "horizontal_slot_error_m": 0.4347640069581723,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": false
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 33.96,
+      "bilateral_contact_samples": 58,
+      "maximum_relative_slip_m": 0.0135330676
+    }
+  },
+  "physical_sort_success_count": 0,
+  "physical_sort_failure_count": 1,
+  "all_active_objects_physically_sorted": false,
+  "controller_done_and_physical_success": false,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

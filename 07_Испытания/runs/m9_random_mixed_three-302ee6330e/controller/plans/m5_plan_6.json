@@ -1,0 +1,7672 @@
+{
+  "code": "SUCCESS",
+  "reason": "Full pick/place/return cycle passed IK, temporal and sampled collision preflight.",
+  "phase": null,
+  "plan": {
+    "plan_id": "ce92aaca174b2688e44d",
+    "ssot_version": "M7-v1.8",
+    "ssot_sha256": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95",
+    "model_sha256": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "perception_frame_id": 5,
+    "perception_time_s": 135.5899999999193,
+    "target_track_id": 3,
+    "target_class": "BLUE",
+    "slot_id": "BLUE:0",
+    "selected_ik_branch": "ELBOW_POSITIVE",
+    "resolved_tool_yaw_rad": 6.283063431574275,
+    "phases": [
+      "INITIAL_APPROACH",
+      "ORIENTATION_ALIGN",
+      "PREGRASP_ROUTE",
+      "PREGRASP",
+      "DESCENT",
+      "GRASP_CLOSE",
+      "LIFT",
+      "TRANSFER",
+      "PREPLACE",
+      "PLACE_DESCENT",
+      "RELEASE",
+      "RETREAT",
+      "SAFE_RETURN",
+      "SAFE_HOME"
+    ],
+    "waypoints": [
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08737549739181641,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000685,
+          1.0471975511965628,
+          0.015624502608183597,
+          7.308347777254043e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08566452880482789,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.01733547119517212,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08395356021783935,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.019046439782160654,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08224259163085082,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02075740836914919,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.0805316230438623,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02246837695613771,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07882065445687378,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02417934554312623,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07710968586988526,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02589031413011475,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07539871728289674,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02760128271710327,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.0736877486959082,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.029312251304091805,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07197678010891967,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03102321989108034,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07026581152193115,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03273418847806886,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06855484293494263,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03444515706505738,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06684387434795411,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.0361561256520459,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06513290576096559,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03786709423903442,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06342193717397705,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.039578062826022956,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.061710968586988525,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04128903141301148,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "INITIAL_APPROACH",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.4690090616533853
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.07818848954310886
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.3908205721102691
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.15637697908622505
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.3126320825671529
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.23456546862934124
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.23444359302403672
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.31275395817245744
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.15625510348092053
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.3909424477155736
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          0.07806661393780434
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.4691309372586898
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "ORIENTATION_ALIGN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          -0.00012187560531184971
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.547319426801806
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3776404907057167,
+          -0.006291963943412283,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4783048116434577,
+          0.9994300228742492,
+          0.04300000000000001,
+          -0.5212470868361025
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3826397968567518,
+          -0.00637525865046451,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4555578973305872,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.49404254430594446
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3816921239754305,
+          -0.02247182636893948,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.49928716021817526,
+          0.952949869870306,
+          0.04300000000000001,
+          -0.45378458525744175
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3807444510941092,
+          -0.03856839408741445,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5398511514825506,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.4097492901539811
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.37844491714543915,
+          -0.054528021897120915,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5835804143701385,
+          0.9529498698703056,
+          0.04300000000000001,
+          -0.36949133110547805
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.37614538319676905,
+          -0.07048764970682739,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.624144405634514,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.32545603600201767
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.37251031750825225,
+          -0.08619700595225036,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.6678736685221021,
+          0.952949869870306,
+          0.04300000000000001,
+          -0.28519807695351496
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3688752518197354,
+          -0.10190636219767334,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.7084376597864775,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.24116278185005435
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.36393046752544356,
+          -0.11725389243834616,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.7521669226740653,
+          0.9529498698703056,
+          0.04300000000000001,
+          -0.2009048228015513
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.35898568323115165,
+          -0.13260142267901898,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.792730913938441,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.15686952769809093
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.35276629396887865,
+          -0.1474781418539502,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.8364601768260289,
+          0.952949869870306,
+          0.04300000000000001,
+          -0.1166115686495881
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.34654690470660565,
+          -0.1623548610288814,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.8770241680904043,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.07257627354612739
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3390970752707809,
+          -0.1766551273754416,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.9207534309779923,
+          0.952949869870306,
+          0.04300000000000001,
+          -0.03231831449762468
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.33164724583495625,
+          -0.19095539372200176,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.9613174222423677,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.011716980605836036
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.3230198785559683,
+          -0.2045776589535589,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.0050466851299558,
+          0.952949869870306,
+          0.04300000000000001,
+          0.05197493965433875
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.31439251127698037,
+          -0.21819992418511605,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.0456106763943311,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.09601023475779946
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.30464887035397725,
+          -0.23104745460029785,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.0893399392819194,
+          0.9529498698703065,
+          0.04300000000000001,
+          0.13626819380630195
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.2949052294309742,
+          -0.24389498501547968,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.1299039305462948,
+          0.9494785660312214,
+          0.04300000000000001,
+          0.18030348890976244
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.284114505885809,
+          -0.2558765484183608,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.1736331934338828,
+          0.9529498698703065,
+          0.04300000000000001,
+          0.22056144795826538
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.27332378234064386,
+          -0.2678581118212419,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.214197184698258,
+          0.9494785660312209,
+          0.04300000000000001,
+          0.2645967430617261
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.2615626026822903,
+          -0.2788886253745346,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.2579264475858458,
+          0.9529498698703056,
+          0.04300000000000001,
+          0.30485470211022925
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.24980142302393676,
+          -0.2899191389278273,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.2984904388502214,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.34888999721368974
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.2371533051124216,
+          -0.2999202733385755,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.3422197017378092,
+          0.9529498698703056,
+          0.04300000000000001,
+          0.3891479562621927
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.22450518720090643,
+          -0.30992140774932375,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.3827836930021848,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.43318325136565317
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.2110599471747482,
+          -0.31882214349668947,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.4265129558897731,
+          0.9529498698703065,
+          0.04300000000000001,
+          0.47344121041415566
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.19761470714859,
+          -0.32772287924405524,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.467076947154148,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.5174765055176164
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.18346782162723932,
+          -0.335460010899342,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.5108062100417363,
+          0.952949869870306,
+          0.04300000000000001,
+          0.5577344645661193
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.16932093610588864,
+          -0.3431971425546288,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.5513702013061115,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.6017697596695798
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.15457286419626404,
+          -0.3497157276122915,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.5950994641936997,
+          0.952949869870306,
+          0.04300000000000001,
+          0.6420277187180827
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.13982479228663944,
+          -0.3562343126699543,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.635663455458075,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.6860630138215432
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.1245802622082897,
+          -0.3614880617023818,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.679392718345663,
+          0.9529498698703056,
+          0.04300000000000001,
+          0.7263209728700464
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.10933573212993997,
+          -0.3667418107348092,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.7199567096100383,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.7703562679735066
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.09370299752461209,
+          -0.3706934161003318,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.7636859724976264,
+          0.9529498698703056,
+          0.04300000000000001,
+          0.8106142270220098
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP_ROUTE",
+        "pose_xyzyaw": [
+          0.07807026291928422,
+          -0.3746450214658543,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.8042499637620018,
+          0.9494785660312207,
+          0.04300000000000001,
+          0.8546495221254701
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.07644730006474221,
+          -0.3668567173057055,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.8399392112021047,
+          1.0279103923141748,
+          0.04300000000000001,
+          0.8119069432826189
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.07482433721020021,
+          -0.3590684131455567,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.8731654744550528,
+          1.1012440883649013,
+          0.04300000000000001,
+          0.7717995104848405
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.07320137435565821,
+          -0.3512801089854079,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.9043757243765647,
+          1.1704461767220407,
+          0.04300000000000001,
+          0.733807672049213
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.07157841150111621,
+          -0.3434918048252591,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.933892889825776,
+          1.2362183978577626,
+          0.04300000000000001,
+          0.6975526163627024
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.06995544864657421,
+          -0.3357035006651103,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.9619585700746383,
+          1.2990893903490055,
+          0.04300000000000001,
+          0.6627473041203218
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "PREGRASP",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04300000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.058916666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04408333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.057833333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.045166666666666674,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.056749999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04625000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05566666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.047333333333333345,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05458333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04841666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05349999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.049500000000000016,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05241666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05058333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05133333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05166666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.050249999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05275000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.049166666666666664,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.053833333333333344,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04808333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.054916666666666676,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.047,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05600000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04591666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05708333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.044833333333333336,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05816666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04375,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05925000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.042666666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06033333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04158333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.061416666666666675,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.040499999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06250000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03941666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06358333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03833333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06466666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03725,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06575,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.036166666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06683333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.035083333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06791666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.034,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.069,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03291666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07008333333333333,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03183333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07116666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.030750000000000003,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07225000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.029666666666666668,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07333333333333333,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.028583333333333336,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07441666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.0275,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07550000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.026416666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07658333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.025333333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07766666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.02425,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07875000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.023166666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07983333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.02208333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08091666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.020999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08200000000000002,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.019916666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08308333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.018833333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08416666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.017750000000000002,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08525,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.016666666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08633333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.015583333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08741666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.014499999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08850000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.013416666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08958333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.012333333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09066666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.01125,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09175000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.010166666666666668,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09283333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.009083333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09391666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "DESCENT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.008,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.095,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "unheld",
+        "event": null
+      },
+      {
+        "phase": "GRASP_CLOSE",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.008,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.095,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "unheld",
+        "event": "GRIPPER_CLOSE_COMPLETE"
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.008,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.095,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": "OBJECT_ATTACHED"
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.009083333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09391666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.010166666666666668,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09283333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.01125,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09175000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.012333333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.09066666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.013416666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08958333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.014499999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08850000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.015583333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08741666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.016666666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08633333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.017750000000000002,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08525,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.018833333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08416666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.019916666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08308333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.020999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08200000000000002,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.02208333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.08091666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.023166666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07983333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.02425,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07875000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.025333333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07766666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.026416666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07658333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.0275,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07550000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.028583333333333336,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07441666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.029666666666666668,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07333333333333333,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.030750000000000003,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07225000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03183333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07116666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03291666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.07008333333333333,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.034,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.069,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.035083333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06791666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.036166666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06683333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03725,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06575,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03833333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06466666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.03941666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06358333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.040499999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06250000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04158333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.061416666666666675,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.042666666666666665,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.06033333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04375,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05925000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.044833333333333336,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05816666666666667,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04591666666666667,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05708333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.047,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05600000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.04808333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.054916666666666676,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.049166666666666664,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.053833333333333344,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.050249999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05275000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05133333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05166666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05241666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.05058333333333335,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05349999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.049500000000000016,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05458333333333333,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04841666666666668,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.05566666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.047333333333333345,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.056749999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04625000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.057833333333333334,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.045166666666666674,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.058916666666666666,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04408333333333334,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "LIFT",
+        "pose_xyzyaw": [
+          0.0683324857920322,
+          -0.3279151965049615,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.988758422245474,
+          1.359469227607514,
+          0.04300000000000001,
+          0.629167319032649
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.0703725095889893,
+          -0.33770490042836226,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.954873866868382,
+          1.283185660648953,
+          0.04300000000000001,
+          0.6715663306141182
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.08455504311725687,
+          -0.33411571052734906,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.9135323741955292,
+          1.2856108191156495,
+          0.04300000000000001,
+          0.6277996794745688
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.09873757664552443,
+          -0.33052652062633586,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.8700288619388665,
+          1.2831856606489533,
+          0.04300000000000001,
+          0.5867213256846022
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.11256493346186826,
+          -0.3257483677510628,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.8286873692660128,
+          1.2856108191156495,
+          0.04300000000000001,
+          0.5429546745450524
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.12639229027821208,
+          -0.32097021487578975,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.7851838570093501,
+          1.283185660648953,
+          0.04300000000000001,
+          0.5018763207550863
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.13976499143458662,
+          -0.31503747476617194,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.7438423643364969,
+          1.2856108191156495,
+          0.04300000000000001,
+          0.45810966961553645
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.15313769259096116,
+          -0.30910473465655414,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.7003388520798342,
+          1.283185660648953,
+          0.04300000000000001,
+          0.4170313158255703
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.16595953009467262,
+          -0.3020600895658212,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.658997359406981,
+          1.2856108191156495,
+          0.04300000000000001,
+          0.3732646646860205
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.1787813675983841,
+          -0.2950154444750883,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.6154938471503182,
+          1.2831856606489531,
+          0.04300000000000001,
+          0.3321863108960541
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.1909600965667828,
+          -0.2869095760983963,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.574152354477465,
+          1.2856108191156497,
+          0.04300000000000001,
+          0.2884196597565043
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2031388255351815,
+          -0.2788037077217043,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.5306488422208022,
+          1.2831856606489531,
+          0.04300000000000001,
+          0.24734130596653814
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.21458682783832417,
+          -0.26969493257390265,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.489307349547949,
+          1.2856108191156497,
+          0.04300000000000001,
+          0.20357465482698833
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.22603483014146686,
+          -0.260586157426101,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.445803837291286,
+          1.2831856606489531,
+          0.04300000000000001,
+          0.16249630103702195
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.23666974475826574,
+          -0.2505400072918771,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.4044623446184328,
+          1.2856108191156495,
+          0.04300000000000001,
+          0.11872964989747237
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.24730465937506463,
+          -0.24049385715765323,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.3609588323617698,
+          1.283185660648953,
+          0.04300000000000001,
+          0.07765129610750598
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.25704997492791637,
+          -0.2295826076324469,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.3196173396889166,
+          1.2856108191156492,
+          0.04300000000000001,
+          0.0338846449679564
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.26679529048076805,
+          -0.21867135810724056,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.2761138274322539,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.007193708822010203
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2755808956857559,
+          -0.20697350862077257,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.2347723347594008,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.050960359961559565
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2843665008907437,
+          -0.19527565913430456,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.191268822502738,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.09203871375152617
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.292129188963278,
+          -0.18287536819761668,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.1499273298298849,
+          1.2856108191156497,
+          0.04300000000000001,
+          -0.13580536489107575
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2998918770358123,
+          -0.17047507726092884,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.106423817573222,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.17688371868104213
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.30657580042283455,
+          -0.15746155699996997,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.0650823249003687,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.22065036982059172
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3132597238098568,
+          -0.1444480367390111,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -1.0215788126437058,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.2617287236105583
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3188167959771009,
+          -0.13091491107071074,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.9802373199708526,
+          1.2856108191156497,
+          0.04300000000000001,
+          -0.305495374750108
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.32437386814434505,
+          -0.11738178540241039,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.9367338077141896,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.3465737285400743
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.32876410952805546,
+          -0.10342641647075096,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.8953923150413367,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.39034037967962376
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.33315435091176593,
+          -0.08947104753909155,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.8518888027846737,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.43141873346959014
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.33634617654597143,
+          -0.07519383525703882,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.8105473101118207,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.4751853846091397
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.339538002180177,
+          -0.06091662297498609,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.7670437978551577,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.5162637383991061
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.34150844893022697,
+          -0.046420282711623496,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.7257023051823046,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.5600303895386558
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.34347889568027695,
+          -0.031923942448260904,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.6821987929256417,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.6011087433286224
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.34421378744784126,
+          -0.017312766057705112,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.6408573002527885,
+          1.2856108191156497,
+          0.04300000000000001,
+          -0.6448753944681721
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3449486792154056,
+          -0.0027015896671493227,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5973537879961256,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.6859537482581383
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3444427289263937,
+          0.011919304824331619,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5560122953232726,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.7297203993976878
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3439367786373818,
+          0.026540199315812557,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5125087830666097,
+          1.2831856606489531,
+          0.04300000000000001,
+          -0.7707987531876543
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3421936262790438,
+          0.04106562396645839,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4711672903937566,
+          1.2856108191156495,
+          0.04300000000000001,
+          -0.8145654043272038
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3404504739207059,
+          0.05559104861710422,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.42766377813709366,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.8556437581171702
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.337482660354263,
+          0.06991650232931898,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.3863222854642404,
+          1.2856108191156492,
+          0.04300000000000001,
+          -0.8994104092567198
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3345148467878201,
+          0.08424195604153373,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.3428187732075775,
+          1.283185660648953,
+          0.04300000000000001,
+          -0.9404887630466864
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.33034372352502595,
+          0.09826437638013955,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.3014772805347244,
+          1.2856108191156492,
+          0.04300000000000001,
+          -0.9842554141862359
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3261726002622317,
+          0.11228679671874536,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.2579737682780616,
+          1.2831856606489531,
+          0.04300000000000001,
+          -1.0253337679762025
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3208281758549636,
+          0.1259053013789849,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.21663227560520842,
+          1.2856108191156497,
+          0.04300000000000001,
+          -1.0691004191157523
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3154837514476955,
+          0.13952380603922443,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.17312876334854566,
+          1.2831856606489531,
+          0.04300000000000001,
+          -1.1101787729057184
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.3090044755957049,
+          0.15264041863012534,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.13178727067569246,
+          1.2856108191156495,
+          0.04300000000000001,
+          -1.153945424045268
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.30252519974371417,
+          0.16575703122102628,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.08828375841902947,
+          1.2831856606489533,
+          0.04300000000000001,
+          -1.1950237778352348
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.294957686673741,
+          0.17827738614258315,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.046942265746176326,
+          1.2856108191156497,
+          0.04300000000000001,
+          -1.2387904289747844
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.28739017360376784,
+          0.19079774106414005,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.003438753489513502,
+          1.2831856606489531,
+          0.04300000000000001,
+          -1.2798687827647506
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2787888667101296,
+          0.20263176240717562,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.03790273918333975,
+          1.2856108191156495,
+          0.04300000000000001,
+          -1.3236354339043002
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2701875598164914,
+          0.2144657837502112,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.08140625144000269,
+          1.283185660648953,
+          0.04300000000000001,
+          -1.3647137876942665
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2606143399758416,
+          0.22552833333466765,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.12274774411285594,
+          1.285610819115649,
+          0.04300000000000001,
+          -1.408480438833816
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.25104112013519175,
+          0.23659088291912408,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.16625125636951876,
+          1.283185660648953,
+          0.04300000000000001,
+          -1.4495587926237827
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.2405648605133714,
+          0.24680237280856654,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.2075927490423719,
+          1.2856108191156492,
+          0.04300000000000001,
+          -1.493325443763332
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "TRANSFER",
+        "pose_xyzyaw": [
+          0.230088600891551,
+          0.25701386269800897,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.25109626129903473,
+          1.283185660648953,
+          0.04300000000000001,
+          -1.5344037975532987
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.22482752578010712,
+          0.25113712986075787,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.22421292958526695,
+          1.3436605805129882,
+          0.04300000000000001,
+          -1.5679953857035662
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.21956645066866326,
+          0.24526039702350672,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.19846550673182117,
+          1.4019287106927518,
+          0.04300000000000001,
+          -1.600516093029884
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.21430537555721937,
+          0.2393836641862556,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.17373390028268465,
+          1.4582618600243231,
+          0.04300000000000001,
+          -1.6321176359123188
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.2090443004457755,
+          0.23350693134900447,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.14992138015500778,
+          1.5128834540486984,
+          0.04300000000000001,
+          -1.662926709809017
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.20378322533433163,
+          0.22763019851175337,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.12694936937672174,
+          1.5659798929320468,
+          0.04300000000000001,
+          -1.6930511379140794
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.19852215022288774,
+          0.22175346567450224,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.10475374383469593,
+          1.6177087096662657,
+          0.04300000000000001,
+          -1.7225843291062726
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.19326107511144386,
+          0.21587673283725112,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.08328215951373164,
+          1.6682045670183714,
+          0.04300000000000001,
+          -1.751608602137414
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PREPLACE",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.059,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04400000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.057999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.056999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.055999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.047000000000000014,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05499999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.048000000000000015,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05399999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.049000000000000016,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05299999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05000000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.052,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.051000000000000004,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.052000000000000005,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.053000000000000005,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.049,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.054000000000000006,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.048,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.047,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.046,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.045,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.044,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.043,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06000000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.041999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.040999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06200000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.039999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03899999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06400000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03799999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06500000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03699999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06600000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.036,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.067,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.035,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.068,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.034,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.069,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.033,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.032,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.031,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07200000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.028999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07400000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.027999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.026999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.025999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.024999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.023999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.023,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08000000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.022,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08100000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.020999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08200000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.019999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08300000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.018999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08400000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.017999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08500000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.016999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08600000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.015999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.014999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.013999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.012999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.09000000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "PLACE_DESCENT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.011999999999999997,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.09100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": null
+      },
+      {
+        "phase": "RELEASE",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.012,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.09100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.01599829384550551,
+        "payload_mode": "carried",
+        "event": "RELEASE_BEGIN"
+      },
+      {
+        "phase": "RELEASE",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.012,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.09100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": "OBJECT_RELEASED"
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.013000000000000001,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.09000000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.014,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.015,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.016,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.017,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.018000000000000002,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.085,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.019000000000000003,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.084,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.02,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.083,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.020999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08200000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.022,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08100000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.023,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.08000000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.024,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.025,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.026000000000000002,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.027000000000000003,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.028,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.028999999999999998,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07400000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.031,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07200000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.032,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.033,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.07,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.034,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.069,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.035,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.068,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.036,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.067,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03699999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06600000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03799999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06500000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.03899999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06400000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.039999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.040999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06200000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.041999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.043,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.06000000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.044,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05900000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.045,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05800000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.046,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05700000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.047,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.048,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.049,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.054000000000000006,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.053000000000000005,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.051000000000000004,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.052000000000000005,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.052,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05100000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05299999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.05000000000000002,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05399999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.049000000000000016,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.05499999999999999,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.048000000000000015,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.055999999999999994,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.047000000000000014,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.056999999999999995,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04600000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.057999999999999996,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04500000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.059,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04400000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "RETREAT",
+        "pose_xyzyaw": [
+          0.188,
+          0.21,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.06249210167270702,
+          1.7175837558597928,
+          0.04300000000000001,
+          -1.7801977331378107
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.19360475223356277,
+          0.2162606274949371,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.08466355983652263,
+          1.664941216388119,
+          0.04300000000000001,
+          -1.7497266518299526
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.19920950446712551,
+          0.2225212549898742,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.10761144714194837,
+          1.6110230925016935,
+          0.04300000000000001,
+          -1.718756415248953
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.20481425670068826,
+          0.22878188248481132,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.1313882753852761,
+          1.5556867355653081,
+          0.04300000000000001,
+          -1.687196886555895
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.210419008934251,
+          0.23504250997974843,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.15605951797491824,
+          1.498765132120841,
+          0.04300000000000001,
+          -1.6549465257010703
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.21602376116781374,
+          0.24130313747468557,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.18170643495602312,
+          1.4400604252377733,
+          0.04300000000000001,
+          -1.6218887357991074
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.22162851340137651,
+          0.24756376496962268,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.2084300318700404,
+          1.3793350745999187,
+          0.04300000000000001,
+          -1.5878869820752701
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.22723326563493926,
+          0.2538243924645598,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.23635668384426833,
+          1.316299504841971,
+          0.04300000000000001,
+          -1.5527780642915503
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.232838017868502,
+          0.2600850199594969,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.26564629588742383,
+          1.2505943657862246,
+          0.04300000000000001,
+          -1.5163625372789595
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.23844277010206477,
+          0.266345647454434,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.296504482982372,
+          1.1817642161792403,
+          0.04300000000000001,
+          -1.4783905747669233
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.24404752233562754,
+          0.2726062749493711,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.32920141982077034,
+          1.1092169422602638,
+          0.04300000000000001,
+          -1.438540237686345
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.24965227456919029,
+          0.27886690244430823,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.36410237746775326,
+          1.0321581443033203,
+          0.04300000000000001,
+          -1.3963823973763845
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.25525702680275303,
+          0.28512752993924534,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.4017201644054152,
+          0.9494785660312207,
+          0.04300000000000001,
+          -1.351320606041947
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.26699504086929915,
+          0.2736760662113137,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.35721940614374204,
+          0.9530688035016405,
+          0.04300000000000001,
+          -1.3104100852506935
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.2787330549358452,
+          0.262224602483382,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.3159923582318151,
+          0.9494785660312209,
+          0.04300000000000001,
+          -1.265592799868347
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.2894474557396402,
+          0.24981015077763966,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.27149159997014155,
+          0.9530688035016414,
+          0.04300000000000001,
+          -1.224682279077094
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3001618565434352,
+          0.23739569907189734,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.23026455205821478,
+          0.9494785660312207,
+          0.04300000000000001,
+          -1.1798649936947465
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3097739494153611,
+          0.2241094405180365,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.1857637937965413,
+          0.9530688035016409,
+          0.04300000000000001,
+          -1.1389544729034933
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.31938604228728706,
+          0.21082318196417563,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.14453674588461446,
+          0.9494785660312207,
+          0.04300000000000001,
+          -1.094137187521146
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3278252287420027,
+          0.19676270090124204,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.10003598762294091,
+          0.9530688035016414,
+          0.04300000000000001,
+          -1.0532266667298933
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3362644151967184,
+          0.18270221983830848,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.05880893971101425,
+          0.9494785660312207,
+          0.04300000000000001,
+          -1.0084093813475459
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3434687114613708,
+          0.16797078708145538,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          0.014308181449340762,
+          0.9530688035016414,
+          0.04300000000000001,
+          -0.9674988605562931
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3506730077260233,
+          0.15323935432460228,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.02691886646258601,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.9226815751739459
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.35658949999599054,
+          0.1379451686660591,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.0714196247242595,
+          0.9530688035016414,
+          0.04300000000000001,
+          -0.8817710543826929
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.36250599226595775,
+          0.12265098300751592,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.11264667263618622,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.8369537690003457
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3670912253438797,
+          0.10690637652276373,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.15714743089785999,
+          0.9530688035016416,
+          0.04300000000000001,
+          -0.7960432482090926
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37167645842180175,
+          0.09116177003801154,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.1983744788097866,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.7512259628267453
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37489675488544055,
+          0.07508238303399782,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.24287523707146,
+          0.9530688035016409,
+          0.04300000000000001,
+          -0.7103154420354919
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37811705134907936,
+          0.0590029960299841,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.28410228498338674,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.6654981566531449
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3799487589037982,
+          0.042706927695181515,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.3286030432450602,
+          0.9530688035016409,
+          0.04300000000000001,
+          -0.6245876358618917
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3817804664585171,
+          0.02641085936037893,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.369830091156987,
+          0.9494785660312209,
+          0.04300000000000001,
+          -0.5797703504795448
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.38221013165763446,
+          0.010017800354957238,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4143308494186604,
+          0.9530688035016409,
+          0.04300000000000001,
+          -0.5388598296882915
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3826397968567518,
+          -0.006375258650464455,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4555578973305871,
+          0.9494785660312207,
+          0.04300000000000001,
+          -0.4940425443059446
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.3776404907057167,
+          -0.006291963943412257,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.4783048116434576,
+          0.9994300228742492,
+          0.04300000000000001,
+          -0.5212470868361025
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.283063431574275
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.5473194268018051
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.3612519211173915
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.46913093725868893
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.439440410660508
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.39094244771557274
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.517628900203624
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.31275395817245655
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.595817389746739
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.23456546862934213
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.674005879289855
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.15637697908622594
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.7521943688329715
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          -0.07818848954310975
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_RETURN",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06,
+          6.830382858376088
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04300000000000001,
+          6.439293542825908e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.061710968586988525,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.04128903141301148,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06342193717397705,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.039578062826022956,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06513290576096559,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03786709423903442,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06684387434795411,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.0361561256520459,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.06855484293494263,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03444515706505738,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07026581152193115,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03273418847806886,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07197678010891967,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.03102321989108034,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.0736877486959082,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.029312251304091805,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07539871728289674,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02760128271710327,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07710968586988526,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02589031413011475,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.07882065445687378,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02417934554312623,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.0805316230438623,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02246837695613771,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08224259163085082,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.02075740836914919,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08395356021783935,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.019046439782160654,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08566452880482789,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.01733547119517212,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      },
+      {
+        "phase": "SAFE_HOME",
+        "pose_xyzyaw": [
+          0.37264118455468165,
+          -0.0062086692363600565,
+          0.08737549739181641,
+          0.5471975511965015
+        ],
+        "q": [
+          -0.5000000000000684,
+          1.0471975511965625,
+          0.0156245026081836,
+          7.327471962526033e-15
+        ],
+        "branch_id": "ELBOW_POSITIVE",
+        "symmetry_index": 3,
+        "gripper_m": 0.0,
+        "payload_mode": "placed",
+        "event": null
+      }
+    ],
+    "events": [
+      {
+        "time_s": 34.798690540544214,
+        "event": "GRIPPER_CLOSE_COMPLETE",
+        "phase": "GRASP_CLOSE",
+        "track_id": 3,
+        "slot_id": "BLUE:0",
+        "details": {
+          "payload_mode": "unheld",
+          "gripper_m": 0.01599829384550551,
+          "resolved_tool_yaw_rad": 6.283063431574275
+        }
+      },
+      {
+        "time_s": 34.798690540544214,
+        "event": "OBJECT_ATTACHED",
+        "phase": "LIFT",
+        "track_id": 3,
+        "slot_id": "BLUE:0",
+        "details": {
+          "payload_mode": "carried",
+          "gripper_m": 0.01599829384550551,
+          "resolved_tool_yaw_rad": 6.283063431574275
+        }
+      },
+      {
+        "time_s": 73.238762530987,
+        "event": "RELEASE_BEGIN",
+        "phase": "RELEASE",
+        "track_id": 3,
+        "slot_id": "BLUE:0",
+        "details": {
+          "payload_mode": "carried",
+          "gripper_m": 0.01599829384550551,
+          "resolved_tool_yaw_rad": 6.283063431574275
+        }
+      },
+      {
+        "time_s": 79.20464661259876,
+        "event": "OBJECT_RELEASED",
+        "phase": "RELEASE",
+        "track_id": 3,
+        "slot_id": "BLUE:0",
+        "details": {
+          "payload_mode": "placed",
+          "gripper_m": 0.0,
+          "resolved_tool_yaw_rad": 6.283063431574275
+        }
+      }
+    ],
+    "duration_s": 114.36565581782341,
+    "path_length_m": 2.1050562559712067,
+    "minimum_clearance_m": 0.05,
+    "clearance_lower_bound_m": 0.002999999999999975,
+    "minimum_clearance_phase": "INITIAL_APPROACH",
+    "vertical_xy_error_max_m": 0.0,
+    "vertical_yaw_error_max_rad": 8.881784197001252e-16,
+    "maximum_abs_velocity_ratio": 0.6630413565404394,
+    "maximum_abs_acceleration_ratio": 0.9611679921019992,
+    "planner_strategy": "deterministic radial-ring transfer + vertical Cartesian contact segments",
+    "collision_sample_step_m": 0.001
+  },
+  "diagnostics": {
+    "attempts": [],
+    "sample_count": 15787,
+    "maximum_swept_step_bound_m": 0.0009999551146119426,
+    "collision_sample_step_m": 0.001,
+    "clearance_metric_note": "minimum_clearance_m is the nearest signed distance among narrow-phase pairs, capped by SSOT; clearance_lower_bound_m is the conservative bound over all checked pairs.",
+    "joint_metric": "Euclidean L2 over M3 characteristic joint spans",
+    "singularity_penalty_weight": 0.02,
+    "ring_directions": [
+      0,
+      0,
+      0
+    ],
+    "slot_reservation_owner": "M6; availability is caller supplied"
+  }
+}

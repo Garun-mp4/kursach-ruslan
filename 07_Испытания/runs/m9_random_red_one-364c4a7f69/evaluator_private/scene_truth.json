@@ -1,0 +1,23 @@
+{
+  "scenario_id": "m9_random_red_one",
+  "seed": 20261009,
+  "active_objects": [
+    {
+      "body_name": "object_red_01",
+      "class_label": "RED",
+      "initial_xy_m": [
+        0.043788840919644495,
+        -0.19873052105046096
+      ],
+      "yaw_rad": 0.5303306189505701
+    }
+  ],
+  "initial_slot_occupants": [],
+  "inactive_bodies": [
+    "object_green_01",
+    "object_blue_01",
+    "object_red_02",
+    "object_green_02",
+    "object_blue_02"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "M9-campaign-metadata-v1",
+  "campaign_id": "M9-RC-2026-01",
+  "campaign_sha256": "be7bb93f56c04ad2ea1d7cfee033c52ab6182fb09988b5dce8321c625445a765",
+  "protocol_path": "07_Испытания/campaign.yaml",
+  "software_revision": "ffb3727d2c163b085c5957c2ee1e5f053700cb15",
+  "started_utc": "2026-09-27T07:18:06.798688+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+  "runtime": {
+    "python": "3.12.10",
+    "mujoco": "3.14.0",
+    "physics_profile": "nominal",
+    "max_simulation_time_s": 900.0,
+    "record_video_during_trials": false,
+    "scenario_seed_controls_scene_and_noise_seed_unless_overridden": true
+  },
+  "independent_units": {
+    "V03_RANDOM_MIXED": "seeded three-object batch",
+    "V07_RGB_NOISE": "paired seed, one randomized red object per level",
+    "V10_GRIP_FRICTION": "same scene seeds paired against V07_RGB_NOISE/sigma_0"
+  },
+  "commands_are_saved_per_trial": true,
+  "finished_utc": "2026-09-27T11:00:03.213820+00:00",
+  "state_file": "07_Испытания/campaign_state.jsonl"
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": "M8-recording-manifest-v1",
+  "run_id": "single_red_center-2d771e58cc",
+  "scenario_id": "single_red_center",
+  "scenario_seed": 20260925,
+  "controller_final_state": "DONE",
+  "source_run_directory": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc",
+  "source_state_stream": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/evaluator_private/recording/state_stream.npz",
+  "source_state_stream_sha256": "c0c5f96771dcab3a9b37c244d7d40b726b1471844ced60e93a34a61bb078b7f7",
+  "source_run_manifest": {
+    "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/evaluator_private/recording/source_run_manifest.json",
+    "sha256": "c7eaf37f04778b40fb421ecf97975247adf5b81b8e720dd5178c75b3975c8c09"
+  },
+  "source_run_manifest_sha256": "c7eaf37f04778b40fb421ecf97975247adf5b81b8e720dd5178c75b3975c8c09",
+  "source_input_hashes_sha256": {
+    "ssot": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95",
+    "mjcf": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "runtime_config": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "scenario": "00672fa4d151b1bf2aef1596a0430e164a17753fa1276a3f997b2c193b2152e5",
+    "perception_config": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "camera_calibration": "035e5fd2a7af3e17c43bede7320b8c06a17986faeaae14b03be3b542928e02da",
+    "background_reference": "f40946e44bd5b10fd7d133b793a46462311e1f64760a979ae8d99862d3c5573f",
+    "placement_camera_calibration": "6e9502952a8a71d07882a6ea341a39f80f6a8cf912e076b687b136c6fde6715a",
+    "placement_camera_background": "16f4911760fee24f13a5eaf55d0d3144fb33ce02aa87a3fa9a7016c79a446571",
+    "runner": "733ebfd17d1bc12952a0d59b6e848f873e19d550dfdce6763825c4cb700c7897",
+    "placement_camera_model": "37f3d65de1afb9adc1aa56aec1455f4854569d0dfa95859df5dc360d2c18f91a",
+    "placement_camera_asset_builder": "ac1ec72c576f519e101ff2e5ac8233ab09e08583d9880397bd717409ba15663c",
+    "runtime": "2c9ee923ec417682567e89b9c9fbe919591ff7d7573b7ea22aed5347c38c2ebd",
+    "recording": "a561be7edcd04c9cf543c20041a34d08dfe000852f942e1f34d6eb83cfc379d5",
+    "actuator": "466c46b1760fd728b8835d347e9b1247784b96615c5610dd987295d4f99409d2",
+    "scene_generator": "77b11504a0ec7cb905c104ebe8ff48cc3017971b9cf2a8022ff6c7b07118ccf0",
+    "sensor_adapter": "cefd483bbbfb893c5c9dd51b88a3f137e195bb72843d4d900fb5e509a4f6e737",
+    "placement_adapter": "8a5a7603997fd5b3af68181852828f4ee55c698b2f3f308a5a9b004df1c63d62",
+    "interactive_display": "503401202871c56a3f421238388a92d5161d899478d2801c155c1770345ca8f0",
+    "controller": "34d2976bf3e3ab4125c2229714fd89b01bfa9837bf28f110669493872c06bcac",
+    "planner": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+    "perception": "399663fdb42d4dc2766e3d6ef0dfeaa2fe008b6c12d7efb3d1215c0d4ae4ee30",
+    "evaluator": "99dc56780397600a56bf7c3a07124a6589af465169ac261ddcb4206cf93018b2",
+    "evaluator_telemetry": "d6b3ddff9919189e7aa69d738b72b86a6da616764dbfee921fff787556b8b53b",
+    "m7_integrated_model": "a9fcb542d428ca3a8408b0af30728ae81d097d1379311af4d543742be1b096ee"
+  },
+  "source_logs": {
+    "controller_events": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/controller_events.jsonl",
+      "sha256": "38e56d5f5357523d9574ba95743a487ffc32dc2d407b968beb41813e05ed0da8"
+    },
+    "controller_telemetry": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/telemetry.csv",
+      "sha256": "e325ccb902a08937a9d0582292ad8eb6f2c489ba1871c281d65df67b85543f16"
+    },
+    "perception_snapshots": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/perception_snapshots.jsonl",
+      "sha256": "985ee4b14b6643bd8cc71546287d8f23bc844e58ece24a18a21eebc487546f08"
+    },
+    "evaluator_object_telemetry": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/evaluator/object_telemetry.csv",
+      "sha256": "0ac8958dceee08b8b3b1f223e6671335faae4c4aadf231ab74100a5bb0256e5d"
+    },
+    "evaluator_contact_events": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/evaluator/contact_events.jsonl",
+      "sha256": "406ed248a8daf8bc6819ce09c869248f3c4d52f6935b75bb683e37cd33dbc05a"
+    },
+    "m5_plan_samples": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/plans",
+      "file_count": 2,
+      "files": [
+        {
+          "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/plans/m5_plan_2.csv",
+          "sha256": "b7100f0b5b062bd8ead926251afe8460e6513294d318d4b6893b1e55db09d647"
+        },
+        {
+          "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/controller/plans/m5_plan_2.json",
+          "sha256": "2766e8f244f3f2b644f524fdd9bed650263803c5adfdd0bcc5a33e0158faa58e"
+        }
+      ]
+    },
+    "evaluator_report": {
+      "path": "07_Испытания/recording_parity/runs/single_red_center-2d771e58cc/evaluator/report.json",
+      "sha256": "030ab840f71a14baff40c762d00de81acc0efe606f9a9d8f8142cb905cc43bf0"
+    }
+  },
+  "spectator_cameras": {
+    "main": {
+      "type": "free camera",
+      "lookat_world_m": [
+        0.0,
+        0.045,
+        0.19
+      ],
+      "distance": 1.27,
+      "azimuth_deg": 135.0,
+      "elevation_deg": -39.0
+    },
+    "top": {
+      "type": "free camera",
+      "lookat_world_m": [
+        0.0,
+        0.045,
+        0.0
+      ],
+      "distance": 1.22,
+      "azimuth_deg": 90.0,
+      "elevation_deg": -89.5
+    },
+    "close": {
+      "type": "free camera tracking the rendered TCP site",
+      "distance": 0.45,
+      "azimuth_deg": 45.0,
+      "elevation_deg": -75.0
+    },
+    "independent_of_sensor_views": true
+  },
+  "video": {
+    "path": "06_Медиа/M9/single_red_center-2d771e58cc/симуляция.mp4",
+    "sha256": "5bbed6c8d5d26fe15bfdb387c11e5eb5c1a2132a015191d2dc23abf8bb9017a3",
+    "container": "MP4",
+    "codec_fourcc": "mp4v",
+    "codec_note": "H.264 avc1 was attempted first but unavailable in the installed OpenCV build; verified MPEG-4 Part 2 mp4v fallback was used.",
+    "fps": 25,
+    "resolution_px": [
+      1280,
+      720
+    ],
+    "playback_speed_nominal": 5.0,
+    "playback_speed_effective": 4.988196125909771,
+    "source_simulation_time_start_s": 0.0,
+    "source_simulation_time_end_s": 164.81000000005884,
+    "source_simulation_duration_s": 164.81000000005884,
+    "encoded_video_duration_s": 33.04,
+    "frame_count": 826,
+    "decoded_frame_count": 826,
+    "dropped_frames": 0,
+    "frame_schedule": "Fixed 0.2 s simulation sampling at 25 fps / 5x; exact terminal state is appended if off-grid.",
+    "decode_verification": {
+      "decoded_frame_count": 826,
+      "fps": 25.0,
+      "width": 1280,
+      "height": 720,
+      "first_frame_mean_bgr": [
+        108.018505859375,
+        105.63530164930556,
+        100.63334201388889
+      ],
+      "last_frame_mean_bgr": [
+        108.2561501736111,
+        105.85478515625,
+        101.02264539930556
+      ]
+    }
+  },
+  "keyframes": [
+    {
+      "label": "before_detection",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/before_detection.png",
+      "simulation_time_s": 0.0,
+      "controller_state": "INIT",
+      "nearest_video_frame_index": 0,
+      "nearest_frame_time_s": 0.0,
+      "nearest_frame_delta_s": 0.0,
+      "event_ids": []
+    },
+    {
+      "label": "detection",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/detection.png",
+      "simulation_time_s": 0.020000000000000004,
+      "controller_state": "PLAN",
+      "nearest_video_frame_index": 0,
+      "nearest_frame_time_s": 0.0,
+      "nearest_frame_delta_s": 0.020000000000000004,
+      "event_ids": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "label": "final",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/final.png",
+      "simulation_time_s": 164.81000000005884,
+      "controller_state": "DONE",
+      "nearest_video_frame_index": 825,
+      "nearest_frame_time_s": 164.81000000005884,
+      "nearest_frame_delta_s": 0.0,
+      "event_ids": [
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "label": "grasp",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/grasp.png",
+      "simulation_time_s": 32.38999999999362,
+      "controller_state": "GRASP",
+      "nearest_video_frame_index": 162,
+      "nearest_frame_time_s": 32.39999999999363,
+      "nearest_frame_delta_s": 0.010000000000012221,
+      "event_ids": [
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "label": "release",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/release.png",
+      "simulation_time_s": 101.20999999994552,
+      "controller_state": "RELEASE",
+      "nearest_video_frame_index": 506,
+      "nearest_frame_time_s": 101.19999999994555,
+      "nearest_frame_delta_s": 0.009999999999976694,
+      "event_ids": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "label": "transfer",
+      "image": "06_Медиа/M9/single_red_center-2d771e58cc/кадры/transfer.png",
+      "simulation_time_s": 44.71000000000868,
+      "controller_state": "TRANSFER",
+      "nearest_video_frame_index": 224,
+      "nearest_frame_time_s": 44.80000000000879,
+      "nearest_frame_delta_s": 0.09000000000010999,
+      "event_ids": [
+        26,
+        27,
+        28,
+        29
+      ]
+    }
+  ],
+  "ground_truth_separation": "HUD fields are derived only from public controller state/track records. Evaluator ground truth is not passed to the controller or HUD. The rendered viewer uses the recorded physical state solely to draw the same run.",
+  "created_from_recorded_run_states": true,
+  "physical_prototype_or_physical_test": false,
+  "recording_manifest": "06_Медиа/M9/single_red_center-2d771e58cc/Запись_и_связанные_логи.json"
+}

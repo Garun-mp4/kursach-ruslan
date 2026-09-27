@@ -1,0 +1,39 @@
+{
+  "scenario_id": "m9_random_mixed_three",
+  "seed": 20261023,
+  "active_objects": [
+    {
+      "body_name": "object_red_01",
+      "class_label": "RED",
+      "initial_xy_m": [
+        -0.06472763102298583,
+        -0.1992474100680744
+      ],
+      "yaw_rad": 0.588103429988547
+    },
+    {
+      "body_name": "object_blue_01",
+      "class_label": "BLUE",
+      "initial_xy_m": [
+        -0.03484660933913193,
+        -0.2668860537260757
+      ],
+      "yaw_rad": -0.29532949733100083
+    },
+    {
+      "body_name": "object_green_01",
+      "class_label": "GREEN",
+      "initial_xy_m": [
+        0.008819924581264516,
+        -0.29719013282411944
+      ],
+      "yaw_rad": 0.4587051637017745
+    }
+  ],
+  "initial_slot_occupants": [],
+  "inactive_bodies": [
+    "object_red_02",
+    "object_green_02",
+    "object_blue_02"
+  ]
+}

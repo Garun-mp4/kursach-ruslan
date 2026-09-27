@@ -1,0 +1,139 @@
+{
+  "schema_version": "M7-evaluator-v1.1",
+  "run_id": "m9_random_mixed_three-88a0983a19",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 399.71000000118045,
+  "controller_final_state": "DONE",
+  "controller_track_records": {
+    "1": {
+      "class_label": "BLUE",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    },
+    "2": {
+      "class_label": "RED",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    },
+    "3": {
+      "class_label": "GREEN",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    }
+  },
+  "controller_reports_done": true,
+  "controller_confirmed_track_count": 3,
+  "controller_all_tracks_confirmed": true,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.24961357360970415,
+        0.20869141195514643,
+        0.011947044595649815
+      ],
+      "linear_velocity_m_s": [
+        -1.064631391588101e-18,
+        7.196564928090917e-18,
+        2.2372235566117133e-16
+      ],
+      "angular_velocity_rad_s": [
+        -5.073210915512488e-16,
+        7.52626104412874e-17,
+        -4.455622751320308e-18
+      ],
+      "nearest_slot_id": "RED:0",
+      "nearest_zone": "RED",
+      "horizontal_slot_error_m": 0.0027216600793328596,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    },
+    {
+      "body_name": "object_blue_01",
+      "ground_truth_class": "BLUE",
+      "final_xyz_m": [
+        0.18844744845874023,
+        0.20770730035840076,
+        0.011947014950155583
+      ],
+      "linear_velocity_m_s": [
+        -2.2036194198346553e-19,
+        2.402570558149119e-17,
+        2.2182215870670246e-16
+      ],
+      "angular_velocity_rad_s": [
+        -1.514635104749865e-15,
+        1.5560058614333232e-16,
+        1.345955305052233e-20
+      ],
+      "nearest_slot_id": "BLUE:0",
+      "nearest_zone": "BLUE",
+      "horizontal_slot_error_m": 0.002335954145487071,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    },
+    {
+      "body_name": "object_green_01",
+      "ground_truth_class": "GREEN",
+      "final_xyz_m": [
+        -0.029840967889202638,
+        0.2988401276537638,
+        0.01194702707915228
+      ],
+      "linear_velocity_m_s": [
+        -1.0200726506775488e-17,
+        2.6647704070394053e-18,
+        2.4944937941675707e-16
+      ],
+      "angular_velocity_rad_s": [
+        -5.68503097366394e-16,
+        8.8969521493927e-17,
+        -9.917954382608587e-19
+      ],
+      "nearest_slot_id": "GREEN:0",
+      "nearest_zone": "GREEN",
+      "horizontal_slot_error_m": 0.002450861790272477,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 162.84,
+      "bilateral_contact_samples": 1402,
+      "maximum_relative_slip_m": 0.0020552237
+    },
+    "object_blue_01": {
+      "ground_truth_color": "BLUE",
+      "first_bilateral_contact_time_s": 312.48,
+      "bilateral_contact_samples": 1133,
+      "maximum_relative_slip_m": 0.00228671684
+    },
+    "object_green_01": {
+      "ground_truth_color": "GREEN",
+      "first_bilateral_contact_time_s": 32.08,
+      "bilateral_contact_samples": 1279,
+      "maximum_relative_slip_m": 0.0017439182
+    }
+  },
+  "physical_sort_success_count": 3,
+  "physical_sort_failure_count": 0,
+  "all_active_objects_physically_sorted": true,
+  "controller_done_and_physical_success": true,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

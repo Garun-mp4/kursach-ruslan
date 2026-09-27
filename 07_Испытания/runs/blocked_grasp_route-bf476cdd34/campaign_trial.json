@@ -1,0 +1,302 @@
+{
+  "schema_version": "M9-trial-record-v1",
+  "trial_id": "v11_blocked_path",
+  "experiment_id": "v11_blocked_path",
+  "variant_id": "fixed",
+  "scenario": "blocked_grasp_route",
+  "scenario_dir": null,
+  "seed": null,
+  "expected_kind": "safe_skip",
+  "expected_reason": null,
+  "expected_track_status": null,
+  "expected_failure_reason": null,
+  "expected_object_outcomes": {
+    "object_green_01": "SKIPPED_UNREACHABLE",
+    "object_red_01": "SKIPPED_UNKNOWN",
+    "object_blue_01": "SKIPPED_UNKNOWN"
+  },
+  "required_perception_checks": {},
+  "tags": [
+    "V11",
+    "SAFE-003"
+  ],
+  "parameters": {},
+  "paired_control": null,
+  "campaign_id": "M9-RC-2026-01",
+  "campaign_sha256": "be7bb93f56c04ad2ea1d7cfee033c52ab6182fb09988b5dce8321c625445a765",
+  "software_revision": "ffb3727d2c163b085c5957c2ee1e5f053700cb15",
+  "started_utc": "2026-09-27T10:53:14.930587+00:00",
+  "finished_utc": "2026-09-27T10:53:35.142775+00:00",
+  "runner_returncode": 0,
+  "run_id": "blocked_grasp_route-bf476cdd34",
+  "run_manifest_sha256": "541015b140b225ca178a4c5e45329e80e18cd26378b6c178d59cb3a805951d7d",
+  "run_directory": "07_Испытания/runs/blocked_grasp_route-bf476cdd34",
+  "input_hashes_sha256": {
+    "ssot": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95",
+    "mjcf": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "runtime_config": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "scenario": "b10adfe502f05edf28c972c7567ecbf4279d88592fd76072e0e0492da0987214",
+    "perception_config": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "camera_calibration": "035e5fd2a7af3e17c43bede7320b8c06a17986faeaae14b03be3b542928e02da",
+    "background_reference": "f40946e44bd5b10fd7d133b793a46462311e1f64760a979ae8d99862d3c5573f",
+    "placement_camera_calibration": "6e9502952a8a71d07882a6ea341a39f80f6a8cf912e076b687b136c6fde6715a",
+    "placement_camera_background": "16f4911760fee24f13a5eaf55d0d3144fb33ce02aa87a3fa9a7016c79a446571",
+    "runner": "733ebfd17d1bc12952a0d59b6e848f873e19d550dfdce6763825c4cb700c7897",
+    "placement_camera_model": "37f3d65de1afb9adc1aa56aec1455f4854569d0dfa95859df5dc360d2c18f91a",
+    "placement_camera_asset_builder": "ac1ec72c576f519e101ff2e5ac8233ab09e08583d9880397bd717409ba15663c",
+    "runtime": "2c9ee923ec417682567e89b9c9fbe919591ff7d7573b7ea22aed5347c38c2ebd",
+    "recording": "a561be7edcd04c9cf543c20041a34d08dfe000852f942e1f34d6eb83cfc379d5",
+    "actuator": "466c46b1760fd728b8835d347e9b1247784b96615c5610dd987295d4f99409d2",
+    "scene_generator": "77b11504a0ec7cb905c104ebe8ff48cc3017971b9cf2a8022ff6c7b07118ccf0",
+    "sensor_adapter": "cefd483bbbfb893c5c9dd51b88a3f137e195bb72843d4d900fb5e509a4f6e737",
+    "placement_adapter": "8a5a7603997fd5b3af68181852828f4ee55c698b2f3f308a5a9b004df1c63d62",
+    "interactive_display": "503401202871c56a3f421238388a92d5161d899478d2801c155c1770345ca8f0",
+    "controller": "34d2976bf3e3ab4125c2229714fd89b01bfa9837bf28f110669493872c06bcac",
+    "planner": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+    "perception": "399663fdb42d4dc2766e3d6ef0dfeaa2fe008b6c12d7efb3d1215c0d4ae4ee30",
+    "evaluator": "99dc56780397600a56bf7c3a07124a6589af465169ac261ddcb4206cf93018b2",
+    "evaluator_telemetry": "d6b3ddff9919189e7aa69d738b72b86a6da616764dbfee921fff787556b8b53b",
+    "m7_integrated_model": "a9fcb542d428ca3a8408b0af30728ae81d097d1379311af4d543742be1b096ee"
+  },
+  "evidence_hashes_sha256": {
+    "controller/controller_events.jsonl": "92a5e5b91169669738a3b54eb626e70a6d63a7b6ab760e71421a31a68d5c1d80",
+    "controller/perception_snapshots.jsonl": "681a818140699c30ab8317a02059c4dfe8b8b80f9498b355b4af2663af338a47",
+    "controller/telemetry.csv": "9e17bc1e1e5a9b3b558c6ce4906f34e215fc819d937cd5c8be90842e5724ef54",
+    "evaluator/contact_events.jsonl": "66e78ade6523ebd7d870f60783454b355b24d16656ac8cb015c81db803e58ad1",
+    "evaluator/object_telemetry.csv": "83f8587fedce45cc86d3ca2600320479e9eb1bd8e4f6f2cab20afaf8f9efba66",
+    "evaluator/report.json": "798993d51402d3d28c9679dcc6ce8c9c6736b481abf0cb98854d464d773cc45d",
+    "evaluator_private/scene_truth.json": "a189da95f2b5a784046315a9c62a2ed672e54e22a8b3ae7cbc5c1d3ea937e3ce",
+    "snapshots/m7_integrated_model.xml": "d744d8fd19abb33f30d074d37a90576284516d4389301ef19715a8f0b6064dc4",
+    "snapshots/perception_config.yaml": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "snapshots/runtime_config.yaml": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "snapshots/scenario.yaml": "b10adfe502f05edf28c972c7567ecbf4279d88592fd76072e0e0492da0987214",
+    "snapshots/ssot.yaml": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95"
+  },
+  "compressed_evidence": {
+    "controller/controller_events.jsonl": {
+      "path": "controller/controller_events.jsonl.gz",
+      "uncompressed_sha256": "92a5e5b91169669738a3b54eb626e70a6d63a7b6ab760e71421a31a68d5c1d80",
+      "compressed_sha256": "2b9dbc3bcd8f9b4112cf0ca4709a024ce283f0993da05a4f8693d78ce5f81824"
+    },
+    "controller/perception_snapshots.jsonl": {
+      "path": "controller/perception_snapshots.jsonl.gz",
+      "uncompressed_sha256": "681a818140699c30ab8317a02059c4dfe8b8b80f9498b355b4af2663af338a47",
+      "compressed_sha256": "b199b835ee416bbce94180202dbe68575d3d6787a5fcc5b6b7355cddefffc6b8"
+    },
+    "controller/telemetry.csv": {
+      "path": "controller/telemetry.csv.gz",
+      "uncompressed_sha256": "9e17bc1e1e5a9b3b558c6ce4906f34e215fc819d937cd5c8be90842e5724ef54",
+      "compressed_sha256": "6bc53b31fd0e850d0b9fb4b3eab8e1a51cf2abc641483f7e85fb1feca447af54"
+    },
+    "evaluator/contact_events.jsonl": {
+      "path": "evaluator/contact_events.jsonl.gz",
+      "uncompressed_sha256": "66e78ade6523ebd7d870f60783454b355b24d16656ac8cb015c81db803e58ad1",
+      "compressed_sha256": "c21fea8fa115c240fd4e822ee5f78a36c6fff9bc1089346b34ab2d72efc7a6f9"
+    },
+    "evaluator/object_telemetry.csv": {
+      "path": "evaluator/object_telemetry.csv.gz",
+      "uncompressed_sha256": "83f8587fedce45cc86d3ca2600320479e9eb1bd8e4f6f2cab20afaf8f9efba66",
+      "compressed_sha256": "024d6b07217d86313553aba11dbecb5c1eb92b029c3215f4ed2d16f1e81694de"
+    }
+  },
+  "scenario_seed": 20260930,
+  "final_state": "DONE",
+  "simulation_time_s": 0.06000000000000004,
+  "fault_injection": {
+    "camera_failure": false,
+    "stale_camera_age_s": null,
+    "placement_camera_failure_at_verify": false,
+    "emergency_stop_after_hold": false,
+    "payload_loss_after_hold": false,
+    "payload_loss_body_name": null,
+    "payload_loss_impulse_Ns": null,
+    "gripper_friction_scale": null,
+    "effective_grasp_contact_slide_friction": null,
+    "gripper_actuator_disabled": false,
+    "release_actuator_failure": false,
+    "original_gripper_actuator_forcerange_N": null,
+    "events": null,
+    "render_rgba_overrides": {
+      "object_red_01": [
+        0.0,
+        0.8,
+        1.0,
+        1.0
+      ],
+      "object_blue_01": [
+        0.0,
+        0.8,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "public_input_conditions": {
+    "lighting_scale": 1.0,
+    "rgb_gain": 1.0,
+    "rgb_noise_sigma_8bit": 0.0,
+    "sensor_noise_seed": 20260930,
+    "input_calibration_bias_xy_m": [
+      0.0,
+      0.0
+    ],
+    "note": "Test-only perturbations are applied before M4 perception; evaluator ground truth is not exposed."
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "blocked_grasp_route-bf476cdd34",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 0.06000000000000004,
+    "controller_final_state": "DONE",
+    "controller_track_records": {
+      "1": {
+        "class_label": "UNKNOWN",
+        "status": "SKIPPED_UNKNOWN",
+        "attempts": 0,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "UNKNOWN_COLOR_CONFIRMED"
+        ]
+      },
+      "2": {
+        "class_label": "GREEN",
+        "status": "SKIPPED_UNREACHABLE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "COLLISION_GRASP"
+        ]
+      },
+      "3": {
+        "class_label": "UNKNOWN",
+        "status": "SKIPPED_UNKNOWN",
+        "attempts": 0,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "UNKNOWN_COLOR_CONFIRMED"
+        ]
+      }
+    },
+    "controller_reports_done": true,
+    "controller_confirmed_track_count": 0,
+    "controller_all_tracks_confirmed": false,
+    "items": [
+      {
+        "body_name": "object_green_01",
+        "ground_truth_class": "GREEN",
+        "final_xyz_m": [
+          -1.3357707572221146e-19,
+          -0.25,
+          0.007900670019429658
+        ],
+        "linear_velocity_m_s": [
+          4.365973226789137e-20,
+          3.5394961091033366e-18,
+          0.0014968598006100233
+        ],
+        "angular_velocity_rad_s": [
+          9.042291943800619e-17,
+          6.821169819194808e-17,
+          -1.2932261025666557e-31
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.4969346033433373,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      },
+      {
+        "body_name": "object_red_01",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          -0.065,
+          -0.25,
+          0.007900670019429653
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          0.0014968598006102236
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.47616068716348264,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      },
+      {
+        "body_name": "object_blue_01",
+        "ground_truth_class": "BLUE",
+        "final_xyz_m": [
+          0.065,
+          -0.25,
+          0.007900670019429653
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          0.0014968598006102236
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.47616068716348264,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_green_01": {
+        "ground_truth_color": "GREEN",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      },
+      "object_red_01": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      },
+      "object_blue_01": {
+        "ground_truth_color": "BLUE",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      }
+    },
+    "physical_sort_success_count": 0,
+    "physical_sort_failure_count": 3,
+    "all_active_objects_physically_sorted": false,
+    "controller_done_and_physical_success": false,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  },
+  "command": [
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\99_Рабочие_материалы\\integration\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\run_m7.py",
+    "--mode",
+    "batch",
+    "--scenario",
+    "blocked_grasp_route",
+    "--physics-profile",
+    "nominal",
+    "--out",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\07_Испытания\\runs"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "scenario_id": "m9_empty_input",
+  "seed": 20261050,
+  "active_objects": [],
+  "initial_slot_occupants": [],
+  "inactive_bodies": [
+    "object_red_01",
+    "object_green_01",
+    "object_blue_01",
+    "object_red_02",
+    "object_green_02",
+    "object_blue_02"
+  ]
+}

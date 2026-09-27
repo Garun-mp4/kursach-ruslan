@@ -1,0 +1,63 @@
+{
+  "schema_version": "M7-evaluator-v1.1",
+  "run_id": "m9_random_red_one-01366c3f7d",
+  "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+  "simulation_time_s": 173.86000000010205,
+  "controller_final_state": "DONE",
+  "controller_track_records": {
+    "1": {
+      "class_label": "RED",
+      "status": "PLACED_CONTROLLER_CONFIRMED",
+      "attempts": 1,
+      "grasp_attempts": 0,
+      "failure_reasons": []
+    }
+  },
+  "controller_reports_done": true,
+  "controller_confirmed_track_count": 1,
+  "controller_all_tracks_confirmed": true,
+  "items": [
+    {
+      "body_name": "object_red_01",
+      "ground_truth_class": "RED",
+      "final_xyz_m": [
+        -0.24970655421295349,
+        0.21015503980443356,
+        0.011947014951387142
+      ],
+      "linear_velocity_m_s": [
+        4.7090197925366266e-18,
+        1.6408280737892605e-17,
+        2.381955836894414e-16
+      ],
+      "angular_velocity_rad_s": [
+        -2.9075721915676254e-16,
+        -5.832356419139538e-16,
+        -1.6036184248888397e-20
+      ],
+      "nearest_slot_id": "RED:0",
+      "nearest_zone": "RED",
+      "horizontal_slot_error_m": 0.002298680255946924,
+      "resting_on_tray": true,
+      "settled": true,
+      "physical_sort_success": true
+    }
+  ],
+  "evaluator_grasp_slip": {
+    "object_red_01": {
+      "ground_truth_color": "RED",
+      "first_bilateral_contact_time_s": 43.68,
+      "bilateral_contact_samples": 1715,
+      "maximum_relative_slip_m": 0.00211598785
+    }
+  },
+  "physical_sort_success_count": 1,
+  "physical_sort_failure_count": 0,
+  "all_active_objects_physically_sorted": true,
+  "controller_done_and_physical_success": true,
+  "limitations": [
+    "The evaluator uses simulator ground truth only after the controller run has ended.",
+    "This is a virtual physical-model result, not a physical prototype test.",
+    "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+  ]
+}

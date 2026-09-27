@@ -1,0 +1,3 @@
+{"fault": "STALE_INPUT_CAMERA_FRAME", "simulation_time_s": 0.01, "frame_id": 2, "frame_age_s": 1.0, "trigger": "CONTROLLED_PUBLIC_RGB_BUFFER_REPLAY"}
+{"fault": "STALE_INPUT_CAMERA_FRAME", "simulation_time_s": 0.020000000000000004, "frame_id": 3, "frame_age_s": 1.0, "trigger": "CONTROLLED_PUBLIC_RGB_BUFFER_REPLAY"}
+{"fault": "STALE_INPUT_CAMERA_FRAME", "simulation_time_s": 0.030000000000000013, "frame_id": 4, "frame_age_s": 1.0, "trigger": "CONTROLLED_PUBLIC_RGB_BUFFER_REPLAY"}

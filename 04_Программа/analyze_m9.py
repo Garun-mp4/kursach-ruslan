@@ -1141,21 +1141,21 @@ def _draw_rate_plot(rows: list[dict[str, Any]], path: Path) -> None:
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
     title = _font(34)
-    label = _font(20)
+    label = _font(19)
     small = _font(16)
-    draw.text((80, 38), "Virtual test completion by registered series", font=title, fill="#162A35")
-    left, right, top, bottom = 400, 1490, 130, 790
+    draw.text((80, 38), "Доля выполненных критериев зарегистрированных серий", font=title, fill="#162A35")
+    left, right, top, bottom = 475, 1490, 150, 770
     for tick in range(0, 11):
         value = tick / 10
-        y = bottom - int(value * (bottom - top))
-        draw.line((left, y, right, y), fill="#D8E0E4", width=1)
-        draw.text((left - 55, y - 12), f"{value:.0%}", font=small, fill="#445761")
-    row_height = max(28, min(54, (bottom - top) // max(1, len(rows))))
+        x = left + int(value * (right - left))
+        draw.line((x, top, x, bottom), fill="#D8E0E4", width=1)
+        draw.text((x - 16, bottom + 12), f"{value:.0%}", font=small, fill="#445761")
+    row_height = min(78, (bottom - top) // max(1, len(rows)))
     for index, row in enumerate(rows):
-        y0 = top + index * row_height + 5
-        y1 = y0 + row_height - 10
+        center_y = top + index * row_height + row_height // 2
+        y0, y1 = center_y - 19, center_y + 19
         name = f"{row['experiment_id']} / {row['variant_id']}"
-        draw.text((left - 305, y0 + 4), name[:34], font=label, fill="#213843")
+        draw.text((60, center_y - 11), name[:39], font=label, fill="#213843")
         rate = float(row["test_pass_rate"] or 0.0)
         x1 = left + int(rate * (right - left))
         draw.rounded_rectangle((left, y0, x1, y1), radius=7, fill="#E7B83E")
@@ -1166,8 +1166,10 @@ def _draw_rate_plot(rows: list[dict[str, Any]], path: Path) -> None:
         draw.line((ci_left, (y0 + y1) // 2, ci_right, (y0 + y1) // 2), fill="#233D4A", width=3)
         draw.line((ci_left, (y0 + y1) // 2 - 6, ci_left, (y0 + y1) // 2 + 6), fill="#233D4A", width=2)
         draw.line((ci_right, (y0 + y1) // 2 - 6, ci_right, (y0 + y1) // 2 + 6), fill="#233D4A", width=2)
-        draw.text((min(x1 + 12, right - 100), y0 + 3), f"{row['test_passes']}/{row['runs']}", font=small, fill="#162A35")
-    draw.text((left, 835), "Bars show trial-level expected-outcome tests passed; whiskers are Wilson 95% intervals.",
+        draw.text((min(x1 + 12, right - 62), y0 + 3), f"{row['test_passes']}/{row['runs']}", font=small, fill="#162A35")
+    draw.text((left, 835), "Полоса — доля прогонов, выполнивших заранее заданный исход; усики — 95% интервал Уилсона.",
+              font=small, fill="#445761")
+    draw.text((left, 862), "Для V10 ожидаемый исход — безопасное ограничение отказа, а не успешная сортировка.",
               font=small, fill="#445761")
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, format="PNG", optimize=True)
@@ -1183,8 +1185,13 @@ def _draw_confusion_matrix(matrix: dict[tuple[str, str], int], path: Path) -> No
     title = _font(32)
     label = _font(20)
     small = _font(18)
-    draw.text((55, 34), "First public input view: evaluator-matched colors + false detections",
+    draw.text((55, 34), "Сопоставление первого публичного распознавания с истинными классами",
               font=title, fill="#162A35")
+    draw.text((left, top - 72), "Метка первого кадра →", font=small, fill="#445761")
+    draw.text((65, top - 4), "Истинный класс", font=small, fill="#445761")
+    draw.text((left, top + cell_h * len(rows) + 18),
+              "Строка NO_OBJECT показывает несопоставленные детекции; столбцы — метки первого кадра.",
+              font=small, fill="#445761")
     for ci, column in enumerate(columns):
         draw.text((left + ci * cell_w + 20, top - 44), column, font=label, fill="#213843")
     maximum = max(matrix.values(), default=1) or 1
@@ -1197,9 +1204,6 @@ def _draw_confusion_matrix(matrix: dict[tuple[str, str], int], path: Path) -> No
             x0, y0 = left + ci * cell_w, top + ri * cell_h
             draw.rectangle((x0, y0, x0 + cell_w - 4, y0 + cell_h - 4), fill=fill, outline="#C6D3D9")
             draw.text((x0 + cell_w // 2 - 10, y0 + cell_h // 2 - 14), str(count), font=label, fill="#132C38")
-    draw.text((left, top + cell_h * len(rows) + 18),
-              "NO_OBJECT row counts unmatched detections; columns = public first-view labels.",
-              font=small, fill="#445761")
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, format="PNG", optimize=True)
 
@@ -1211,7 +1215,7 @@ def _draw_trajectory(
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
     title, label, small = _font(30), _font(18), _font(15)
-    draw.text((50, 28), f"Measured TCP trajectory — {metric['run_id']} ({outcome_label})",
+    draw.text((50, 28), f"Измеренная TCP-траектория — {metric['run_id']} ({outcome_label})",
               font=title, fill="#162A35")
     xmin, xmax, ymin, ymax = -0.52, 0.52, -0.44, 0.44
     l, r, t, b = 130, 1320, 120, 1000
@@ -1227,6 +1231,8 @@ def _draw_trajectory(
         _, yy = xy((xmin, float(y)))
         draw.line((l, yy, r, yy), fill="#EEF1F2", width=1)
         draw.text((l - 48, yy - 8), f"{y:.1f}", font=small, fill="#566972")
+    draw.text((l + (r - l) // 2 - 18, b + 24), "x, м", font=small, fill="#566972")
+    draw.text((l - 42, t - 20), "y, м", font=small, fill="#566972")
     trays = ssot["parameters"]["cell.tray_centers_xy_m"]["value"]
     offsets = ssot["parameters"]["cell.tray_slot_x_offsets_m"]["value"]
     tray_y_offset = float(ssot["parameters"]["cell.tray_slot_y_offset_m"]["value"])
@@ -1258,7 +1264,7 @@ def _draw_trajectory(
         # Thin dense traces to keep the exported chart readable.
         stride = max(1, len(path_points) // 600)
         draw.line(path_points[::stride] + [path_points[-1]], fill="#293F4A", width=2)
-    draw.text((l, 1040), "TCP path: measured execution telemetry; colored segments join evaluator initial/final object positions.",
+    draw.text((l, 1070), "TCP по телеметрии; цветные отрезки соединяют начальные и конечные позиции объектов по оценщику.",
               font=small, fill="#445761")
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, format="PNG", optimize=True)
@@ -1268,32 +1274,75 @@ def _draw_joint_error(metric: dict[str, Any], path: Path) -> None:
     run_dir = Path(metric["_run_dir"])
     manifest = metric["_manifest"]
     rows = _read_csv(_resolve_output(run_dir, manifest["relative_outputs"]["controller_telemetry"]))
-    values = [(_number(row.get("simulation_time_s")), _number(row.get("peak_abs_joint_error"))) for row in rows]
-    values = [(float(x), float(y)) for x, y in values if x is not None and y is not None]
-    width, height = 1500, 760
+    times = [float(value) for row in rows
+             if (value := _number(row.get("simulation_time_s"))) is not None]
+    max_t = max(times, default=1.0) or 1.0
+    angular = [
+        (f"J{joint}", f"peak_abs_error_j{joint}", color)
+        for joint, color in ((1, "#2F7792"), (2, "#D77B32"), (4, "#5D7C4A"))
+    ]
+    vertical = [("J3 · ползун", "peak_abs_error_j3", "#7655A5")]
+    width, height = 1500, 790
     image = Image.new("RGB", (width, height), "white")
     draw = ImageDraw.Draw(image)
-    title, small = _font(30), _font(17)
-    draw.text((60, 28), f"Peak absolute joint tracking error — {metric['run_id']}", font=title, fill="#162A35")
-    left, right, top, bottom = 120, 1430, 120, 620
-    max_t = max((x for x, _ in values), default=1.0) or 1.0
-    max_y = max((y for _, y in values), default=0.02)
-    max_y = max(max_y * 1.1, 0.001)
-    for tick in range(6):
-        ratio = tick / 5
-        yy = bottom - int(ratio * (bottom - top))
-        draw.line((left, yy, right, yy), fill="#E5EAEC", width=1)
-        draw.text((30, yy - 8), f"{ratio * max_y:.3g}", font=small, fill="#52656E")
-    points = [
-        (int(left + t / max_t * (right - left)), int(bottom - err / max_y * (bottom - top)))
-        for t, err in values
+    title, label, small = _font(30), _font(18), _font(16)
+    draw.text((60, 24), f"Ошибка слежения по осям — {metric['run_id']}", font=title, fill="#162A35")
+    left, right = 135, 1430
+    panels = [
+        ("Поворотные оси J1/J2/J4, рад", angular, 115, 365, 1.0),
+        ("Вертикальный ползун J3, мм", vertical, 435, 685, 1000.0),
     ]
-    if len(points) > 1:
-        draw.line(points, fill="#2F7792", width=2)
-    draw.text((left, 665), f"simulation time: 0–{max_t:.2f} s; error units follow joint: rad for revolute, m for vertical slide.",
+    for panel_title, series, top, bottom, unit_scale in panels:
+        draw.text((left, top - 32), panel_title, font=label, fill="#213843")
+        max_y = max((
+            (value or 0.0) * unit_scale
+            for row in rows for _, field, _ in series
+            if (value := _number(row.get(field))) is not None
+        ), default=0.001)
+        max_y = max(max_y * 1.12, 0.001)
+        for tick in range(5):
+            ratio = tick / 4
+            y = bottom - int(ratio * (bottom - top))
+            draw.line((left, y, right, y), fill="#E5EAEC", width=1)
+            draw.text((24, y - 9), f"{ratio * max_y:.3g}", font=small, fill="#52656E")
+        for tick in range(5):
+            ratio = tick / 4
+            x = left + int(ratio * (right - left))
+            draw.line((x, top, x, bottom), fill="#F0F3F4", width=1)
+            draw.text((x - 14, bottom + 7), f"{ratio * max_t:.0f}", font=small, fill="#52656E")
+        for series_index, (series_name, field, color) in enumerate(series):
+            points: list[tuple[int, int]] = []
+            for row in rows:
+                time_value = _number(row.get("simulation_time_s"))
+                error_value = _number(row.get(field))
+                if time_value is None or error_value is None:
+                    continue
+                x = int(left + time_value / max_t * (right - left))
+                y = int(bottom - (error_value * unit_scale) / max_y * (bottom - top))
+                points.append((x, y))
+            if len(points) > 1:
+                draw.line(points, fill=color, width=2)
+            legend_x = 840 + series_index * 165
+            legend_y = top - 28
+            draw.line((legend_x, legend_y + 11, legend_x + 24, legend_y + 11), fill=color, width=3)
+            draw.text((legend_x + 31, legend_y), series_name, font=small, fill="#445761")
+    draw.text((left, 750), f"Модельное время, с (0–{max_t:.1f}); вертикальные и угловые ошибки показаны раздельно.",
               font=small, fill="#445761")
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, format="PNG", optimize=True)
+
+
+def _registered_trial_directories(runs_root: Path) -> dict[str, Path]:
+    trial_dirs: dict[str, Path] = {}
+    for record_path in sorted(runs_root.glob("*/campaign_trial.json")):
+        trial = _read_json(record_path)
+        trial_id = trial.get("trial_id")
+        if not isinstance(trial_id, str) or not trial_id:
+            raise ValueError(f"Campaign trial record has no valid trial_id: {record_path}")
+        if trial_id in trial_dirs:
+            raise ValueError(f"Duplicate campaign trial_id {trial_id!r} under {runs_root}")
+        trial_dirs[trial_id] = record_path.parent
+    return trial_dirs
 
 
 def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
@@ -1301,12 +1350,11 @@ def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
             require_all_jobs: bool = True) -> dict[str, Any]:
     campaign = yaml.safe_load(campaign_path.read_text(encoding="utf-8"))
     expected_jobs = {job["trial_id"]: job for job in _expand_campaign_jobs(campaign)}
-    run_dirs = sorted(path.parent for path in runs_root.glob("*/campaign_trial.json"))
-    trial_dirs = {path.name: path for path in run_dirs}
+    trial_dirs = _registered_trial_directories(runs_root)
     unknown = sorted(set(trial_dirs) - set(expected_jobs))
     missing = sorted(set(expected_jobs) - set(trial_dirs))
     if unknown:
-        raise ValueError(f"Unregistered run directories found under campaign runs: {unknown}")
+        raise ValueError(f"Unregistered trial IDs found under campaign runs: {unknown}")
     if require_all_jobs and missing:
         raise ValueError(f"Campaign is incomplete; missing {len(missing)} preregistered trials: {missing[:5]}")
     metrics: list[dict[str, Any]] = []
@@ -1383,6 +1431,7 @@ def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
         "schema_version": "M9-analysis-v1",
         "campaign_id": campaign["campaign_id"],
         "campaign_sha256": _sha256(campaign_path),
+        "analyzer_source_sha256": _sha256(Path(__file__).resolve()),
         "analyzed_utc": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
         "scope": "virtual MuJoCo simulation only; no physical prototype tests",
         "registered_trials": len(expected_jobs),
@@ -1435,26 +1484,26 @@ def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
             "No conclusion is made about a physical prototype, real camera calibration, or real gripper friction.",
         ],
     }
-    TABLES_ROOT.mkdir(parents=True, exist_ok=True)
-    PLOTS_ROOT.mkdir(parents=True, exist_ok=True)
+    tables_root.mkdir(parents=True, exist_ok=True)
+    plots_root.mkdir(parents=True, exist_ok=True)
     scenario_rows = _scenario_matrix_rows(campaign)
-    _write_csv(TABLES_ROOT / "Матрица_сценариев.csv", scenario_rows)
+    _write_csv(tables_root / "Матрица_сценариев.csv", scenario_rows)
     flat_metrics = [
         {key: value for key, value in metric.items() if not key.startswith("_")}
         for metric in metrics
     ]
-    _write_csv(TABLES_ROOT / "Результаты_по_прогонам.csv", flat_metrics)
+    _write_csv(tables_root / "Результаты_по_прогонам.csv", flat_metrics)
     object_columns = list(object_records[0]) if object_records else []
-    _write_csv(TABLES_ROOT / "Результаты_по_объектам.csv", object_records, object_columns)
-    _write_csv(TABLES_ROOT / "Сводка_по_сериям.csv", series)
-    _write_csv(TABLES_ROOT / "Сравнение_парных_seed.csv", paired_rows)
-    _write_csv(TABLES_ROOT / "Матрица_ошибок_цвета_V03.csv", confusion_rows)
-    _write_csv(TABLES_ROOT / "Метрики_классификации_V03.csv", baseline_classification)
-    _write_csv(TABLES_ROOT / "Матрица_цветов_по_условиям.csv", confusion_condition_rows)
+    _write_csv(tables_root / "Результаты_по_объектам.csv", object_records, object_columns)
+    _write_csv(tables_root / "Сводка_по_сериям.csv", series)
+    _write_csv(tables_root / "Сравнение_парных_seed.csv", paired_rows)
+    _write_csv(tables_root / "Матрица_ошибок_цвета_V03.csv", confusion_rows)
+    _write_csv(tables_root / "Метрики_классификации_V03.csv", baseline_classification)
+    _write_csv(tables_root / "Матрица_цветов_по_условиям.csv", confusion_condition_rows)
     RESULTS_PATH.write_text(json.dumps(_json_safe(results), ensure_ascii=False, indent=2) + "\n",
                             encoding="utf-8")
-    _draw_rate_plot(series, PLOTS_ROOT / "Выполнение_серий.png")
-    _draw_confusion_matrix(baseline_confusion, PLOTS_ROOT / "Матрица_цветов_V03.png")
+    _draw_rate_plot(series, plots_root / "Выполнение_серий.png")
+    _draw_confusion_matrix(baseline_confusion, plots_root / "Матрица_цветов_V03.png")
     successful_baseline = [row for row in baseline if row["test_pass"]]
     if baseline:
         if successful_baseline:
@@ -1464,7 +1513,7 @@ def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
             representative_rule = (
                 "lower median simulation time among successful V03 batches; not claimed statistically typical"
             )
-            outcome_label = "successful batch"
+            outcome_label = "полная партия"
         else:
             chosen = sorted(
                 baseline,
@@ -1473,13 +1522,13 @@ def analyze(campaign_path: Path = CAMPAIGN_PATH, runs_root: Path = RUNS_ROOT,
             representative_rule = (
                 "best observed V03 outcome, then shortest simulation time; failure example only"
             )
-            outcome_label = "best observed failure example"
+            outcome_label = "лучшая неполная партия"
         ssot = yaml.safe_load((ROOT / "02_Спецификация" / "параметры_системы.yaml").read_text(encoding="utf-8-sig"))
         _draw_trajectory(
-            chosen, PLOTS_ROOT / "Траектория_представительного_прогона.png", ssot,
+            chosen, plots_root / "Траектория_представительного_прогона.png", ssot,
             outcome_label=outcome_label,
         )
-        _draw_joint_error(chosen, PLOTS_ROOT / "Ошибка_слеживания_суставов.png")
+        _draw_joint_error(chosen, plots_root / "Ошибка_слеживания_суставов.png")
         results["representative_run"] = {
             "run_id": chosen["run_id"],
             "test_pass": chosen["test_pass"],

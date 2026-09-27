@@ -1,0 +1,1 @@
+{"fault": "EXTERNAL_PAYLOAD_IMPULSE", "simulation_time_s": 44.71000000000868, "body_name": "object_red_01", "world_impulse_xyz_Ns": [0.12, 0.0, 0.0], "duration_s": 0.02, "trigger": "TRANSFER_WITH_BILATERAL_PUBLIC_TOUCH"}

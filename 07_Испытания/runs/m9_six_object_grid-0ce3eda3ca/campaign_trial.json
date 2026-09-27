@@ -1,0 +1,434 @@
+{
+  "schema_version": "M9-trial-record-v1",
+  "trial_id": "v02_two_per_color",
+  "experiment_id": "v02_two_per_color",
+  "variant_id": "fixed",
+  "scenario": "m9_six_object_grid",
+  "scenario_dir": "07_Испытания/scenarios",
+  "seed": 20261040,
+  "expected_kind": "sort_all",
+  "expected_reason": null,
+  "expected_track_status": null,
+  "expected_failure_reason": null,
+  "expected_object_outcomes": {},
+  "required_perception_checks": {},
+  "tags": [
+    "V02"
+  ],
+  "parameters": {},
+  "paired_control": null,
+  "campaign_id": "M9-RC-2026-01",
+  "campaign_sha256": "be7bb93f56c04ad2ea1d7cfee033c52ab6182fb09988b5dce8321c625445a765",
+  "software_revision": "ffb3727d2c163b085c5957c2ee1e5f053700cb15",
+  "started_utc": "2026-09-27T10:20:05.326260+00:00",
+  "finished_utc": "2026-09-27T10:24:30.244202+00:00",
+  "runner_returncode": 2,
+  "run_id": "m9_six_object_grid-0ce3eda3ca",
+  "run_manifest_sha256": "6231545e3acac428a9b843f8e7f30f5c179de0a16c93d8b8af423658d90389ae",
+  "run_directory": "07_Испытания/runs/m9_six_object_grid-0ce3eda3ca",
+  "input_hashes_sha256": {
+    "ssot": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95",
+    "mjcf": "92b65e991aef19aade975eebbb76ae3e668b5437973cbed4cf52f0df112ad2fb",
+    "runtime_config": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "scenario": "422add8599e25d7b2c702593093dff42374962f5729ea89464d5e604fdf68ecb",
+    "perception_config": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "camera_calibration": "035e5fd2a7af3e17c43bede7320b8c06a17986faeaae14b03be3b542928e02da",
+    "background_reference": "f40946e44bd5b10fd7d133b793a46462311e1f64760a979ae8d99862d3c5573f",
+    "placement_camera_calibration": "6e9502952a8a71d07882a6ea341a39f80f6a8cf912e076b687b136c6fde6715a",
+    "placement_camera_background": "16f4911760fee24f13a5eaf55d0d3144fb33ce02aa87a3fa9a7016c79a446571",
+    "runner": "733ebfd17d1bc12952a0d59b6e848f873e19d550dfdce6763825c4cb700c7897",
+    "placement_camera_model": "37f3d65de1afb9adc1aa56aec1455f4854569d0dfa95859df5dc360d2c18f91a",
+    "placement_camera_asset_builder": "ac1ec72c576f519e101ff2e5ac8233ab09e08583d9880397bd717409ba15663c",
+    "runtime": "2c9ee923ec417682567e89b9c9fbe919591ff7d7573b7ea22aed5347c38c2ebd",
+    "recording": "a561be7edcd04c9cf543c20041a34d08dfe000852f942e1f34d6eb83cfc379d5",
+    "actuator": "466c46b1760fd728b8835d347e9b1247784b96615c5610dd987295d4f99409d2",
+    "scene_generator": "77b11504a0ec7cb905c104ebe8ff48cc3017971b9cf2a8022ff6c7b07118ccf0",
+    "sensor_adapter": "cefd483bbbfb893c5c9dd51b88a3f137e195bb72843d4d900fb5e509a4f6e737",
+    "placement_adapter": "8a5a7603997fd5b3af68181852828f4ee55c698b2f3f308a5a9b004df1c63d62",
+    "interactive_display": "503401202871c56a3f421238388a92d5161d899478d2801c155c1770345ca8f0",
+    "controller": "34d2976bf3e3ab4125c2229714fd89b01bfa9837bf28f110669493872c06bcac",
+    "planner": "9944a33d5c10fe32a77806c37ad0759788931ee9f9296c275cdc6ef66c64d5d7",
+    "perception": "399663fdb42d4dc2766e3d6ef0dfeaa2fe008b6c12d7efb3d1215c0d4ae4ee30",
+    "evaluator": "99dc56780397600a56bf7c3a07124a6589af465169ac261ddcb4206cf93018b2",
+    "evaluator_telemetry": "d6b3ddff9919189e7aa69d738b72b86a6da616764dbfee921fff787556b8b53b",
+    "m7_integrated_model": "a9fcb542d428ca3a8408b0af30728ae81d097d1379311af4d543742be1b096ee"
+  },
+  "evidence_hashes_sha256": {
+    "controller/controller_events.jsonl": "f18c15b70384bf055cf1188d6200ecc9b96bfd3b73d2d61684dfb306ef286cd3",
+    "controller/perception_snapshots.jsonl": "9113bb3a72b2603a7290b57c8363a45a11aea2771ea017fb59a66fd3f0d56777",
+    "controller/plans/m5_plan_10.csv": "3fc77243c56ea75cf98e8765ccfdbcd20acd5e994f58e00bd6244dba1b633b24",
+    "controller/plans/m5_plan_10.json": "7050d5f23cc14b4c10eb20a4c8a39b9b122ddd05ddc3b9df21444697520785c8",
+    "controller/plans/m5_plan_2.csv": "087d6f9e7eeb2e72e45d95b53341cb4fc3088727d93ffe5961f0c09c40e1bc83",
+    "controller/plans/m5_plan_2.json": "64effcada254c1833efb22e5c965caf305827bf3ad9a28c52c5b54625bc04afd",
+    "controller/plans/m5_plan_6.csv": "edc07516dd5917a67984013e022aafa0518391d9033e43ec10328b31911b3f0f",
+    "controller/plans/m5_plan_6.json": "c969c7d1906f0197fca84adc4930a518341862397df4d014dce55e99bc44507b",
+    "controller/telemetry.csv": "6fcca1589f48831b52a33d6d2aa41682c3bd5db6dc1a94243bc296461535af79",
+    "evaluator/contact_events.jsonl": "56b8072d6eb4612a6f08c3a24b1a1901b3970d11a70436a8946215eb629fd3d0",
+    "evaluator/object_telemetry.csv": "78dd0ca93ff95ddd0e12c0abcfbab10f36b1280b1ed5b436b887f6444c9524ca",
+    "evaluator/report.json": "502e85e0f681e1b727f23f94e956bd5169cc230856d84075951dcbe3a4e64c56",
+    "evaluator_private/scene_truth.json": "dac4bc9c9ed7de1e7b7ded77eb3832d2c0c85a648a7fb5f49e8d8c4308d3ba2c",
+    "snapshots/m7_integrated_model.xml": "d744d8fd19abb33f30d074d37a90576284516d4389301ef19715a8f0b6064dc4",
+    "snapshots/perception_config.yaml": "868a662e8325d8d7eb42e2a46213a31471b3e21d91b2744dfbf62e71250e0878",
+    "snapshots/runtime_config.yaml": "84a541a3d02bd7e6acfa7c322d0a5040348ec76372032f09a77c75db4ed4d23b",
+    "snapshots/scenario.yaml": "422add8599e25d7b2c702593093dff42374962f5729ea89464d5e604fdf68ecb",
+    "snapshots/ssot.yaml": "2af127a55d7987c5eaae8dcc07788ce0fd565f9bcb8ba87551e8477d8f1c3d95"
+  },
+  "compressed_evidence": {
+    "controller/controller_events.jsonl": {
+      "path": "controller/controller_events.jsonl.gz",
+      "uncompressed_sha256": "f18c15b70384bf055cf1188d6200ecc9b96bfd3b73d2d61684dfb306ef286cd3",
+      "compressed_sha256": "f49abbf7d06ca96ef1f03286ff4ef944f42feb2b295609de6e85ef987b8461d1"
+    },
+    "controller/perception_snapshots.jsonl": {
+      "path": "controller/perception_snapshots.jsonl.gz",
+      "uncompressed_sha256": "9113bb3a72b2603a7290b57c8363a45a11aea2771ea017fb59a66fd3f0d56777",
+      "compressed_sha256": "70ffa95f0afb90c8395f3a88d9106948efaaddf510438b09fd60bcbc90e30540"
+    },
+    "controller/plans/m5_plan_10.csv": {
+      "path": "controller/plans/m5_plan_10.csv.gz",
+      "uncompressed_sha256": "3fc77243c56ea75cf98e8765ccfdbcd20acd5e994f58e00bd6244dba1b633b24",
+      "compressed_sha256": "15def9a10c5fd706633db5d92990c7a5c45b7e97db7aa8e16bf6cb11e7894cf2"
+    },
+    "controller/plans/m5_plan_10.json": {
+      "path": "controller/plans/m5_plan_10.json.gz",
+      "uncompressed_sha256": "7050d5f23cc14b4c10eb20a4c8a39b9b122ddd05ddc3b9df21444697520785c8",
+      "compressed_sha256": "d9ca4ea6dd37f2c33147034afe57d07dccb08c01bec71b898836de855f29fef5"
+    },
+    "controller/plans/m5_plan_2.csv": {
+      "path": "controller/plans/m5_plan_2.csv.gz",
+      "uncompressed_sha256": "087d6f9e7eeb2e72e45d95b53341cb4fc3088727d93ffe5961f0c09c40e1bc83",
+      "compressed_sha256": "8af947f7a28510166f201f653adefb4743d39b183ae7493386d6bc84b2c67312"
+    },
+    "controller/plans/m5_plan_2.json": {
+      "path": "controller/plans/m5_plan_2.json.gz",
+      "uncompressed_sha256": "64effcada254c1833efb22e5c965caf305827bf3ad9a28c52c5b54625bc04afd",
+      "compressed_sha256": "f360428918d48c4e18ddb1bfda0a70be28e4682508ce8964b0736bccf5adfbba"
+    },
+    "controller/plans/m5_plan_6.csv": {
+      "path": "controller/plans/m5_plan_6.csv.gz",
+      "uncompressed_sha256": "edc07516dd5917a67984013e022aafa0518391d9033e43ec10328b31911b3f0f",
+      "compressed_sha256": "bc27cf3692675d7d03fd14fd064aeb77491b4b2bded2fc39867dadb66185229f"
+    },
+    "controller/plans/m5_plan_6.json": {
+      "path": "controller/plans/m5_plan_6.json.gz",
+      "uncompressed_sha256": "c969c7d1906f0197fca84adc4930a518341862397df4d014dce55e99bc44507b",
+      "compressed_sha256": "4286bfff3abd88292efcf487a6a8b8894546b5d6b4cc5314e254ec26acf726fd"
+    },
+    "controller/telemetry.csv": {
+      "path": "controller/telemetry.csv.gz",
+      "uncompressed_sha256": "6fcca1589f48831b52a33d6d2aa41682c3bd5db6dc1a94243bc296461535af79",
+      "compressed_sha256": "18011389716643880b64a7bcef7e265dc94e049a9ce042dc5ad043c3b197d052"
+    },
+    "evaluator/contact_events.jsonl": {
+      "path": "evaluator/contact_events.jsonl.gz",
+      "uncompressed_sha256": "56b8072d6eb4612a6f08c3a24b1a1901b3970d11a70436a8946215eb629fd3d0",
+      "compressed_sha256": "b8ab02dda2e0f6a012a58f54c1e7ecf387579227652a92e4c7dd9faa40be09d4"
+    },
+    "evaluator/object_telemetry.csv": {
+      "path": "evaluator/object_telemetry.csv.gz",
+      "uncompressed_sha256": "78dd0ca93ff95ddd0e12c0abcfbab10f36b1280b1ed5b436b887f6444c9524ca",
+      "compressed_sha256": "c47beb299a1c990f93f45bb6181bd657713ae5a7d653a68bf484fef65ffe2c3a"
+    }
+  },
+  "scenario_seed": 20261040,
+  "final_state": "SAFE_STOP",
+  "simulation_time_s": 327.92000000083766,
+  "fault_injection": {
+    "camera_failure": false,
+    "stale_camera_age_s": null,
+    "placement_camera_failure_at_verify": false,
+    "emergency_stop_after_hold": false,
+    "payload_loss_after_hold": false,
+    "payload_loss_body_name": null,
+    "payload_loss_impulse_Ns": null,
+    "gripper_friction_scale": null,
+    "effective_grasp_contact_slide_friction": null,
+    "gripper_actuator_disabled": false,
+    "release_actuator_failure": false,
+    "original_gripper_actuator_forcerange_N": null,
+    "events": null,
+    "render_rgba_overrides": {}
+  },
+  "public_input_conditions": {
+    "lighting_scale": 1.0,
+    "rgb_gain": 1.0,
+    "rgb_noise_sigma_8bit": 0.0,
+    "sensor_noise_seed": 20261040,
+    "input_calibration_bias_xy_m": [
+      0.0,
+      0.0
+    ],
+    "note": "Test-only perturbations are applied before M4 perception; evaluator ground truth is not exposed."
+  },
+  "evaluator_summary": {
+    "schema_version": "M7-evaluator-v1.1",
+    "run_id": "m9_six_object_grid-0ce3eda3ca",
+    "evaluation_source": "post-run MuJoCo free-joint state plus private scene ground truth",
+    "simulation_time_s": 327.92000000083766,
+    "controller_final_state": "SAFE_STOP",
+    "controller_track_records": {
+      "1": {
+        "class_label": "RED",
+        "status": "PENDING",
+        "attempts": 0,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      },
+      "2": {
+        "class_label": "RED",
+        "status": "PENDING",
+        "attempts": 0,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      },
+      "3": {
+        "class_label": "GREEN",
+        "status": "PENDING",
+        "attempts": 0,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      },
+      "4": {
+        "class_label": "GREEN",
+        "status": "PLACED_CONTROLLER_CONFIRMED",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      },
+      "5": {
+        "class_label": "BLUE",
+        "status": "SAFE_FAILURE",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": [
+          "PUBLIC_HOLD_SIGNAL_LOST"
+        ]
+      },
+      "6": {
+        "class_label": "BLUE",
+        "status": "PLACED_CONTROLLER_CONFIRMED",
+        "attempts": 1,
+        "grasp_attempts": 0,
+        "failure_reasons": []
+      }
+    },
+    "controller_reports_done": false,
+    "controller_confirmed_track_count": 2,
+    "controller_all_tracks_confirmed": false,
+    "items": [
+      {
+        "body_name": "object_red_01",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          -0.09,
+          -0.19,
+          0.007947014951203054
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          2.0312823934645065e-11
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.41183006204015754,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      },
+      {
+        "body_name": "object_green_01",
+        "ground_truth_class": "GREEN",
+        "final_xyz_m": [
+          -0.031051217672487936,
+          0.2993234317629169,
+          0.011947014955294879
+        ],
+        "linear_velocity_m_s": [
+          -1.0047599639440125e-18,
+          8.72413216155307e-18,
+          -2.5595772602348923e-16
+        ],
+        "angular_velocity_rad_s": [
+          -1.3852406519108882e-15,
+          -1.032720408161957e-16,
+          -6.033414424099968e-20
+        ],
+        "nearest_slot_id": "GREEN:0",
+        "nearest_zone": "GREEN",
+        "horizontal_slot_error_m": 0.001165303601826106,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      },
+      {
+        "body_name": "object_blue_01",
+        "ground_truth_class": "BLUE",
+        "final_xyz_m": [
+          0.19154110589596218,
+          0.21262224999580018,
+          0.011361933526711294
+        ],
+        "linear_velocity_m_s": [
+          -0.0002169688992932672,
+          0.0014030781011102503,
+          0.00048506988124427664
+        ],
+        "angular_velocity_rad_s": [
+          -3.585706150334562e-08,
+          3.1638843794405145e-08,
+          -0.004900031810898873
+        ],
+        "nearest_slot_id": "BLUE:0",
+        "nearest_zone": "BLUE",
+        "horizontal_slot_error_m": 0.0044063166031156,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      },
+      {
+        "body_name": "object_red_02",
+        "ground_truth_class": "RED",
+        "final_xyz_m": [
+          -0.09,
+          -0.31,
+          0.007947014951203054
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          2.0312823934645065e-11
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.5291540418441496,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      },
+      {
+        "body_name": "object_green_02",
+        "ground_truth_class": "GREEN",
+        "final_xyz_m": [
+          0.0,
+          -0.31,
+          0.007947014951203054
+        ],
+        "linear_velocity_m_s": [
+          0.0,
+          0.0,
+          2.0312823934645065e-11
+        ],
+        "angular_velocity_rad_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nearest_slot_id": null,
+        "nearest_zone": null,
+        "horizontal_slot_error_m": 0.5529412265331642,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": false
+      },
+      {
+        "body_name": "object_blue_02",
+        "ground_truth_class": "BLUE",
+        "final_xyz_m": [
+          0.2237519340357479,
+          0.20986004468566577,
+          0.010294660427286542
+        ],
+        "linear_velocity_m_s": [
+          -0.00029299963818717786,
+          -0.0009412456285477698,
+          0.00698073111457782
+        ],
+        "angular_velocity_rad_s": [
+          -0.060363887760514295,
+          -0.03965834553584243,
+          -0.004377538494172051
+        ],
+        "nearest_slot_id": "BLUE:1",
+        "nearest_zone": "BLUE",
+        "horizontal_slot_error_m": 0.0037545434474265753,
+        "resting_on_tray": true,
+        "settled": true,
+        "physical_sort_success": true
+      }
+    ],
+    "evaluator_grasp_slip": {
+      "object_red_01": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      },
+      "object_green_01": {
+        "ground_truth_color": "GREEN",
+        "first_bilateral_contact_time_s": 151.6,
+        "bilateral_contact_samples": 1396,
+        "maximum_relative_slip_m": 0.00241516016
+      },
+      "object_blue_01": {
+        "ground_truth_color": "BLUE",
+        "first_bilateral_contact_time_s": 32.52,
+        "bilateral_contact_samples": 984,
+        "maximum_relative_slip_m": 0.00186140487
+      },
+      "object_red_02": {
+        "ground_truth_color": "RED",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      },
+      "object_green_02": {
+        "ground_truth_color": "GREEN",
+        "first_bilateral_contact_time_s": null,
+        "bilateral_contact_samples": 0,
+        "maximum_relative_slip_m": null
+      },
+      "object_blue_02": {
+        "ground_truth_color": "BLUE",
+        "first_bilateral_contact_time_s": 292.36,
+        "bilateral_contact_samples": 889,
+        "maximum_relative_slip_m": 0.00735035971
+      }
+    },
+    "physical_sort_success_count": 3,
+    "physical_sort_failure_count": 3,
+    "all_active_objects_physically_sorted": false,
+    "controller_done_and_physical_success": false,
+    "limitations": [
+      "The evaluator uses simulator ground truth only after the controller run has ended.",
+      "This is a virtual physical-model result, not a physical prototype test.",
+      "Slot and settling tolerances are project-level integration checks, not M9 campaign acceptance criteria."
+    ]
+  },
+  "command": [
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\99_Рабочие_материалы\\integration\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\04_Программа\\run_m7.py",
+    "--mode",
+    "batch",
+    "--scenario",
+    "m9_six_object_grid",
+    "--physics-profile",
+    "nominal",
+    "--out",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\07_Испытания\\runs",
+    "--scenario-dir",
+    "C:\\Users\\admin\\Desktop\\Ruslan-agtu\\курсач-руслан\\07_Испытания\\scenarios",
+    "--seed",
+    "20261040"
+  ]
+}
