@@ -29,6 +29,7 @@ INLINE_RE = re.compile(r"(\*\*.+?\*\*|`[^`]+`|\*[^*]+\*)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 FIGURE_RE = re.compile(r"^\{\{figure:\s*(.*?)\s*\|\s*caption:\s*(.*?)\}\}\s*$")
 TABLE_CAPTION_RE = re.compile(r"^Таблица\s+\d+(?:\.\d+)?\s*-")
+APPENDIX_HEADING_RE = re.compile(r"^ПРИЛОЖЕНИЕ\s+([А-ЯЁ])\.?\s+(.+)$", re.IGNORECASE)
 
 
 def set_font(run, name: str = "Times New Roman", size: float = 12, bold: bool | None = None,
@@ -67,7 +68,7 @@ def add_inline(paragraph, text: str, size: float = 12) -> None:
             set_font(run, size=size, bold=True)
         elif token.startswith("`"):
             run = paragraph.add_run(token[1:-1])
-            set_font(run, name="Consolas", size=max(8, size - 2))
+            set_font(run, name="Consolas", size=size)
         else:
             run = paragraph.add_run(token[1:-1])
             set_font(run, size=size, italic=True)
@@ -177,7 +178,7 @@ def add_table(doc: Document, rows: list[list[str]], section) -> None:
             p.paragraph_format.first_line_indent = Cm(0)
             p.paragraph_format.space_after = Pt(0)
             p.paragraph_format.line_spacing = 1.0
-            add_inline(p, value, size=10 if col_count >= 4 else 10.5)
+            add_inline(p, value, size=12)
             if row_idx == 0:
                 for run in p.runs:
                     run.bold = True
@@ -206,7 +207,7 @@ def add_page_number(paragraph) -> None:
     fonts.set(qn("w:hAnsi"), "Times New Roman")
     rpr.append(fonts)
     size = OxmlElement("w:sz")
-    size.set(qn("w:val"), "20")
+    size.set(qn("w:val"), "24")
     rpr.append(size)
     r.append(rpr)
     t = OxmlElement("w:t")
@@ -345,6 +346,10 @@ def populate_reference_toc(doc: Document, entries: list[tuple[int, str]],
             run.text = ""
     else:
         title_paragraph.add_run("СОДЕРЖАНИЕ")
+    for run in title_paragraph.runs:
+        run.font.name = "Times New Roman"
+        run.font.size = Pt(12)
+        run.bold = True
 
 
 def add_bottom_rule(paragraph) -> None:
@@ -377,7 +382,7 @@ def add_running_header(section) -> None:
     first.paragraph_format.space_after = Pt(0)
     add_page_number(first)
     for run in first.runs:
-        set_font(run, size=10)
+        set_font(run, size=12)
 
     second = header.add_paragraph()
     second.alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -386,9 +391,9 @@ def add_running_header(section) -> None:
     second.paragraph_format.space_after = Pt(0)
     second.paragraph_format.tab_stops.add_tab_stop(Cm(17.5), WD_TAB_ALIGNMENT.RIGHT)
     left = second.add_run("Кафедра АСОИУ")
-    set_font(left, size=10.5, italic=True)
+    set_font(left, size=12, italic=True)
     right = second.add_run("\tМоделирование роботов  |  Курсовой проект")
-    set_font(right, size=10.5, italic=True)
+    set_font(right, size=12, italic=True)
     add_bottom_rule(second)
 
 
@@ -396,14 +401,10 @@ def configure_style(doc: Document) -> None:
     normal = doc.styles["Normal"]
     normal.font.name = "Times New Roman"
     normal.font.size = Pt(12)
-    normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    normal.paragraph_format.line_spacing = 1.5
-    normal.paragraph_format.first_line_indent = Cm(1.25)
-    normal.paragraph_format.space_after = Pt(0)
     for style_name, size, align, before, after in (
-        ("Heading 1", 16, WD_ALIGN_PARAGRAPH.CENTER, 12, 8),
-        ("Heading 2", 14, WD_ALIGN_PARAGRAPH.LEFT, 10, 5),
-        ("Heading 3", 13, WD_ALIGN_PARAGRAPH.LEFT, 7, 4),
+        ("Heading 1", 12, WD_ALIGN_PARAGRAPH.CENTER, 12, 8),
+        ("Heading 2", 12, WD_ALIGN_PARAGRAPH.LEFT, 10, 5),
+        ("Heading 3", 12, WD_ALIGN_PARAGRAPH.LEFT, 7, 4),
     ):
         style = doc.styles[style_name]
         style.font.name = "Times New Roman"
@@ -416,6 +417,14 @@ def configure_style(doc: Document) -> None:
         style.paragraph_format.space_after = Pt(after)
         style.paragraph_format.keep_with_next = True
         style.paragraph_format.keep_together = True
+
+    for style in doc.styles:
+        if style.name.casefold().startswith("toc "):
+            style.font.name = "Times New Roman"
+            style.font.size = Pt(12)
+            style.paragraph_format.line_spacing = 1.0
+            style.paragraph_format.space_before = Pt(0)
+            style.paragraph_format.space_after = Pt(0)
 
 
 def add_cover(doc: Document, project_root: Path) -> None:
@@ -544,7 +553,7 @@ def add_front_pages(doc: Document, annotation: str, keywords: str, project_root:
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.first_line_indent = Cm(0)
     r = p.add_run("АННОТАЦИЯ")
-    set_font(r, size=16, bold=True)
+    set_font(r, size=12, bold=True)
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     p.paragraph_format.first_line_indent = Cm(1.25)
@@ -566,7 +575,6 @@ def add_front_pages(doc: Document, annotation: str, keywords: str, project_root:
 
 def add_heading(doc: Document, text: str, level: int) -> None:
     p = doc.add_paragraph(style=f"Heading {min(level, 3)}")
-    p.paragraph_format.first_line_indent = Cm(0)
     p.paragraph_format.keep_with_next = True
     p_pr = p._p.get_or_add_pPr()
     suppress_hyphens = OxmlElement("w:suppressAutoHyphens")
@@ -574,7 +582,25 @@ def add_heading(doc: Document, text: str, level: int) -> None:
     p_pr.append(suppress_hyphens)
     if level == 1 and text != "ВВЕДЕНИЕ":
         p.paragraph_format.page_break_before = True
-    add_inline(p, text, size=16 if level == 1 else (14 if level == 2 else 13))
+    appendix = APPENDIX_HEADING_RE.match(text) if level == 1 else None
+    if appendix:
+        label, subtitle = appendix.groups()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.first_line_indent = Cm(0)
+        p.paragraph_format.tab_stops.add_tab_stop(Cm(8.75), WD_TAB_ALIGNMENT.CENTER)
+        p.paragraph_format.tab_stops.add_tab_stop(Cm(17.5), WD_TAB_ALIGNMENT.RIGHT)
+        prefix = p.add_run("\t\t")
+        set_font(prefix, size=12, bold=True)
+        label_run = p.add_run(f"ПРИЛОЖЕНИЕ {label.upper()}")
+        set_font(label_run, size=12, bold=True)
+        label_run.add_break()
+        subtitle_prefix = p.add_run("\t")
+        set_font(subtitle_prefix, size=12, bold=True)
+        subtitle_run = p.add_run(subtitle)
+        set_font(subtitle_run, size=12, bold=True)
+        return
+    p.paragraph_format.first_line_indent = Cm(0)
+    add_inline(p, text, size=12)
     for run in p.runs:
         run.bold = True
         run.italic = False
@@ -627,7 +653,7 @@ def add_equation(doc: Document, text: str) -> None:
     p.paragraph_format.space_before = Pt(3)
     p.paragraph_format.space_after = Pt(3)
     r = p.add_run(text.strip())
-    set_font(r, name="Cambria Math", size=11)
+    set_font(r, name="Cambria Math", size=12)
 
 
 def set_page_number_start(section, start: int = 1) -> None:
@@ -637,6 +663,48 @@ def set_page_number_start(section, start: int = 1) -> None:
     page_type = OxmlElement("w:pgNumType")
     page_type.set(qn("w:start"), str(start))
     section._sectPr.append(page_type)
+
+
+def normalize_document_font_sizes(doc: Document) -> None:
+    """Apply 12 pt to the thesis body, preserving the reference front matter."""
+    body_start = next(
+        (index for index, paragraph in enumerate(doc.paragraphs)
+         if paragraph.text.strip() == "ВВЕДЕНИЕ"),
+        None,
+    )
+    if body_start is None:
+        raise ValueError("Cannot normalize fonts: body heading 'ВВЕДЕНИЕ' is missing")
+
+    for paragraph in doc.paragraphs[body_start:]:
+        for run in paragraph.runs:
+            run.font.size = Pt(12)
+
+    # The template's first six tables belong to its reference-formatted cover,
+    # assignment, and calendar pages; body tables are added after them.
+    for table in doc.tables[6:]:
+        for row in table.rows:
+            for cell in row.cells:
+                for paragraph in cell.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.size = Pt(12)
+
+    body_section = doc.sections[-1]
+    for part in (body_section.header, body_section.footer,
+                 body_section.first_page_header, body_section.first_page_footer):
+        for paragraph in part.paragraphs:
+            for run in paragraph.runs:
+                run.font.size = Pt(12)
+        for table in part.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    for paragraph in cell.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.size = Pt(12)
+
+    for style in doc.styles:
+        if hasattr(style, "font"):
+            style.font.name = "Times New Roman"
+            style.font.size = Pt(12)
 
 
 def build(input_path: Path, output_path: Path, project_root: Path, template_path: Path,
@@ -691,7 +759,7 @@ def build(input_path: Path, output_path: Path, project_root: Path, template_path
                 p.paragraph_format.keep_together = True
                 p.alignment = WD_ALIGN_PARAGRAPH.LEFT
                 r = p.add_run("\n".join(code))
-                set_font(r, name="Consolas", size=9)
+                set_font(r, name="Consolas", size=12)
                 code = []
                 in_code = False
             else:
@@ -765,6 +833,7 @@ def build(input_path: Path, output_path: Path, project_root: Path, template_path
         update = OxmlElement("w:updateFields")
         settings.append(update)
     update.set(qn("w:val"), "true")
+    normalize_document_font_sizes(doc)
     doc.core_properties.title = TITLE
     doc.core_properties.subject = "Курсовая работа по моделированию и симуляции робота-манипулятора"
     doc.core_properties.author = STUDENT

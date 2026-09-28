@@ -274,8 +274,8 @@ def replace_calendar(doc) -> None:
     if schedule_table is None or len(schedule_table.rows) != len(SCHEDULE) + 1:
         raise ValueError("Reference calendar table does not have ten data rows")
     for index, (row, task) in enumerate(zip(schedule_table.rows[1:], SCHEDULE), start=1):
-        set_cell_value(row.cells[0], str(index), font_size=11)
-        set_cell_value(row.cells[1], task, font_size=11)
+        set_cell_value(row.cells[0], str(index), font_size=12)
+        set_cell_value(row.cells[1], task, font_size=12)
         set_cell_value(row.cells[2], "")
         set_cell_value(row.cells[3], "")
 
@@ -317,10 +317,11 @@ def populate_front_matter(doc) -> None:
                 set_paragraph_text(paragraph, "выполняющего задачу сортировки объектов по цвету")
             elif text.startswith("по дисциплине"):
                 set_paragraph_text(paragraph, f"по дисциплине «{DISCIPLINE}»")
-            elif text.startswith("обучающимся группы"):
-                set_paragraph_text(paragraph, f"обучающимся группы {GROUP}")
-            elif "Сулеймановым Г.Б." in text:
-                set_paragraph_text(paragraph, "Шатуевым Р.С.")
+            elif text.startswith("Проект выполнен") or "Сулеймановым Г.Б." in text:
+                set_paragraph_text(
+                    paragraph,
+                    f"Проект выполнен\nобучающимся группы {GROUP}\nШатуевым Р.С.",
+                )
             elif "ассистент Тараканов В. Д." in text:
                 set_paragraph_text(paragraph, f"Руководитель\n{SUPERVISOR}")
             elif "2025г." in text:
@@ -425,13 +426,18 @@ def populate_front_matter(doc) -> None:
     replace_calendar(doc)
     clear_reference_toc(doc)
 
-    # Apply this after template substitutions: the source has mixed-script
-    # capitals and Word run formatting that may be recreated during edits.
-    for paragraph in doc.paragraphs:
-        text = paragraph.text.strip()
-        if text.startswith("ФЕДЕРАЛЬНОЕ") and len(text) > 50:
-            for run in paragraph.runs:
-                run.font.size = Pt(11)
+    literature_headings = [
+        paragraph for paragraph in doc.paragraphs
+        if paragraph.text.strip() == "Список рекомендуемой литературы"
+    ]
+    if len(literature_headings) != 1:
+        raise ValueError(
+            "Expected exactly one recommended-literature heading in the front matter"
+        )
+    # Keep the heading with the first citation so it cannot be stranded at the
+    # bottom of the assignment page while the list starts on the next page.
+    literature_headings[0].paragraph_format.keep_with_next = True
+    literature_headings[0].paragraph_format.keep_together = True
 
     old_terms = (
         "Сулейманов", "Тараканов", "Хоменко", "ДИНРб-21", "Веб-платформа",
