@@ -11,7 +11,7 @@ from pypdf import PdfReader
 from build_m10_docx import toc_headings
 
 
-INTRO_SIGNATURE = "Автоматизированная сортировка деталей требует согласованной работы сенсора"
+INTRO_SIGNATURE = "Для автоматической сортировки ячейка должна распознать деталь"
 
 
 def normalize(text: str) -> str:
