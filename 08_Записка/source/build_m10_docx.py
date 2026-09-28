@@ -25,7 +25,7 @@ UNIVERSITY = "Астраханский государственный техни
 DISCIPLINE = "Моделирование роботов"
 DOCUMENT_YEAR = "2026"
 
-INLINE_RE = re.compile(r"(\*\*.+?\*\*|`[^`]+`|\*[^*]+\*)")
+INLINE_RE = re.compile(r"(\\\(.*?\\\)|\*\*.+?\*\*|`[^`]+`|\*[^*]+\*)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 FIGURE_RE = re.compile(r"^\{\{figure:\s*(.*?)\s*\|\s*caption:\s*(.*?)\}\}\s*$")
 TABLE_CAPTION_RE = re.compile(r"^Таблица\s+\d+(?:\.\d+)?\s*-")
@@ -56,6 +56,224 @@ def set_font(run, name: str = "Times New Roman", size: float = 12, bold: bool | 
     lang.set(qn("w:val"), "ru-RU")
 
 
+XML_NS = "http://www.w3.org/XML/1998/namespace"
+
+
+def math_element(name: str):
+    return OxmlElement(f"m:{name}")
+
+
+def math_run(text: str, style: str | None = None):
+    run = math_element("r")
+    if style is None:
+        style = "i" if len(text) == 1 and text.isalpha() else "p"
+    rpr = math_element("rPr")
+    math_style = math_element("sty")
+    math_style.set(qn("m:val"), style)
+    rpr.append(math_style)
+    run.append(rpr)
+    value = math_element("t")
+    if text[:1].isspace() or text[-1:].isspace():
+        value.set(f"{{{XML_NS}}}space", "preserve")
+    value.text = text
+    run.append(value)
+    return run
+
+
+class MathParser:
+    """Parse the small TeX subset used by this thesis into native Word math."""
+
+    COMMANDS = {
+        "psi": ("ψ", "i"),
+        "pi": ("π", "i"),
+        "Delta": ("Δ", "i"),
+        "pm": ("±", "p"),
+        "cdot": ("·", "p"),
+        "times": ("×", "p"),
+        "leq": ("≤", "p"),
+        "geq": ("≥", "p"),
+        "sin": ("sin", "p"),
+        "cos": ("cos", "p"),
+        "arccos": ("arccos", "p"),
+    }
+
+    def __init__(self, source: str):
+        self.source = source.strip()
+        self.pos = 0
+
+    def parse(self) -> list:
+        nodes = self._sequence()
+        if self.pos != len(self.source):
+            raise ValueError(f"Unexpected math input at {self.source[self.pos:]!r}")
+        return nodes
+
+    def _sequence(self, stop_at_brace: bool = False) -> list:
+        nodes = []
+        while self.pos < len(self.source):
+            char = self.source[self.pos]
+            if char == "}" and stop_at_brace:
+                break
+            if char == "{":
+                self.pos += 1
+                nodes.extend(self._sequence(stop_at_brace=True))
+                if self.pos >= len(self.source) or self.source[self.pos] != "}":
+                    raise ValueError("Unclosed group in math expression")
+                self.pos += 1
+                continue
+            if char == "}":
+                raise ValueError("Unexpected closing brace in math expression")
+            if char.isspace():
+                self.pos += 1
+                nodes.append(math_run(" ", style="p"))
+                continue
+
+            atom = self._atom()
+            subscript = None
+            superscript = None
+            while self.pos < len(self.source) and self.source[self.pos] in "_^":
+                marker = self.source[self.pos]
+                self.pos += 1
+                argument = self._argument()
+                if marker == "_":
+                    if subscript is not None:
+                        raise ValueError("Repeated subscript in math expression")
+                    subscript = argument
+                else:
+                    if superscript is not None:
+                        raise ValueError("Repeated superscript in math expression")
+                    superscript = argument
+            if subscript is not None or superscript is not None:
+                tag = "sSubSup" if subscript is not None and superscript is not None else (
+                    "sSub" if subscript is not None else "sSup"
+                )
+                scripted = math_element(tag)
+                base = math_element("e")
+                base.append(atom)
+                scripted.append(base)
+                if subscript is not None:
+                    sub = math_element("sub")
+                    sub.extend(subscript)
+                    scripted.append(sub)
+                if superscript is not None:
+                    sup = math_element("sup")
+                    sup.extend(superscript)
+                    scripted.append(sup)
+                atom = scripted
+            nodes.append(atom)
+        return nodes
+
+    def _argument(self) -> list:
+        if self.pos >= len(self.source):
+            raise ValueError("Missing script argument in math expression")
+        if self.source[self.pos] == "{":
+            self.pos += 1
+            value = self._sequence(stop_at_brace=True)
+            if self.pos >= len(self.source) or self.source[self.pos] != "}":
+                raise ValueError("Unclosed script group in math expression")
+            self.pos += 1
+            return value
+        return [self._atom()]
+
+    def _raw_group(self) -> str:
+        if self.pos >= len(self.source) or self.source[self.pos] != "{":
+            raise ValueError("Expected a braced argument in math expression")
+        start = self.pos + 1
+        depth = 1
+        self.pos += 1
+        while self.pos < len(self.source) and depth:
+            if self.source[self.pos] == "{":
+                depth += 1
+            elif self.source[self.pos] == "}":
+                depth -= 1
+            self.pos += 1
+        if depth:
+            raise ValueError("Unclosed command argument in math expression")
+        return self.source[start:self.pos - 1]
+
+    def _atom(self):
+        char = self.source[self.pos]
+        if char == "\\":
+            self.pos += 1
+            if self.pos >= len(self.source):
+                raise ValueError("Trailing escape in math expression")
+            if self.source[self.pos].isalpha():
+                start = self.pos
+                while self.pos < len(self.source) and self.source[self.pos].isalpha():
+                    self.pos += 1
+                command = self.source[start:self.pos]
+            else:
+                command = self.source[self.pos]
+                self.pos += 1
+            if command == "frac":
+                fraction = math_element("f")
+                fraction_properties = math_element("fPr")
+                fraction_type = math_element("type")
+                fraction_type.set(qn("m:val"), "bar")
+                fraction_properties.append(fraction_type)
+                fraction.append(fraction_properties)
+                numerator = math_element("num")
+                numerator.extend(self._raw_math_group())
+                denominator = math_element("den")
+                denominator.extend(self._raw_math_group())
+                fraction.append(numerator)
+                fraction.append(denominator)
+                return fraction
+            if command in ("mathrm", "text", "operatorname"):
+                return math_run(self._raw_group(), style="p")
+            if command in ("left", "right"):
+                return self._atom()
+            if command == ",":
+                return math_run(" ", style="p")
+            if command == "_":
+                return math_run("_", style="p")
+            if command in self.COMMANDS:
+                value, style = self.COMMANDS[command]
+                return math_run(value, style=style)
+            raise ValueError(f"Unsupported math command \\{command}")
+
+        if char.isdigit():
+            start = self.pos
+            while self.pos < len(self.source) and self.source[self.pos].isdigit():
+                self.pos += 1
+            if (
+                self.pos + 1 < len(self.source)
+                and self.source[self.pos] == ","
+                and self.source[self.pos + 1].isdigit()
+            ):
+                self.pos += 1
+                while self.pos < len(self.source) and self.source[self.pos].isdigit():
+                    self.pos += 1
+            return math_run(self.source[start:self.pos], style="p")
+
+        if char.isalpha() or char in "ψΔ":
+            start = self.pos
+            while self.pos < len(self.source) and (
+                self.source[self.pos].isalpha() or self.source[self.pos] in "ψΔ"
+            ):
+                self.pos += 1
+            value = self.source[start:self.pos]
+            return math_run(value, style="i" if len(value) == 1 and value.isalpha() else "p")
+
+        self.pos += 1
+        return math_run(char, style="p")
+
+    def _raw_math_group(self) -> list:
+        if self.pos >= len(self.source) or self.source[self.pos] != "{":
+            raise ValueError("Expected a braced fraction argument")
+        self.pos += 1
+        nodes = self._sequence(stop_at_brace=True)
+        if self.pos >= len(self.source) or self.source[self.pos] != "}":
+            raise ValueError("Unclosed fraction argument")
+        self.pos += 1
+        return nodes
+
+
+def add_math(paragraph, text: str) -> None:
+    equation = math_element("oMath")
+    equation.extend(MathParser(text).parse())
+    paragraph._p.append(equation)
+
+
 def add_inline(paragraph, text: str, size: float = 12) -> None:
     pos = 0
     for match in INLINE_RE.finditer(text):
@@ -63,7 +281,9 @@ def add_inline(paragraph, text: str, size: float = 12) -> None:
             run = paragraph.add_run(text[pos:match.start()])
             set_font(run, size=size)
         token = match.group(0)
-        if token.startswith("**"):
+        if token.startswith(r"\("):
+            add_math(paragraph, token[2:-2])
+        elif token.startswith("**"):
             run = paragraph.add_run(token[2:-2])
             set_font(run, size=size, bold=True)
         elif token.startswith("`"):
@@ -646,14 +866,23 @@ def add_figure(doc: Document, image_path: Path, caption: str, section) -> None:
 
 
 def add_equation(doc: Document, text: str) -> None:
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.paragraph_format.first_line_indent = Cm(0)
-    p.paragraph_format.keep_together = True
-    p.paragraph_format.space_before = Pt(3)
-    p.paragraph_format.space_after = Pt(3)
-    r = p.add_run(text.strip())
-    set_font(r, name="Cambria Math", size=12)
+    for line in (part.strip() for part in text.splitlines() if part.strip()):
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Cm(0)
+        p.paragraph_format.keep_together = True
+        p.paragraph_format.space_before = Pt(2)
+        p.paragraph_format.space_after = Pt(2)
+        display = math_element("oMathPara")
+        properties = math_element("oMathParaPr")
+        justification = math_element("jc")
+        justification.set(qn("m:val"), "center")
+        properties.append(justification)
+        display.append(properties)
+        equation = math_element("oMath")
+        equation.extend(MathParser(line).parse())
+        display.append(equation)
+        p._p.append(display)
 
 
 def set_page_number_start(section, start: int = 1) -> None:
@@ -773,7 +1002,7 @@ def build(input_path: Path, output_path: Path, project_root: Path, template_path
         if stripped == "$$":
             flush()
             if in_equation:
-                add_equation(doc, " ".join(equation))
+                add_equation(doc, "\n".join(equation))
                 equation = []
                 in_equation = False
             else:
